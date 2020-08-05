@@ -1,0 +1,11 @@
+/* purgecss start ignore */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+/* purgecss end ignore */
+
+@import 'tailwindcss/utilities';
+
+/* .gatsby-highlight pre {
+    color: inherit;
+    background-color: inherit;
+} */
