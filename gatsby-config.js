@@ -59,7 +59,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-personal-website-starter`,
+        name: `Riccardo Sirigu personal website`,
         short_name: `Riccardo Sirigu`,
         start_url: `/`,
         background_color: `#81e6d9`,
