@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url> <loc>https://www.riccardosirigu.com/blog/aws-amplify-dynamodb-total-count-graphql-queries/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/how-to-connect-multiple-docker-containers/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/best-programming-resources-of-2017/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/lift-framework-rest-apis-authentication-with-jwt/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/type-classes-in-scala-a-practical-example/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/functional-programming-and-category-theory/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/human-friendly-errors-for-scala/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/building-secure-software-with-a-card-game/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/how-to-conditionally-render-html-with-scala-and-lift/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/isomorphic-web-applications-with-scala-and-scalajs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/scala-simplify-code-with-lifecycle-callbacks-model/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/blog/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/contact/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://www.riccardosirigu.com/resume/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+</urlset>
