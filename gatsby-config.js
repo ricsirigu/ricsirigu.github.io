@@ -1,7 +1,6 @@
 module.exports = {
   siteMetadata: {
     siteUrl: `https://www.riccardosirigu.com`,
-    pathPrefix: "/ricsirigu.github.io",
     title: `Riccardo Sirigu`,
     description: `Riccardo Sirigu, Senior Software Engineer and Cybersecurity Consultant`,
     author: `Riccardo Sirigu`
