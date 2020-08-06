@@ -5,14 +5,10 @@
 
 @import 'tailwindcss/utilities';
 
-/* .gatsby-highlight pre {
-    color: inherit;
-    background-color: inherit;
-} */
 
-.format-html{
-  overflow-x: hidden;
-}
+ .format-html{
+   overflow-x: hidden;
+ }
 
 
 /**
