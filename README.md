@@ -1,22 +1,8 @@
-# Gatsby Markdown Typescript Personal Website
+# Just my personal website built with Gatsby Markdown and Typescript 
 
 This is a personal website / blog using [Gatsby](https://www.gatsbyjs.org/), [Markdown](https://www.markdownguide.org/), [Typescript](https://www.typescriptlang.org/), [Styled Components](https://styled-components.com/), [Talwind CSS](https://tailwindcss.com/), [Framer Motion](https://www.framer.com/motion/) & [React Font Awesome](https://github.com/FortAwesome/react-fontawesome/).
 
-## Demo
-
-[Gatsby Markdown Typescript Personal Website](https://gatsby-markdown-typescript-personal-website.netlify.app/)
-
-## Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, using the Gatsby Markdown Typescript Personal Website Starter.
-
-    ```shell
-    gatsby new my-site-name https://github.com/SaimirKapaj/gatsby-markdown-typescript-personal-website
-    ```
-
-2.  **Develop**
+1.  **Develop**
 
     Navigate into your new site’s directory and start the development environment.
 
@@ -26,7 +12,7 @@ This is a personal website / blog using [Gatsby](https://www.gatsbyjs.org/), [Ma
 
     Your site is now running at `http://localhost:8000`
 
-3.  **Build**
+2.  **Build**
 
     Get an optimized production build for your site generating static HTML and JavaScript, CSS bundles.
 
@@ -34,7 +20,7 @@ This is a personal website / blog using [Gatsby](https://www.gatsbyjs.org/), [Ma
     gatsby build
     ```
 
-4.  **Serve**
+3.  **Serve**
 
     Starts a local server for testing your production site.
 
@@ -46,6 +32,6 @@ This is a personal website / blog using [Gatsby](https://www.gatsbyjs.org/), [Ma
 
 ## Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/SaimirKapaj/gatsby-markdown-typescript-personal-website)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ricsirigu/ricsirigu.github.io)
 
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/SaimirKapaj/gatsby-markdown-typescript-personal-website)
+[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/ricsirigu/ricsirigu.github.io)
