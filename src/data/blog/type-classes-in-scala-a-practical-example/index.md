@@ -8,7 +8,7 @@ tags: ['scala', 'functional programming', 'type class']
 published: true
 ---
 
-<article class="prose prose-lg sm:prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-xl">
 
 Say you want to extend a particular class (type) with some new functionality but you can't access the source code..
 or perhaps you can but you don't want to use inheritance and subtype polimorphism..

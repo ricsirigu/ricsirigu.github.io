@@ -7,7 +7,7 @@ date: '2019-12-10'
 tags: ['aws', 'dynamodb', 'graphql', 'amplify']
 published: true
 ---
-<article class="prose prose-lg sm:prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-xl">
 
 How to get the total count of results with DynamoDB and GraphQL in order to paginate my results?
 

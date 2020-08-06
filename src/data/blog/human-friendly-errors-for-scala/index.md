@@ -8,7 +8,7 @@ tags: ['scala', 'functional programming']
 published: true
 ---
 
-<article class="prose prose-lg sm:prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-xl">
 
 Sometimes Scala compiler errors can be too cryptic and scare beginners away
 
