@@ -39,3 +39,7 @@
     float: left; /* 1 */
     min-width: 100%; /* 2 */
   }
+
+  .prose h2 {
+    font-size: inherit;
+  }
