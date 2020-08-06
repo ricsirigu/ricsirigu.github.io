@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Quick recipe: How to connect multiple Docker containers'
-description: 'How to connect multiple Docker containers'
+description: 'Learn how to build a network of containers'
 date: '2018-02-22'
 tags: ['docker', 'containers']
 published: true

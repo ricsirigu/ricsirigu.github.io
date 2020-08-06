@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'How to protect your RESTful APIs in Lift with JWT'
-description: How to protect your RESTful APIs in Lift with JWT'
+description: 'How to add authentication to your REST APIs'
 date: '2017-07-21'
 tags: ['jwt', 'security', 'authentication']
 published: true

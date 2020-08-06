@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Human Friendly errors for Scala'
-description: 'Learn how to render human friendly errors with scala clippy'
+description: 'Learn how to make Scala errors more human friendly'
 date: '2017-02-17'
 tags: ['scala', 'functional programming']
 published: true

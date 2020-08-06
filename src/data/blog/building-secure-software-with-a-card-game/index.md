@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Building Secure Software With a Card Game'
-description: 'Building Secure Software With the Card Game OWASP Cornucopia'
+description: 'Have you ever heard of OWASP Cornucopia?'
 date: '2017-02-16'
 tags: ['owasp', 'secure development', 'cornucopia']
 published: true

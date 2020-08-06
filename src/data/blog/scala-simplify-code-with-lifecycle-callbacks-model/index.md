@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Scala & Lift and the record lifecycle callbacks'
-description: 'Learn how to hook the model lifecicle with custom code'
+description: 'Learn how to hook the model lifecycle with custom code'
 date: '2016-02-29'
 tags: ['scala', 'design pattern', 'lift framework']
 published: true

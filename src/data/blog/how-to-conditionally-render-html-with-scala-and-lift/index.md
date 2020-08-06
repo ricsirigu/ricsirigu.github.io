@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'How to conditionally render HTML with Scala and the Lift Framework'
-description: 'Learn how to conditionally render HTML with Scala and the Lift Framework'
+description: 'Learn how to render HTML conditionally with Scala and Lift'
 date: '2017-02-01'
 tags: ['scala', 'lift framework']
 published: true

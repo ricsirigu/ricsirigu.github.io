@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Functional Programming and Category Theory'
-description: 'Functional Programming and Category Theory resources'
+description: 'Want to improve your functional programming skills?'
 date: '2017-05-14'
 tags: ['scala', 'functional programming', 'category theory', 'monads']
 published: true
