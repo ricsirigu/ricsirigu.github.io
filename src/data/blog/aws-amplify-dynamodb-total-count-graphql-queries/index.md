@@ -57,7 +57,7 @@ export const listUsers = /* GraphQL */ `
 
 And so, there will be no `scannedCount` and `count` in the result.
 
-To make them magically appear, open your `amplify/backend/api/deepboard/build/schema.graphql` 
+To make them magically appear, open your `amplify/backend/api/<project-name>/build/schema.graphql` 
 
 and look for the definition of the `type Query`.
 
