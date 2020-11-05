@@ -30,8 +30,6 @@ This is a personal website / blog using [Gatsby](https://www.gatsbyjs.org/), [Ma
 
     Your production site is now running at `http://localhost:9000`
 
-## Deploy
+## Deploy 
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/ricsirigu/ricsirigu.github.io)
-
-[![Deploy with ZEIT Now](https://zeit.co/button)](https://zeit.co/import/project?template=https://github.com/ricsirigu/ricsirigu.github.io)
+    Run `npm run deploy` to push all the contents of the `public` folder to the repository’s gh-pages branch.
