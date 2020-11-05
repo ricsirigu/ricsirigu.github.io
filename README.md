@@ -30,6 +30,7 @@ This is a personal website / blog using [Gatsby](https://www.gatsbyjs.org/), [Ma
 
     Your production site is now running at `http://localhost:9000`
 
-## Deploy 
+4.  **Deploy**
 
-    Run `npm run deploy` to push all the contents of the `public` folder to the repository’s gh-pages branch.
+    Run 
+    `npm run deploy` to push all the contents of the `public` folder to the repository’s gh-pages branch.
