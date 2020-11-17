@@ -1,6 +1,6 @@
 ---
 category: 'experiences'
-company: 'tree'
+company: 'Tree'
 position: 'Instructor'
 startDate: 'June 2020'
 endDate: 'July 2020'
