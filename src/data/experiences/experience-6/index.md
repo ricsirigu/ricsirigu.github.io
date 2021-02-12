@@ -7,4 +7,4 @@ endDate: 'Present'
 ---
 
 Helping companies to secure their products and infrastructures.
-Our customers range from various sectors: telecommunications, finance, automotive, retail, telco, industrial, transportation, medical, utilities.
+Our customers spans various sectors: telecommunications, insurance, finance, automotive, retail, industrial, transportation, medical, utilities.
