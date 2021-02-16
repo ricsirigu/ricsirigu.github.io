@@ -7,17 +7,30 @@ import SEO from 'components/SEO';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
+import { ImageSharpFixed } from 'helpers/definitions';
 
 import * as Styled from './styles';
 
 interface Post {
   html: React.ReactNode;
+  excerpt: string;
   fields: {
     slug: string;
   };
   frontmatter: {
     title: string;
+    description: string;
     date: string;
+    tags: string[];
+    cover: {
+      childImageSharp: {
+        resize: {
+          src: string;
+          width: number;
+          height: number;
+        }
+      };
+    };
   };
 }
 
@@ -35,10 +48,18 @@ interface Props {
 const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
+  const image = post.frontmatter.cover
+  ? post.frontmatter.cover.childImageSharp.resize
+  : null
+
 
   return (
     <Layout>
-      <SEO title={post.frontmatter.title} />
+      <SEO
+        title={post.frontmatter.title}
+        description={post.frontmatter.description || post.excerpt}
+        image={image}
+      />
       <Container section>
         <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
         <FormatHtml content={post.html} />
@@ -68,10 +89,23 @@ export default BlogPost;
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
+      id,
+      excerpt(pruneLength: 160)
       html
       frontmatter {
         title
+        description
         date(formatString: "MMM DD, YYYY")
+        tags
+        cover {
+          childImageSharp {
+            resize(width: 1200, quality: 100) {
+              src
+              width
+              height
+            }
+          }
+        }
       }
     }
   }

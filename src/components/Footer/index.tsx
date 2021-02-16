@@ -61,7 +61,7 @@ const Footer: React.FC = () => (
       </Styled.Links>
     </Container>
     <Container>
-      <Styled.Links style={{"font-size": "small"}}>
+      <Styled.Links style={{"fontSize": "small"}}>
         P.IVA 03780110924
       </Styled.Links>
     </Container>
