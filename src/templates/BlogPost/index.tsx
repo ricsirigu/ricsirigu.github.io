@@ -59,6 +59,7 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={image}
+        blogPost={post}
       />
       <Container section>
         <TitleSection title={post.frontmatter.date} subtitle={post.frontmatter.title} />
@@ -106,6 +107,9 @@ export const query = graphql`
             }
           }
         }
+      }
+      fields {
+        slug
       }
     }
   }

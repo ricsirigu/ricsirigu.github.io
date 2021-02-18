@@ -3,7 +3,15 @@ module.exports = {
     siteUrl: `https://www.riccardosirigu.com`,
     title: `Riccardo Sirigu`,
     description: `Riccardo Sirigu, Senior Software Engineer and Cybersecurity Consultant`,
-    author: `Riccardo Sirigu`
+    author: `Riccardo Sirigu`,
+    organization: {
+      name: `Riccardo Sirigu`,
+      url: `https://www.riccardosirigu.com`,
+    },
+    social: {
+      facebook: `https://www.facebook.com/riccardo.sirigu`,
+      twitter:  `https://twitter.com/ricsirigu`,
+    }
   },
   plugins: [
     `gatsby-plugin-sitemap`,
