@@ -72,6 +72,7 @@ export default React.memo(
               '@id': siteUrl,
             },
             datePublished,
+            dateModified: datePublished
           },
         ]
       : baseSchema;
