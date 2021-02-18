@@ -170,7 +170,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, image: metaImage, title
         description={metaDescription}
         image={image}
         isBlogPost={blogPost !== null}
-        organization={{name: site.siteMetadata.organization, logo: logoUrl, url: site.siteMetadata.siteUrl}}
+        organization={{name: site.siteMetadata.organization.name, logo: logoUrl, url: site.siteMetadata.siteUrl}}
         title={title}
         url={url}
       />
