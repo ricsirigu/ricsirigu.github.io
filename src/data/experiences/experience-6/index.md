@@ -3,8 +3,7 @@ category: 'experiences'
 company: 'Abissi Srl'
 position: 'Cybersecurity Consultant'
 startDate: 'Sep 2018'
-endDate: 'Present'
+endDate: 'Dec 2020'
 ---
 
-Helping companies to secure their products and infrastructures.
-Our customers spans various sectors: telecommunications, insurance, finance, automotive, retail, industrial, transportation, medical, utilities.
+Helping clients to assess their security posture, testing hardware and software products. Performing secure code reviews, penetration testing their networks and cloud infrastructures. Educating developers on how to build software with security in mind.
