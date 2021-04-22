@@ -43,7 +43,7 @@ const MainNav: React.FC = () => {
           </Styled.MainNavItem>
         ))}
       </Styled.MainNav>
-      <Styled.ToogleMainNav open={open} onClick={() => setOpen(!open)}>
+      <Styled.ToogleMainNav aria-label="open navigation menu" open={open} onClick={() => setOpen(!open)}>
         <span />
         <span />
         <span />
