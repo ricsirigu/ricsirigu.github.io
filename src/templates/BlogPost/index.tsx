@@ -7,7 +7,6 @@ import SEO from 'components/SEO';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
-import { ImageSharpFixed } from 'helpers/definitions';
 
 import * as Styled from './styles';
 
@@ -100,11 +99,7 @@ export const query = graphql`
         tags
         cover {
           childImageSharp {
-            resize(width: 1200, quality: 100) {
-              src
-              width
-              height
-            }
+            gatsbyImageData(layout: CONSTRAINED, width: 800)
           }
         }
       }

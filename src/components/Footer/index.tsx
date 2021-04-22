@@ -25,6 +25,7 @@ const Footer: React.FC = () => (
         <Styled.Link
           href="mailto:me@riccardosirigu.com"
           rel="noreferrer noopener"
+          aria-label="email riccardo sirigu"
           target="_blank"
         >
           <FontAwesomeIcon icon={faEnvelope} />
@@ -32,6 +33,7 @@ const Footer: React.FC = () => (
         <Styled.Link
           href="https://github.com/ricsirigu"
           rel="noreferrer noopener"
+          aria-label="github riccardo sirigu"
           target="_blank"
         >
           <FontAwesomeIcon icon={faGithub} />
@@ -39,22 +41,26 @@ const Footer: React.FC = () => (
         <Styled.Link
           href="https://twitter.com/ricsirigu"
           rel="noreferrer noopener"
+          aria-label="twitter riccardo sirigu"
           target="_blank"
         >
           <FontAwesomeIcon icon={faTwitter} />
         </Styled.Link>
         <Styled.Link href="https://www.linkedin.com/in/riccardosirigu"
           rel="noreferrer noopener"
+          aria-label="linkedin riccardo sirigu"
           target="_blank">
           <FontAwesomeIcon icon={faLinkedin} />
         </Styled.Link>
         <Styled.Link href="https://www.facebook.com/riccardo.sirigu"
           rel="noreferrer noopener"
+          aria-label="facebook riccardo sirigu"
           target="_blank">
           <FontAwesomeIcon icon={faFacebook} />
         </Styled.Link>
         <Styled.Link href="https://www.instagram.com/ricsirigu"
           rel="noreferrer noopener"
+          aria-label="instagram riccardo sirigu"
           target="_blank">
           <FontAwesomeIcon icon={faInstagram} />
         </Styled.Link>

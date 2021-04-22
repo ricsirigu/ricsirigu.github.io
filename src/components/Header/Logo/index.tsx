@@ -1,36 +1,31 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { StaticImage } from "gatsby-plugin-image"
 
 import * as Styled from './styles';
 
-import { ImageSharpFluid } from 'helpers/definitions';
-
 const Logo: React.FC = () => {
-  const { site, placeholderImage } = useStaticQuery(graphql`
+  const { site } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           title
         }
       }
-      placeholderImage: file(relativePath: { eq: "riccardo-sirigu.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 80) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
   `);
 
   const logoTitle: string = site.siteMetadata.title;
-  const logoImage: ImageSharpFluid = placeholderImage.childImageSharp.fluid;
 
   return (
     <Styled.Logo to="/">
       <Styled.Image>
-        <Img fluid={logoImage} alt={logoTitle} />
+        <StaticImage
+          src="../../../assets/images/riccardo-sirigu.jpg"
+          alt={logoTitle}
+          width={80}
+          placeholder="blurred"
+        />
       </Styled.Image>
       <Styled.Text>{logoTitle}</Styled.Text>
     </Styled.Logo>

@@ -8,7 +8,7 @@ tags: ['security', 'programming', 'secure coding', 'secure coding best practices
 published: true
 ---
 
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 We all know that writing bug-free code is hard.  
 That writing readable code is hard.  

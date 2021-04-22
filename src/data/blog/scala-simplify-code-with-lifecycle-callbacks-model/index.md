@@ -8,7 +8,7 @@ tags: ['scala', 'design pattern', 'lift framework']
 published: true
 ---
 
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 I was digging around the source code of our project when I noticed spread in many <a href="http://exploring.liftweb.net/master/index-5.html" target="_blank" rel="noopener noreferrer">snippets</a>, code that perform the same action (such as send a push notification to a user) after a particular object gets persisted in the database (for example when a new chat message is sent) or when a change of state happens (a payment for a particular order has been made).
 

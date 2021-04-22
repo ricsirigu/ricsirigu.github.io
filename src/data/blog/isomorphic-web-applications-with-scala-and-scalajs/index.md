@@ -8,7 +8,7 @@ tags: ['scala', 'scalajs', 'isomorphic web application']
 published: true
 ---
 
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 ## What is an isomorphic web application? ##
 

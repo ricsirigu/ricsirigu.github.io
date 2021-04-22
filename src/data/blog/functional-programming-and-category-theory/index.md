@@ -7,7 +7,7 @@ date: '2017-05-14'
 tags: ['scala', 'functional programming', 'category theory', 'monads']
 published: true
 ---
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 Here you are.
 

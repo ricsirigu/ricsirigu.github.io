@@ -8,7 +8,7 @@ tags: ['jwt', 'security', 'authentication']
 published: true
 ---
 
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 You have a RESTful api as a source of data for your mobile applications or a reactjs/angular/vue/whatever frontend, and you, as a security conscious software engineer (or a good student that follows <a href="https://github.com/shieldfy/API-Security-Checklist" target="_blank" rel="noopener noreferrer">these security guidelines</a> ) want to protect your precious endpoints from unwanted eyes.
 

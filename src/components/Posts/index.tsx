@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 import Link from 'gatsby-link';
 import { motion } from 'framer-motion';
 
@@ -24,7 +24,7 @@ interface Post {
       tags: string[];
       cover: {
         childImageSharp: {
-          fluid: ImageSharpFluid;
+          gatsbyImageData: ImageSharpFluid;
         };
       };
     };
@@ -58,9 +58,7 @@ const Posts: React.FC = () => {
               tags
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 800) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(layout: CONSTRAINED, width: 800)
                 }
               }
             }
@@ -90,7 +88,7 @@ const Posts: React.FC = () => {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}>
                   <Styled.Card>
                     <Styled.Image>
-                      <Img fluid={cover.childImageSharp.fluid} alt={title} />
+                      <GatsbyImage image={cover.childImageSharp.gatsbyImageData} alt={title} />
                     </Styled.Image>
                     <Styled.Content>
                       <Styled.Date>{date}</Styled.Date>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 import Loadable from '@loadable/component';
 
 import Container from 'components/ui/Container';
@@ -46,9 +46,7 @@ const Testimonials: React.FC = () => {
               title
               cover {
                 childImageSharp {
-                  fluid(maxWidth: 80) {
-                    ...GatsbyImageSharpFluid
-                  }
+                  gatsbyImageData(layout: CONSTRAINED, width: 80)
                 }
               }
             }
@@ -76,7 +74,7 @@ const Testimonials: React.FC = () => {
             return (
               <Styled.Testimonial key={id}>
                 <Styled.Image>
-                  <Img fluid={cover.childImageSharp.fluid} alt={title} />
+                  <GatsbyImage image={cover.childImageSharp.fluid} alt={title} />
                 </Styled.Image>
                 <Styled.Title>{title}</Styled.Title>
                 <FormatHtml content={html} />

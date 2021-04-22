@@ -8,7 +8,7 @@ tags: ['scala', 'functional programming', 'deep learning', 'security', 'machine 
 published: true
 ---
 
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 
 As you already know, I like to read a lot. :notebook_with_decorative_cover:   

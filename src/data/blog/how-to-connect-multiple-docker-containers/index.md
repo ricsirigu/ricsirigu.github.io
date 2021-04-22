@@ -8,7 +8,7 @@ tags: ['docker', 'containers']
 published: true
 ---
 
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 
 This will be a quick one.  

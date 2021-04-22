@@ -7,7 +7,7 @@ date: '2017-02-01'
 tags: ['scala', 'lift framework']
 published: true
 ---
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 You have a piece of HTML like the following
 

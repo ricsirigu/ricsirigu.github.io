@@ -38,7 +38,7 @@ const Newsletter: React.FC = () => {
         <Styled.Form>
           <Styled.Input type="text" placeholder={newsletter.namePlaceholder} />
           <Styled.Input type="email" placeholder={newsletter.emailPlaceholder} />
-          <Button primary block>
+          <Button primary block name="newsletter">
             {newsletter.submitPlaceholder}
           </Button>
         </Styled.Form>

@@ -1,6 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import {getSrc} from 'gatsby-plugin-image'
 import SchemaOrg from './schema';
 import * as moment from 'moment'
 
@@ -57,9 +58,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, image: metaImage, title
       query {
         logo: file(relativePath: { eq: "riccardo-sirigu.jpg" }) {
           childImageSharp {
-            fixed(width: 960) {
-              ...GatsbyImageSharpFixed
-            }
+            gatsbyImageData(layout: FIXED, width: 960)
           }
         }
         site {
@@ -82,7 +81,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, image: metaImage, title
     `
   );
 
-  const logoUrl = `${site.siteMetadata.siteUrl}${logo.childImageSharp.fixed.src}`
+  const logoUrl = `${site.siteMetadata.siteUrl}${getSrc(logo.childImageSharp.gatsbyImageData)}`
   const metaDescription = description || site.siteMetadata.description;
   const image =
     metaImage && metaImage.src

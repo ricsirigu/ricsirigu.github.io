@@ -21,7 +21,7 @@ const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText })
       <TitleSection title={title} subtitle={subtitle} />
       <Styled.Content>{content}</Styled.Content>
       <Link to={linkTo}>
-        <Button primary>{linkText}</Button>
+        <Button primary name="riccardo sirigu profile">{linkText}</Button>
       </Link>
     </Container>
   </Styled.Banner>

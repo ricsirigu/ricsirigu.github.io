@@ -7,7 +7,7 @@ date: '2017-02-16'
 tags: ['owasp', 'secure development', 'cornucopia']
 published: true
 ---
-<article class="prose lg:prose-lg xl:prose-xl">
+<article class="prose lg:prose-lg xl:prose-lg">
 
 If you are like me you like designing and building robust and secure software. 
 Security analysis is hard and can be tedious but doesn't have to be.  
