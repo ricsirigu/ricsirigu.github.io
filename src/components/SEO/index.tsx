@@ -3,7 +3,6 @@ import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 import {getSrc} from 'gatsby-plugin-image'
 import SchemaOrg from './schema';
-import * as moment from 'moment'
 
 type Meta =
   | {
@@ -88,7 +87,14 @@ const SEO: React.FC<Props> = ({ description, lang, meta, image: metaImage, title
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
       : logoUrl
   const url = blogPost ? `${site.siteMetadata.siteUrl}${blogPost.fields.slug}` : site.siteMetadata.siteUrl
-  const datePublished = moment().format("YYYY-MM-DD")
+  const today = new Date();
+  let dd = today.getDate();
+  let mm = today.getMonth() + 1;
+  const yyyy = today.getFullYear();
+  dd < 10 ? dd = '0' + dd : dd;
+  mm < 10 ? mm = '0' + mm : mm;
+
+  const datePublished = `${yyyy}/${mm}/${dd}`; 
 
 
   return (
