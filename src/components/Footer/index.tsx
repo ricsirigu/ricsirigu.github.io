@@ -23,7 +23,7 @@ const Footer: React.FC = () => (
     <Container>
       <Styled.Links>
         <Styled.Link
-          href="mailto:me@riccardosirigu.com"
+          href="mailto:me@riccardosirigu.it"
           rel="noreferrer noopener"
           aria-label="email riccardo sirigu"
           target="_blank"

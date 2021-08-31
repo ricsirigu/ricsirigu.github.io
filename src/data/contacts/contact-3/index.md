@@ -2,5 +2,5 @@
 category: 'contact'
 title: 'Email'
 icon: 'paper-plane'
-content: 'me at riccardosirigu com'
+content: 'me at riccardosirigu it'
 ---
