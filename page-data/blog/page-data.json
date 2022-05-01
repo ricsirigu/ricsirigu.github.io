@@ -1,1 +1,5 @@
-{"componentChunkName":"component---src-pages-blog-tsx","path":"/blog/","result":{"pageContext":{}},"staticQueryHashes":["279501559","3159585216","3649515864","530488536"]}
+{
+    "componentChunkName": "component---src-pages-blog-tsx",
+    "path": "/blog/",
+    "result": {"pageContext":{}},
+    "staticQueryHashes": ["279501559","3159585216","3649515864","530488536"]}
