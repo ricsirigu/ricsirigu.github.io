@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Professional Training'
-icon: 'university'
-description: 'Tailor-made courses on how to build software following the best practices of secure coding.'
+title: 'Secure Coding & Review'
+icon: 'laptop-code' 
+description: "Manual review of application's source code in an attempt to identify vulnerabilities in the code."
 ---
