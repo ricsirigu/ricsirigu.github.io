@@ -6,5 +6,4 @@ startDate: 'Jan 2021'
 endDate: 'Present'
 ---
 
-Guiding companies on how to secure their software and hardware products and infrastructures.
-Our customers spans various sectors: telecommunications, insurance, finance, automotive, retail, industrial, transportation, medical, utilities.
+As a part of my professional responsibilities, I offered expert advice to companies on implementing effective security measures for their software. Our clientele represented a diverse range of industries, including but not limited to telecommunications, insurance, finance, automotive, retail, industrial, transportation, medical, and utilities.

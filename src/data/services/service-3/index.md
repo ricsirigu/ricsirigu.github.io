@@ -2,5 +2,5 @@
 category: 'services'
 title: 'Penetration Test'
 icon: 'user-secret'
-description: 'Execution of simulated cyber attacks against computer systems to check for exploitable vulnerabilities.'
+description: 'Conducting simulated cyber attacks on computer systems to assess their susceptibility to exploitable vulnerabilities.'
 ---

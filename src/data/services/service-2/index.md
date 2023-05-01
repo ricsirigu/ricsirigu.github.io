@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Vulnerability Assessment'
+title: 'Security By Design'
 icon: 'bug'
-description: 'Identification, classification and prioritization of vulnerabilities in computing systems'
+description: 'Embedding security practices into the design and architecture of products, instead of treating it as an afterthought'
 ---

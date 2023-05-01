@@ -6,5 +6,5 @@ startDate: 'Oct 2017'
 endDate: 'Jun 2018'
 ---
 
-Helping the company to build the backend and the frontend for their web application and mobile application using Node.js and React. I also mentored junior developers.
+As a team member, I was accountable for collaborating with the company to develop the backend and frontend components of their web and mobile applications, utilizing Node.js and React. Additionally, I provided guidance and mentorship to junior developers to support their professional growth.
 

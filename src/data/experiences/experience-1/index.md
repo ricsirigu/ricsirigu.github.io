@@ -6,5 +6,4 @@ startDate: 'Mar 2017'
 endDate: 'Present'
 ---
 
-Helping companies to build software backends and frontends for their products, with a particular attention to maintainability, testability, scalability and security.
-I also advise them on which tech stack is best suited for their needs.
+My job involves providing assistance to companies in developing the software backends and frontends for their products, with a strong emphasis on achieving maintainability, testability, scalability, and security. In addition, I offer guidance to help them identify the most suitable tech stack for their specific requirements.

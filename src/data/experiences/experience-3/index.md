@@ -6,4 +6,4 @@ startDate: 'Apr 2018'
 endDate: 'Nov 2018'
 ---
 
-Helping the company to improve their microservices architecture using Scala, Akka and Lagom.
+As a team member, my primary responsibility was to assist the company in refining their microservices architecture through the utilization of Scala, Akka, and Lagom.

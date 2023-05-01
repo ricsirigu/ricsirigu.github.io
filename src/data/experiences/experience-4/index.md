@@ -6,4 +6,4 @@ startDate: 'Feb 2015'
 endDate: 'Feb 2019'
 ---
 
-Helping the company to improve and maintain its platform using Scala, Lift, JavaScript and MongoDB.
+As a team member, my primary responsibility was to assist the company in enhancing and sustaining its platform, utilizing Scala, Lift, JavaScript, and MongoDB technologies.
