@@ -9,7 +9,8 @@ import {
   faUniversity,
   faMapMarkerAlt,
   faPhone,
-  faPaperPlane
+  faPaperPlane,
+  faBuildingShield,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitter,
@@ -19,7 +20,7 @@ import {
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
 /* add any additional icon to the library */
-library.add(faTwitter, faLinkedin, faGithub, faLaptopCode, faBug, faUserSecret, faUniversity, faMapMarkerAlt, faPhone, faPaperPlane);
+library.add(faTwitter, faLinkedin, faGithub, faLaptopCode, faBug, faUserSecret, faUniversity, faMapMarkerAlt, faPhone, faPaperPlane, faBuildingShield);
 
 export type IconProps = FontAwesomeIconProps['icon'];
 

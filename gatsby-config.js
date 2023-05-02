@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://www.riccardosirigu.com`,
     title: `Riccardo Sirigu`,
-    description: `Riccardo Sirigu, Senior Software Engineer and Cybersecurity Consultant`,
+    description: `Riccardo Sirigu, CISSP, Senior Software Engineer and Cybersecurity Consultant`,
     author: `Riccardo Sirigu`,
     organization: {
       name: `Riccardo Sirigu`,
@@ -68,7 +68,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Riccardo Sirigu personal website`,
+        name: `Riccardo Sirigu, CISSP, personal website`,
         short_name: `Riccardo Sirigu`,
         start_url: `/`,
         background_color: `#81e6d9`,
