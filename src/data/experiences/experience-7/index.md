@@ -6,4 +6,4 @@ startDate: 'Jan 2021'
 endDate: 'Present'
 ---
 
-As a part of my professional responsibilities, I offered expert advice to companies on implementing effective security measures for their software. Our clientele represented a diverse range of industries, including but not limited to telecommunications, insurance, finance, automotive, retail, industrial, transportation, medical, and utilities.
+As Head of, I am accountable for managing project teams to drive and facilitate the execution of activities such as IoT penetration testing and application security. I guide our clients in implementing security across all phases of the software development lifecycle (security by design), assisting them in identifying security requirements and conducting threat modeling activities. Additionally, I am responsible for corporate training initiatives and educate our clients employee on best practices in secure coding and secure design.
