@@ -2,7 +2,7 @@
 category: 'hero section'
 title: 'CISSP, Head Of Application Security @Abissi'
 subtitle: 'Fighting for a foundationally secure (cyber) world.'
-content: "Hi, I'm Riccardo Sirigu, a seasoned software engineer with over a decade of experience. I'm dedicated to assisting companies in crafting and delivering secure products, prioritizing a 'security by design' philosophy. I also provide expert training in vital application security principles."
+content: "Hi, I'm Riccardo Sirigu, an experienced cybersecurity professional with over a decade of software engineering and cybersecurity expertise. I'm dedicated to assisting companies in crafting and delivering secure products, prioritizing a 'security by design' philosophy. I also provide expert training in vital application security principles."
 linkTo: '/resume/'
 linkText: 'View My Profile'
 ---
