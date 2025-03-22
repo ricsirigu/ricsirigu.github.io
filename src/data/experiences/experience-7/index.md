@@ -1,9 +1,9 @@
 ---
 category: 'experiences'
 company: 'Abissi Srl'
-position: 'Head of Application Security'
-startDate: 'Jan 2021'
-endDate: 'Present'
+position: 'Cybersecurity Consultant'
+startDate: 'Sep 2018'
+endDate: 'Dec 2020'
 ---
 
-Lead security initiatives for web applications and IoT systems. Guide clients in implementing security-by-design practices across the Software Development Lifecycle (SDLC). Conduct threat modeling, define security requirements, and deliver corporate training in secure coding, application security, and secure architecture.
+Performed penetration testing, secure code reviews, and vulnerability assessments across hardware, software, and cloud environments. Advised clients on improving their security posture and led workshops to help developers integrate security best practices into their workflows.
