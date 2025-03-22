@@ -1,6 +1,6 @@
 ---
 category: 'education'
-university: '(ISC)²'
+university: 'ISC2'
 degree: 'CISSP, Certified Information Systems Security Professional'
 startDate: '2022'
 endDate: '2025'
