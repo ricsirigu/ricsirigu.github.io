@@ -2,5 +2,5 @@
 category: 'services'
 title: 'Professional Training'
 icon: 'university'
-description: 'Tailor-made courses on how to build software following the best practices of secure coding.'
+description: 'Tailored courses designed to teach teams how to build software using secure coding best practices.'
 ---

@@ -6,4 +6,4 @@ startDate: 'Feb 2015'
 endDate: 'Feb 2019'
 ---
 
-As a team member, my primary responsibility was to assist the company in enhancing and sustaining its platform, utilizing Scala, Lift, JavaScript, and MongoDB technologies.
+Designed and maintained core platform components using Scala, Lift Framework, JavaScript, and MongoDB. Contributed to platform scalability and long-term maintainability with a focus on performance and security.

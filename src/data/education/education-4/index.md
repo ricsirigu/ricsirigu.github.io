@@ -6,4 +6,4 @@ startDate: '2014'
 endDate: '2015'
 ---
 
-Specialization in Cybersecurity. Topics include cryptography, hardware security, software security, and usability,
+Topics included cryptography, hardware and software security, system usability, and secure design principles.

@@ -6,4 +6,4 @@ startDate: 'Sep 2018'
 endDate: 'Dec 2020'
 ---
 
-As part of my role, I was accountable for guiding clients in assessing their security posture by conducting rigorous testing of their hardware and software products, performing secure code reviews, and conducting penetration testing on their networks and cloud infrastructures. Furthermore, I facilitated educational initiatives aimed at empowering developers to build software with security as a key priority.
+Performed penetration testing, secure code reviews, and vulnerability assessments across hardware, software, and cloud environments. Advised clients on improving their security posture and led workshops to help developers integrate security best practices into development workflows.

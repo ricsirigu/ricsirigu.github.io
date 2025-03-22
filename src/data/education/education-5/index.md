@@ -6,4 +6,4 @@ startDate: '2016'
 endDate: '2016'
 ---
 
-Specialization in Cybersecurity. Topics include internet security, internet of things, 4G and 5G networks, cryptography, software security
+Focused on internet security, IoT (Internet of Things), 4G/5G network security, applied cryptography, and secure software development.

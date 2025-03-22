@@ -6,4 +6,4 @@ startDate: '2013'
 endDate: '2013'
 ---
 
-Summer School in Computer Security & Privacy
+Summer School in Computer Security & Privacy, focused on privacy, system threats, and secure software engineering.

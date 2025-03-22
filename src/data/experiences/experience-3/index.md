@@ -6,4 +6,4 @@ startDate: 'Apr 2018'
 endDate: 'Nov 2018'
 ---
 
-As a team member, my primary responsibility was to assist the company in refining their microservices architecture through the utilization of Scala, Akka, and Lagom.
+Refined and extended microservices infrastructure using Scala, Akka, and Lagom. Contributed to backend reliability and architectural improvements.

@@ -6,4 +6,4 @@ startDate: 'Jan 2021'
 endDate: 'Present'
 ---
 
-As Head of, I am accountable for managing project teams to drive and facilitate the execution of activities such as IoT penetration testing and application security. I guide our clients in implementing security across all phases of the software development lifecycle (security by design), assisting them in identifying security requirements and conducting threat modeling activities. Additionally, I am responsible for corporate training initiatives and educate our clients employee on best practices in secure coding and secure design.
+Lead security initiatives for web applications and IoT systems. Guide clients in implementing security-by-design practices across the Software Development Lifecycle (SDLC). Conduct threat modeling, define security requirements, and deliver corporate training in secure coding, application security, and secure architecture.

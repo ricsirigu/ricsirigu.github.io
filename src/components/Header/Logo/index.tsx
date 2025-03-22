@@ -21,7 +21,7 @@ const Logo: React.FC = () => {
     <Styled.Logo to="/">
       <Styled.Image>
         <StaticImage
-          src="../../../assets/images/riccardo-sirigu.jpg"
+          src="../../../assets/images/riccardo-sirigu.webp"
           alt={logoTitle}
           width={80}
           placeholder="blurred"

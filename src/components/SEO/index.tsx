@@ -55,7 +55,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, image: metaImage, title
   const { site, logo } = useStaticQuery(
     graphql`
       query {
-        logo: file(relativePath: { eq: "riccardo-sirigu.jpg" }) {
+        logo: file(relativePath: { eq: "riccardo-sirigu.webp" }) {
           childImageSharp {
             gatsbyImageData(layout: FIXED, width: 960)
           }
