@@ -4,7 +4,7 @@ cover: './cover.jpg'
 title: 'How to write secure code'
 description: 'Maybe you do not need to be a security expert, do you?'
 date: '2021-02-13'
-tags: ['security', 'programming', 'secure coding', 'secure coding best practices']
+tags: ['security', 'programming', 'coding']
 published: true
 ---
 
