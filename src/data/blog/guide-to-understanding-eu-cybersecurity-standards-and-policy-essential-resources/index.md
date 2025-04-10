@@ -190,7 +190,7 @@ You don’t have to be in Brussels to make an impact.
 
 ## 💬 Let’s Connect
 
-If you found this post helpful, or if you want to chat more about this vulnerability, secure architecture, or anything at the intersection of development and security — I’d love to hear from you.
+If you found this post helpful, or if you want to chat more about this or anything at the intersection of development and security — I’d love to hear from you.
 
 Feel free to reach out on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
