@@ -59,6 +59,11 @@ const Posts: React.FC = () => {
               cover {
                 childImageSharp {
                   gatsbyImageData(layout: CONSTRAINED, width: 800)
+                  resize(width: 1200) {
+                    src
+                    width
+                    height
+                  }
                 }
               }
             }
