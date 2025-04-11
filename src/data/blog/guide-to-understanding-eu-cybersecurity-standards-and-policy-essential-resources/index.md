@@ -52,11 +52,28 @@ The **New Legislative Framework (NLF)** is how the EU regulates products and ser
 - **Harmonized standards** that show how to meet those requirements  
 - **Conformity assessment procedures** and **market surveillance** to ensure compliance
 
-If you follow a harmonized standard under the NLF, your product is presumed compliant, that’s called **presumption of conformity**.
+> 🔎 **What’s a harmonized standard?**  
+> A *harmonized standard* is a European standard developed by a recognized European Standards Organization (e.g., CEN, CENELEC, ETSI) and published in the Official Journal of the EU. If a product complies with a harmonized standard, it benefits from **presumption of conformity** with relevant legal requirements.
+
+> 🧠 What does **presumption of conformity** mean?  
+> When you follow a harmonized standard, your product is presumed to meet the essential legal requirements of EU legislation — **no extra proof needed** unless market surveillance says otherwise. It’s not mandatory, but it’s a **fast track to compliance**.
 
 > Example: CRA and RED set cybersecurity obligations. CEN, CENELEC, and ETSI develop the standards to support them.
 
+> 🚗 In the automotive world, cybersecurity is also governed by **UNECE Regulations R155 and R156**, which define requirements for **vehicle cybersecurity management systems (CSMS)** and **software update management systems (SUMS)** respectively. These are mandatory for new vehicle type approvals in the EU and many other markets.
+
+> 🌐 **What’s UNECE?**  
+> The **United Nations Economic Commission for Europe (UNECE)** develops international legal instruments, including vehicle regulations that many countries — including all EU Member States — adopt. UNECE's *World Forum for Harmonization of Vehicle Regulations (WP.29)* sets global standards on automotive safety, cybersecurity, and environmental impact.
+
 ---
+
+## 🗓️ Key Upcoming Deadlines
+
+- **RED Delegated Act**: Applies from **August 2025**. Wireless and IoT devices must meet cybersecurity requirements to be CE marked.
+- **Cyber Resilience Act (CRA)**: Enters into force in 2025 with a **36-month transition period** for most products.
+
+---
+
 
 ## 🏛️ The Big Names You’ll Keep Seeing
 
@@ -99,6 +116,9 @@ The **TIC Council** represents the global third-party conformity assessment sect
 - Support CE marking, RED compliance, CRA self-assessments
 - Are key players in **conformity assessment procedures** under the NLF
 
+> 🧾 What’s a **Notified Body**?  
+> A *Notified Body* is an organization designated by an EU country to assess the conformity of certain products before they are placed on the market. Notified bodies conduct audits, product tests, or certification for **higher-risk products** under CE marking regulations (including cybersecurity aspects under CRA and RED). Their involvement is mandatory when self-assessment isn’t allowed.
+
 > ⚙️ Standards and laws are theory. The TIC sector turns them into **verified compliance.**
 
 ---
@@ -119,9 +139,21 @@ Everything official and legally binding is published here: EU regulations, direc
 | <a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener noreferrer">AI Act</a> | Risk-based framework for AI. High-risk systems must meet cybersecurity and conformity requirements. |
 | <a href="https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red_en" target="_blank" rel="noopener noreferrer">RED Delegated Act</a> | From 2025, wireless and IoT devices must meet cybersecurity criteria to be CE marked. |
 | <a href="https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-strategy" target="_blank" rel="noopener noreferrer">EU Cybersecurity Strategy</a> | The EU’s long-term plan for digital resilience and strategic autonomy. |
+| <a href="https://unece.org/transport/documents/2021/03/standards/un-regulation-no-155-cyber-security-and-cyber-security" target="_blank" rel="noopener noreferrer">UN Regulation R155</a> | Mandates cybersecurity risk management across the vehicle lifecycle (CSMS) for vehicle manufacturers. |
+| <a href="https://unece.org/transport/documents/2021/03/standards/un-regulation-no-156-software-update-and-software-update" target="_blank" rel="noopener noreferrer"> UN Regulation R156</a> | Requires secure and controlled **software updates**, including over-the-air (OTA), through a Software Update Management System (SUMS). |
 
 
 ---
+
+### 🚘 Automotive-Specific Cybersecurity Rules
+
+If you're in mobility or automotive, these regulations affect you directly:
+
+- **UN Regulation R155**: Requires automakers to have a **Cybersecurity Management System (CSMS)** in place — covering the entire vehicle lifecycle. Mandatory for **new type approvals from July 2022**, and **all vehicles sold after July 2024** in the EU.
+- **UN Regulation R156**: Focuses on **Software Update Management Systems (SUMS)**, ensuring secure, traceable, and verifiable software updates — including over-the-air (OTA).
+
+These are enforced via UNECE and applied under EU type approval law.
+
 
 ## 🛡️ What is EUCC?
 
@@ -135,6 +167,34 @@ It is the **first EU-wide cybersecurity certification scheme** under the Cyberse
 > 📋 Certification is voluntary for now — but often required in **defense, gov, and critical sectors**.
 
 More at: <a href="https://certification.enisa.europa.eu/certification-library/eucc-certification-scheme_en" target="_blank" rel="noopener noreferrer">https://certification.enisa.europa.eu/certification-library/eucc-certification-scheme_en</a>
+
+---
+
+
+## 🔮 What’s Next?
+
+Cybersecurity in Europe is not standing still. Expect to hear more about:
+
+- **Post-Quantum Cryptography** standards (e.g., NIST selections + EU rollout)
+- **Secure-by-design AI systems** under the AI Act
+- **Supply chain security** and **SBOMs** becoming industry default
+
+Staying ahead of these shifts is as much about mindset as it is compliance.
+
+---
+
+## 📖 Glossary – Key Terms at a Glance
+
+| Term | What It Means |
+|------|----------------|
+| **CE Marking** | A declaration that a product meets EU safety, health, and environmental requirements. |
+| **Conformity Assessment** | The process to prove products meet legal requirements (testing, inspection, etc.). |
+| **Notified Body** | Independent orgs designated to assess higher-risk product compliance under EU law. |
+| **Presumption of Conformity** | If you meet a harmonized standard, you’re presumed to meet legal obligations. |
+| **UNECE** | UN body that sets international vehicle regulations, including cybersecurity (R155/R156). |
+| **CSMS** | Cybersecurity Management System – required by UNECE R155 for vehicle development and support. |
+| **SUMS** | Software Update Management System – required by UNECE R156 to manage secure vehicle software updates. |
+| **SOG-IS** | Older European framework for IT security certification, being replaced by **EUCC**. |
 
 ---
 
