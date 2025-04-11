@@ -71,12 +71,15 @@ The **New Legislative Framework (NLF)** is how the EU regulates products and ser
 
 ## 🗓️ Key Upcoming Deadlines
 
-- **DORA**: Applies from **January 17, 2025**. Financial entities and critical ICT third-party providers must comply.
-- **RED Delegated Act**: Applies from **August 2025**. Wireless and IoT devices must meet cybersecurity requirements to be CE marked.
-- **Cyber Resilience Act (CRA)**: Enters into force in 2025 with a **36-month transition period** for most products.
+A quick overview of key EU laws shaping cybersecurity, data governance, and digital resilience — and when they hit:
+
+- **Cyber Resilience Act (CRA)**: Enters into force in 2025 with a **36-month transition period** for most digital products. Establishes baseline cybersecurity requirements across hardware and software.
+- **AI Act**: Finalized in 2024 — introduces a risk-based framework for AI. **High-risk systems** must meet cybersecurity, transparency, and conformity requirements.
+- **Digital Operational Resilience Act (DORA)**: Applies from **January 17, 2025**. Covers financial institutions and critical ICT providers. Mandates ICT risk management, incident reporting, and resilience testing.
+- **Data Act**: Applies from **September 2025**. Sets rules for **who can access and use data** from connected products and services. Promotes **data-sharing obligations**, **cloud interoperability**, and limits vendor lock-in.  
+- **RED Delegated Act**: Applies from **August 2025**. Wireless and IoT devices must meet cybersecurity requirements to be CE marked in the EU.
 
 ---
-
 
 ## 🏛️ The Big Names You’ll Keep Seeing
 
@@ -164,9 +167,9 @@ Everything official and legally binding is published here: EU regulations, direc
 | <a href="https://digital-strategy.ec.europa.eu/en/policies/nis2-directive" target="_blank" rel="noopener noreferrer">NIS2 Directive</a> | Applies to essential/important entities. Stronger rules, reporting, penalties. |
 | <a href="https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act" target="_blank" rel="noopener noreferrer">Cyber Resilience Act (CRA)</a> | Sets baseline cybersecurity requirements for **all digital products and software** in the EU. |
 | <a href="https://artificialintelligenceact.eu/" target="_blank" rel="noopener noreferrer">AI Act</a> | Risk-based framework for AI. High-risk systems must meet cybersecurity and conformity requirements. |
-| <a href="https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en" target="_blank" rel="noopener noreferrer">Digital Operational Resilience Act (DORA)</a> | Applies to financial institutions and their ICT providers. Ensures they can **withstand and recover from ICT-related incidents**. Enforced from January 2025. |
+| <a href="https://www.eiopa.europa.eu/digital-operational-resilience-act-dora_en" target="_blank" rel="noopener noreferrer">Digital Operational Resilience Act (DORA)</a> | Applies to financial institutions and their ICT providers. Ensures they can **withstand and recover from ICT-related incidents**. |
 | <a href="https://digital-strategy.ec.europa.eu/en/policies/data-act" target="_blank" rel="noopener noreferrer">Data Act</a> | Sets rules on **who can use and access data** from connected products and services. Promotes interoperability and **data-sharing obligations** across sectors. |
-| <a href="https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red_en" target="_blank" rel="noopener noreferrer">RED Delegated Act</a> | From 2025, wireless and IoT devices must meet cybersecurity criteria to be CE marked. |
+| <a href="https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red_en" target="_blank" rel="noopener noreferrer">RED Delegated Act</a> | Wireless and IoT devices must meet cybersecurity criteria to be CE marked. |
 | <a href="https://digital-strategy.ec.europa.eu/en/policies/cybersecurity-strategy" target="_blank" rel="noopener noreferrer">EU Cybersecurity Strategy</a> | The EU’s long-term plan for digital resilience and strategic autonomy. |
 | <a href="https://unece.org/transport/documents/2021/03/standards/un-regulation-no-155-cyber-security-and-cyber-security" target="_blank" rel="noopener noreferrer">UN Regulation R155</a> | Mandates cybersecurity risk management across the vehicle lifecycle (CSMS) for vehicle manufacturers. |
 | <a href="https://unece.org/transport/documents/2021/03/standards/un-regulation-no-156-software-update-and-software-update" target="_blank" rel="noopener noreferrer"> UN Regulation R156</a> | Requires secure and controlled **software updates**, including over-the-air (OTA), through a Software Update Management System (SUMS). |
@@ -228,7 +231,7 @@ Staying ahead of these shifts is as much about mindset as it is compliance.
 | **ESAs** | European Supervisory Authorities (EBA, EIOPA, ESMA) – enforce DORA in the financial sector. |
 | **ECSO** | European Cyber Security Organisation – a public-private partnership that supports EU cyber policy, innovation, and SMEs. |
 | **CRA** | Cyber Resilience Act – requires baseline cybersecurity for digital products in the EU. |
-| **RED** | Radio Equipment Directive – mandates cybersecurity for wireless/IoT devices from 2025. |
+| **RED** | Radio Equipment Directive – mandates cybersecurity for wireless/IoT devices. |
 
 
 ---
