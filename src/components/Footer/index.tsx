@@ -7,7 +7,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
-  faTwitter,
+  faXTwitter,
   faLinkedin,
   faGithub,
   faInstagram,
@@ -44,7 +44,7 @@ const Footer: React.FC = () => (
           aria-label="twitter riccardo sirigu"
           target="_blank"
         >
-          <FontAwesomeIcon icon={faTwitter} />
+          <FontAwesomeIcon icon={faXTwitter} />
         </Styled.Link>
         <Styled.Link href="https://www.linkedin.com/in/riccardosirigu"
           rel="noreferrer noopener"
