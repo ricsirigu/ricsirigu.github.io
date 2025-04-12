@@ -1,6 +1,6 @@
 ---
 category: 'contact'
-title: 'Twitter'
-icon: 'brand-twitter'
-content: 'ricsirigu'
+title: 'Email'
+icon: 'paper-plane'
+content: 'me at riccardosirigu com'
 ---
