@@ -77,7 +77,7 @@ module.exports = {
         icon: `src/assets/images/favicon.png`
       }
     },
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-tailwindcss`,
