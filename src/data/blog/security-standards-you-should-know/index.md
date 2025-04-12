@@ -24,13 +24,13 @@ Whether you're working in **enterprise IT**, **cloud services**, **automotive**,
 ## 📑 Table of Contents
 
 1. [Policies & Standards: How Security Gets Done](#from-policies-to-standards)  
-2. [Core Cybersecurity Standards (ISO, NIST)](#core-information-security-standards)  
+2. [Core Cybersecurity Standards (ISO/IEC)](#core-information-security-standards)  
 3. [Cybersecurity Risk & Governance Frameworks](#risk--governance-standards)  
 4. [Security Frameworks for Organizations (NIST, CIS)](#organizational-security-frameworks)  
 5. [Secure Software & Systems Engineering Standards](#secure-by-design--engineering-standards)  
 6. [Cybersecurity Supply Chain Standards](#supply-chain-security)  
 7. [Industrial/OT Cybersecurity Standards](#industrial--ot-security)  
-8. [IoT, Automotive & EU Regulation-Aligned Security Standards (CRA, RED)](#application-specific--iot-security-standards)  
+8. [IoT, Automotive & EU Regulation-Aligned Security Standards](#application-specific--iot-security-standards)  
 9. [AI & Emerging Technology Security Standards](#ai-security-standards)
 10. [Incident Response & Security Event Standards](#incident-management)  
 11. [Vulnerability Disclosure & Management Standards](#vulnerability-management--disclosure)  
@@ -75,7 +75,7 @@ This layered structure ensures your security program:
 
 ---
 
-<h2 id="core-information-security-standards">📑 Core Cybersecurity Standards (ISO, NIST)</h2>
+<h2 id="core-information-security-standards">📑 Core Cybersecurity Standards (ISO/IEC)</h2>
 
 These foundational standards are widely adopted across sectors and often form the base of any security program.
 
@@ -167,9 +167,9 @@ These standards are designed to protect industrial environments — including ma
 ---
 
 
-<h2 id="application-specific--iot-security-standards">🚗 IoT, Automotive & EU Regulation-Aligned Security Standards (CRA, RED)</h2>
+<h2 id="application-specific--iot-security-standards">🚗 IoT, Automotive & EU Regulation-Aligned Security Standards</h2>
 
-These standards apply to specific sectors like automotive, healthcare, and IoT — and align with new EU regulations like the Cyber Resilience Act (CRA) and Radio Equipment Directive (RED).
+These standards apply to specific sectors like automotive, healthcare, and IoT — and align with new EU regulations like the Radio Equipment Directive (RED). As for the Cyber Resilience Act, the standards are still a work in progress.
 
 - <a href="https://www.iso.org/standard/70918.html" target="_blank" rel="noopener noreferrer"><strong>ISO/SAE 21434</strong></a> – *Automotive Cybersecurity Engineering*  
   Provides a comprehensive framework for securing electrical and electronic systems in vehicles — from concept through decommissioning. Required for UNECE R155 compliance.
