@@ -4,7 +4,7 @@ cover: './cover.jpg'
 title: 'Your Guide to Understanding EU Cybersecurity Laws and Standards'
 description: 'A list of must read essential resources'
 date: '2025-04-09'
-tags: ['eu cybersecurity', 'nis2', 'standards', 'red', 'cra']
+tags: ['cybersecurity', 'nis2', 'red', 'cra']
 published: true
 ---
 
