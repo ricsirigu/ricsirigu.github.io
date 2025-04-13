@@ -218,27 +218,6 @@ Staying ahead of these shifts is as much about mindset as it is compliance.
 
 ---
 
-## 📖 Glossary: EU Cybersecurity Terms You Should Know
-
-| Term | What It Means |
-|------|----------------|
-| **CE Marking** | A declaration that a product meets EU safety, health, and environmental requirements. |
-| **Conformity Assessment** | The process to prove products meet legal requirements (testing, inspection, etc.). |
-| **Notified Body** | Independent orgs designated to assess higher-risk product compliance under EU law. |
-| **Presumption of Conformity** | If you meet a harmonized standard, you’re presumed to meet legal obligations. |
-| **UNECE** | UN body that sets international vehicle regulations, including cybersecurity (R155/R156). |
-| **CSMS** | Cybersecurity Management System – required by UNECE R155 for vehicle development and support. |
-| **SUMS** | Software Update Management System – required by UNECE R156 to manage secure vehicle software updates. |
-| **SOG-IS** | Older European framework for IT security certification, being replaced by **EUCC**. |
-| **DORA** | Digital Operational Resilience Act – EU regulation ensuring financial institutions and their tech providers can withstand ICT disruptions. |
-| **ESAs** | European Supervisory Authorities (EBA, EIOPA, ESMA) – enforce DORA in the financial sector. |
-| **ECSO** | European Cyber Security Organisation – a public-private partnership that supports EU cyber policy, innovation, and SMEs. |
-| **CRA** | Cyber Resilience Act – requires baseline cybersecurity for digital products in the EU. |
-| **RED** | Radio Equipment Directive – mandates cybersecurity for wireless/IoT devices. |
-
-
----
-
 ## 📎 Top Resources to Understand EU Cybersecurity Rules
 
 ### 📘 The Blue Guide  
@@ -284,6 +263,26 @@ You don’t have to be in Brussels to make an impact.
 
 > The biggest mistake is thinking this world is closed-off or “just for regulators.”  
 > It’s not. If you care about privacy, safety, or secure digital products, your voice belongs here.
+
+---
+
+## 📖 Glossary: EU Cybersecurity Terms You Should Know
+
+| Term | What It Means |
+|------|----------------|
+| **CE Marking** | A declaration that a product meets EU safety, health, and environmental requirements. |
+| **Conformity Assessment** | The process to prove products meet legal requirements (testing, inspection, etc.). |
+| **Notified Body** | Independent orgs designated to assess higher-risk product compliance under EU law. |
+| **Presumption of Conformity** | If you meet a harmonized standard, you’re presumed to meet legal obligations. |
+| **UNECE** | UN body that sets international vehicle regulations, including cybersecurity (R155/R156). |
+| **CSMS** | Cybersecurity Management System – required by UNECE R155 for vehicle development and support. |
+| **SUMS** | Software Update Management System – required by UNECE R156 to manage secure vehicle software updates. |
+| **SOG-IS** | Older European framework for IT security certification, being replaced by **EUCC**. |
+| **DORA** | Digital Operational Resilience Act – EU regulation ensuring financial institutions and their tech providers can withstand ICT disruptions. |
+| **ESAs** | European Supervisory Authorities (EBA, EIOPA, ESMA) – enforce DORA in the financial sector. |
+| **ECSO** | European Cyber Security Organisation – a public-private partnership that supports EU cyber policy, innovation, and SMEs. |
+| **CRA** | Cyber Resilience Act – requires baseline cybersecurity for digital products in the EU. |
+| **RED** | Radio Equipment Directive – mandates cybersecurity for wireless/IoT devices. |
 
 
 ---
