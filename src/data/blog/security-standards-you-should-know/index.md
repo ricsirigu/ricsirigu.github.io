@@ -12,9 +12,9 @@ published: true
 
 — Security standards without the headache — just facts, links, and context.
 
-Security standards provide the technical and organizational foundations for protecting systems, data, and infrastructure. While they are **not laws**, they’re often essential for demonstrating compliance with **legal and regulatory requirements** — including European mandates like the <a href="https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act" target="_blank" rel="noopener noreferrer"><strong>Cyber Resilience Act (CRA)</strong></a> and the <a href="https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red_en" target="_blank" rel="noopener noreferrer"><strong>Radio Equipment Directive (RED)</strong></a>.
+Security standards provide the technical and organizational foundations for protecting systems, data, and infrastructure. While they are **not laws**, they’re often essential for demonstrating compliance with **legal and regulatory requirements**, including European mandates like the <a href="https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act" target="_blank" rel="noopener noreferrer"><strong>Cyber Resilience Act (CRA)</strong></a> and the <a href="https://single-market-economy.ec.europa.eu/sectors/electrical-and-electronic-engineering-industries-eei/radio-equipment-directive-red_en" target="_blank" rel="noopener noreferrer"><strong>Radio Equipment Directive (RED)</strong></a>.
 
-Whether you're working in **enterprise IT**, **cloud services**, **automotive**, **healthcare**, or **industrial systems**, these standards — when applied correctly — help you build systems that are more secure, more resilient, and easier to prove compliant.
+Whether you're working in **enterprise IT**, **cloud services**, **automotive**, **healthcare**, or **industrial systems**, these standards, when applied correctly, help you build systems that are more secure, more resilient, and easier to prove compliant.
 
 ---
 
