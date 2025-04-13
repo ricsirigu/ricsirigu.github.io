@@ -273,6 +273,36 @@ Security standards are more than checklists — they’re **strategic tools** fo
 
 ---
 
+### Glossary
+
+| **Term** | **Definition** |
+|----------|----------------|
+| **AI RMF** | *Artificial Intelligence Risk Management Framework* – A NIST-developed model for managing AI-specific risks like bias, security, and trustworthiness. |
+| **AIMS** | *Artificial Intelligence Management System* – A certifiable ISO/IEC framework for governing AI across its lifecycle (e.g., ISO/IEC 42001). |
+| **CIS** | *Center for Internet Security* – A nonprofit organization that publishes prioritized security best practices (like CIS Controls). |
+| **COBIT** | *Control Objectives for Information and Related Technologies* – A governance and management framework for enterprise IT. |
+| **CRA** | *Cyber Resilience Act* – A European regulation that introduces mandatory cybersecurity requirements for products with digital elements. |
+| **CSF** | *Cybersecurity Framework* – A voluntary NIST framework that helps organizations manage and reduce cybersecurity risk. |
+| **C-SCRM** | *Cybersecurity Supply Chain Risk Management* – A structured approach to identifying and managing supply chain cybersecurity risks. |
+| **CUI** | *Controlled Unclassified Information* – Sensitive U.S. federal data that requires protection but isn’t classified. |
+| **EN** | *European Norm* – A standard adopted by recognized European standardization organizations (CEN, CENELEC, or ETSI). |
+| **ETSI** | *European Telecommunications Standards Institute* – A major European standards body, especially for telecommunications and IoT. |
+| **GRC** | *Governance, Risk, and Compliance* – An approach to aligning IT with business goals while managing risk and meeting compliance requirements. |
+| **hEN** | *Harmonised European Standard* – A subset of EN standards published in the Official Journal of the EU that can be used to show compliance with EU legislation (e.g., RED, CRA). |
+| **IEC** | *International Electrotechnical Commission* – An international standards organization for electrical, electronic, and related technologies. Often co-publishes ISO/IEC cybersecurity standards. |
+| **IoT** | *Internet of Things* – Networked devices and systems that communicate over the internet (e.g., smart home devices, industrial sensors). |
+| **ISMS** | *Information Security Management System* – A framework of policies and controls to manage information security risks (e.g., ISO/IEC 27001). |
+| **ISO** | *International Organization for Standardization* – An independent global body that develops standards for a wide range of sectors, including cybersecurity. |
+| **NIST** | *National Institute of Standards and Technology* – A U.S. agency that publishes influential cybersecurity guidelines, including SP 800-series and the CSF. |
+| **OT** | *Operational Technology* – Hardware and software used to monitor or control industrial systems, such as manufacturing or critical infrastructure. |
+| **PCI DSS** | *Payment Card Industry Data Security Standard* – A global standard for securing credit card transactions and cardholder data. |
+| **PIMS** | *Privacy Information Management System* – An extension to ISMS focused on managing personal data privacy (e.g., ISO/IEC 27701). |
+| **PII** | *Personally Identifiable Information* – Any data that can identify a person, such as names, emails, biometric data, or IP addresses. |
+| **RED** | *Radio Equipment Directive* – An EU directive that sets requirements for radio-enabled devices, including cybersecurity provisions as of 2025. |
+| **SSDF** | *Secure Software Development Framework* – A NIST framework (SP 800-218) outlining best practices for secure software development. |
+
+---
+
 ## 💬 Let’s Connect
 
 If you found this post helpful, or if you want to chat more about this or anything at the intersection of development and security — I’d love to hear from you.
