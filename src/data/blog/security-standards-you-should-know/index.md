@@ -16,8 +16,19 @@ Security standards provide the technical and organizational foundations for prot
 
 Whether you're working in **enterprise IT**, **cloud services**, **automotive**, **healthcare**, or **industrial systems**, these standards — when applied correctly — help you build systems that are more secure, more resilient, and easier to prove compliant.
 
-> ℹ️ **Note on ISO and IEC**  
-> The **International Organization for Standardization (ISO)** and the **International Electrotechnical Commission (IEC)** are independent, international bodies that develop and publish widely adopted standards. In the cybersecurity space, they often collaborate to produce joint standards under the **ISO/IEC** label — such as ISO/IEC 27001 or ISO/IEC 27701. 
+---
+
+## 🧭 What You’ll Find in This Guide
+
+**🔍 What does this guide cover about cybersecurity standards and compliance?**
+
+This guide cuts through the noise and helps you make sense of security standards, fast. Here’s what to expect:
+
+- A clear overview of how **security policies and standards fit into your organization’s governance**  
+- A breakdown of **core and sector-specific standards**, from ISO/IEC to NIST, ETSI, and EN  
+- Coverage of **specialized areas** like secure software development, AI risk, incident response, and more  
+- Contextual notes to help you understand **which standards apply where**, and how they map to regulations like GDPR, CRA, RED, and others  
+- Direct links to authoritative sources 
 
 ---
 
@@ -75,9 +86,21 @@ This layered structure ensures your security program:
 
 ---
 
+> ℹ️ **Note on ISO and IEC**  
+> The **International Organization for Standardization (ISO)** and the **International Electrotechnical Commission (IEC)** are independent, international bodies that develop and publish widely adopted standards. In the cybersecurity space, they often collaborate to produce joint standards under the **ISO/IEC** label — such as ISO/IEC 27001 or ISO/IEC 27701. 
+
+> 📘 **Note on EN and hEN Standards**  
+> **EN standards** (European Norms) are official European standards published by bodies like CEN, CENELEC, or ETSI. 
+
+> **hENs** (<a href="https://single-market-economy.ec.europa.eu/single-market/european-standards/harmonised-standards_en" target="_blank" rel="noopener noreferrer">Harmonised European Standards</a>) are a subset of ENs that are formally recognized by the European Commission. Using an hEN provides a *presumption of conformity* with specific EU legislation, such as the Radio Equipment Directive (RED) or the Cyber Resilience Act (CRA).  
+>  
+> 📰 The **Official Journal of the European Union (OJEU)** is the official source where harmonised standards (hENs) are published. Once listed in the OJEU, a hEN can be used to demonstrate legal compliance with the relevant EU directive or regulation, making it a key part of the EU conformity process.
+
+---
+
 <h2 id="core-information-security-standards">📑 Core Cybersecurity Standards (ISO/IEC)</h2>
 
-These foundational standards are widely adopted across sectors and often form the base of any security program.
+These ISO/IEC standards form the foundation of most modern cybersecurity programs, especially those built on risk-based, auditable management systems. ISO/IEC 27001 is certifiable and often used to demonstrate compliance with security requirements across industries, while the other standards provide implementation guidance, controls, and extensions for cloud and data protection.
 
 - <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer"><strong>ISO/IEC 27001</strong></a> – *Information Security Management Systems (ISMS)*  
   Defines requirements for setting up, implementing, maintaining, and continually improving an organization's information security program.
@@ -97,7 +120,7 @@ These foundational standards are widely adopted across sectors and often form th
 
 <h2 id="risk--governance-standards">🏛 Cybersecurity Risk & Governance Standards</h2>
 
-These focus on aligning cybersecurity with business strategy, legal compliance, and enterprise risk appetite.
+These standards and frameworks help align cybersecurity with overall business risk management, regulatory expectations, and IT governance. They are typically used by executive teams, risk officers, and GRC leaders to shape policy, prioritize security investments, and ensure accountability.
 
 - <a href="https://www.isaca.org/resources/cobit" target="_blank" rel="noopener noreferrer"><strong>COBIT</strong></a> – *IT Governance and Management Framework*  
   Offers a comprehensive framework for developing, implementing, monitoring, and improving IT governance and management practices, often used by auditors and enterprise GRC programs.
@@ -186,7 +209,7 @@ These standards apply to specific sectors like automotive, healthcare, and IoT �
 - <a href="https://www.iso.org/standard/72026.html" target="_blank" rel="noopener noreferrer"><strong>IEC 80001</strong></a> – *Risk Management in Medical IT Networks*  
   Focuses on ensuring safety and effectiveness when medical devices are connected to IT networks — addressing security, data integrity, and clinical safety.
 
-- <a href="https://standards.iteh.ai/catalog/standards/cen/4f1e2768-e1a6-4541-a2b6-465e1c682627/en-18031-1-2024" target="_blank" rel="noopener noreferrer"><strong>EN 18031</strong></a> – *Cybersecurity for Radio Equipment (RED)*  
+- <a href="https://standards.iteh.ai/catalog/standards/cen/4f1e2768-e1a6-4541-a2b6-465e1c682627/en-18031-1-2024" target="_blank" rel="noopener noreferrer"><strong>hEN 18031</strong></a> – *Cybersecurity for Radio Equipment (RED)*  
   A harmonized European standard under the RED Delegated Act. It sets security requirements (authentication, update integrity, etc.) for wireless and radio-enabled devices.
   
 ---
