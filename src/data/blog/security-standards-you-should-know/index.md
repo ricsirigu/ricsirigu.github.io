@@ -213,6 +213,8 @@ Identity, authentication, and cryptography form the backbone of digital trust. T
 - <a href="https://csrc.nist.gov/publications/detail/sp/800-131a/rev-2/final" target="_blank" rel="noopener noreferrer">**NIST SP 800-131A Rev. 2**</a> – *Approved Algorithm Transitions*  
 - <a href="https://csrc.nist.gov/projects/cryptographic-standards-and-guidelines" target="_blank" rel="noopener noreferrer">**NIST**</a> – *Cryptographic Standards and Guidelines*  
 - <a href="https://www.iso.org/standard/82423.html" target="_blank" rel="noopener noreferrer">**ISO/IEC 19790**</a> – *International Crypto Module Requirements*
+- <a href="https://csrc.nist.gov/pubs/sp/800/52/r2/final" target="_blank" rel="noopener noreferrer">**Guidelines for the Selection, Configuration, and Use of Transport Layer Security (TLS) Implementations**</a>  
+- <a href="https://www.nist.gov/news-events/news/2024/08/nist-releases-first-3-finalized-post-quantum-encryption-standards" target="_blank" rel="noopener noreferrer">**NIST Post-Quantum Encryption Standards**</a> 
 
 ---
 
