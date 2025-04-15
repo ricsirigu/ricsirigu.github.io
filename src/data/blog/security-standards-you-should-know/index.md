@@ -230,6 +230,7 @@ These standards provide guidance for detecting, responding to, and disclosing cy
 - <a href="https://csrc.nist.gov/Projects/incident-response" target="_blank" rel="noopener noreferrer">**NIST SP 800-61 Rev. 3**</a>  Incident Response Recommendations and Considerations for Cybersecurity Risk Management
 - <a href="https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final" target="_blank" rel="noopener noreferrer">**NIST SP 800-34 Rev. 1**</a>  Contingency Planning Guide
 - <a href="https://www.iso.org/standard/78973.html" target="_blank" rel="noopener noreferrer">**ISO/IEC 27035**</a> – *Incident Management Lifecycle*
+- <a href="https://www.iso.org/standard/78973.html" target="_blank" rel="noopener noreferrer">**ISO 22301:2019**</a> – *Security and resilience* - Business continuity management systems
 
 ### Vulnerability Management & Disclosure
 
