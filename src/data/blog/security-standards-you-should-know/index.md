@@ -164,7 +164,7 @@ This group includes standards tailored for IoT, automotive, industrial systems, 
   Ensures cybersecurity across the vehicle lifecycle. Required for UNECE R155.
 
 - <a href="https://www.iso.org/standard/77796.html" target="_blank" rel="noopener noreferrer"><strong>ISO 24089:2023</strong></a> – *Road vehicles — Software update engineering*  
-  Specifies requirements and recommendations for software update engineering for road vehicles.
+  Specifies requirements and recommendations for software update engineering for road vehicles. Useful for UNECE R156.
 
 - <a href="https://www.etsi.org/deliver/etsi_en/303600_303699/303645/03.01.03_60/en_303645v030103p.pdf" target="_blank" rel="noopener noreferrer"><strong>ETSI EN 303 645</strong></a> – *Baseline Security for Consumer IoT Devices*  
   Sets baseline security requirements like default passwords and updates.
