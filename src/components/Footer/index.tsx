@@ -11,7 +11,8 @@ import {
   faLinkedin,
   faGithub,
   faInstagram,
-  faFacebook
+  faFacebook,
+  faSquareBluesky
 } from '@fortawesome/free-brands-svg-icons';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -63,6 +64,12 @@ const Footer: React.FC = () => (
           aria-label="instagram riccardo sirigu"
           target="_blank">
           <FontAwesomeIcon icon={faInstagram} />
+        </Styled.Link>
+        <Styled.Link href="https://bsky.app/profile/riccardosirigu.com"
+          rel="noreferrer noopener"
+          aria-label="bluesky riccardo sirigu"
+          target="_blank">
+          <FontAwesomeIcon icon={faSquareBluesky} />
         </Styled.Link>
       </Styled.Links>
     </Container>
