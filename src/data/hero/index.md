@@ -1,8 +1,8 @@
 ---
 category: 'hero section'
-title: 'CISSP, Head Of Application Security @Abissi'
+title: 'CISSP, Offensive Security Director @Abissi'
 subtitle: 'Fighting for a foundationally secure (cyber) world.'
-content: "Hi, I'm Riccardo Sirigu — a CISSP-certified cybersecurity professional with over a decade of experience in software engineering and cybersecurity. I help companies design and deliver secure products by championing a security-by-design approach from the ground up. With a strong focus on the intersection of cybersecurity and AI, I also provide expert training in application security principles, empowering teams to build more secure and resilient systems."
+content: "Hi, I’m Riccardo Sirigu — a CISSP-certified cybersecurity leader with 15+ years of experience spanning software engineering, offensive security, and secure-by-design practices. I work at the intersection of how software is built, how it is attacked, and how it is regulated, helping organizations design products that are resilient by construction, not just compliant by checklist. My background as a software engineer, combined with hands-on offensive security leadership, allows me to focus on what truly breaks systems: design assumptions, architectural trade-offs, and overlooked abuse cases. Today, my work focuses on secure software and product design, developer enablement, and aligning engineering practices with emerging European cybersecurity regulations such as the Cyber Resilience Act (CRA)."
 linkTo: '/resume/'
 linkText: 'View My Profile'
 ---
