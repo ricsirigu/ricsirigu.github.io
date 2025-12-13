@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Secure Coding & Review'
+title: 'Secure Code & Architecture Review'
 icon: 'laptop-code' 
-description: "Analyzing source code to uncover potential security flaws and ensure adherence to secure development standards."
+description: "In-depth reviews of source code and architecture to identify security flaws, design issues, and recurring patterns that impact long-term product resilience."
 ---

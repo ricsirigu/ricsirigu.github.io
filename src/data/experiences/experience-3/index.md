@@ -6,4 +6,4 @@ startDate: 'Apr 2018'
 endDate: 'Nov 2018'
 ---
 
-Refined and extended microservices infrastructure using Scala, Akka, and Lagom. Contributed to backend reliability and architectural improvements.
+Contributed to backend reliability and architectural improvements by evolving a microservices-based platform built with Scala, Akka, and Lagom.

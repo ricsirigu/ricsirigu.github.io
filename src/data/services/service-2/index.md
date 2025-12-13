@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Security By Design'
+title: 'Secure-by-Design Advisory'
 icon: 'building-shield'
-description: 'Integrating security into the design and architecture of products from the very beginning — not as an afterthought.'
+description: 'Advisory services to embed security into product design and architecture, addressing risks, assumptions, and abuse cases early — before they turn into vulnerabilities.'
 ---

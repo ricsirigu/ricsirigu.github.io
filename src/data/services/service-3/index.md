@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Penetration Test'
+title: 'Offensive Security Assessment'
 icon: 'user-secret'
-description: 'Simulating real-world cyberattacks to identify and assess vulnerabilities in systems, applications, and networks.'
+description: 'Offensive security assessments simulating real-world attacks to uncover systemic weaknesses in design, architecture, and implementation.'
 ---

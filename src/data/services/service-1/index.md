@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Professional Training'
+title: 'Security Engineering Training'
 icon: 'university'
-description: 'Tailored courses designed to teach teams how to build software using secure coding best practices.'
+description: 'Hands-on security engineering training for development teams, grounded in real-world attack scenarios and focused on design, architecture, and secure development practices.'
 ---

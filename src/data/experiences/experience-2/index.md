@@ -6,4 +6,4 @@ startDate: 'Oct 2017'
 endDate: 'Jun 2018'
 ---
 
-Developed backend and frontend systems for web and mobile applications using Node.js and React. Mentored junior developers and promoted clean code principles and collaborative workflows.
+Developed backend and frontend systems for web and mobile applications using Node.js and React, while mentoring junior developers and promoting clean code and collaborative engineering practices.
