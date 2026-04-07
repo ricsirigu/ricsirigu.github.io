@@ -6,5 +6,6 @@ startDate: 'Sep 2025'
 endDate: 'Present'
 ---
 
-As Cybersecurity Director at Abissi, I operate in first line with clients, acting as the primary point of contact for understanding security needs, business constraints, and regulatory expectations.
-Through my teams, I define and drive the offensive security strategy and consulting delivery, translating client requirements into structured security programs that improve how organizations design, build, and operate secure products.
+As Offensive Security Director at Abissi, I define and own the offensive security strategy, shaping how the organization delivers security consulting and how clients approach security as a product and engineering discipline.
+I engage at executive and technical leadership level to align security programs with business objectives, regulatory requirements, and engineering constraints, moving organizations from reactive posture to systemic capability.
+I lead the offensive security practice and the teams that deliver it.

@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Secure Code & Architecture Review'
+title: 'Security Strategy Advisory'
 icon: 'laptop-code' 
-description: "In-depth reviews of source code and architecture to identify security flaws, design issues, and recurring patterns that impact long-term product resilience."
+description: "I work with executive and technical leadership to reframe security as a product and engineering discipline, defining strategy, governance structures, and capability roadmaps aligned with business objectives and regulatory requirements, including the Cyber Resilience Act."
 ---

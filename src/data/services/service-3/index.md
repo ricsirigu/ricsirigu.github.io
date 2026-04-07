@@ -1,6 +1,6 @@
 ---
 category: 'services'
-title: 'Offensive Security Assessment'
+title: 'Offensive Security & Systemic Risk Assessment'
 icon: 'user-secret'
-description: 'Offensive security assessments simulating real-world attacks to uncover systemic weaknesses in design, architecture, and implementation.'
+description: 'I direct offensive security assessments designed to surface systemic weaknesses, not isolated vulnerabilities. The output is an actionable understanding of how your systems fail under real-world conditions and what that means for your risk posture.'
 ---
