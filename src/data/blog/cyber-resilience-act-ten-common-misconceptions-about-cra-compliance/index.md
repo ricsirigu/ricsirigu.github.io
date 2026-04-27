@@ -150,7 +150,7 @@ This means that the **manufacturer must take appropriate measures to ensure that
 In other words: “it is not mine” is not an excuse.
 
 ---
-## CRA Misconception #8: Only large chabges matter under the CRA
+## CRA Misconception #8: Only large changes matter under the CRA
 It is the size of the change that makes the difference.
 
 No. Under the Cyber Resilience Act, the assessment does not depend on the size or complexity of the change, but on its impact on the product’s risk profile.
@@ -170,7 +170,7 @@ Every case is different, but if in your risk assessment you had not considered t
 Not because of its complexity, but because of the risk it introduces.
 
 ---
-## CRA Misconception #9: 
+## CRA Misconception #9: A Component can be declared secure without context
 I secure the component and I am good to go.
 
 This is one I hear very often.
