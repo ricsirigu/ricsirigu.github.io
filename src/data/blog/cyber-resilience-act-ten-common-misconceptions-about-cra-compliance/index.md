@@ -1,8 +1,8 @@
 ---
 category: 'blog'
 cover: './cover.jpg'
-title: 'EU Cyber Resilience Act Misconception and Compliance'
-description: 'The most common misconceptions related to the Cyber Resilience Act '
+title: 'Cyber Resilience Act Compliance: 10 Misconceptions Companies Should Avoid'
+description: 'Avoid common Cyber Resilience Act compliance mistakes'
 date: '2026-04-27'
 tags: ['cybersecurity', 'cra', 'compliance']
 published: true
@@ -10,24 +10,31 @@ published: true
 
 <article class="prose lg:prose-lg xl:prose-lg">
 
-— A list of common misconceptions I’ve heard during my consultancy work. This list has been translated from Italian. You can find the original posts on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
+The Cyber Resilience Act is already creating confusion among manufacturers, software vendors, and companies placing products with digital elements on the EU market.
 
-PS: I’m not a lawyer. This article is my interpretation of the legal text, based on the guidance and the FAQ published by the EU Commission.
+In this post, I collect ten common misconceptions I often hear during consultancy work on CRA compliance, from the scope of application to risk assessment, incident reporting, third-party components, open-source software, and substantial modifications.
 
-🧭 What You’ll Find in This Post:
+This article is based on my interpretation of the Regulation, the European Commission guidance, and the official FAQ. It is not legal advice.
 
-- When the Cyber Resilience Act applies
-- When you need to design your product with security in mind
-- The Hamlet-level difference between being a bootloader and having one
-- No harmonised standards, no party
-- No incident notification if I’m not aware of anything
-- I’m only responsible for the components I built, not the ones I use
-- It’s not the size of the change that makes the difference
-- Is this component secure?
-- I’m not responsible for the open-source components I use
+### 🤔 Who this article is for:
+
+This article is especially relevant for manufacturers, software vendors, embedded system developers, product security teams, compliance teams, and companies placing products with digital elements on the EU market.
+
+### 🧭 What you’ll find in this post:
+
+- When does the Cyber Resilience Act apply?
+- Does the CRA apply to products without internet connectivity?
+- Is Annex I enough to demonstrate CRA compliance?
+- Does having a bootloader make a product Class I?
+- Can you demonstrate conformity without harmonised standards?
+- When do CRA incident reporting obligations apply?
+- Are manufacturers responsible for third-party components?
+- What counts as a substantial modification under the CRA?
+- Why CRA compliance starts from risk assessment
+- Who is responsible for open-source components under the CRA?
 ---
 
-## CRA Misconception #1
+## CRA Misconception #1: The CRA does not apply to simple connected products
 But my product is just a simple on/off switch, the CRA does not apply! 😡
 
 That may not be true.
@@ -41,7 +48,7 @@ You can find more details in the guidance published by the European Commission.
 
 ---
 
-## CRA Misconception #2
+## CRA Misconception #2: Products without internet connectivity are out of scope
 My product does not connect to the internet, so I do not care about the Cyber Resilience Act 🥱
 
 Spoiler: probably not 🙅🏻‍♂️
@@ -52,7 +59,7 @@ If your product includes a data connection, as explained in yesterday’s post, 
 
 ---
 
-## CRA Misconception #3
+## CRA Misconception #3: Annex I controls alone are enough for CRA compliance
 If I implement all the security controls listed in Annex I of the Regulation, my product is compliant ✅
 
 For this post, let’s set aside one fundamental point: **everything MUST be based on a risk assessment**, which will become part of the technical documentation to be kept for at least 10 years.
@@ -67,10 +74,25 @@ This is the real paradigm shift: acting on the root cause of many vulnerabilitie
 To quote Bruce Schneier: *“No industry in the past 150 years has improved safety or security without being forced to by the government. Planes, cars, pharmaceuticals, food safety — all of them.”*
 
 In other words, no industry has truly improved safety, security, and quality in a structural way without regulatory pressure. It is not a technical issue, but an economic one.
+
 The CRA is exactly this: a regulatory lever to structurally reduce vulnerabilities in products with digital elements, starting from development processes.
 
+But there is a “but”.
+
+If a product implements all the applicable cybersecurity requirements listed in Annex I, Part I, point (2), and the cybersecurity risk assessment shows that there are no uncovered risks, then the security-by-design requirement may be considered fulfilled.
+
+So the real question is not:
+
+“Have we implemented Annex I controls?”
+
+The real question is:
+
+“Can we demonstrate, through our risk assessment and development processes, that those controls are appropriate and sufficient for this product?”
+
+That is where CRA compliance really begins.
+
 ---
-## CRA Misconception #4
+## CRA Misconception #4: Having a bootloader makes the product Class I.
 My product has a bootloader, so it falls under important products Class I.
 
 This is another solid no 🙅‍♂️
@@ -85,7 +107,7 @@ Only in the first case does Class I apply.
 The European Commission says it clearly in the guidance: *“the mere integration of an important or critical product does not in itself render the product an important or critical product.”*
 
 ---
-## CRA Misconception #5
+## CRA Misconception #5: You cannot demonstrate compliance without harmonised standards
 Until the harmonised standards are published, I cannot demonstrate conformity.
 
 You already know the answer 🙅‍♂️
@@ -101,7 +123,7 @@ However, pay attention: for important products Class I, if a harmonised standard
 There will be more work to do on the technical documentation and stronger justifications will be needed. But it is an effort that pays off, because it is much better to do it now than to arrive at the last minute and have to rush to fix, or build from scratch, the documentation needed to use the harmonised standards.
 
 ---
-## CRA Misconception #6
+## CRA Misconception #6: No awareness means no incident notification
 If I am not aware of incidents or vulnerabilities, I do not have to notify anything!
 
 I really wish I had not heard this one, but at least it gave me useful material for this series of posts 😅
@@ -115,7 +137,7 @@ If you close your eyes and ears, you cannot then hide behind the fact that you �
 And just to add a bit more spice to the matter, remember that Article 14 is not even something far away in time, because the reporting obligations already start on 11 September 2026.
 
 ---
-## CRA Misconception #7
+## CRA Misconception #7: Third party components are outside my responsibility
 I am only responsible for my product, not for the third-party components I integrate.
 
 As if a restaurant were not responsible for the ingredients it puts on the plate.
@@ -128,7 +150,7 @@ This means that the **manufacturer must take appropriate measures to ensure that
 In other words: “it is not mine” is not an excuse.
 
 ---
-## CRA Misconception #8
+## CRA Misconception #8: Only large chabges matter under the CRA
 It is the size of the change that makes the difference.
 
 No. Under the Cyber Resilience Act, the assessment does not depend on the size or complexity of the change, but on its impact on the product’s risk profile.
@@ -148,7 +170,7 @@ Every case is different, but if in your risk assessment you had not considered t
 Not because of its complexity, but because of the risk it introduces.
 
 ---
-## CRA Misconception #9
+## CRA Misconception #9: 
 I secure the component and I am good to go.
 
 This is one I hear very often.
@@ -179,7 +201,7 @@ And that is exactly why the risk assessment is step ZERO.
 The risk assessment is what makes the question meaningful, because every decision must be **PROPORTIONATE** to the risk.
 
 ---
-## CRA Misconception #10
+## CRA Misconception #10: Open source components shifts responsibility to the maintainer
 If I integrate an open-source component, the responsibility lies with the steward, not with me!
 
 This is one of those mental shortcuts that crashes into common sense at 127 km/h.
@@ -198,6 +220,17 @@ So, if you are a manufacturer that has integrated an open-source component into 
 And what if the vulnerability in an open-source project is not fixed by the maintainer because support has ended?
 We will cover this point in a future episode ⏭️
  
+---
+
+## Practical CRA Compliance takeaways
+
+- Start from a documented cybersecurity risk assessment.
+- Identify whether your product qualifies as a product with digital elements.
+- Map Annex I requirements to product features and development processes.
+- Document third-party and open-source components.
+- Define a vulnerability handling and incident reporting process.
+- Assess whether product changes affect the risk profile or intended purpose.
+- Prepare technical documentation before harmonised standards become available.
 
 ---
 
