@@ -235,11 +235,11 @@ We will cover this point in a future episode ⏭️
 ---
 
 ### 📚 References
-[Cyber Resilience Act - Regulation (EU) 2024/2847 - Legal Text](https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402847)
+<a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402847" target="_blank">Cyber Resilience Act - Regulation (EU) 2024/2847 - Legal Text</a>
 
-[Cyber Resilience Act - Regulation (EU) 2024/2847 - Guidance](https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16959-Draft-Commission-guidance-on-the-Cyber-Resilience-Act_en)
+<a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16959-Draft-Commission-guidance-on-the-Cyber-Resilience-Act_en" target="_blank">Cyber Resilience Act - Regulation (EU) 2024/2847 - Guidance</a>
 
-[Cyber Resilience Act - Regulation (EU) 2024/2847 - FAQ](https://digital-strategy.ec.europa.eu/it/library/cyber-resilience-act-implementation-frequently-asked-questions)
+<a href="https://digital-strategy.ec.europa.eu/it/library/cyber-resilience-act-implementation-frequently-asked-questions" target="_blank">Cyber Resilience Act - Regulation (EU) 2024/2847 - FAQ</a>
 
 ## 👋 Let’s Connect
 

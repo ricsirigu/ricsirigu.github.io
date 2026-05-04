@@ -610,13 +610,13 @@ We are just running faster inside the wheel.
 ---
 
 ### 📚 References
-[ Tom Regan, *Putting the Dancing Pigs in Their Cyber-Pen*, 1999](https://www.csmonitor.com/1999/1007/p18s2.html)
+<a href="https://www.csmonitor.com/1999/1007/p18s2.html" target="_blank">Tom Regan, <em>Putting the Dancing Pigs in Their Cyber-Pen</em>, 1999</a>
 
-[Jerome H. Saltzer, Michael D. Schroeder, *The Protection of Information in Computer Systems*, 1975](https://www.cs.virginia.edu/~evans/cs551/saltzer/)
+<a href="https://www.cs.virginia.edu/~evans/cs551/saltzer/" target="_blank">Jerome H. Saltzer, Michael D. Schroeder, <em>The Protection of Information in Computer Systems</em>, 1975</a>
 
-[Andrew J. Stewart, *A Vulnerable System: The History of Information Security in the Computer Age*](https://www.jstor.org/stable/10.7591/j.ctv1bxh5t3)
+<a href="https://www.jstor.org/stable/10.7591/j.ctv1bxh5t3" target="_blank">Andrew J. Stewart, <em>A Vulnerable System: The History of Information Security in the Computer Age</em></a>
 
-[ENISA, *Secure by Design and Default Playbook*](https://www.enisa.europa.eu/sites/default/files/2026-03/ENISA_Secure_By_Design_and_Default_Playbook_v0.4_draft_for_consultation.pdf)
+<a href="https://www.enisa.europa.eu/sites/default/files/2026-03/ENISA_Secure_By_Design_and_Default_Playbook_v0.4_draft_for_consultation.pdf" target="_blank">ENISA, <em>Secure by Design and Default Playbook</em></a>
 
 ## 👋 Let’s Connect
 
