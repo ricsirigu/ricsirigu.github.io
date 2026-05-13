@@ -13,25 +13,19 @@ published: true
 
 # Secure by Design: The Hamster Wheel of Pain
 
-A few weeks ago, during an assessment, we found a second-order SQL injection.
+A few weeks ago, during an assessment, the team found a second-order SQL injection.
 
-Not a sophisticated zero-day.
+Not a sophisticated zero-day, not a complex exploit chain.
 
-Not a complex exploit chain.
-
-Not an obscure edge case hidden behind ten layers of business logic.
+Not even an obscure edge case hidden behind ten layers of business logic.
 
 A SQL injection.
 
-In 2026.
+In 2026. A vulnerability that is almost thirty years old.
 
 In a world where secure coding guidelines have existed for decades, frameworks provide safer abstractions, and security tooling is everywhere, we are still finding vulnerabilities that should have been structurally impossible.
 
-That is the interesting part.
-
-Not the vulnerability itself.
-
-The interesting part is what the vulnerability says about the system that produced it.
+That is the interesting part, not the vulnerability itself, but what the vulnerability says about the system that produced it.
 
 Because a second-order SQL injection is rarely just a developer mistake. It is a symptom. It tells us that unsafe data flows were possible, that architectural guardrails were weak or missing, and that the organization was relying on people to remember the right thing instead of designing the wrong thing out of the system.
 
@@ -81,25 +75,19 @@ When security is treated as something that happens after design and implementati
 - Incident response has to absorb what delivery pressure ignored.
 - Customers eventually experience what the organization failed to design out.
 
-The cost does not disappear.
-
-It just moves.
+The cost does not disappear, it just moves.
 
 And when cost moves far enough downstream, it becomes harder to see, harder to measure, and harder to fix structurally.
 
 This is why many security programs feel busy but not effective. They generate findings, reports, dashboards, meetings, and remediation plans, but the organization continues to produce the same categories of risk.
 
-That is not a tooling problem.
-
-That is a design problem.
+That is not a tooling problem, it's a design problem.
 
 More specifically, it is an engineering leadership failure.
 
 ## Recurring Vulnerabilities Are Management Signals
 
-A single vulnerability can be a mistake.
-
-A recurring vulnerability class is a signal.
+A single vulnerability can be a mistake but a recurring vulnerability class is a signal.
 
 If the same type of issue appears repeatedly across teams, products, services, or releases, the useful question is not:
 
@@ -147,23 +135,17 @@ They have security champions.
 They have ticketing systems.  
 They have dashboards.
 
-The problem is not that vulnerabilities are impossible to find.
-
-The problem is that many vulnerabilities are still cheap to create and expensive to remove.
+The problem is not that vulnerabilities are impossible to find, the problem is that many vulnerabilities are still cheap to create and expensive to remove.
 
 That asymmetry is what keeps the wheel spinning.
 
 If a developer can introduce an unsafe pattern in five minutes, but the organization needs a pentest, a report, a triage meeting, a risk rating, a remediation ticket, a sprint negotiation, a retest, and an exception process to remove it, the system is economically broken.
 
-The insecure path is too easy.
-
-The secure path is too dependent on memory, discipline, and manual review.
+The insecure path is too easy and the secure path is too dependent on memory, discipline, and manual review.
 
 And any security model that depends on everyone always remembering everything is not a model.
 
-It is hope.
-
-Hope does not scale.
+It is hope and hope does not scale.
 
 ## Secure by Design Is Not a Slogan
 
@@ -236,9 +218,7 @@ This is where internal platforms matter.
 
 This is where reusable libraries, golden paths, reference architectures, policy-as-code, and automated guardrails matter.
 
-Not because developers do not care.
-
-But because caring is not a control.
+Not because developers do not care, but because caring is not a control.
 
 ## The Secure Path Must Be the Easy Path
 
