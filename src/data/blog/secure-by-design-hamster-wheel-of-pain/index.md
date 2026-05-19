@@ -23,7 +23,7 @@ That is the interesting part. Not the vulnerability itself, but what the vulnera
 
 Because a second-order SQL injection is rarely just a developer mistake. It is a symptom. It tells us that <strong>unsafe data flows were possible, that architectural guardrails were weak or missing</strong>, and that the organization was <strong>relying on people to remember the right thing instead of designing the wrong thing out of the system</strong>.
 
-This is what I call the <strong>hamster wheel of pain</strong>.
+This is the <strong>"hamster wheel of pain"</strong> described by Andrew J. Stewart in A Vulnerable System: The History of Information Security in the Computer Age: the endless cycle of finding vulnerabilities, applying patches, and waiting for the next weakness to appear.
 
 For many organizations, security becomes a remediation hamster wheel. They scan, find, ticket, patch, and repeat. The organization keeps moving, but the system does not really improve. Each vulnerability gets treated as an isolated issue, while the design choices that made it possible remain untouched.
 
