@@ -51,6 +51,6 @@ npm run preview
 npm run deploy
 ```
 
-This creates a fresh Astro build and publishes `dist/` to the repository's `gh-pages` branch. The custom domain is preserved through `static/CNAME`.
+This creates a fresh Astro build and publishes `dist/` to the repository's `gh-pages` branch. The deploy command also creates `.nojekyll`, which is required for GitHub Pages to serve Astro's `_astro/` asset directory. The custom domain is preserved through `static/CNAME`.
 
 Deployment is intentionally manual; a normal build or test never publishes the site.

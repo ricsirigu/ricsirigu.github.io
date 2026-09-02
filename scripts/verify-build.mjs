@@ -5,6 +5,7 @@ const root = process.cwd();
 const output = path.join(root, 'dist');
 const baseline = process.env.GATSBY_BASELINE;
 const failures = [];
+const packageJson = JSON.parse(readFileSync(path.join(root, 'package.json'), 'utf8'));
 
 function walk(directory) {
   return readdirSync(directory, { withFileTypes: true }).flatMap((entry) => {
@@ -58,6 +59,10 @@ function assert(condition, message) {
 }
 
 assert(existsSync(output), 'dist/ is missing; run npm run build first');
+assert(
+  packageJson.scripts?.deploy?.includes('--nojekyll'),
+  'deploy must pass --nojekyll so GitHub Pages serves the _astro directory',
+);
 
 if (existsSync(output)) {
   const blogDirectories = readdirSync(path.join(root, 'src/data/blog'), { withFileTypes: true })

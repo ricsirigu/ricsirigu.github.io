@@ -161,4 +161,4 @@ Il build statico viene scritto in `dist/`. `scripts/postbuild.mjs` crea gli alia
 
 ## Deployment
 
-`npm run deploy` esegue un nuovo build e pubblica `dist/` sul branch `gh-pages`. `static/CNAME` mantiene `www.riccardosirigu.com`. La migrazione non ha eseguito alcuna pubblicazione e non modifica il modello di deploy manuale esistente.
+`npm run deploy` esegue un nuovo build e pubblica `dist/` sul branch `gh-pages`. L'opzione `--nojekyll` crea `.nojekyll` nel branch pubblicato, evitando che GitHub Pages escluda la directory `_astro/`. `static/CNAME` mantiene `www.riccardosirigu.com`. La migrazione non ha eseguito alcuna pubblicazione e non modifica il modello di deploy manuale esistente.

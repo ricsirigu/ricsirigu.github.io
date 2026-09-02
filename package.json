@@ -51,7 +51,7 @@
     "build": "astro build && node scripts/postbuild.mjs",
     "check": "astro check",
     "clean": "astro clean",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist --nojekyll",
     "dev": "astro dev",
     "develop": "astro dev",
     "format": "prettier --write \"**/*.{astro,js,jsx,json,md,ts,tsx}\"",
