@@ -28,7 +28,7 @@ interface Props {
 const Experience: React.FC<Props> = ({ experiences, sectionTitle }) => {
   return (
     <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />
+      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} headingLevel="h1" />
 
       {experiences.map((item) => {
         const {

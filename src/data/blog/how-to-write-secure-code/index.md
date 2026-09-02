@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'How to write secure code'
-description: 'Maybe you do not need to be a security expert, do you?'
+description: 'Practical principles and resources developers can use to write more secure code without becoming full-time security specialists.'
 date: '2021-02-13'
 tags: ['security', 'programming', 'coding']
 published: true

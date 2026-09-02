@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'The best programming resources I read in 2017'
-description: 'Here is a list of some of the programming resources I found most interesting'
+description: 'A curated collection of standout resources on Scala, functional programming, machine learning, deep learning and software security.'
 date: '2018-01-28'
 tags: ['scala', 'functional programming', 'deep learning', 'security', 'machine learning']
 published: true

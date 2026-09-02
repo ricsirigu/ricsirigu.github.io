@@ -3,8 +3,8 @@ import React from 'react';
 import Layout from 'components/Layout';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
-import FormatHtml from 'components/utils/FormatHtml';
 import type { BlogPost as BlogPostData } from 'lib/content';
+import { getBlogTopics, topicSlug } from 'lib/content';
 
 import * as Styled from './styles';
 
@@ -22,12 +22,67 @@ interface Props {
 const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
+  const indexedTopics = new Set(getBlogTopics().map((topic) => topic.slug));
 
   return (
     <Layout currentPath={pageContext.slug}>
       <Container section>
-        <TitleSection title={post.frontmatter.formattedDate} subtitle={post.frontmatter.title} />
-        <FormatHtml content={post.html} />
+        <Styled.Breadcrumbs aria-label="Breadcrumb">
+          <a href="/">Home</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">{post.frontmatter.title}</span>
+        </Styled.Breadcrumbs>
+        <TitleSection
+          title={<time dateTime={post.frontmatter.date}>{post.frontmatter.formattedDate}</time>}
+          subtitle={post.frontmatter.title}
+          headingLevel="h1"
+        />
+        <Styled.Byline>
+          By <a href="/#about">Riccardo Sirigu</a>
+          {post.frontmatter.updated && (
+            <>
+              {' '}
+              · Updated <time dateTime={post.frontmatter.updated}>{post.frontmatter.updated}</time>
+            </>
+          )}
+        </Styled.Byline>
+        {post.headings.length >= 2 && (
+          <Styled.TableOfContents aria-labelledby="table-of-contents-title">
+            <h2 id="table-of-contents-title">Table of contents</h2>
+            <ol>
+              {post.headings.map((heading) => (
+                <li key={heading.id} className={heading.depth === 3 ? 'nested' : undefined}>
+                  <a href={`#${heading.id}`}>{heading.text}</a>
+                </li>
+              ))}
+            </ol>
+          </Styled.TableOfContents>
+        )}
+        <article
+          className="format-html prose lg:prose-lg xl:prose-lg"
+          dangerouslySetInnerHTML={{ __html: post.html }}
+        />
+        <Styled.Topics aria-label="Article topics">
+          <strong>Topics:</strong>
+          {post.frontmatter.tags.map((tag) =>
+            indexedTopics.has(topicSlug(tag)) ? (
+              <a key={tag} href={`/blog/topics/${topicSlug(tag)}/`}>
+                {tag}
+              </a>
+            ) : (
+              <span key={tag}>{tag}</span>
+            )
+          )}
+        </Styled.Topics>
+        <Styled.Author>
+          <h2>About the author</h2>
+          <p>
+            <a href="/#about">Riccardo Sirigu</a> is a CISSP and Offensive Security Director focused on secure-by-design
+            engineering, product security and European cybersecurity standards.
+          </p>
+        </Styled.Author>
         <Styled.Links>
           <span>
             {previous && (

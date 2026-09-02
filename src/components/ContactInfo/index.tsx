@@ -28,7 +28,7 @@ interface Props {
 const ConctactInfo: React.FC<Props> = ({ contacts, sectionTitle }) => {
   return (
     <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} headingLevel="h1" center />
       {contacts.map((item) => {
         const {
           id,
@@ -37,7 +37,7 @@ const ConctactInfo: React.FC<Props> = ({ contacts, sectionTitle }) => {
 
         return (
           <Styled.ContactInfoItem key={id}>
-            <InfoBlock icon={icon} title={title} content={content} center />
+            <InfoBlock icon={icon} title={title} content={content} headingLevel="h2" center />
           </Styled.ContactInfoItem>
         );
       })}

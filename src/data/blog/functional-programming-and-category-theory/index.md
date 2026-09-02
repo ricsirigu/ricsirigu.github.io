@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Functional Programming and Category Theory'
-description: 'Want to improve your functional programming skills?'
+description: 'A practical reading path for developers who want to understand functional programming, category theory, monads and their use in Scala.'
 date: '2017-05-14'
 tags: ['scala', 'functional programming', 'category theory', 'monads']
 published: true

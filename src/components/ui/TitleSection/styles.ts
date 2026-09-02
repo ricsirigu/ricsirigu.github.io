@@ -18,12 +18,12 @@ export const Title = styled.h2<TransientStyledProps>`
   ${({ $center }) => $center && tw`text-center`};
 `;
 
-export const SubTitle = styled.h3<TransientStyledProps>`
+export const SubTitle = styled.p<TransientStyledProps>`
   ${tw`text-xs text-indigo-600 w-full text-left`};
   ${({ $center }) => $center && tw`text-center`};
 `;
 
-export const Separator = styled.h2<TransientStyledProps>`
+export const Separator = styled.div<TransientStyledProps>`
   ${tw`relative w-2 h-8 mb-6 -mt-2`};
   ${({ $center }) => $center && tw`mx-auto`};
 

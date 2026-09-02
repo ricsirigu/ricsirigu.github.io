@@ -53,4 +53,6 @@ npm run deploy
 
 This creates a fresh Astro build and publishes `dist/` to the repository's `gh-pages` branch. The deploy command also creates `.nojekyll`, which is required for GitHub Pages to serve Astro's `_astro/` asset directory. The custom domain is preserved through `static/CNAME`.
 
+If `CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` are available, deployment also purges the Cloudflare cache so crawlers and visitors receive the new HTML immediately. The API token only needs the `Zone.Cache Purge` permission. Configure Cloudflare Cache Rules with a short edge TTL or revalidation for HTML, `robots.txt`, `sitemap.xml`, `rss.xml` and `llms.txt`; hashed `/_astro/` assets can retain a long immutable TTL.
+
 Deployment is intentionally manual; a normal build or test never publishes the site.

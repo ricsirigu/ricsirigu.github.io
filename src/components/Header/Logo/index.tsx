@@ -19,8 +19,9 @@ const Logo: React.FC<Props> = ({ siteTitle }) => {
           alt={siteTitle}
           width={80}
           height={80}
-          loading="lazy"
+          loading="eager"
           decoding="async"
+          fetchPriority="high"
         />
       </Styled.Image>
       <Styled.Text>{siteTitle}</Styled.Text>

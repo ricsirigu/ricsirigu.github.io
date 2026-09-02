@@ -4,23 +4,24 @@ import * as Styled from './styles';
 
 interface Props extends Styled.StyledProps {
   children: React.ReactNode;
+  href?: string;
 }
 
 const Button: React.FC<Props & React.ButtonHTMLAttributes<HTMLButtonElement>> = ({
   primary,
   block,
   children,
+  href,
   name
-}) => (
-  <Styled.Button
-    aria-label={name}
-    $primary={primary}
-    $block={block}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    {children}
-  </Styled.Button>
-);
+}) =>
+  href ? (
+    <Styled.ButtonLink href={href} aria-label={name} $primary={primary} $block={block}>
+      {children}
+    </Styled.ButtonLink>
+  ) : (
+    <Styled.Button type="button" aria-label={name} $primary={primary} $block={block}>
+      {children}
+    </Styled.Button>
+  );
 
 export default Button;

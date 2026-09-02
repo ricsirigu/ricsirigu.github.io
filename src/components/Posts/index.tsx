@@ -1,10 +1,10 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 
 import type { SectionTitle } from 'helpers/definitions';
+import { topicSlug } from 'lib/content';
 
 import * as Styled from './styles';
 
@@ -18,6 +18,7 @@ interface Post {
       title: string;
       description: string;
       date: string;
+      publishedDate: string;
       tags: string[];
       cover: {
         height: number;
@@ -32,55 +33,75 @@ interface Post {
 }
 
 interface Props {
+  activeTopic?: string;
   posts: Post[];
   sectionTitle: SectionTitle;
+  topics?: Array<{ count: number; name: string; slug: string }>;
 }
 
-const Posts: React.FC<Props> = ({ posts, sectionTitle }) => {
+const Posts: React.FC<Props> = ({ activeTopic, posts, sectionTitle, topics = [] }) => {
   return (
     <Container section>
-      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
+      <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} headingLevel="h1" center />
+      {topics.length > 0 && (
+        <Styled.TopicNavigation aria-label="Blog topics">
+          <span>Explore topics:</span>
+          {topics.map((topic) => (
+            <a
+              key={topic.slug}
+              href={`/blog/topics/${topic.slug}/`}
+              aria-current={activeTopic === topic.slug ? 'page' : undefined}
+            >
+              {topic.name} ({topic.count})
+            </a>
+          ))}
+        </Styled.TopicNavigation>
+      )}
       <Styled.Posts>
         {posts.map((item) => {
           const {
             id,
             fields: { slug },
-            frontmatter: { title, cover, description, date, tags }
+            frontmatter: { title, cover, description, date, publishedDate, tags }
           } = item.node;
 
           return (
             <Styled.Post key={id}>
-              <a href={slug}>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}>
-                  <Styled.Card>
-                    <Styled.Image>
-                      <picture>
-                        {cover.webpSrcSet && <source type="image/webp" srcSet={cover.webpSrcSet} sizes={cover.sizes} />}
-                        <img
-                          src={cover.url}
-                          srcSet={cover.srcSet}
-                          sizes={cover.sizes}
-                          alt={title}
-                          width={cover.width}
-                          height={cover.height}
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      </picture>
-                    </Styled.Image>
-                    <Styled.Content>
-                      <Styled.Date>{date}</Styled.Date>
-                      <Styled.Title>{title}</Styled.Title>
-                      <Styled.Description>{description}</Styled.Description>
-                    </Styled.Content>
-                    <Styled.Tags>
-                      {tags.map((item) => (
-                        <Styled.Tag key={item}>{item}</Styled.Tag>
-                      ))}
-                    </Styled.Tags>
-                  </Styled.Card>
-                </motion.div>
-              </a>
+              <Styled.Card>
+                <Styled.PostLink href={slug}>
+                  <Styled.Image>
+                    <picture>
+                      {cover.webpSrcSet && <source type="image/webp" srcSet={cover.webpSrcSet} sizes={cover.sizes} />}
+                      <img
+                        src={cover.url}
+                        srcSet={cover.srcSet}
+                        sizes={cover.sizes}
+                        alt={title}
+                        width={cover.width}
+                        height={cover.height}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </picture>
+                  </Styled.Image>
+                  <Styled.Content>
+                    <Styled.Date dateTime={publishedDate}>{date}</Styled.Date>
+                    <Styled.Title>{title}</Styled.Title>
+                    <Styled.Description>{description}</Styled.Description>
+                  </Styled.Content>
+                </Styled.PostLink>
+                <Styled.Tags aria-label={`Topics for ${title}`}>
+                  {tags.map((item) =>
+                    topics.some((topic) => topic.slug === topicSlug(item)) ? (
+                      <Styled.TagLink key={item} href={`/blog/topics/${topicSlug(item)}/`}>
+                        {item}
+                      </Styled.TagLink>
+                    ) : (
+                      <Styled.Tag key={item}>{item}</Styled.Tag>
+                    )
+                  )}
+                </Styled.Tags>
+              </Styled.Card>
             </Styled.Post>
           );
         })}

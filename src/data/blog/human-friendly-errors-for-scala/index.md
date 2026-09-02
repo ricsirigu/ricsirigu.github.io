@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Human Friendly errors for Scala'
-description: 'Learn how to make Scala errors more human friendly'
+description: 'Learn how to transform cryptic Scala compiler errors into clearer, more actionable messages that improve the developer experience.'
 date: '2017-02-17'
 tags: ['scala', 'functional programming']
 published: true

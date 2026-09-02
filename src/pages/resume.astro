@@ -19,6 +19,11 @@ const props: PageProps = {
 const styledStyleTags = collectStyles(ResumePage, props);
 ---
 
-<BaseLayout title="Resume" styledStyleTags={styledStyleTags}>
-  <ResumePage {...props} client:load />
+<BaseLayout
+  title="Experience and Education"
+  description="Professional experience and education of Riccardo Sirigu, CISSP and Offensive Security Director specializing in secure software and product security."
+  pageType="ProfilePage"
+  styledStyleTags={styledStyleTags}
+>
+  <ResumePage {...props} />
 </BaseLayout>

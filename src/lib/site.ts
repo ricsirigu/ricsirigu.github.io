@@ -1,14 +1,19 @@
 export const siteMetadata = {
   siteUrl: 'https://www.riccardosirigu.com',
   title: 'Riccardo Sirigu',
-  description: 'Riccardo Sirigu, CISSP, Senior Software Engineer and Cybersecurity Consultant',
+  description:
+    'Riccardo Sirigu is a CISSP and Offensive Security Director helping organizations build secure-by-design products.',
   author: 'Riccardo Sirigu',
   organization: {
     name: 'Riccardo Sirigu',
-    url: 'https://www.riccardosirigu.com',
+    url: 'https://www.riccardosirigu.com'
   },
   social: {
+    bluesky: 'https://bsky.app/profile/riccardosirigu.com',
     facebook: 'https://www.facebook.com/riccardo.sirigu',
-    twitter: 'https://twitter.com/ricsirigu',
-  },
+    github: 'https://github.com/ricsirigu',
+    instagram: 'https://www.instagram.com/ricsirigu',
+    linkedin: 'https://www.linkedin.com/in/riccardosirigu',
+    twitter: 'https://twitter.com/ricsirigu'
+  }
 } as const;

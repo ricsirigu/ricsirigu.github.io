@@ -1,7 +1,7 @@
 ---
 import BlogPage from 'react-pages/BlogPage';
 import BaseLayout from 'layouts/BaseLayout.astro';
-import { getBlogPosts, getSection } from 'lib/content';
+import { getBlogTopics, getPublishedBlogPosts, getSection } from 'lib/content';
 import { collectStyles } from 'lib/collectStyles';
 import type { ComponentProps } from 'react';
 
@@ -10,8 +10,8 @@ type PageProps = ComponentProps<typeof BlogPage>;
 const props: PageProps = {
   currentPath: '/blog/',
   sectionTitle: getSection<PageProps['sectionTitle']>('blog section'),
-  posts: getBlogPosts()
-    .filter((post) => post.frontmatter.published)
+  topics: getBlogTopics(),
+  posts: getPublishedBlogPosts()
     .map((post) => ({
       node: {
         id: post.id,
@@ -20,6 +20,7 @@ const props: PageProps = {
           title: post.frontmatter.title,
           description: post.frontmatter.description,
           date: post.frontmatter.formattedDate,
+          publishedDate: post.frontmatter.date,
           tags: post.frontmatter.tags,
           cover: post.frontmatter.coverImage || {
             height: 1,
@@ -35,6 +36,12 @@ const props: PageProps = {
 const styledStyleTags = collectStyles(BlogPage, props);
 ---
 
-<BaseLayout title="Blog" styledStyleTags={styledStyleTags}>
-  <BlogPage {...props} client:load />
+<BaseLayout
+  title="Cybersecurity and Software Engineering Blog"
+  description="Articles by Riccardo Sirigu about secure-by-design engineering, application security, the Cyber Resilience Act and software development."
+  pageType="CollectionPage"
+  collectionItems={getPublishedBlogPosts().map((post) => ({ name: post.frontmatter.title, url: post.fields.slug }))}
+  styledStyleTags={styledStyleTags}
+>
+  <BlogPage {...props} />
 </BaseLayout>

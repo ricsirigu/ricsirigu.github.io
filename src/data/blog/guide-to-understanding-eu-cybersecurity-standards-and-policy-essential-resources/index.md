@@ -2,7 +2,8 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Your Guide to Understanding EU Cybersecurity Laws and Standards'
-description: 'A list of must read essential resources'
+seoTitle: 'EU Cybersecurity Laws and Standards: Essential Guide'
+description: 'A practical guide to authoritative EU cybersecurity laws, policies and standards, including NIS2, RED and the Cyber Resilience Act.'
 date: '2025-04-09'
 tags: ['cybersecurity', 'nis2', 'red', 'cra']
 published: true

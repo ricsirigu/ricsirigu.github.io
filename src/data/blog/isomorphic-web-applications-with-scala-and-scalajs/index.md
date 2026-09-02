@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Isomorphic Web Applications with Scala and ScalaJs'
-description: 'Learn how to integrate ScalaJs in a Scala project'
+description: 'Learn how to build an isomorphic web application by integrating Scala.js into a Scala project and sharing code across client and server.'
 date: '2016-03-20'
 tags: ['scala', 'scalajs', 'isomorphic web application']
 published: true

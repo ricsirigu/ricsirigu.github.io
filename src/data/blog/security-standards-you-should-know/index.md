@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Security Standards You Should Know'
-description: 'A list of must-read essential resources for understanding key cybersecurity standards.'
+description: 'A practical reference to essential cybersecurity standards, including ISO, IEC and European EN standards for secure products and compliance.'
 date: '2025-04-12'
 tags: ['cybersecurity', 'iso', 'en', 'standards']
 published: true
