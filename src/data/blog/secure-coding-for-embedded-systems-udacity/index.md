@@ -30,7 +30,7 @@ Key obligations include:
 
 Non-compliance may result in penalties up to €15 million or 2.5% of global annual turnover.
 
-The CRA is expected to become enforceable by 2026, and it will directly impact how embedded systems are developed, tested, and maintained — especially in critical infrastructure and consumer devices.
+The CRA is expected to become enforceable by December 2027, and it will directly impact how products with digital elements are developed, tested, and maintained.
 
 ## 📻 2. Radio Equipment Directive (RED) – Article 3(3)(d)(e)(f)
 Since 2022, the Radio Equipment Directive (2014/53/EU) has been extended with new cybersecurity requirements under Delegated Regulation (EU) 2022/30, specifically:
