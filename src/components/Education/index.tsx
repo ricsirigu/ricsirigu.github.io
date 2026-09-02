@@ -10,7 +10,7 @@ import type { SectionTitle } from 'helpers/definitions';
 interface Education {
   node: {
     id: string;
-    html: React.ReactNode;
+    html: string;
     frontmatter: {
       university: string;
       degree: string;

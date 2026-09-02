@@ -1,11 +1,11 @@
 import React from 'react';
 
 interface Props {
-  content: any;
+  content: string;
 }
 
 const FormatHtml: React.FC<Props> = ({ content }) => (
-  <span
+  <div
     className="format-html"
     dangerouslySetInnerHTML={{
       __html: content

@@ -10,7 +10,7 @@ import type { SectionTitle } from 'helpers/definitions';
 interface Experience {
   node: {
     id: string;
-    html: React.ReactNode;
+    html: string;
     frontmatter: {
       company: string;
       position: string;

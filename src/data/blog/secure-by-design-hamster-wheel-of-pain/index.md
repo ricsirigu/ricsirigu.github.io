@@ -381,3 +381,5 @@ Feel free to reach out on <a href="https://www.linkedin.com/in/riccardosirigu/" 
 Always happy to connect with fellow developers, researchers, and security-minded folks.
 
 Stay curious, stay secure. 🔒🚀
+
+</article>

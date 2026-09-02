@@ -58,6 +58,50 @@ function assert(condition, message) {
   if (!condition) failures.push(message);
 }
 
+const voidElements = new Set([
+  'area',
+  'base',
+  'br',
+  'col',
+  'embed',
+  'hr',
+  'img',
+  'input',
+  'link',
+  'meta',
+  'param',
+  'source',
+  'track',
+  'wbr',
+]);
+
+function validateEmbeddedHtml(source, file) {
+  const html = source
+    .replace(/^(`{3,}|~{3,})[^\n]*\n[\s\S]*?^\1[ \t]*$/gm, '')
+    .replace(/`[^`\n]*`/g, '')
+    .replace(/<!--[\s\S]*?-->/g, '');
+  const stack = [];
+
+  for (const match of html.matchAll(/<\/?([a-z][\w:-]*)\b[^>]*>/gi)) {
+    const tag = match[1].toLowerCase();
+    const closing = match[0].startsWith('</');
+    const selfClosing = match[0].endsWith('/>') || voidElements.has(tag);
+    const line = html.slice(0, match.index).split('\n').length;
+
+    if (closing) {
+      const open = stack.pop();
+      assert(Boolean(open), `${file}:${line}: unexpected closing </${tag}>`);
+      if (open) assert(open.tag === tag, `${file}:${line}: expected </${open.tag}>, found </${tag}>`);
+    } else if (!selfClosing) {
+      stack.push({ line, tag });
+    }
+  }
+
+  for (const open of stack) {
+    assert(false, `${file}:${open.line}: unclosed <${open.tag}>`);
+  }
+}
+
 assert(existsSync(output), 'dist/ is missing; run npm run build first');
 assert(
   packageJson.scripts?.deploy?.includes('--nojekyll'),
@@ -69,6 +113,12 @@ if (existsSync(output)) {
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)
     .sort();
+
+  for (const slug of blogDirectories) {
+    const relativeSource = `src/data/blog/${slug}/index.md`;
+    validateEmbeddedHtml(readFileSync(path.join(root, relativeSource), 'utf8'), relativeSource);
+  }
+
   const expectedHtml = [
     '404.html',
     '404/index.html',
@@ -135,6 +185,8 @@ if (failures.length) {
   failures.forEach((failure) => console.error(`- ${failure}`));
   process.exitCode = 1;
 } else {
-  console.log(`Verification passed: 25 routes, 26 HTML entry files, SEO metadata, sitemap, CNAME and local links.`);
+  console.log(
+    `Verification passed: 25 routes, 26 HTML entry files, embedded article HTML, SEO metadata, sitemap, CNAME and local links.`,
+  );
   if (baseline) console.log(`Gatsby metadata parity passed against ${baseline}.`);
 }
