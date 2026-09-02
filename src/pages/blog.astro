@@ -1,0 +1,40 @@
+---
+import BlogPage from 'react-pages/BlogPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { getBlogPosts, getSection } from 'lib/content';
+import { collectStyles } from 'lib/collectStyles';
+import type { ComponentProps } from 'react';
+
+type PageProps = ComponentProps<typeof BlogPage>;
+
+const props: PageProps = {
+  currentPath: '/blog/',
+  sectionTitle: getSection<PageProps['sectionTitle']>('blog section'),
+  posts: getBlogPosts()
+    .filter((post) => post.frontmatter.published)
+    .map((post) => ({
+      node: {
+        id: post.id,
+        fields: post.fields,
+        frontmatter: {
+          title: post.frontmatter.title,
+          description: post.frontmatter.description,
+          date: post.frontmatter.formattedDate,
+          tags: post.frontmatter.tags,
+          cover: post.frontmatter.coverImage || {
+            height: 1,
+            sizes: '100vw',
+            srcSet: '',
+            url: post.frontmatter.coverUrl || '',
+            width: 1,
+          },
+        },
+      },
+    })),
+};
+const styledStyleTags = collectStyles(BlogPage, props);
+---
+
+<BaseLayout title="Blog" styledStyleTags={styledStyleTags}>
+  <BlogPage {...props} client:load />
+</BaseLayout>

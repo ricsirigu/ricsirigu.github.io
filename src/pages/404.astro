@@ -1,0 +1,11 @@
+---
+import NotFoundPage from 'react-pages/NotFoundPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { collectStyles } from 'lib/collectStyles';
+
+const styledStyleTags = collectStyles(NotFoundPage, {});
+---
+
+<BaseLayout title="404: Not found" styledStyleTags={styledStyleTags}>
+  <NotFoundPage client:load />
+</BaseLayout>

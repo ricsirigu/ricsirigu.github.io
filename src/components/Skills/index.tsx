@@ -1,11 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import ProgressBar from 'components/ui/ProgressBar';
 
-import { SectionTitle } from 'helpers/definitions';
+import type { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
 
@@ -19,32 +18,12 @@ interface Skill {
   };
 }
 
-const Skills: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
-    query {
-      markdownRemark(frontmatter: { category: { eq: "skills section" } }) {
-        frontmatter {
-          title
-          subtitle
-        }
-      }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "skills" } } }, sort: { fields: fileAbsolutePath }) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              percentage
-            }
-          }
-        }
-      }
-    }
-  `);
+interface Props {
+  sectionTitle: SectionTitle;
+  skills: Skill[];
+}
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const skills: Skill[] = allMarkdownRemark.edges;
-
+const Skills: React.FC<Props> = ({ sectionTitle, skills }) => {
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />

@@ -7,7 +7,7 @@ interface Props extends Styled.StyledProps {
 }
 
 const Container: React.FC<Props> = ({ section, children }) => (
-  <Styled.Container section={section}>{children}</Styled.Container>
+  <Styled.Container $section={section}>{children}</Styled.Container>
 );
 
 export default Container;

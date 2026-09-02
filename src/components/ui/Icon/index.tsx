@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
+import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faLaptopCode,
   faBug,
@@ -9,27 +9,34 @@ import {
   faMapMarkerAlt,
   faPhone,
   faPaperPlane,
-  faBuildingShield,
+  faBuildingShield
 } from '@fortawesome/free-solid-svg-icons';
-import {
-  faXTwitter,
-  faLinkedin,
-  faGithub
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
+import { faXTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import type { FontAwesomeIconProps } from '@fortawesome/react-fontawesome';
 
-/* add any additional icon to the library */
-library.add(faXTwitter, faLinkedin, faGithub, faLaptopCode, faBug, faUserSecret, faUniversity, faMapMarkerAlt, faPhone, faPaperPlane, faBuildingShield);
+const icons: Record<string, IconDefinition> = {
+  'brand-github': faGithub,
+  'brand-linkedin': faLinkedin,
+  'brand-x-twitter': faXTwitter,
+  'building-shield': faBuildingShield,
+  bug: faBug,
+  'laptop-code': faLaptopCode,
+  'map-marker-alt': faMapMarkerAlt,
+  'paper-plane': faPaperPlane,
+  phone: faPhone,
+  university: faUniversity,
+  'user-secret': faUserSecret
+};
 
 export type IconProps = FontAwesomeIconProps['icon'];
 
 const Icon: React.FC<FontAwesomeIconProps> = ({ ...props }) => {
-  if(props.icon.includes('brand')){
-    return <FontAwesomeIcon {...props} icon={['fab', props.icon.replace('brand-', '')]}/>
+  if (typeof props.icon === 'string' && icons[props.icon]) {
+    return <FontAwesomeIcon {...props} icon={icons[props.icon]} />;
   }
-  else {
-    return <FontAwesomeIcon {...props} />
-  }
-}
+
+  return <FontAwesomeIcon {...props} />;
+};
 
 export default Icon;

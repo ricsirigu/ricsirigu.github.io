@@ -1,0 +1,22 @@
+---
+import IndexPage from 'react-pages/IndexPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { getItems, getSection } from 'lib/content';
+import { collectStyles } from 'lib/collectStyles';
+import type { ComponentProps } from 'react';
+
+type PageProps = ComponentProps<typeof IndexPage>;
+
+const props: PageProps = {
+  currentPath: '/',
+  heroBanner: getSection<PageProps['heroBanner']>('hero section'),
+  sectionTitle: getSection<PageProps['sectionTitle']>('services section'),
+  services: getItems<PageProps['services'][number]['node']['frontmatter']>('services')
+    .map(({ id, frontmatter }) => ({ node: { id, frontmatter } })),
+};
+const styledStyleTags = collectStyles(IndexPage, props);
+---
+
+<BaseLayout title="About Me" styledStyleTags={styledStyleTags}>
+  <IndexPage {...props} client:load />
+</BaseLayout>

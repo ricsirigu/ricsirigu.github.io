@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import tw from 'tailwind.macro';
+import tw from 'lib/tw';
 
 export default createGlobalStyle`
   body {

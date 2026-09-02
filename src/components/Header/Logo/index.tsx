@@ -1,33 +1,29 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from "gatsby-plugin-image"
+
+import { logoImage } from 'lib/imageManifest';
 
 import * as Styled from './styles';
 
-const Logo: React.FC = () => {
-  const { site } = useStaticQuery(graphql`
-    query {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
+interface Props {
+  siteTitle: string;
+}
 
-  const logoTitle: string = site.siteMetadata.title;
-
+const Logo: React.FC<Props> = ({ siteTitle }) => {
   return (
-    <Styled.Logo to="/">
+    <Styled.Logo href="/">
       <Styled.Image>
-        <StaticImage
-          src="../../../assets/images/riccardo-sirigu.webp"
-          alt={logoTitle}
+        <img
+          src={logoImage}
+          srcSet="/static/6716eff14ad2af05b485ed7fcbddcf80/264f2/riccardo-sirigu.webp 20w, /static/6716eff14ad2af05b485ed7fcbddcf80/e73fe/riccardo-sirigu.webp 40w, /static/6716eff14ad2af05b485ed7fcbddcf80/61ca6/riccardo-sirigu.webp 80w, /static/6716eff14ad2af05b485ed7fcbddcf80/60b4d/riccardo-sirigu.webp 160w"
+          sizes="(min-width: 80px) 80px, 100vw"
+          alt={siteTitle}
           width={80}
-          placeholder="blurred"
+          height={80}
+          loading="lazy"
+          decoding="async"
         />
       </Styled.Image>
-      <Styled.Text>{logoTitle}</Styled.Text>
+      <Styled.Text>{siteTitle}</Styled.Text>
     </Styled.Logo>
   );
 };

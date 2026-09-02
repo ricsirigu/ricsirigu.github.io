@@ -1,13 +1,11 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image"
 import Loadable from '@loadable/component';
 
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
-import { SectionTitle, ImageSharpFluid } from 'helpers/definitions';
+import type { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
 
@@ -19,46 +17,17 @@ interface Testimonial {
     html: string;
     frontmatter: {
       title: string;
-      cover: {
-        childImageSharp: {
-          fluid: ImageSharpFluid;
-        };
-      };
+      cover: string;
     };
   };
 }
 
-const Testimonials: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
-    query {
-      markdownRemark(frontmatter: { category: { eq: "testimonials section" } }) {
-        frontmatter {
-          title
-          subtitle
-        }
-      }
-      allMarkdownRemark(filter: { frontmatter: { category: { eq: "testimonials" } } }) {
-        edges {
-          node {
-            id
-            html
-            frontmatter {
-              title
-              cover {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, width: 80)
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+interface Props {
+  sectionTitle: SectionTitle;
+  testimonials: Testimonial[];
+}
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const testimonials: Testimonial[] = allMarkdownRemark.edges;
-
+const Testimonials: React.FC<Props> = ({ sectionTitle, testimonials }) => {
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
@@ -74,7 +43,7 @@ const Testimonials: React.FC = () => {
             return (
               <Styled.Testimonial key={id}>
                 <Styled.Image>
-                  <GatsbyImage image={cover.childImageSharp.fluid} alt={title} />
+                  <img src={cover} alt={title} loading="lazy" decoding="async" />
                 </Styled.Image>
                 <Styled.Title>{title}</Styled.Title>
                 <FormatHtml content={html} />

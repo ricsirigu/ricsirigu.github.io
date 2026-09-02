@@ -13,7 +13,7 @@ const ProgressBar: React.FC<Props> = ({ title, percentage }) => (
       <Styled.Percentage>{percentage}%</Styled.Percentage>
     </Styled.Content>
     <Styled.BarWrapper>
-      <Styled.Bar percentage={percentage} />
+      <Styled.Bar $percentage={percentage} />
     </Styled.BarWrapper>
   </Styled.ProgressBar>
 );

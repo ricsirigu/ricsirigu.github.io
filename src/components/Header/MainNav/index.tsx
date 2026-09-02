@@ -26,24 +26,28 @@ const mainNavItems: MainNavItem[] = [
   }
 ];
 
-const MainNav: React.FC = () => {
+interface Props {
+  currentPath: string;
+}
+
+const MainNav: React.FC<Props> = ({ currentPath }) => {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Styled.MainNav open={open}>
+      <Styled.MainNav $open={open}>
         {mainNavItems.map((item, index) => (
           <Styled.MainNavItem
             key={`nav-item-${index}`}
-            to={item.slug}
-            activeClassName="active"
+            href={item.slug}
+            className={currentPath === item.slug ? 'active' : undefined}
             whileTap={{ scale: 0.9 }}
           >
             {item.title}
           </Styled.MainNavItem>
         ))}
       </Styled.MainNav>
-      <Styled.ToogleMainNav aria-label="open navigation menu" open={open} onClick={() => setOpen(!open)}>
+      <Styled.ToogleMainNav aria-label="open navigation menu" $open={open} onClick={() => setOpen(!open)}>
         <span />
         <span />
         <span />

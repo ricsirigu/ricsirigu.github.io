@@ -1,12 +1,11 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import Timeline from 'components/ui/Timeline';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 import FormatHtml from 'components/utils/FormatHtml';
 
-import { SectionTitle } from 'helpers/definitions';
+import type { SectionTitle } from 'helpers/definitions';
 
 interface Experience {
   node: {
@@ -21,38 +20,12 @@ interface Experience {
   };
 }
 
-const Experience: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
-    query {
-      markdownRemark(frontmatter: { category: { eq: "experiences section" } }) {
-        frontmatter {
-          title
-          subtitle
-        }
-      }
-      allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "experiences" } } }
-        sort: { order: DESC, fields: fileAbsolutePath }
-      ) {
-        edges {
-          node {
-            id
-            html
-            frontmatter {
-              company
-              position
-              startDate
-              endDate
-            }
-          }
-        }
-      }
-    }
-  `);
+interface Props {
+  experiences: Experience[];
+  sectionTitle: SectionTitle;
+}
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const experiences: Experience[] = allMarkdownRemark.edges;
-
+const Experience: React.FC<Props> = ({ experiences, sectionTitle }) => {
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} />

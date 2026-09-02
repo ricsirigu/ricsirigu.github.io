@@ -1,10 +1,9 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import Container from 'components/ui/Container';
 import Button from 'components/ui/Button';
 import TitleSection from 'components/ui/TitleSection';
-import { SectionTitle } from 'helpers/definitions';
+import type { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
 
@@ -14,23 +13,11 @@ interface Newsletter extends SectionTitle {
   submitPlaceholder: string;
 }
 
-const Newsletter: React.FC = () => {
-  const { markdownRemark } = useStaticQuery(graphql`
-    query {
-      markdownRemark(frontmatter: { category: { eq: "newsletter section" } }) {
-        frontmatter {
-          title
-          subtitle
-          namePlaceholder
-          emailPlaceholder
-          submitPlaceholder
-        }
-      }
-    }
-  `);
+interface Props {
+  newsletter: Newsletter;
+}
 
-  const newsletter: Newsletter = markdownRemark.frontmatter;
-
+const Newsletter: React.FC<Props> = ({ newsletter }) => {
   return (
     <Styled.Newsletter>
       <Container section>

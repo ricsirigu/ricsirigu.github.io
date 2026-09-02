@@ -6,20 +6,17 @@ import Logo from './Logo';
 import * as Styled from './styles';
 
 interface Props {
+  currentPath: string;
   siteTitle: string;
 }
 
-const Header: React.FC<Props> = ({ siteTitle }) => (
+const Header: React.FC<Props> = ({ currentPath, siteTitle = '' }) => (
   <Styled.Header>
     <Styled.Wrapper>
-      <Logo />
-      <MainNav />
+      <Logo siteTitle={siteTitle} />
+      <MainNav currentPath={currentPath} />
     </Styled.Wrapper>
   </Styled.Header>
 );
-
-Header.defaultProps = {
-  siteTitle: ``
-};
 
 export default Header;

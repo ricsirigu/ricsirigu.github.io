@@ -47,7 +47,7 @@ Don't miss <a href="http://adit.io/posts/2013-04-17-functors,_applicatives,_and_
 For more practical examples in **Scala** take a look at the <a href="http://typelevel.org/cats/typeclasses.html" target="_blank" rel="noopener noreferrer">Cats</a> library.  
 The documentation is very well written, and Eugene Yokota wrote <a href="http://eed3si9n.com/herding-cats/" target="_blank" rel="noopener noreferrer">this</a> nice blog post series.  
 
-After you have a general idea of what category theory is, you can dive into **type classes** with <a href="http://channingwalton.github.io/typeclassopedia/" target="_blank" rel="noopener noreferrer">typeclassopedia</a>, <a href="http://blog.scalac.io/2017/04/19/typeclasses-in-scala.html" target="_blank" rel="noopener noreferrer">this blog post</a> and <a href="/type-classes-in-scala-a-practical-example/" target="_blank" rel="noopener noreferrer">this one</a>.    
+After you have a general idea of what category theory is, you can dive into **type classes** with <a href="http://channingwalton.github.io/typeclassopedia/" target="_blank" rel="noopener noreferrer">typeclassopedia</a>, <a href="http://blog.scalac.io/2017/04/19/typeclasses-in-scala.html" target="_blank" rel="noopener noreferrer">this blog post</a> and <a href="/blog/type-classes-in-scala-a-practical-example/" target="_blank" rel="noopener noreferrer">this one</a>.
 
 I hope that those resources will help you to connect the dots between all of these concepts.
 

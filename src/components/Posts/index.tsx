@@ -1,13 +1,10 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image"
-import Link from 'gatsby-link';
 import { motion } from 'framer-motion';
 
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
 
-import { SectionTitle, ImageSharpFluid } from 'helpers/definitions';
+import type { SectionTitle } from 'helpers/definitions';
 
 import * as Styled from './styles';
 
@@ -23,59 +20,23 @@ interface Post {
       date: string;
       tags: string[];
       cover: {
-        childImageSharp: {
-          gatsbyImageData: ImageSharpFluid;
-        };
+        height: number;
+        sizes: string;
+        srcSet: string;
+        url: string;
+        webpSrcSet?: string;
+        width: number;
       };
     };
   };
 }
 
-const Posts: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
-    query {
-      markdownRemark(frontmatter: { category: { eq: "blog section" } }) {
-        frontmatter {
-          title
-          subtitle
-        }
-      }
-      allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "blog" }, published: { eq: true } } }
-        sort: { fields: frontmatter___date, order: DESC }
-      ) {
-        edges {
-          node {
-            id
-            html
-            fields {
-              slug
-            }
-            frontmatter {
-              title
-              description
-              date(formatString: "MMM DD, YYYY")
-              tags
-              cover {
-                childImageSharp {
-                  gatsbyImageData(layout: CONSTRAINED, width: 800)
-                  resize(width: 1200) {
-                    src
-                    width
-                    height
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  `);
+interface Props {
+  posts: Post[];
+  sectionTitle: SectionTitle;
+}
 
-  const sectionTitle: SectionTitle = markdownRemark.frontmatter;
-  const posts: Post[] = allMarkdownRemark.edges;
-
+const Posts: React.FC<Props> = ({ posts, sectionTitle }) => {
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
@@ -89,11 +50,23 @@ const Posts: React.FC = () => {
 
           return (
             <Styled.Post key={id}>
-              <Link to={slug}>
+              <a href={slug}>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 1 }}>
                   <Styled.Card>
                     <Styled.Image>
-                      <GatsbyImage image={cover.childImageSharp.gatsbyImageData} alt={title} />
+                      <picture>
+                        {cover.webpSrcSet && <source type="image/webp" srcSet={cover.webpSrcSet} sizes={cover.sizes} />}
+                        <img
+                          src={cover.url}
+                          srcSet={cover.srcSet}
+                          sizes={cover.sizes}
+                          alt={title}
+                          width={cover.width}
+                          height={cover.height}
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </picture>
                     </Styled.Image>
                     <Styled.Content>
                       <Styled.Date>{date}</Styled.Date>
@@ -107,7 +80,7 @@ const Posts: React.FC = () => {
                     </Styled.Tags>
                   </Styled.Card>
                 </motion.div>
-              </Link>
+              </a>
             </Styled.Post>
           );
         })}

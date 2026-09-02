@@ -1,0 +1,24 @@
+---
+import ResumePage from 'react-pages/ResumePage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { getItems, getSection } from 'lib/content';
+import { collectStyles } from 'lib/collectStyles';
+import type { ComponentProps } from 'react';
+
+type PageProps = ComponentProps<typeof ResumePage>;
+
+const props: PageProps = {
+  currentPath: '/resume/',
+  experienceSection: getSection<PageProps['experienceSection']>('experiences section'),
+  experiences: getItems<PageProps['experiences'][number]['node']['frontmatter']>('experiences', 'desc')
+    .map(({ id, html, frontmatter }) => ({ node: { id, html, frontmatter } })),
+  educationSection: getSection<PageProps['educationSection']>('education section'),
+  education: getItems<PageProps['education'][number]['node']['frontmatter']>('education', 'desc')
+    .map(({ id, html, frontmatter }) => ({ node: { id, html, frontmatter } })),
+};
+const styledStyleTags = collectStyles(ResumePage, props);
+---
+
+<BaseLayout title="Resume" styledStyleTags={styledStyleTags}>
+  <ResumePage {...props} client:load />
+</BaseLayout>

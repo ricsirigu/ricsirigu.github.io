@@ -1,4 +1,4 @@
-import { ObjectType } from 'helpers/definitions';
+import type { ObjectType } from 'helpers/definitions';
 
 /**
  * ----------------------------------------

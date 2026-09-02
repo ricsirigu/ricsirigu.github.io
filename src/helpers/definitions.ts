@@ -1,8 +1,16 @@
-import { FixedObject, FluidObject } from 'gatsby-plugin-image';
+export interface ImageSharpFluid {
+  aspectRatio?: number;
+  sizes?: string;
+  src: string;
+  srcSet?: string;
+}
 
-export type ImageSharpFluid = FluidObject | FluidObject[] | undefined;
-
-export type ImageSharpFixed = FixedObject | FixedObject[] | undefined;
+export interface ImageSharpFixed {
+  height: number;
+  src: string;
+  srcSet?: string;
+  width: number;
+}
 
 export type ObjectType = Record<string, any>;
 

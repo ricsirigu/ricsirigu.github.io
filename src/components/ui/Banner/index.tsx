@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import Container from 'components/ui/Container';
 import Button from 'components/ui/Button';
@@ -20,9 +19,9 @@ const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText })
     <Container section>
       <TitleSection title={title} subtitle={subtitle} />
       <Styled.Content>{content}</Styled.Content>
-      <Link to={linkTo}>
+      <a href={linkTo}>
         <Button primary name="riccardo sirigu profile">{linkText}</Button>
-      </Link>
+      </a>
     </Container>
   </Styled.Banner>
 );

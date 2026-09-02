@@ -1,8 +1,12 @@
-import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import { styled } from 'styled-components';
+import tw from 'lib/tw';
 
 export interface StyledProps {
   percentage: number;
+}
+
+interface TransientStyledProps {
+  $percentage: number;
 }
 
 export const ProgressBar = styled.div`
@@ -13,9 +17,9 @@ export const BarWrapper = styled.div`
   ${tw`w-full h-2 bg-gray-300 rounded overflow-hidden mt-1`};
 `;
 
-export const Bar = styled.div<StyledProps>`
+export const Bar = styled.div<TransientStyledProps>`
   ${tw`h-2 bg-teal-400`};
-  width: ${({ percentage }) => `${percentage}%`};
+  width: ${({ $percentage }) => `${$percentage}%`};
 `;
 
 export const Content = styled.div`

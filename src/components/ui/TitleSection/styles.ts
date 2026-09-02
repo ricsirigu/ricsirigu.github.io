@@ -1,27 +1,31 @@
-import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import { styled } from 'styled-components';
+import tw from 'lib/tw';
 
 export interface StyledProps {
   center?: boolean;
+}
+
+interface TransientStyledProps {
+  $center?: boolean;
 }
 
 export const TitleSection = styled.div`
   ${tw`flex flex-col w-full`};
 `;
 
-export const Title = styled.h2<StyledProps>`
+export const Title = styled.h2<TransientStyledProps>`
   ${tw`uppercase mb-4 text-lg font-bold w-full text-left`};
-  ${({ center }) => center && tw`text-center`};
+  ${({ $center }) => $center && tw`text-center`};
 `;
 
-export const SubTitle = styled.h3<StyledProps>`
+export const SubTitle = styled.h3<TransientStyledProps>`
   ${tw`text-xs text-indigo-600 w-full text-left`};
-  ${({ center }) => center && tw`text-center`};
+  ${({ $center }) => $center && tw`text-center`};
 `;
 
-export const Separator = styled.h2<StyledProps>`
+export const Separator = styled.h2<TransientStyledProps>`
   ${tw`relative w-2 h-8 mb-6 -mt-2`};
-  ${({ center }) => center && tw`mx-auto`};
+  ${({ $center }) => $center && tw`mx-auto`};
 
   &:before {
     content: '';

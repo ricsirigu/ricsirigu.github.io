@@ -1,36 +1,24 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Newsletter from 'components/Newsletter';
 
-import 'assets/styles/global.css';
 import GlobalStyles from 'assets/styles/globalStyles';
 import * as Styled from './styles';
 
 interface Props {
   children: React.ReactNode;
+  currentPath: string;
 }
 
-const Layout: React.FC<Props> = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
+const Layout: React.FC<Props> = ({ children, currentPath }) => {
   return (
     <>
       <GlobalStyles />
-      <AnimatePresence exitBeforeEnter>
+      <AnimatePresence mode="wait">
         <Styled.Layout>
-          <Header siteTitle={data.site.siteMetadata.title} />
+          <Header siteTitle="Riccardo Sirigu" currentPath={currentPath} />
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}

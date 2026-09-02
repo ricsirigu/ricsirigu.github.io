@@ -1,21 +1,25 @@
-import styled from 'styled-components';
-import tw from 'tailwind.macro';
+import { styled } from 'styled-components';
+import tw from 'lib/tw';
 
 export interface StyledProps {
   center?: boolean;
 }
 
-export const InfoBlock = styled.div<StyledProps>`
+interface TransientStyledProps {
+  $center?: boolean;
+}
+
+export const InfoBlock = styled.div<TransientStyledProps>`
   ${tw`flex flex-col my-4 mx-3 p-4 bg-white rounded-lg border border-gray-300`};
-  ${({ center }) => center && tw`items-center`};
+  ${({ $center }) => $center && tw`items-center`};
 `;
 
 export const Icon = styled.span`
   ${tw`flex items-center justify-center w-10 h-10 text-indigo-500 border border-teal-400 rounded-full mb-2`};
 `;
 
-export const Wrapper = styled.div<StyledProps>`
-  ${({ center }) => center && tw`text-center`};
+export const Wrapper = styled.div<TransientStyledProps>`
+  ${({ $center }) => $center && tw`text-center`};
 `;
 
 export const Title = styled.h3`
