@@ -1,4 +1,4 @@
-import{t as e}from"./react.OrosJ8bI.js";import{_ as t,g as n,h as r,n as i,t as a,y as o}from"./TitleSection.DE1y3FvA.js";import{t as s}from"./FormatHtml.qZ3ZvRT9.js";e();var c=t.div`
+import{t as e}from"./react.OrosJ8bI.js";import{_ as t,g as n,h as r,n as i,t as a,y as o}from"./TitleSection.DE1y3FvA.js";import{t as s}from"./FormatHtml.DsGdfQlh.js";e();var c=t.div`
   ${n`flex flex-col sm:flex-row w-full p-4 relative border-l border-indigo-200`};
 
   &:last-child {

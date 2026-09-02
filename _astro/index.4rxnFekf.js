@@ -1,4 +1,4 @@
-import{t as e}from"./react.OrosJ8bI.js";import{_ as t,g as n,h as r,n as i,t as a,y as o}from"./TitleSection.DE1y3FvA.js";import{t as s}from"./FormatHtml.qZ3ZvRT9.js";e(),t.h3`
+import{t as e}from"./react.OrosJ8bI.js";import{_ as t,g as n,h as r,n as i,t as a,y as o}from"./TitleSection.DE1y3FvA.js";import{t as s}from"./FormatHtml.DsGdfQlh.js";e(),t.h3`
   ${n`font-semibold mb-4`};
 `,t.figure`
   ${n`w-full rounded-lg overflow-hidden mt-4 mb-10`};
