@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Secure by Design: Escaping the Hamster Wheel of Pain'
-description: 'Recurring vulnerabilities are not engineering accidents. They are management signals.'
+description: 'Why recurring vulnerabilities signal systemic management failures, and how secure-by-design practices can break the remediation cycle.'
 date: '2026-05-03'
 tags: ['cybersecurity', 'Security Architecture', 'security by design']
 published: true
@@ -10,8 +10,6 @@ published: true
 
 <article class="prose lg:prose-lg xl:prose-lg">
 
-
-# Secure by Design: The Hamster Wheel of Pain
 
 A few weeks ago, during an assessment, the team found a second-order SQL injection.
 

@@ -2,7 +2,8 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Cyber Resilience Act Compliance: 10 Misconceptions Companies Should Avoid'
-description: 'Avoid common Cyber Resilience Act compliance mistakes'
+seoTitle: 'Cyber Resilience Act: 10 Compliance Misconceptions'
+description: 'Ten common Cyber Resilience Act compliance misconceptions that manufacturers and software vendors should address before CRA deadlines.'
 date: '2026-04-27'
 tags: ['cybersecurity', 'cra', 'compliance']
 published: true

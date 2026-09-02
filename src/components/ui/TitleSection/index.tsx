@@ -4,15 +4,18 @@ import * as Styled from './styles';
 import type { StyledProps } from './styles';
 
 interface Props extends StyledProps {
-  title: string;
+  headingLevel?: 'h1' | 'h2';
+  title: React.ReactNode;
   subtitle?: string;
 }
 
-const TitleSection: React.FC<Props> = ({ center, title, subtitle }) => (
+const TitleSection: React.FC<Props> = ({ center, headingLevel = 'h2', title, subtitle }) => (
   <Styled.TitleSection>
     {subtitle && <Styled.SubTitle $center={center}>{title}</Styled.SubTitle>}
-    <Styled.Title $center={center}>{subtitle}</Styled.Title>
-    <Styled.Separator $center={center} />
+    <Styled.Title as={headingLevel} $center={center}>
+      {subtitle || title}
+    </Styled.Title>
+    <Styled.Separator $center={center} aria-hidden="true" />
   </Styled.TitleSection>
 );
 

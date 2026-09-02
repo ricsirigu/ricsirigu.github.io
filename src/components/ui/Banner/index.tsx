@@ -15,13 +15,13 @@ interface Props {
 }
 
 const Banner: React.FC<Props> = ({ title, subtitle, content, linkTo, linkText }) => (
-  <Styled.Banner>
+  <Styled.Banner id="about">
     <Container section>
-      <TitleSection title={title} subtitle={subtitle} />
+      <TitleSection title={title} subtitle={subtitle} headingLevel="h1" />
       <Styled.Content>{content}</Styled.Content>
-      <a href={linkTo}>
-        <Button primary name="riccardo sirigu profile">{linkText}</Button>
-      </a>
+      <Button primary name="Riccardo Sirigu profile" href={linkTo}>
+        {linkText}
+      </Button>
     </Container>
   </Styled.Banner>
 );

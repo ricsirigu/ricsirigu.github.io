@@ -6,6 +6,11 @@ import { collectStyles } from 'lib/collectStyles';
 const styledStyleTags = collectStyles(NotFoundPage, {});
 ---
 
-<BaseLayout title="404: Not found" styledStyleTags={styledStyleTags}>
-  <NotFoundPage client:load />
+<BaseLayout
+  title="Page not found"
+  description="The requested page could not be found."
+  noindex
+  styledStyleTags={styledStyleTags}
+>
+  <NotFoundPage />
 </BaseLayout>

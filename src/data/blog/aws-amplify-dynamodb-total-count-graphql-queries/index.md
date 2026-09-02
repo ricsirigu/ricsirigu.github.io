@@ -2,7 +2,8 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'How to count the number of results with AWS Amplify DynamoDB and GraphQL'
-description: 'Ho to paginate the results with DynamoDB?'
+seoTitle: 'Count DynamoDB Results with AWS Amplify and GraphQL'
+description: 'How to count and paginate DynamoDB results with AWS Amplify and GraphQL.'
 date: '2019-12-10'
 tags: ['aws', 'dynamodb', 'graphql', 'amplify']
 published: true

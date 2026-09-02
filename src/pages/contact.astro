@@ -16,6 +16,11 @@ const props: PageProps = {
 const styledStyleTags = collectStyles(ContactPage, props);
 ---
 
-<BaseLayout title="Contact" styledStyleTags={styledStyleTags}>
-  <ContactPage {...props} client:load />
+<BaseLayout
+  title="Contact Riccardo Sirigu"
+  description="Contact Riccardo Sirigu about secure-by-design engineering, offensive security, product security and cybersecurity consulting."
+  pageType="ContactPage"
+  styledStyleTags={styledStyleTags}
+>
+  <ContactPage {...props} />
 </BaseLayout>

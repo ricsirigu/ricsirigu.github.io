@@ -17,6 +17,11 @@ const props: PageProps = {
 const styledStyleTags = collectStyles(IndexPage, props);
 ---
 
-<BaseLayout title="About Me" styledStyleTags={styledStyleTags}>
-  <IndexPage {...props} client:load />
+<BaseLayout
+  title="Secure-by-Design Cybersecurity"
+  description="Riccardo Sirigu is a CISSP and Offensive Security Director helping organizations reduce product risk through secure-by-design engineering."
+  pageType="ProfilePage"
+  styledStyleTags={styledStyleTags}
+>
+  <IndexPage {...props} />
 </BaseLayout>

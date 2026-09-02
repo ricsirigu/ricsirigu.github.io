@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Type Classes in Scala: A Practical Example'
-description: 'A guided practical tour of the Type Class pattern '
+description: 'A guided practical tour of the Type Class pattern in Scala, with concrete code examples and alternatives to inheritance.'
 date: '2017-06-02'
 tags: ['scala', 'functional programming', 'type class']
 published: true

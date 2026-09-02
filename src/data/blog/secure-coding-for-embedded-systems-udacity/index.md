@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Secure Coding for Embedded Systems'
-description: 'Learn how to build trustworthy products with this'
+description: 'An introduction to the Secure Coding for Embedded Systems Udacity course and the practices engineers need to build trustworthy products.'
 date: '2024-11-21'
 tags: ['udacity', 'embedded', 'cybersecurity']
 published: true

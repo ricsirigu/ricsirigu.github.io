@@ -1,0 +1,64 @@
+---
+import BlogPage from 'react-pages/BlogPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { getBlogTopics, getPublishedBlogPosts } from 'lib/content';
+import { collectStyles } from 'lib/collectStyles';
+import type { ComponentProps } from 'react';
+
+type PageProps = ComponentProps<typeof BlogPage>;
+
+export function getStaticPaths() {
+  const posts = getPublishedBlogPosts();
+  const topics = getBlogTopics();
+
+  return topics.map((topic) => ({
+    params: { topic: topic.slug },
+    props: {
+      topic,
+      topics,
+      topicPosts: posts.filter((post) =>
+        post.frontmatter.tags.some((tag) => tag.toLowerCase() === topic.name.toLowerCase()),
+      ),
+    },
+  }));
+}
+
+const { topic, topics, topicPosts } = Astro.props;
+const props: PageProps = {
+  activeTopic: topic.slug,
+  currentPath: `/blog/topics/${topic.slug}/`,
+  sectionTitle: { title: 'Blog topic', subtitle: topic.name },
+  topics,
+  posts: topicPosts.map((post) => ({
+    node: {
+      id: post.id,
+      fields: post.fields,
+      frontmatter: {
+        title: post.frontmatter.title,
+        description: post.frontmatter.description,
+        date: post.frontmatter.formattedDate,
+        publishedDate: post.frontmatter.date,
+        tags: post.frontmatter.tags,
+        cover: post.frontmatter.coverImage || {
+          height: 1,
+          sizes: '100vw',
+          srcSet: '',
+          url: post.frontmatter.coverUrl || '',
+          width: 1,
+        },
+      },
+    },
+  })),
+};
+const styledStyleTags = collectStyles(BlogPage, props);
+---
+
+<BaseLayout
+  title={`${topic.name} articles`}
+  description={`Articles by Riccardo Sirigu about ${topic.name}, secure software engineering and cybersecurity.`}
+  pageType="CollectionPage"
+  collectionItems={topicPosts.map((post) => ({ name: post.frontmatter.title, url: post.fields.slug }))}
+  styledStyleTags={styledStyleTags}
+>
+  <BlogPage {...props} />
+</BaseLayout>

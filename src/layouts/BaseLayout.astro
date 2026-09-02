@@ -1,4 +1,5 @@
 ---
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'prismjs/themes/prism-solarizedlight.css';
 import 'assets/styles/global.css';
 
@@ -7,78 +8,137 @@ import { siteMetadata } from 'lib/site';
 interface BlogMetadata {
   date: string;
   image?: string;
+  imageHeight?: number;
+  imageWidth?: number;
+  modified?: string;
   slug: string;
+  tags?: string[];
 }
 
 interface Props {
   blog?: BlogMetadata;
+  collectionItems?: Array<{ name: string; url: string }>;
   description?: string;
+  noindex?: boolean;
+  pageType?: 'CollectionPage' | 'ContactPage' | 'ProfilePage' | 'WebPage';
+  seoTitle?: string;
   styledStyleTags: string;
   title: string;
 }
 
 const {
   blog,
+  collectionItems = [],
   description = siteMetadata.description,
+  noindex = false,
+  pageType = 'WebPage',
+  seoTitle,
   styledStyleTags,
   title,
 } = Astro.props;
 
 const defaultImage = '/static/6716eff14ad2af05b485ed7fcbddcf80/1fb14/riccardo-sirigu.webp';
 const imagePath = blog?.image || defaultImage;
-const imageUrl = `${siteMetadata.siteUrl}${imagePath}`;
-const imageWidth = blog?.image ? 1200 : 960;
-const imageHeight = blog?.image ? 630 : 960;
-const pageUrl = blog ? `${siteMetadata.siteUrl}${blog.slug}` : siteMetadata.siteUrl;
-const datePublished = blog?.date || new Date().toISOString().split('T')[0];
+const imageUrl = new URL(imagePath, siteMetadata.siteUrl).href;
+const imageWidth = blog?.imageWidth || 960;
+const imageHeight = blog?.imageHeight || 960;
+const pageUrl = new URL(Astro.url.pathname, siteMetadata.siteUrl).href;
+const titleBase = seoTitle || title;
+const fullTitle = `${titleBase} | ${siteMetadata.title}`;
+const documentTitle = fullTitle.length <= 60 ? fullTitle : titleBase;
+const personId = `${siteMetadata.siteUrl}/#person`;
+const websiteId = `${siteMetadata.siteUrl}/#website`;
+const webPageId = `${pageUrl}#webpage`;
+const sameAs = Object.values(siteMetadata.social);
 
-const baseSchema = {
-  '@context': 'http://schema.org',
-  '@type': 'WebSite',
-  url: pageUrl,
-  name: title,
-  alternateName: title,
-};
+const graph: Record<string, unknown>[] = [
+  {
+    '@type': 'WebSite',
+    '@id': websiteId,
+    url: `${siteMetadata.siteUrl}/`,
+    name: siteMetadata.title,
+    description: siteMetadata.description,
+    inLanguage: 'en',
+    publisher: { '@id': personId },
+  },
+  {
+    '@type': 'Person',
+    '@id': personId,
+    name: siteMetadata.author,
+    url: `${siteMetadata.siteUrl}/`,
+    image: {
+      '@type': 'ImageObject',
+      url: new URL(defaultImage, siteMetadata.siteUrl).href,
+      width: 960,
+      height: 960,
+    },
+    jobTitle: 'Offensive Security Director',
+    sameAs,
+  },
+  {
+    '@type': pageType,
+    '@id': webPageId,
+    url: pageUrl,
+    name: title,
+    description,
+    inLanguage: 'en',
+    isPartOf: { '@id': websiteId },
+    ...(pageType === 'ProfilePage' || pageType === 'ContactPage' ? { about: { '@id': personId } } : {}),
+    ...(pageType === 'ProfilePage' ? { mainEntity: { '@id': personId } } : {}),
+    ...(collectionItems.length > 0 ? { mainEntity: { '@id': `${pageUrl}#items` } } : {}),
+  },
+];
 
-const schema = blog
-  ? [
-      baseSchema,
-      {
-        '@context': 'http://schema.org',
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          {
-            '@type': 'ListItem',
-            position: 1,
-            item: { '@id': pageUrl, name: title, image: imageUrl },
-          },
-        ],
+if (collectionItems.length > 0) {
+  graph.push({
+    '@type': 'ItemList',
+    '@id': `${pageUrl}#items`,
+    itemListElement: collectionItems.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      url: new URL(item.url, siteMetadata.siteUrl).href,
+    })),
+  });
+}
+
+if (blog) {
+  graph.push(
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteMetadata.siteUrl}/` },
+        { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteMetadata.siteUrl}/blog/` },
+        { '@type': 'ListItem', position: 3, name: title, item: pageUrl },
+      ],
+    },
+    {
+      '@type': 'BlogPosting',
+      '@id': `${pageUrl}#article`,
+      url: pageUrl,
+      headline: title,
+      image: {
+        '@type': 'ImageObject',
+        url: imageUrl,
+        width: imageWidth,
+        height: imageHeight,
       },
-      {
-        '@context': 'http://schema.org',
-        '@type': 'BlogPosting',
-        url: pageUrl,
-        name: title,
-        alternateName: title,
-        headline: title,
-        image: { '@type': 'ImageObject', url: imageUrl },
-        description,
-        author: { '@type': 'Person', name: siteMetadata.author },
-        publisher: {
-          '@type': 'Organization',
-          url: siteMetadata.organization.url,
-          logo: {
-            '@type': 'ImageObject',
-            url: `${siteMetadata.siteUrl}/static/6716eff14ad2af05b485ed7fcbddcf80/1fb14/riccardo-sirigu.webp`,
-          },
-          name: siteMetadata.organization.name,
-        },
-        mainEntityOfPage: { '@type': 'WebSite', '@id': siteMetadata.siteUrl },
-        datePublished,
-        dateModified: datePublished,
-      },
-    ]
-  : [baseSchema];
+      description,
+      inLanguage: 'en',
+      keywords: blog.tags?.join(', '),
+      about: blog.tags?.map((tag) => ({ '@type': 'Thing', name: tag })),
+      author: { '@id': personId },
+      publisher: { '@id': personId },
+      isPartOf: { '@id': websiteId },
+      mainEntityOfPage: { '@id': webPageId },
+      datePublished: blog.date,
+      ...(blog.modified ? { dateModified: blog.modified } : {}),
+    },
+  );
+}
+
+const schema = { '@context': 'https://schema.org', '@graph': graph };
 
 const iconVersion = '572fe588d98a7211c32f49b0c1c05427';
 const iconSizes = [48, 72, 96, 144, 192, 256, 384, 512];
@@ -91,31 +151,52 @@ const iconSizes = [48, 72, 96, 144, 192, 256, 384, 512];
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <title>{title} | {siteMetadata.title}</title>
+    <link rel="alternate" type="application/rss+xml" title={`${siteMetadata.title} blog`} href="/rss.xml" />
+    <link rel="canonical" href={pageUrl} />
+    <title>{documentTitle}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content={noindex ? 'noindex,follow' : 'index,follow,max-image-preview:large'} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={blog ? 'article' : 'website'} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:site_name" content={siteMetadata.title} />
     <meta property="og:image" content={imageUrl} />
     <meta property="og:image:width" content={String(imageWidth)} />
     <meta property="og:image:height" content={String(imageHeight)} />
+    <meta property="og:image:alt" content={blog ? `Cover image for ${title}` : `Portrait of ${siteMetadata.author}`} />
+    {blog && <meta property="article:published_time" content={blog.date} />}
+    {blog?.modified && <meta property="article:modified_time" content={blog.modified} />}
+    {blog && <meta property="article:author" content={`${siteMetadata.siteUrl}/`} />}
+    {blog?.tags?.map((tag) => <meta property="article:tag" content={tag} />)}
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:creator" content={siteMetadata.author} />
+    <meta name="twitter:creator" content="@ricsirigu" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content={blog ? `Cover image for ${title}` : `Portrait of ${siteMetadata.author}`} />
     <link rel="icon" href={`/favicon-32x32.png?v=${iconVersion}`} type="image/png" />
     <link rel="manifest" href="/manifest.webmanifest" crossorigin="anonymous" />
     <meta name="theme-color" content="#81e6d9" />
     {iconSizes.map((size) => (
       <link rel="apple-touch-icon" sizes={`${size}x${size}`} href={`/icons/icon-${size}x${size}.png?v=${iconVersion}`} />
     ))}
-    {schema.map((entry) => (
-      <script type="application/ld+json" is:inline set:html={JSON.stringify(entry)} />
-    ))}
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
     <Fragment set:html={styledStyleTags} />
   </head>
   <body>
     <slot />
+    <script is:inline>
+      document.querySelectorAll('[data-navigation-toggle]').forEach((toggle) => {
+        toggle.addEventListener('click', () => {
+          const targetId = toggle.getAttribute('aria-controls');
+          const navigation = targetId ? document.getElementById(targetId) : null;
+          if (!navigation) return;
+          const open = navigation.classList.toggle('is-open');
+          toggle.classList.toggle('is-open', open);
+          toggle.setAttribute('aria-expanded', String(open));
+        });
+      });
+    </script>
   </body>
 </html>

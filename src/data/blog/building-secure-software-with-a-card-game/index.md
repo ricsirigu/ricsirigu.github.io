@@ -2,7 +2,7 @@
 category: 'blog'
 cover: './cover.jpg'
 title: 'Building Secure Software With a Card Game'
-description: 'Have you ever heard of OWASP Cornucopia?'
+description: 'Learn how OWASP Cornucopia turns threat modeling and secure software design into a collaborative card game for engineering teams.'
 date: '2017-02-16'
 tags: ['owasp', 'secure development', 'cornucopia']
 published: true

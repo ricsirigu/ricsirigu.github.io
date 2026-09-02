@@ -5,7 +5,7 @@ export const Logo = styled.a`
   ${tw`flex items-center mr-auto text-indigo-900 hover:text-indigo-900`};
 `;
 
-export const Text = styled.h1`
+export const Text = styled.span`
   ${tw`text-lg`};
 `;
 
