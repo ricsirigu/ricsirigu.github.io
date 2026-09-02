@@ -6,7 +6,12 @@ The canonical website is https://www.riccardosirigu.com. Content may be used for
 
 ## Key pages
 
-- [About](https://www.riccardosirigu.com/): Professional profile and services.
+- [About](https://www.riccardosirigu.com/about/): Professional profile, expertise and independent references.
+- [Expertise](https://www.riccardosirigu.com/expertise/): Offensive security, Secure by Design and Cyber Resilience Act hubs.
+- [Secure by Design](https://www.riccardosirigu.com/expertise/secure-by-design/): Engineering operating models, architecture and guardrails.
+- [Offensive Security](https://www.riccardosirigu.com/expertise/offensive-security/): Attack-informed systemic risk assessment.
+- [Cyber Resilience Act](https://www.riccardosirigu.com/expertise/cyber-resilience-act/): Product security and engineering readiness.
+- [Contributions and speaking](https://www.riccardosirigu.com/speaking-contributions/): Standards, OWASP and technical education.
 - [Resume](https://www.riccardosirigu.com/resume/): Experience and education.
 - [Blog](https://www.riccardosirigu.com/blog/): All published articles.
 - [Contact](https://www.riccardosirigu.com/contact/): Contact information.
