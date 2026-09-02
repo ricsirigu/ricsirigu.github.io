@@ -1,0 +1,42 @@
+# Riccardo Sirigu
+
+> Riccardo Sirigu is a CISSP and Offensive Security Director writing about secure-by-design engineering, product security, European cybersecurity regulation, and software development.
+
+The canonical website is https://www.riccardosirigu.com. Content may be used for search and reference. Automated training access is governed by robots.txt.
+
+## Key pages
+
+- [About](https://www.riccardosirigu.com/): Professional profile and services.
+- [Resume](https://www.riccardosirigu.com/resume/): Experience and education.
+- [Blog](https://www.riccardosirigu.com/blog/): All published articles.
+- [Contact](https://www.riccardosirigu.com/contact/): Contact information.
+- [RSS feed](https://www.riccardosirigu.com/rss.xml): Full-content feed of published articles.
+
+## Topics
+
+- [cra](https://www.riccardosirigu.com/blog/topics/cra/): 2 articles.
+- [cybersecurity](https://www.riccardosirigu.com/blog/topics/cybersecurity/): 7 articles.
+- [functional programming](https://www.riccardosirigu.com/blog/topics/functional-programming/): 4 articles.
+- [scala](https://www.riccardosirigu.com/blog/topics/scala/): 6 articles.
+- [security](https://www.riccardosirigu.com/blog/topics/security/): 3 articles.
+
+## Published articles
+
+- [Secure by Design: Escaping the Hamster Wheel of Pain](https://www.riccardosirigu.com/blog/secure-by-design-hamster-wheel-of-pain/): Why recurring vulnerabilities signal systemic management failures, and how secure-by-design practices can break the remediation cycle.
+- [Cyber Resilience Act Compliance: 10 Misconceptions Companies Should Avoid](https://www.riccardosirigu.com/blog/cyber-resilience-act-ten-common-misconceptions-about-cra-compliance/): Ten common Cyber Resilience Act compliance misconceptions that manufacturers and software vendors should address before CRA deadlines.
+- [Security Standards You Should Know](https://www.riccardosirigu.com/blog/security-standards-you-should-know/): A practical reference to essential cybersecurity standards, including ISO, IEC and European EN standards for secure products and compliance.
+- [Your Guide to Understanding EU Cybersecurity Laws and Standards](https://www.riccardosirigu.com/blog/guide-to-understanding-eu-cybersecurity-standards-and-policy-essential-resources/): A practical guide to authoritative EU cybersecurity laws, policies and standards, including NIS2, RED and the Cyber Resilience Act.
+- [Exploring Next.js CVE-2025-29927](https://www.riccardosirigu.com/blog/exploring-cve-2025-29927-a-hands-on-look-at-authorization-bypass-in-nextjs-middleware/): A hands-on technical analysis of CVE-2025-29927 and authorization bypass in Next.js middleware, including impact and defensive lessons.
+- [Secure Coding for Embedded Systems](https://www.riccardosirigu.com/blog/secure-coding-for-embedded-systems-udacity/): An introduction to the Secure Coding for Embedded Systems Udacity course and the practices engineers need to build trustworthy products.
+- [A Beautiful girl sent me this...](https://www.riccardosirigu.com/blog/javascript-malware-by-a-beaufiful-girl/): A step-by-step analysis of a phishing email and its obfuscated JavaScript malware, from delivery to data theft and command execution.
+- [How to write secure code](https://www.riccardosirigu.com/blog/how-to-write-secure-code/): Practical principles and resources developers can use to write more secure code without becoming full-time security specialists.
+- [How to count the number of results with AWS Amplify DynamoDB and GraphQL](https://www.riccardosirigu.com/blog/aws-amplify-dynamodb-total-count-graphql-queries/): How to count and paginate DynamoDB results with AWS Amplify and GraphQL.
+- [Quick recipe: How to connect multiple Docker containers](https://www.riccardosirigu.com/blog/how-to-connect-multiple-docker-containers/): A concise recipe for connecting multiple Docker containers through a shared network and enabling reliable service-to-service communication.
+- [The best programming resources I read in 2017](https://www.riccardosirigu.com/blog/best-programming-resources-of-2017/): A curated collection of standout resources on Scala, functional programming, machine learning, deep learning and software security.
+- [How to protect your RESTful APIs in Lift with JWT](https://www.riccardosirigu.com/blog/lift-framework-rest-apis-authentication-with-jwt/): A practical guide to protecting Lift Framework REST APIs with JSON Web Tokens, authentication checks and secure Scala endpoints.
+- [Type Classes in Scala: A Practical Example](https://www.riccardosirigu.com/blog/type-classes-in-scala-a-practical-example/): A guided practical tour of the Type Class pattern in Scala, with concrete code examples and alternatives to inheritance.
+- [Functional Programming and Category Theory](https://www.riccardosirigu.com/blog/functional-programming-and-category-theory/): A practical reading path for developers who want to understand functional programming, category theory, monads and their use in Scala.
+- [Human Friendly errors for Scala](https://www.riccardosirigu.com/blog/human-friendly-errors-for-scala/): Learn how to transform cryptic Scala compiler errors into clearer, more actionable messages that improve the developer experience.
+- [Building Secure Software With a Card Game](https://www.riccardosirigu.com/blog/building-secure-software-with-a-card-game/): Learn how OWASP Cornucopia turns threat modeling and secure software design into a collaborative card game for engineering teams.
+- [Isomorphic Web Applications with Scala and ScalaJs](https://www.riccardosirigu.com/blog/isomorphic-web-applications-with-scala-and-scalajs/): Learn how to build an isomorphic web application by integrating Scala.js into a Scala project and sharing code across client and server.
+- [Scala & Lift and the record lifecycle callbacks](https://www.riccardosirigu.com/blog/scala-simplify-code-with-lifecycle-callbacks-model/): Learn how to reduce duplicated Scala and Lift code by attaching reusable callbacks to model lifecycle events.

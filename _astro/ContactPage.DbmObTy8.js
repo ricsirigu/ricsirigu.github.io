@@ -1,3 +1,0 @@
-import{t as e}from"./react.OrosJ8bI.js";import{_ as t,g as n,h as r,n as i,t as a,y as o}from"./TitleSection.DE1y3FvA.js";import{t as s}from"./InfoBlock.Br1tSqQc.js";e();var c=t.div`
-  ${n`w-full sm:w-1/2`};
-`,l=o(),u=({contacts:e,sectionTitle:t})=>(0,l.jsxs)(r,{section:!0,children:[(0,l.jsx)(a,{title:t.title,subtitle:t.subtitle,center:!0}),e.map(e=>{let{id:t,frontmatter:{title:n,icon:r,content:i}}=e.node;return(0,l.jsx)(c,{children:(0,l.jsx)(s,{icon:r,title:n,content:i,center:!0})},t)})]}),d=({contacts:e,currentPath:t,sectionTitle:n})=>(0,l.jsx)(i,{currentPath:t,children:(0,l.jsx)(u,{contacts:e,sectionTitle:n})});export{d as default};

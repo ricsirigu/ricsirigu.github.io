@@ -1,1 +1,0 @@
-import{t as e}from"./react.OrosJ8bI.js";import{y as t}from"./TitleSection.DE1y3FvA.js";e();var n=t(),r=({content:e})=>(0,n.jsx)(`div`,{className:`format-html`,dangerouslySetInnerHTML:{__html:e}});export{r as t};
