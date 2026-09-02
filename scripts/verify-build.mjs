@@ -150,10 +150,16 @@ if (existsSync(output)) {
 
   const expectedHtml = [
     '404.html',
+    'about/index.html',
     'blog/index.html',
     'contact/index.html',
+    'expertise/cyber-resilience-act/index.html',
+    'expertise/index.html',
+    'expertise/offensive-security/index.html',
+    'expertise/secure-by-design/index.html',
     'index.html',
     'resume/index.html',
+    'speaking-contributions/index.html',
     ...publishedBlogs.map((record) => `blog/${record.slug}/index.html`),
     ...topicSlugs.map((slug) => `blog/topics/${slug}/index.html`)
   ].sort();
@@ -186,6 +192,16 @@ if (existsSync(output)) {
   assert((rss.match(/<item>/g) || []).length === publishedBlogs.length, 'RSS must contain every published article');
 
   const llms = readFileSync(path.join(output, 'llms.txt'), 'utf8');
+  for (const authorityRoute of [
+    '/about/',
+    '/expertise/',
+    '/expertise/cyber-resilience-act/',
+    '/expertise/offensive-security/',
+    '/expertise/secure-by-design/',
+    '/speaking-contributions/'
+  ]) {
+    assert(llms.includes(authorityRoute), `llms.txt must include ${authorityRoute}`);
+  }
   for (const record of blogRecords.filter((item) => !item.frontmatter.published)) {
     assert(!llms.includes(`/blog/${record.slug}/`), `Draft article ${record.slug} must not appear in llms.txt`);
   }
@@ -216,9 +232,11 @@ if (existsSync(output)) {
     assert(!/<astro-island\b/i.test(html), `${relativeHtml}: static page should not contain hydrated Astro islands`);
     assert(/<script[^>]+application\/ld\+json/i.test(html), `${relativeHtml}: missing JSON-LD`);
     const jsonLdSources = [...html.matchAll(/<script[^>]+application\/ld\+json[^>]*>([\s\S]*?)<\/script>/gi)];
+    const graphEntries = [];
     for (const source of jsonLdSources) {
       try {
         const jsonLd = JSON.parse(source[1]);
+        graphEntries.push(...(jsonLd['@graph'] || []));
         assert(jsonLd['@context'] === 'https://schema.org', `${relativeHtml}: JSON-LD must use https://schema.org`);
         if (
           relativeHtml.startsWith('blog/') &&
@@ -234,6 +252,29 @@ if (existsSync(output)) {
       } catch (error) {
         assert(false, `${relativeHtml}: invalid JSON-LD (${error.message})`);
       }
+    }
+    if (
+      relativeHtml === 'about/index.html' ||
+      relativeHtml === 'expertise/index.html' ||
+      relativeHtml.startsWith('expertise/') ||
+      relativeHtml === 'speaking-contributions/index.html'
+    ) {
+      assert(
+        graphEntries.some((entry) => entry['@type'] === 'BreadcrumbList'),
+        `${relativeHtml}: authority page must include BreadcrumbList schema`
+      );
+    }
+    if (relativeHtml === 'about/index.html') {
+      const person = graphEntries.find((entry) => entry['@type'] === 'Person');
+      const profile = graphEntries.find((entry) => entry['@type'] === 'ProfilePage');
+      assert(Boolean(profile?.mainEntity?.['@id']), 'about/index.html: ProfilePage must identify its main person');
+      assert(person?.url === 'https://www.riccardosirigu.com/about/', 'about/index.html: Person must use the About URL');
+      assert(person?.worksFor?.name === 'Abissi', 'about/index.html: Person must identify the current organization');
+      assert(person?.knowsAbout?.length >= 5, 'about/index.html: Person must include core expertise areas');
+      assert(
+        person?.sameAs?.includes('https://genai.owasp.org/team/riccardo-sirigu/'),
+        'about/index.html: Person must include independent professional profiles'
+      );
     }
     assert(/rel=["']manifest["'][^>]+\/manifest\.webmanifest/i.test(html), `${relativeHtml}: missing manifest link`);
 

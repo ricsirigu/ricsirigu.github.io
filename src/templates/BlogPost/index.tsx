@@ -23,6 +23,11 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
   const indexedTopics = new Set(getBlogTopics().map((topic) => topic.slug));
+  const formattedUpdatedDate = post.frontmatter.updated
+    ? new Intl.DateTimeFormat('en', { day: '2-digit', month: 'short', timeZone: 'UTC', year: 'numeric' }).format(
+        new Date(`${post.frontmatter.updated}T00:00:00Z`)
+      )
+    : undefined;
 
   return (
     <Layout currentPath={pageContext.slug}>
@@ -40,11 +45,11 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
           headingLevel="h1"
         />
         <Styled.Byline>
-          By <a href="/#about">Riccardo Sirigu</a>
-          {post.frontmatter.updated && (
+          By <a href="/about/">Riccardo Sirigu</a>
+          {post.frontmatter.updated && formattedUpdatedDate && (
             <>
-              {' '}
-              · Updated <time dateTime={post.frontmatter.updated}>{post.frontmatter.updated}</time>
+              {' · '}
+              Reviewed and updated <time dateTime={post.frontmatter.updated}>{formattedUpdatedDate}</time>
             </>
           )}
         </Styled.Byline>
@@ -79,7 +84,7 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
         <Styled.Author>
           <h2>About the author</h2>
           <p>
-            <a href="/#about">Riccardo Sirigu</a> is a CISSP and Offensive Security Director focused on secure-by-design
+            <a href="/about/">Riccardo Sirigu</a> is a CISSP and Offensive Security Director focused on secure-by-design
             engineering, product security and European cybersecurity standards.
           </p>
         </Styled.Author>

@@ -1,0 +1,83 @@
+---
+import AuthorityPage from 'components/AuthorityPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { collectStyles } from 'lib/collectStyles';
+
+const props = {
+  currentPath: '/speaking-contributions/',
+  breadcrumbs: [],
+  eyebrow: 'Contributions',
+  title: 'Cybersecurity Standards, Open Knowledge and Technical Education',
+  summary:
+    'Selected contributions by Riccardo Sirigu across European cybersecurity standardization, OWASP initiatives, technical education and independent writing.',
+  highlights: [
+    {
+      href: 'https://cyberstand.eu/experts/riccardo-sirigu',
+      label: 'CEN/CENELEC JTC 13/WG 9',
+      description: 'Work on horizontal cybersecurity standards supporting the Cyber Resilience Act.',
+      external: true,
+    },
+    {
+      href: 'https://genai.owasp.org/team/riccardo-sirigu/',
+      label: 'OWASP GenAI Security Project',
+      description: 'Contributor profile in the global OWASP GenAI community.',
+      external: true,
+    },
+    {
+      href: 'https://www.udacity.com/course/secure-coding-for-embedded-systems--cd13387',
+      label: 'Secure Coding for Embedded Systems',
+      description: 'Udacity course contribution covering hardening, supply chain, TLS and secure updates.',
+      external: true,
+    },
+    {
+      href: '/blog/',
+      label: 'Independent technical writing',
+      description: 'Articles connecting attacks, engineering decisions and cybersecurity regulation.',
+    },
+  ],
+  sections: [
+    {
+      title: 'European cybersecurity standardization',
+      paragraphs: [
+        'Riccardo participates in CEN/CENELEC JTC 13/WG 9 work on horizontal cybersecurity standards supporting implementation of the EU Cyber Resilience Act. This work connects regulatory requirements with repeatable product security and engineering practices.',
+      ],
+    },
+    {
+      title: 'OWASP and open security knowledge',
+      paragraphs: [
+        'Contributions include work with the OWASP GenAI Security Project and translations of OWASP resources into Italian, including material related to application security, verification and AI security governance.',
+      ],
+    },
+    {
+      title: 'Technical education and speaking',
+      paragraphs: [
+        'Riccardo contributed as an author and instructor to Udacity’s Secure Coding for Embedded Systems course. He is available for technical talks, panels, workshops and expert discussions on offensive security, Secure by Design, product security and the Cyber Resilience Act.',
+      ],
+    },
+  ],
+  relatedLinks: [
+    {
+      href: '/about/',
+      label: 'Full professional profile',
+      description: 'Role, experience, areas of focus and independent references.',
+    },
+    {
+      href: '/contact/',
+      label: 'Speaking and media enquiries',
+      description: 'Get in touch about events, interviews, workshops and professional work.',
+    },
+  ],
+};
+const styledStyleTags = collectStyles(AuthorityPage, props);
+---
+
+<BaseLayout
+  title="Cybersecurity Contributions and Speaking"
+  description="Selected cybersecurity standards, OWASP, technical education and speaking contributions by Riccardo Sirigu."
+  pageType="CollectionPage"
+  collectionItems={props.highlights.map((item) => ({ name: item.label, url: item.href }))}
+  breadcrumbs={[{ name: 'Contributions', url: '/speaking-contributions/' }]}
+  styledStyleTags={styledStyleTags}
+>
+  <AuthorityPage {...props} />
+</BaseLayout>

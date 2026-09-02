@@ -29,3 +29,10 @@ export const Title = styled.h3`
 export const Content = styled.p`
   ${tw`mt-1`};
 `;
+
+export const MoreLink = styled.a`
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+`;

@@ -1,5 +1,5 @@
 ---
 category: 'contact section'
-title: 'Contacts'
+title: 'Professional enquiries'
 subtitle: 'Contact Riccardo Sirigu'
 ---

@@ -38,6 +38,7 @@ npm run preview
 
 - `src/data/` contains the Markdown content and its source images.
 - `src/pages/` contains the Astro routes.
+- `/about/`, `/expertise/` and `/speaking-contributions/` provide stable entity, authority and topic-hub pages.
 - `src/layouts/BaseLayout.astro` owns global document metadata and SEO markup.
 - `src/react-pages/` contains the page-level React islands retained from the previous implementation.
 - `src/lib/content.ts` loads frontmatter, renders Markdown and maps the preserved responsive image assets.

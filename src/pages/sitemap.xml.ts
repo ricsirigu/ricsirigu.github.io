@@ -23,7 +23,18 @@ function escapeXml(value: string): string {
 
 export const GET: APIRoute = () => {
   const posts = getPublishedBlogPosts();
-  const staticUrls: SitemapItem[] = ['/', '/blog/', '/contact/', '/resume/'].map((path) => ({ path }));
+  const staticUrls: SitemapItem[] = [
+    '/',
+    '/about/',
+    '/blog/',
+    '/contact/',
+    '/expertise/',
+    '/expertise/cyber-resilience-act/',
+    '/expertise/offensive-security/',
+    '/expertise/secure-by-design/',
+    '/resume/',
+    '/speaking-contributions/',
+  ].map((path) => ({ path }));
   const topicUrls: SitemapItem[] = getBlogTopics().map((topic) => {
     const topicPosts = posts.filter((post) =>
       post.frontmatter.tags.some((tag) => tag.toLowerCase() === topic.name.toLowerCase())

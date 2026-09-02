@@ -1,0 +1,100 @@
+---
+import AuthorityPage from 'components/AuthorityPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { collectStyles } from 'lib/collectStyles';
+
+const props = {
+  currentPath: '/about/',
+  breadcrumbs: [],
+  eyebrow: 'About',
+  title: 'Riccardo Sirigu — Offensive Security and Secure-by-Design',
+  summary:
+    'Riccardo Sirigu is a CISSP and Offensive Security Director at Abissi with more than 15 years of experience across software engineering and cybersecurity. His work connects real-world attack evidence, product architecture and European cybersecurity regulation.',
+  highlights: [
+    {
+      href: 'https://www.abissi.eu/azienda/',
+      label: 'Offensive Security Director at Abissi',
+      description: 'Current leadership role and professional profile.',
+      external: true,
+    },
+    {
+      href: 'https://cyberstand.eu/experts/riccardo-sirigu',
+      label: 'CEN/CENELEC standardization',
+      description: 'Participation in JTC 13/WG 9 work supporting Cyber Resilience Act standards.',
+      external: true,
+    },
+    {
+      href: 'https://genai.owasp.org/team/riccardo-sirigu/',
+      label: 'OWASP GenAI Security Project',
+      description: 'Contributor to open cybersecurity knowledge and community initiatives.',
+      external: true,
+    },
+    {
+      href: 'https://www.udacity.com/course/secure-coding-for-embedded-systems--cd13387',
+      label: 'Udacity instructor and course author',
+      description: 'Secure Coding for Embedded Systems course contributor.',
+      external: true,
+    },
+  ],
+  sections: [
+    {
+      title: 'Professional focus',
+      paragraphs: [
+        'Riccardo works with engineering, product and executive leaders to identify security risk before it becomes an expensive downstream problem. His focus is on offensive security, application and product security, Secure by Design, and the operational impact of the EU Cyber Resilience Act.',
+        'His perspective combines a software engineering background with offensive assessment experience: attack evidence is used to improve architecture, engineering defaults, governance and product-level accountability.',
+      ],
+    },
+    {
+      title: 'Areas of expertise',
+      bullets: [
+        'Offensive security strategy and systemic risk assessment.',
+        'Secure-by-design architecture and engineering operating models.',
+        'Application security, product security and engineering guardrails.',
+        'Cyber Resilience Act readiness and European cybersecurity standards.',
+        'Embedded and IoT security, secure updates and software supply-chain risk.',
+        'Security leadership, technical training and executive communication.',
+      ],
+    },
+    {
+      title: 'Independent work and contributions',
+      paragraphs: [
+        'Riccardo contributes to European cybersecurity standardization through CEN/CENELEC JTC 13/WG 9 and to OWASP initiatives, including the GenAI Security Project. He also contributed as an author and instructor to Udacity’s Secure Coding for Embedded Systems course.',
+        'This site publishes original technical analysis, practical engineering guidance and interpretations grounded in assessment, software development and standardization work.',
+      ],
+    },
+  ],
+  relatedLinks: [
+    {
+      href: '/expertise/',
+      label: 'Explore expertise',
+      description: 'Secure by Design, offensive security and Cyber Resilience Act guidance.',
+    },
+    {
+      href: '/speaking-contributions/',
+      label: 'Contributions and speaking',
+      description: 'Selected standards, open-source, educational and editorial contributions.',
+    },
+    {
+      href: '/resume/',
+      label: 'Experience and education',
+      description: 'Professional history, leadership roles and education.',
+    },
+    {
+      href: '/contact/',
+      label: 'Contact Riccardo',
+      description: 'Professional, training, media and speaking enquiries.',
+    },
+  ],
+};
+const styledStyleTags = collectStyles(AuthorityPage, props);
+---
+
+<BaseLayout
+  title="Riccardo Sirigu — Offensive Security"
+  description="Riccardo Sirigu is a CISSP and Offensive Security Director focused on Secure by Design, product security, application security and the Cyber Resilience Act."
+  pageType="ProfilePage"
+  breadcrumbs={[{ name: 'About', url: '/about/' }]}
+  styledStyleTags={styledStyleTags}
+>
+  <AuthorityPage {...props} />
+</BaseLayout>

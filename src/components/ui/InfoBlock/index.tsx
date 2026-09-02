@@ -9,9 +9,10 @@ interface Props extends Styled.StyledProps {
   content: React.ReactNode;
   headingLevel?: 'h2' | 'h3';
   icon: IconProps;
+  linkTo?: string;
 }
 
-const InfoBlock: React.FC<Props> = ({ icon, title, content, center, headingLevel = 'h3' }) => (
+const InfoBlock: React.FC<Props> = ({ icon, title, content, center, headingLevel = 'h3', linkTo }) => (
   <Styled.InfoBlock $center={center}>
     <Styled.Icon>
       <Icon icon={icon} />
@@ -19,6 +20,7 @@ const InfoBlock: React.FC<Props> = ({ icon, title, content, center, headingLevel
     <Styled.Wrapper $center={center}>
       <Styled.Title as={headingLevel}>{title}</Styled.Title>
       <Styled.Content>{content}</Styled.Content>
+      {linkTo && <Styled.MoreLink href={linkTo}>Explore this area →</Styled.MoreLink>}
     </Styled.Wrapper>
   </Styled.InfoBlock>
 );

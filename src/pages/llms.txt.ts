@@ -27,7 +27,12 @@ The canonical website is ${siteMetadata.siteUrl}. Content may be used for search
 
 ## Key pages
 
-- [About](${siteMetadata.siteUrl}/): Professional profile and services.
+- [About](${siteMetadata.siteUrl}/about/): Professional profile, expertise and independent references.
+- [Expertise](${siteMetadata.siteUrl}/expertise/): Offensive security, Secure by Design and Cyber Resilience Act hubs.
+- [Secure by Design](${siteMetadata.siteUrl}/expertise/secure-by-design/): Engineering operating models, architecture and guardrails.
+- [Offensive Security](${siteMetadata.siteUrl}/expertise/offensive-security/): Attack-informed systemic risk assessment.
+- [Cyber Resilience Act](${siteMetadata.siteUrl}/expertise/cyber-resilience-act/): Product security and engineering readiness.
+- [Contributions and speaking](${siteMetadata.siteUrl}/speaking-contributions/): Standards, OWASP and technical education.
 - [Resume](${siteMetadata.siteUrl}/resume/): Experience and education.
 - [Blog](${siteMetadata.siteUrl}/blog/): All published articles.
 - [Contact](${siteMetadata.siteUrl}/contact/): Contact information.

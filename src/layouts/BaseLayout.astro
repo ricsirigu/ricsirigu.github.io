@@ -17,6 +17,7 @@ interface BlogMetadata {
 
 interface Props {
   blog?: BlogMetadata;
+  breadcrumbs?: Array<{ name: string; url: string }>;
   collectionItems?: Array<{ name: string; url: string }>;
   description?: string;
   noindex?: boolean;
@@ -28,6 +29,7 @@ interface Props {
 
 const {
   blog,
+  breadcrumbs = [],
   collectionItems = [],
   description = siteMetadata.description,
   noindex = false,
@@ -44,12 +46,14 @@ const imageWidth = blog?.imageWidth || 960;
 const imageHeight = blog?.imageHeight || 960;
 const pageUrl = new URL(Astro.url.pathname, siteMetadata.siteUrl).href;
 const titleBase = seoTitle || title;
-const fullTitle = `${titleBase} | ${siteMetadata.title}`;
+const fullTitle = titleBase.toLowerCase().includes(siteMetadata.title.toLowerCase())
+  ? titleBase
+  : `${titleBase} | ${siteMetadata.title}`;
 const documentTitle = fullTitle.length <= 60 ? fullTitle : titleBase;
 const personId = `${siteMetadata.siteUrl}/#person`;
 const websiteId = `${siteMetadata.siteUrl}/#website`;
 const webPageId = `${pageUrl}#webpage`;
-const sameAs = Object.values(siteMetadata.social);
+const sameAs = [...Object.values(siteMetadata.social), ...siteMetadata.professionalProfiles];
 
 const graph: Record<string, unknown>[] = [
   {
@@ -65,7 +69,8 @@ const graph: Record<string, unknown>[] = [
     '@type': 'Person',
     '@id': personId,
     name: siteMetadata.author,
-    url: `${siteMetadata.siteUrl}/`,
+    url: `${siteMetadata.siteUrl}/about/`,
+    description: siteMetadata.description,
     image: {
       '@type': 'ImageObject',
       url: new URL(defaultImage, siteMetadata.siteUrl).href,
@@ -73,6 +78,12 @@ const graph: Record<string, unknown>[] = [
       height: 960,
     },
     jobTitle: 'Offensive Security Director',
+    worksFor: {
+      '@type': 'Organization',
+      name: siteMetadata.organization.name,
+      url: siteMetadata.organization.url,
+    },
+    knowsAbout: siteMetadata.knowsAbout,
     sameAs,
   },
   {
@@ -99,6 +110,22 @@ if (collectionItems.length > 0) {
       name: item.name,
       url: new URL(item.url, siteMetadata.siteUrl).href,
     })),
+  });
+}
+
+if (breadcrumbs.length > 0 && !blog) {
+  graph.push({
+    '@type': 'BreadcrumbList',
+    '@id': `${pageUrl}#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `${siteMetadata.siteUrl}/` },
+      ...breadcrumbs.map((item, index) => ({
+        '@type': 'ListItem',
+        position: index + 2,
+        name: item.name,
+        item: new URL(item.url, siteMetadata.siteUrl).href,
+      })),
+    ],
   });
 }
 
@@ -167,7 +194,7 @@ const iconSizes = [48, 72, 96, 144, 192, 256, 384, 512];
     <meta property="og:image:alt" content={blog ? `Cover image for ${title}` : `Portrait of ${siteMetadata.author}`} />
     {blog && <meta property="article:published_time" content={blog.date} />}
     {blog?.modified && <meta property="article:modified_time" content={blog.modified} />}
-    {blog && <meta property="article:author" content={`${siteMetadata.siteUrl}/`} />}
+    {blog && <meta property="article:author" content={`${siteMetadata.siteUrl}/about/`} />}
     {blog?.tags?.map((tag) => <meta property="article:tag" content={tag} />)}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="@ricsirigu" />

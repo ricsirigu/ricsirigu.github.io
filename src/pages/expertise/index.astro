@@ -1,0 +1,53 @@
+---
+import AuthorityPage from 'components/AuthorityPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { collectStyles } from 'lib/collectStyles';
+import { expertisePages } from 'lib/authority';
+
+const props = {
+  currentPath: '/expertise/',
+  breadcrumbs: [],
+  eyebrow: 'Expertise',
+  title: 'Attack-Informed Security for Products and Engineering Organizations',
+  summary:
+    'Riccardo Sirigu works at the intersection of offensive security, secure product engineering and European cybersecurity regulation. The objective is durable risk reduction: make systemic weaknesses visible and turn evidence into better architecture, controls and engineering decisions.',
+  highlights: expertisePages.map((page) => ({
+    href: `/expertise/${page.slug}/`,
+    label: page.eyebrow,
+    description: page.summary,
+  })),
+  sections: [
+    {
+      title: 'One connected operating model',
+      paragraphs: [
+        'Offensive security reveals how systems fail. Secure-by-design practices turn those lessons into architecture and engineering guardrails. Product security and regulatory readiness ensure the resulting controls remain owned, documented and effective throughout the product lifecycle.',
+        'Treating these disciplines as a connected system produces more value than running them as independent activities or compliance workstreams.',
+      ],
+    },
+  ],
+  relatedLinks: [
+    {
+      href: '/about/',
+      label: 'About Riccardo Sirigu',
+      description: 'Professional profile, focus areas and independent references.',
+    },
+    {
+      href: '/blog/',
+      label: 'Technical writing',
+      description: 'Original articles on cybersecurity, engineering and regulation.',
+    },
+  ],
+};
+const styledStyleTags = collectStyles(AuthorityPage, props);
+---
+
+<BaseLayout
+  title="Offensive Security and Secure-by-Design Expertise"
+  description="Attack-informed guidance on offensive security, secure-by-design engineering, product security and Cyber Resilience Act readiness."
+  pageType="CollectionPage"
+  collectionItems={expertisePages.map((page) => ({ name: page.title, url: `/expertise/${page.slug}/` }))}
+  breadcrumbs={[{ name: 'Expertise', url: '/expertise/' }]}
+  styledStyleTags={styledStyleTags}
+>
+  <AuthorityPage {...props} />
+</BaseLayout>

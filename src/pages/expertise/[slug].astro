@@ -1,0 +1,37 @@
+---
+import AuthorityPage from 'components/AuthorityPage';
+import BaseLayout from 'layouts/BaseLayout.astro';
+import { collectStyles } from 'lib/collectStyles';
+import { expertisePages } from 'lib/authority';
+
+export function getStaticPaths() {
+  return expertisePages.map((page) => ({ params: { slug: page.slug }, props: { page } }));
+}
+
+const { page } = Astro.props;
+const props = {
+  currentPath: `/expertise/${page.slug}/`,
+  breadcrumbs: [{ href: '/expertise/', label: 'Expertise' }],
+  eyebrow: page.eyebrow,
+  title: page.title,
+  summary: page.summary,
+  highlights: page.highlights,
+  sections: page.sections,
+  relatedLinks: page.relatedLinks,
+};
+const styledStyleTags = collectStyles(AuthorityPage, props);
+---
+
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  pageType="WebPage"
+  collectionItems={page.highlights.map((link) => ({ name: link.label, url: link.href }))}
+  breadcrumbs={[
+    { name: 'Expertise', url: '/expertise/' },
+    { name: page.eyebrow, url: `/expertise/${page.slug}/` },
+  ]}
+  styledStyleTags={styledStyleTags}
+>
+  <AuthorityPage {...props} />
+</BaseLayout>

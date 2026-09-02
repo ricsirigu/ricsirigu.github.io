@@ -22,6 +22,15 @@ import * as Styled from './styles';
 const Footer: React.FC = () => (
   <Styled.Footer>
     <Container>
+      <Styled.Navigation aria-label="Footer navigation">
+        <a href="/about/">About</a>
+        <a href="/expertise/">Expertise</a>
+        <a href="/speaking-contributions/">Contributions</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+      </Styled.Navigation>
+    </Container>
+    <Container>
       <Styled.Links>
         <Styled.Link
           href="mailto:me@riccardosirigu.com"
@@ -74,7 +83,7 @@ const Footer: React.FC = () => (
       </Styled.Links>
     </Container>
     <Container>
-      <Styled.Links style={{"fontSize": "small"}}>
+      <Styled.Links style={{ fontSize: 'small' }}>
         P.IVA 03780110924
       </Styled.Links>
     </Container>

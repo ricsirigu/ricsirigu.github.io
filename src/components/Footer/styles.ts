@@ -13,6 +13,19 @@ export const Links = styled.div`
   }
 `;
 
+export const Navigation = styled.nav`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  gap: 0.75rem 1.25rem;
+
+  a {
+    color: #3c366b;
+    font-size: 0.875rem;
+  }
+`;
+
 export const Link = styled.a`
   ${tw`text-indigo-900 hover:text-indigo-600 mx-2`};
 `;

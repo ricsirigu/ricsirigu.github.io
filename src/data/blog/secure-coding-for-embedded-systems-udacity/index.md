@@ -4,6 +4,7 @@ cover: './cover.jpg'
 title: 'Secure Coding for Embedded Systems'
 description: 'An introduction to the Secure Coding for Embedded Systems Udacity course and the practices engineers need to build trustworthy products.'
 date: '2024-11-21'
+updated: '2026-09-02'
 tags: ['udacity', 'embedded', 'cybersecurity']
 published: true
 ---
