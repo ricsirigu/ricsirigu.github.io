@@ -19,7 +19,7 @@
 <p>Because a second-order SQL injection is rarely just a developer mistake. It is a symptom. It tells us that <strong>unsafe data flows were possible, that architectural guardrails were weak or missing</strong>, and that the organization was <strong>relying on people to remember the right thing instead of designing the wrong thing out of the system</strong>.</p>
 <p>This is the <strong>&quot;hamster wheel of pain&quot;</strong> described by Andrew J. Stewart in A Vulnerable System: The History of Information Security in the Computer Age: the endless cycle of finding vulnerabilities, applying patches, and waiting for the next weakness to appear.</p>
 <p>For many organizations, security becomes a remediation hamster wheel. They scan, find, ticket, patch, and repeat. The organization keeps moving, but the system does not really improve. Each vulnerability gets treated as an isolated issue, while the design choices that made it possible remain untouched.</p>
-<p>That cycle only changes when <strong>security moves into the design of the system itself</strong>, so entire classes of vulnerabilities become harder to create before they turn into another finding to chase.</p>
+<p>That cycle only changes when <a href="https://www.riccardosirigu.com/expertise/secure-by-design/"><strong>security moves into the design of the system itself</strong></a>, so entire classes of vulnerabilities become harder to create before they turn into another finding to chase.</p>
 <img src="https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/212bf/hamster-wheel-of-pain.jpg" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/7809d/hamster-wheel-of-pain.jpg 192w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/4ecad/hamster-wheel-of-pain.jpg 384w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/212bf/hamster-wheel-of-pain.jpg 768w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/5ef17/hamster-wheel-of-pain.jpg 1152w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/8351c/hamster-wheel-of-pain.jpg 1254w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="768" style="aspect-ratio: 768 / 768" alt="Hamster wheel of pain">
 <p>We build software fast, discover security issues late, patch them, create tickets, add another checklist, run another scan, remind developers to be careful, and then the same class of issue appears again somewhere else.</p>
 <p>It may be a different endpoint or a different team, but the failure mode is the same.</p>
@@ -253,7 +253,7 @@
   <guid isPermaLink="true">https://www.riccardosirigu.com/blog/cyber-resilience-act-ten-common-misconceptions-about-cra-compliance/</guid>
   <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
   <description>Ten common Cyber Resilience Act compliance misconceptions that manufacturers and software vendors should address before CRA deadlines.</description>
-  <content:encoded><![CDATA[<p>The Cyber Resilience Act is already creating confusion among manufacturers, software vendors, and companies placing products with digital elements on the EU market.</p>
+  <content:encoded><![CDATA[<p>The <a href="https://www.riccardosirigu.com/expertise/cyber-resilience-act/">Cyber Resilience Act</a> is already creating confusion among manufacturers, software vendors, and companies placing products with digital elements on the EU market.</p>
 <p>In this post, I collect ten common misconceptions I often hear during consultancy work on CRA compliance, from the scope of application to risk assessment, incident reporting, third-party components, open-source software, and substantial modifications.</p>
 <p>This article is based on my interpretation of the Regulation, the European Commission guidance, and the official FAQ. It is not legal advice.</p>
 <h2 id="who-this-article-is-for">🤔 Who this article is for:</h2>
@@ -433,19 +433,6 @@ We will cover this point in a future episode ⏭️</p>
 <li>Direct links to authoritative sources</li>
 </ul>
 <hr>
-<h3 id="table-of-contents">📑 Table of Contents</h3>
-<ol>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#from-policies-to-standards">From Policies to Standards</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#core-cybersecurity-standards-isoiec">Core Cybersecurity Standards (ISO/IEC)</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#risk-governance--security-frameworks">Risk, Governance &amp; Security Frameworks</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#secure-systems-software--supply-chain">Secure Systems, Software &amp; Supply Chain</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#sector-specific--eu-aligned-standards">Sector-Specific &amp; EU-Aligned Standards</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#identity-authentication--cryptography">Identity, Authentication &amp; Cryptography</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#incident--vulnerability-management">Incident &amp; Vulnerability Management</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#data-privacy--payment-security">Data Privacy &amp; Payment Security</a></li>
-<li><a href="https://www.riccardosirigu.com/blog/security-standards-you-should-know/#glossary">Glossary</a></li>
-</ol>
-<hr>
 <h2 id="from-policies-to-standards">🧭 From Policies to Standards</h2>
 <p>Security standards don’t exist in a vacuum — they flow from your company’s broader governance structure.</p>
 <p>In most organizations, the structure looks like this:</p>
@@ -611,8 +598,8 @@ The go-to standard for OT environments like SCADA and manufacturing.</p>
 </ul>
 <h3 id="eu-regulatory-alignment">EU Regulatory Alignment</h3>
 <ul>
-<li><a href="https://standards.iteh.ai/catalog/standards/cen/4f1e2768-e1a6-4541-a2b6-465e1c682627/en-18031-1-2024" target="_blank" rel="noopener noreferrer"><strong>hEN 18031</strong></a> – <em>Cybersecurity for Radio Equipment (RED)</em><br>
-A harmonised EU standard providing presumption of conformity under RED and CRA.</li>
+<li><a href="https://eur-lex.europa.eu/eli/dec_impl/2025/138/oj/eng" target="_blank" rel="noopener noreferrer"><strong>EN 18031 series</strong></a> – <em>Cybersecurity for Radio Equipment (RED)</em>
+Harmonised under the RED, with specific restrictions, for the cybersecurity requirements in Article 3(3)(d), (e), and (f). It does not by itself provide presumption of conformity under the CRA.</li>
 </ul>
 <hr>
 <h2 id="identity-authentication--cryptography">🔐 Identity, Authentication & Cryptography</h2>
@@ -1243,7 +1230,7 @@ Enhance the security of embedded devices by securing communication with TLS, imp
 <p>The file appears like this, after &quot;beautifying&quot; it appropriately, as it was originally minified.</p>
 <img src="https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/e5715/deobfuscated-phase-1.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/8514f/deobfuscated-phase-1.png 192w, https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/804b2/deobfuscated-phase-1.png 384w, https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/e5715/deobfuscated-phase-1.png 768w, https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/ae77d/deobfuscated-phase-1.png 1111w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="539" style="aspect-ratio: 768 / 540" alt="deobfuscated code">
 <p>The content of the suspicious attachment. At first glance, it doesn't inspire the utmost trust; it's heavily obfuscated, as if Juliette doesn't want us to understand the semantics of this piece of code.</p>
-<p>In this initial phase, let's not waste time deobfuscating it and instead move towards a dynamic analysis on an isolated browser, here's the result.</p>
+<p>In this initial phase, let's not waste time deobfuscating it and instead move towards a <a href="https://www.riccardosirigu.com/expertise/offensive-security/">dynamic analysis on an isolated browser</a>, here's the result.</p>
 <img src="https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/e5715/malware-rendering.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/8514f/malware-rendering.png 192w, https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/804b2/malware-rendering.png 384w, https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/e5715/malware-rendering.png 768w, https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/b6529/malware-rendering.png 1049w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="491" style="aspect-ratio: 768 / 492" alt="malware rendering office 365">
 <p>Okay, we're starting to understand the intentions of our (former) friend Juliette. If my experience doesn't deceive me, once you press &quot;Sign in,&quot; our precious password won't end up directly on Microsoft's servers.</p>
 <p>Let's try.</p>
