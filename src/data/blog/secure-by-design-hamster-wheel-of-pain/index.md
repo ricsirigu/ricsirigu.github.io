@@ -25,7 +25,7 @@ This is the <strong>"hamster wheel of pain"</strong> described by Andrew J. Stew
 
 For many organizations, security becomes a remediation hamster wheel. They scan, find, ticket, patch, and repeat. The organization keeps moving, but the system does not really improve. Each vulnerability gets treated as an isolated issue, while the design choices that made it possible remain untouched.
 
-That cycle only changes when <strong>security moves into the design of the system itself</strong>, so entire classes of vulnerabilities become harder to create before they turn into another finding to chase.
+That cycle only changes when <a href="/expertise/secure-by-design/"><strong>security moves into the design of the system itself</strong></a>, so entire classes of vulnerabilities become harder to create before they turn into another finding to chase.
 
 
 <img src="hamster-wheel-of-pain.jpg" alt="Hamster wheel of pain">

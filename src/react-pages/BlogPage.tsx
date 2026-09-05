@@ -6,15 +6,22 @@ import Posts from 'components/Posts';
 interface Props {
   activeTopic?: string;
   currentPath: string;
+  introduction?: string;
   posts: React.ComponentProps<typeof Posts>['posts'];
   sectionTitle: React.ComponentProps<typeof Posts>['sectionTitle'];
   topics?: React.ComponentProps<typeof Posts>['topics'];
 }
 
-const BlogPage: React.FC<Props> = ({ activeTopic, currentPath, posts, sectionTitle, topics }) => {
+const BlogPage: React.FC<Props> = ({ activeTopic, currentPath, introduction, posts, sectionTitle, topics }) => {
   return (
     <Layout currentPath={currentPath}>
-      <Posts activeTopic={activeTopic} posts={posts} sectionTitle={sectionTitle} topics={topics} />
+      <Posts
+        activeTopic={activeTopic}
+        introduction={introduction}
+        posts={posts}
+        sectionTitle={sectionTitle}
+        topics={topics}
+      />
     </Layout>
   );
 };

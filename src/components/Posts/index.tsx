@@ -34,15 +34,17 @@ interface Post {
 
 interface Props {
   activeTopic?: string;
+  introduction?: string;
   posts: Post[];
   sectionTitle: SectionTitle;
   topics?: Array<{ count: number; name: string; slug: string }>;
 }
 
-const Posts: React.FC<Props> = ({ activeTopic, posts, sectionTitle, topics = [] }) => {
+const Posts: React.FC<Props> = ({ activeTopic, introduction, posts, sectionTitle, topics = [] }) => {
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} headingLevel="h1" center />
+      {introduction && <Styled.Introduction>{introduction}</Styled.Introduction>}
       {topics.length > 0 && (
         <Styled.TopicNavigation aria-label="Blog topics">
           <span>Explore topics:</span>

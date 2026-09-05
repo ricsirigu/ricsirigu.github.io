@@ -4,6 +4,7 @@ cover: './cover.jpg'
 title: 'Security Standards You Should Know'
 description: 'A practical reference to essential cybersecurity standards, including ISO, IEC and European EN standards for secure products and compliance.'
 date: '2025-04-12'
+updated: '2026-09-05'
 tags: ['cybersecurity', 'iso', 'en', 'standards']
 published: true
 ---
@@ -27,21 +28,6 @@ This guide cuts through the noise and helps you make sense of security standards
 - Coverage of **specialized areas** like secure software development, AI risk, incident response, and more  
 - Contextual notes to help you understand **which standards apply where**, and how they map to regulations like GDPR, CRA, RED, and others  
 - Direct links to authoritative sources 
-
-
----
-
-### 📑 Table of Contents
-
-1. [From Policies to Standards](#from-policies-to-standards)  
-2. [Core Cybersecurity Standards (ISO/IEC)](#core-cybersecurity-standards-isoiec)  
-3. [Risk, Governance & Security Frameworks](#risk-governance--security-frameworks)  
-4. [Secure Systems, Software & Supply Chain](#secure-systems-software--supply-chain)  
-5. [Sector-Specific & EU-Aligned Standards](#sector-specific--eu-aligned-standards)  
-6. [Identity, Authentication & Cryptography](#identity-authentication--cryptography)  
-7. [Incident & Vulnerability Management](#incident--vulnerability-management)  
-8. [Data Privacy & Payment Security](#data-privacy--payment-security)  
-9. [Glossary](#glossary)
 
 ---
 
@@ -178,8 +164,8 @@ This group includes standards tailored for IoT, automotive, industrial systems, 
 
 ### EU Regulatory Alignment
 
-- <a href="https://standards.iteh.ai/catalog/standards/cen/4f1e2768-e1a6-4541-a2b6-465e1c682627/en-18031-1-2024" target="_blank" rel="noopener noreferrer"><strong>hEN 18031</strong></a> – *Cybersecurity for Radio Equipment (RED)*  
-  A harmonised EU standard providing presumption of conformity under RED and CRA.
+- <a href="https://eur-lex.europa.eu/eli/dec_impl/2025/138/oj/eng" target="_blank" rel="noopener noreferrer"><strong>EN 18031 series</strong></a> – *Cybersecurity for Radio Equipment (RED)*
+  Harmonised under the RED, with specific restrictions, for the cybersecurity requirements in Article 3(3)(d), (e), and (f). It does not by itself provide presumption of conformity under the CRA.
 
 ---
 

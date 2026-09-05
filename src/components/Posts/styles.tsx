@@ -84,3 +84,12 @@ export const TopicNavigation = styled.nav`
     ${tw`font-semibold`};
   }
 `;
+
+export const Introduction = styled.p`
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto 1.5rem;
+  color: #4a5568;
+  line-height: 1.7;
+  text-align: center;
+`;

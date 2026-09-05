@@ -11,7 +11,7 @@ published: true
 
 <article class="prose lg:prose-lg xl:prose-lg">
 
-The Cyber Resilience Act is already creating confusion among manufacturers, software vendors, and companies placing products with digital elements on the EU market.
+The <a href="/expertise/cyber-resilience-act/">Cyber Resilience Act</a> is already creating confusion among manufacturers, software vendors, and companies placing products with digital elements on the EU market.
 
 In this post, I collect ten common misconceptions I often hear during consultancy work on CRA compliance, from the scope of application to risk assessment, incident reporting, third-party components, open-source software, and substantial modifications.
 

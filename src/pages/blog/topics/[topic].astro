@@ -24,10 +24,27 @@ export function getStaticPaths() {
 }
 
 const { topic, topics, topicPosts } = Astro.props;
+const topicMetadata =
+  topic.slug === 'cra'
+    ? {
+        title: 'Cyber Resilience Act: Articles and Practical Analysis',
+        description:
+          'Articles by Riccardo Sirigu on the Cyber Resilience Act, product security and practical compliance misconceptions.',
+        heading: 'Cyber Resilience Act',
+        introduction:
+          'Practical analysis for manufacturers, software vendors and product security teams, with a focus on engineering readiness, risk assessment and compliance misconceptions.',
+      }
+    : {
+        title: `${topic.name} articles`,
+        description: `Articles by Riccardo Sirigu about ${topic.name}, secure software engineering and cybersecurity.`,
+        heading: topic.name,
+        introduction: undefined,
+      };
 const props: PageProps = {
   activeTopic: topic.slug,
   currentPath: `/blog/topics/${topic.slug}/`,
-  sectionTitle: { title: 'Blog topic', subtitle: topic.name },
+  introduction: topicMetadata.introduction,
+  sectionTitle: { title: 'Blog topic', subtitle: topicMetadata.heading },
   topics,
   posts: topicPosts.map((post) => ({
     node: {
@@ -54,8 +71,8 @@ const styledStyleTags = collectStyles(BlogPage, props);
 ---
 
 <BaseLayout
-  title={`${topic.name} articles`}
-  description={`Articles by Riccardo Sirigu about ${topic.name}, secure software engineering and cybersecurity.`}
+  title={topicMetadata.title}
+  description={topicMetadata.description}
   pageType="CollectionPage"
   collectionItems={topicPosts.map((post) => ({ name: post.frontmatter.title, url: post.fields.slug }))}
   styledStyleTags={styledStyleTags}
