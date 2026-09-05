@@ -112,6 +112,9 @@ These frameworks help align cybersecurity with business goals, legal obligations
 - <a href="https://www.cisecurity.org/controls/" target="_blank" rel="noopener noreferrer"><strong>CIS Controls</strong></a> – *Prioritized Cybersecurity Best Practices*  
   A practical set of defensive actions for all organization sizes.
 
+- <a href="https://www.cencenelec.eu/news-events/news/2025/eninthespotlight/2025-04-16-en-18037-2025-on-sectoral-cybersecurity-assessment/" target="_blank" rel="noopener noreferrer"><strong>EN 18037:2025</strong></a> – *Guidelines on a sectoral cybersecurity assessment*  
+  Provides a risk-based method for identifying cybersecurity, assurance, and certification requirements for ICT products, processes, and services within a sectoral system. It can help manufacturers derive product requirements from the product's intended sector and role, but it is not a universal product checklist or, by itself, a basis for presumption of conformity under the CRA.
+
 
 ---
 
@@ -138,6 +141,17 @@ These standards support building secure systems from the ground up, covering sec
 - <a href="https://www.iso.org/standard/82890.html" target="_blank" rel="noopener noreferrer"><strong>ISO/IEC 27036</strong></a> – *Security for Supplier Relationships*  
   Addresses governance, contract clauses, and ongoing assurance for suppliers.
 
+- <a href="https://www.iso.org/standard/86450.html" target="_blank" rel="noopener noreferrer"><strong>ISO/IEC 18974:2023</strong></a> – *OpenChain Security Assurance Specification*  
+  Defines the requirements of an open source software security assurance program, supporting trust between organizations that exchange software containing open source components. It addresses program assurance rather than guaranteeing that software is vulnerability-free.
+
+- <a href="https://www.iso.org/standard/81870.html" target="_blank" rel="noopener noreferrer"><strong>ISO/IEC 5962:2021 (SPDX 2.2.1)</strong></a> – *Software Package Data Exchange*  
+  Defines a standard data format for communicating software package, file, snippet, component, and metadata information. The ISO edition standardizes SPDX 2.2.1; the current SPDX specification is 3.0 and should not be attributed to ISO/IEC 5962:2021.
+
+- <a href="https://ecma-international.org/publications-and-standards/standards/ecma-424/" target="_blank" rel="noopener noreferrer"><strong>ECMA-424, 2nd edition (CycloneDX 1.7)</strong></a> – *CycloneDX Bill of Materials Specification*  
+  Specifies a machine-readable JSON format for exchanging information about software and hardware components, services, dependencies, vulnerabilities, and other supply-chain artefacts. Like SPDX, it supports software transparency and analysis; producing an SBOM is not proof that a product is secure.
+
+The <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj/eng" target="_blank" rel="noopener noreferrer"><strong>CRA, Annex I, Part II, point 1</strong></a> requires manufacturers to identify and document vulnerabilities and components, including an <strong>SBOM</strong> in a commonly used, machine-readable format covering at least the product's top-level dependencies. The regulation does not name SPDX or CycloneDX as mandatory formats; Article 13(24) empowers the Commission to specify the format and elements through implementing acts. An SBOM supports vulnerability handling but does not replace it.
+
 ---
 
 <h2 id="sector-specific--eu-aligned-standards">🚗 Sector-Specific & EU-Aligned Standards</h2>
@@ -159,10 +173,26 @@ This group includes standards tailored for IoT, automotive, industrial systems, 
 
 - <a href="https://www.iso.org/standard/72026.html" target="_blank" rel="noopener noreferrer"><strong>IEC 81001-5-1</strong></a> – *Health software and health IT systems safety, effectiveness and security*  defines the life cycle requirements for development and maintenance of health software.
 
-- <a href="https://isagca.org/isa-iec-62443-standards" target="_blank" rel="noopener noreferrer"><strong>IEC 62443</strong></a> – *Industrial Automation & Control Systems Security*  
-  The go-to standard for OT environments like SCADA and manufacturing.
+- <a href="https://webstore.iec.ch/en/publication/33615" target="_blank" rel="noopener noreferrer"><strong>IEC 62443-4-1:2018</strong></a> and <a href="https://webstore.iec.ch/en/publication/34421" target="_blank" rel="noopener noreferrer"><strong>IEC 62443-4-2:2019</strong></a> – *Industrial Automation & Control Systems Security*  
+  Part 4-1 defines secure product development lifecycle requirements for products used in industrial automation and control systems. Part 4-2 defines technical security requirements for IACS components. Together they connect secure development processes with component-level controls in an industrial context; they are not universal standards for every digital product or automatically harmonised under the CRA.
 
 ### EU Regulatory Alignment
+
+The emerging <strong>EN 40000-1</strong> series is being developed to support cybersecurity requirements for products with digital elements. Its core work separates common terminology, cyber-resilience principles, vulnerability handling, and generic product security requirements:
+
+- <a href="https://www.dinmedia.de/en/draft-standard/din-en-40000-1-1/399664868" target="_blank" rel="noopener noreferrer"><strong>prEN 40000-1-1:2025</strong></a> – *Vocabulary*  
+  A standard establishing shared terminology for the series.
+
+- <a href="https://www.dinmedia.de/en/draft-standard/din-en-40000-1-2/399705978" target="_blank" rel="noopener noreferrer"><strong>prEN 40000-1-2:2025</strong></a> – *Principles for cyber resilience*  
+  A standard addressing cyber-resilience principles across product risk management and the product lifecycle.
+
+- <a href="https://www.dinmedia.de/en/draft-standard/din-en-40000-1-3/404676965" target="_blank" rel="noopener noreferrer"><strong>prEN 40000-1-3:2025</strong></a> – *Vulnerability handling*  
+  A standard focused on the process-related aspects of vulnerability handling for manufacturers of products with digital elements.
+
+- <a href="https://www.cencenelec.eu/news-events/events/2026/2026-03-05-cra-standards-unlocked-deep-dive-session-security-controls-generic-security-requirements/" target="_blank" rel="noopener noreferrer"><strong>EN 40000-1-4 draft</strong></a> – *Cybersecurity requirements for products with digital elements — Generic security requirements*  
+  The working document has been finalized by the drafting group and sent to the European Commission, while the standard remains in drafting. It maps CRA essential product requirements to common threats, derives security objectives, and provides a catalogue of possible controls to be selected according to the product risk assessment. It will not confer presumption of conformity.
+
+These deliverables can support technical preparation for the CRA, but a draft is not a final European standard. Adoption as an EN and citation in the Official Journal are separate steps; presumption of conformity arises only for the CRA requirements covered by a cited harmonised standard.
 
 - <a href="https://eur-lex.europa.eu/eli/dec_impl/2025/138/oj/eng" target="_blank" rel="noopener noreferrer"><strong>EN 18031 series</strong></a> – *Cybersecurity for Radio Equipment (RED)*
   Harmonised under the RED, with specific restrictions, for the cybersecurity requirements in Article 3(3)(d), (e), and (f). It does not by itself provide presumption of conformity under the CRA.
@@ -223,6 +253,9 @@ These standards provide guidance for detecting, responding to, and disclosing cy
 - <a href="https://www.iso.org/standard/69725.html" target="_blank" rel="noopener noreferrer">**ISO/IEC 30111**</a> – *Vulnerability Handling Processes*  
 - <a href="https://www.iso.org/standard/72311.html" target="_blank" rel="noopener noreferrer">**ISO/IEC 29147**</a> – *Vulnerability Disclosure Guidelines*
 
+- <a href="https://www.iso.org/standard/89986.html" target="_blank" rel="noopener noreferrer">**ISO/IEC 20153:2025 (CSAF 2.0)**</a> – *Common Security Advisory Framework*  
+  Standardizes a machine-readable format for exchanging security advisories, including affected products, vulnerabilities, impact status, and remediation information. CSAF complements vulnerability handling and disclosure processes described by ISO/IEC 30111 and ISO/IEC 29147; it is neither an SBOM nor a substitute for regulatory notification obligations.
+
 ---
 
 <h2 id="data-privacy--payment-security">💳 Data Privacy & Payment Security</h2>
@@ -250,6 +283,7 @@ Security standards are more than checklists, they’re **strategic tools** for p
 | **CIS** | *Center for Internet Security* – A nonprofit organization that publishes prioritized security best practices (like CIS Controls). |
 | **COBIT** | *Control Objectives for Information and Related Technologies* – A governance and management framework for enterprise IT. |
 | **CRA** | *Cyber Resilience Act* – A European regulation that introduces mandatory cybersecurity requirements for products with digital elements. |
+| **CSAF** | *Common Security Advisory Framework* – A machine-readable format for structured security advisories. |
 | **CSF** | *Cybersecurity Framework* – A voluntary NIST framework that helps organizations manage and reduce cybersecurity risk. |
 | **C-SCRM** | *Cybersecurity Supply Chain Risk Management* – A structured approach to identifying and managing supply chain cybersecurity risks. |
 | **CUI** | *Controlled Unclassified Information* – Sensitive U.S. federal data that requires protection but isn’t classified. |
@@ -259,9 +293,11 @@ Security standards are more than checklists, they’re **strategic tools** for p
 | **GRC** | *Governance, Risk, and Compliance* – An approach to aligning IT with business goals while managing risk and meeting compliance requirements. |
 | **hEN** | *Harmonised European Standard* – A subset of EN standards published in the Official Journal of the EU that can be used to show compliance with EU legislation (e.g., RED, CRA). |
 | **IEC** | *International Electrotechnical Commission* – An international standards organization for electrical, electronic, and related technologies. Often co-publishes ISO/IEC cybersecurity standards. |
+| **IACS** | *Industrial Automation and Control Systems* – Systems and components used to monitor and control industrial processes. |
 | **PCI DSS** | *Payment Card Industry Data Security Standard* – A global standard for securing credit card transactions and cardholder data. |
 | **PIMS** | *Privacy Information Management System* – An extension to ISMS focused on managing personal data privacy (e.g., ISO/IEC 27701). |
 | **RED** | *Radio Equipment Directive* – An EU directive that sets requirements for radio-enabled devices, including cybersecurity provisions as of 2025. |
+| **SBOM** | *Software Bill of Materials* – A machine-readable inventory of software components and dependency information. |
 | **SSDF** | *Secure Software Development Framework* – A NIST framework (SP 800-218) outlining best practices for secure software development. |
 
 ---
