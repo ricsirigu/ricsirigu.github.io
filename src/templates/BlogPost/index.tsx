@@ -25,8 +25,8 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
   const indexedTopics = new Set(getBlogTopics().map((topic) => topic.slug));
   const formattedUpdatedDate = post.frontmatter.updated
     ? new Intl.DateTimeFormat('en', { day: '2-digit', month: 'short', timeZone: 'UTC', year: 'numeric' }).format(
-        new Date(`${post.frontmatter.updated}T00:00:00Z`)
-      )
+      new Date(`${post.frontmatter.updated}T00:00:00Z`)
+    )
     : undefined;
 
   return (
@@ -84,8 +84,9 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
         <Styled.Author>
           <h2>About the author</h2>
           <p>
-            <a href="/about/">Riccardo Sirigu</a> is a CISSP and Offensive Security Director focused on secure-by-design
-            engineering, product security and European cybersecurity standards.
+            <a href="/about/">Riccardo Sirigu</a> is a CISSP and Offensive Security Director working at the intersection of offensive security, 
+            security engineering and cyber resilience. He also contributes to European cybersecurity standardization, 
+            including work related to the Cyber Resilience Act.
           </p>
         </Styled.Author>
         <Styled.Links>
