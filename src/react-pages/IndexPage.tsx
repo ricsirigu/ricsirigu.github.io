@@ -2,6 +2,7 @@ import React from 'react';
 
 import Layout from 'components/Layout';
 import HeroBanner from 'components/HeroBanner';
+import HomepagePositioning from 'components/HomepagePositioning';
 import Services from 'components/Services';
 
 interface Props {
@@ -15,6 +16,7 @@ const IndexPage: React.FC<Props> = ({ currentPath, heroBanner, sectionTitle, ser
   return (
     <Layout currentPath={currentPath}>
       <HeroBanner heroBanner={heroBanner} />
+      <HomepagePositioning />
       <Services sectionTitle={sectionTitle} services={services} />
       <hr />
       {/* <Testimonials /> */}
