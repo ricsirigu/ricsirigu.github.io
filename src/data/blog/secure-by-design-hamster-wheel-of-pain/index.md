@@ -10,354 +10,216 @@ published: true
 
 <article class="prose lg:prose-lg xl:prose-lg">
 
+SQL injection is old. We know how it works, and we have had parameterized queries for a long time. Yet a few weeks ago, during an assessment, the team found a second-order SQL injection.
 
-A few weeks ago, during an assessment, the team found a second-order SQL injection.
+In 2026, we are still finding this in modern systems.
 
-It was not a sophisticated zero-day, a complex exploit chain, or an obscure edge case hidden behind ten layers of business logic. It was a SQL injection, in 2026: a vulnerability class that is almost thirty years old.
+With second-order SQL injection, attacker-controlled data is stored first and used unsafely in a query later. The first operation may handle the data safely. The problem appears when another part of the application reads it back and treats it as something it can trust.
 
-In a world where secure coding guidelines have existed for decades, frameworks provide safer abstractions, and security tooling is everywhere, we are still finding vulnerabilities that should have been structurally impossible.
+For example, imagine an application storing a user-supplied value through a parameterized query. Later, a reporting job reads that value and concatenates it into another query. The value came from our database, so it must be safe. Right?
 
-That is the interesting part. Not the vulnerability itself, but what the vulnerability says about the system that produced it.
+Storing data does not make it trustworthy. At the point where we build the second query, it is still data, and it still needs to be passed as a parameter rather than interpreted as SQL.
 
-Because a second-order SQL injection is rarely just a developer mistake. It is a symptom. It tells us that <strong>unsafe data flows were possible, that architectural guardrails were weak or missing</strong>, and that the organization was <strong>relying on people to remember the right thing instead of designing the wrong thing out of the system</strong>.
+That example is enough to explain the bug. But fixing the query only answers the first question.
 
-This is the <strong>"hamster wheel of pain"</strong> described by Andrew J. Stewart in A Vulnerable System: The History of Information Security in the Computer Age: the endless cycle of finding vulnerabilities, applying patches, and waiting for the next weakness to appear.
+**Why could we write that unsafe query in the first place?**
 
-For many organizations, security becomes a remediation hamster wheel. They scan, find, ticket, patch, and repeat. The organization keeps moving, but the system does not really improve. Each vulnerability gets treated as an isolated issue, while the design choices that made it possible remain untouched.
+## Why was this still possible?
 
-That cycle only changes when <a href="/expertise/secure-by-design/"><strong>security moves into the design of the system itself</strong></a>, so entire classes of vulnerabilities become harder to create before they turn into another finding to chase.
+We need to fix the vulnerability. No argument there.
 
+But I also want to know why the code was written that way. Was there a shared database library? Did it support this use case? Was the unsafe helper copied from another service? Did someone assume that values read from the database no longer needed the same care as values from an HTTP request?
+
+Those questions lead to different changes. Another secure coding reminder will not fix a shared helper that encourages string concatenation.
+
+This is the “hamster wheel of pain” described by Andrew J. Stewart in *A Vulnerable System: The History of Information Security in the Computer Age*. We find a vulnerability, patch it, and wait for the next one. A different endpoint, perhaps. A different team. The same kind of mistake.
 
 <img src="hamster-wheel-of-pain.jpg" alt="Hamster wheel of pain">
 
-We build software fast, discover security issues late, patch them, create tickets, add another checklist, run another scan, remind developers to be careful, and then the same class of issue appears again somewhere else.
+If the next developer can introduce the same problem just as easily, we have fixed one instance. We have not changed much about how we build software.
 
-It may be a different endpoint or a different team, but the failure mode is the same.
+## The insecure path is often cheap
 
-At that point, the problem is no longer the individual vulnerability. <strong>The problem is the operating model.</strong>
+Concatenating a query can take a few minutes. Finding and removing it later can require an assessment, a report, triage, a ticket, a release and a retest.
 
-## Security Later Is Risk Externalization
+The insecure path is often cheap. The correction is expensive.
 
-Many organizations still treat security as a downstream control.
+And the later we find the problem, the fewer easy options we have. Changing an API before anyone uses it is one thing. Changing it after ten services depend on it is another.
 
-Design happens first, implementation follows, delivery pressure increases, security reviews happen late, findings are raised, exceptions are discussed, deadlines win, and risk is accepted, deferred, or moved somewhere else.
+The work does not disappear because we postpone it. Someone still has to do it. Often it is the developer trying to patch a release, the operations team watching for abuse, or the person responding to an incident.
 
-This is often described as a security maturity issue. I think it is more precise to call it <strong>risk externalization</strong>.
+So why was the unsafe option easier than the safe one?
 
-When security is treated as something that happens after design and implementation, engineering teams unintentionally externalize risk to other parts of the organization:
+Sometimes the answer is quite ordinary. The old helper was available. The documentation used it. The safe alternative did not support the query we needed. Nobody had time to replace it, and nobody was clearly responsible for maintaining it.
 
-- AppSec has to find what the system allowed.
-- QA has to catch what the architecture did not prevent.
-- Operations has to monitor what should not have shipped.
-- Incident response has to absorb what delivery pressure ignored.
-- Customers eventually experience what the organization failed to design out.
+That is useful information. We can work with it.
 
-<strong>The cost does not disappear; it moves.</strong> And when it moves far enough downstream, it becomes harder to see, harder to measure, and harder to fix structurally.
+## Make mistakes harder to introduce
 
-This is why many security programs feel busy but not effective. They generate findings, reports, dashboards, meetings, and remediation plans, while the organization continues to produce the same categories of risk.
+For me, <a href="/expertise/secure-by-design/">Secure by Design</a> starts with questions like these:
 
-That is not mainly a tooling problem. It is a <strong>design problem, and more specifically an engineering leadership failure</strong>.
+- Can our database API keep query structure separate from values by default?
+- Can authorization be checked in a shared place, instead of being reimplemented in every endpoint?
+- Can the frontend escape output by default, with unsafe rendering requiring an explicit choice?
+- Can a new service get its secrets without someone copying credentials into a configuration file?
 
-## Recurring Vulnerabilities Are Management Signals
+None of this removes the need to understand security. It reduces the number of places where a small mistake becomes a vulnerability.
 
-A single vulnerability can be a mistake, but <strong>a recurring vulnerability class is a signal</strong>.
+An ORM is not a guarantee against SQL injection. Many ORMs allow raw SQL, and a raw query can still be built unsafely. We need to look at the API people actually use, including its escape hatches.
 
-If the same type of issue appears repeatedly across teams, products, services, or releases, the useful question is not:
+The same is true of authorization. A shared library helps only if it checks the right thing. Knowing who made a request is not the same as knowing whether that person can read this particular record.
 
-> Who made this mistake?
+Safe building blocks need maintenance, tests and someone responsible for them. Otherwise, we just give the unsafe pattern a nicer interface.
 
-The useful question is:
+## Developers cannot remember everything
 
-> <strong>Why does our engineering system keep making this mistake possible?</strong>
+Use parameters. Encode output. Check authorization. Protect secrets. Configure the service correctly. Update dependencies. Understand what happens when a token expires, leaks or is revoked.
 
-That changes the conversation.
+All good advice. Now apply every rule, correctly, to every change, in every service.
 
-A SQL injection is not only about parameterized queries. It is also about whether teams are allowed to build raw query patterns without safe abstractions, whether persistence layers are standardized or reinvented, whether data flow assumptions are reviewed at design time, whether secure defaults exist, whether <strong>developers have to know every dangerous edge case manually</strong>, and whether the platform makes the secure path the easiest path.
+We all know how that goes.
 
-The same applies to other classes of vulnerabilities.
+**Memory is a terrible security boundary.**
 
-An IDOR is not only a missing authorization check. It may indicate that authorization is implemented inconsistently across services.
+Training helps people understand why a rule matters. Code review helps catch mistakes. Neither should be the only thing between an ordinary coding error and a serious incident.
 
-An XSS is not only poor output encoding. It may indicate that the frontend stack allows unsafe rendering patterns by default.
+If every developer has to remember to add the same security check, can we put that check somewhere they do not have to remember it?
 
-An SSRF is not only a bad URL fetch. It may indicate that internal network boundaries, metadata services, and outbound access controls were not designed with abuse cases in mind.
+There will still be exceptions and decisions that need care. The point is to make those fewer and easier to see.
 
-A secret in source code is not only developer negligence. It may indicate that secret management is painful, unclear, or badly integrated into the delivery workflow.
+## Make the secure path easier
 
-<strong>Recurring vulnerabilities are not random; they are feedback.</strong>
+A shared library is useful when it solves the problem developers actually have. An internal platform is useful when it gives a new service sensible defaults without a separate week of security configuration.
 
-The question is whether leadership treats that feedback as a ticket queue or as evidence that the engineering system needs to change.
+That is what I want from a paved road: a supported way to build something safely, with working examples and fewer decisions to repeat.
 
-## The Real Failure Is Not Detection
+For database access, that might mean a small API that uses parameters by default. For secrets, it might mean an integration with the secret store that is already available in the service template. For infrastructure, it might mean a template that starts with limited permissions instead of asking someone to tighten them later.
 
-Most organizations are not blind. They have scanners, pentests, code reviews, security champions, ticketing systems, and dashboards.
+It does not necessarily mean building a new platform. Sometimes fixing an existing helper and updating its examples is enough.
 
-The problem is not that vulnerabilities are impossible to find. The problem is that <strong>many vulnerabilities are still cheap to create and expensive to remove</strong>.
+And if teams keep working around the safe option, ask why. Maybe it is slow. Maybe it is poorly documented. Maybe it cannot do something the product needs.
 
-That asymmetry is what keeps the wheel spinning.
+Making a workaround forbidden does not make the supported option usable.
 
-If a developer can introduce an unsafe pattern in five minutes, but the organization needs a pentest, a report, a triage meeting, a risk rating, a remediation ticket, a sprint negotiation, a retest, and an exception process to remove it, the system is economically broken.
+## What should a finding teach us?
 
-The insecure path is too easy and the secure path is too dependent on memory, discipline, and manual review.
+**A security finding should not end with a ticket. It should teach us something about the system that produced it.**
 
-Any security model that depends on everyone always remembering everything is not a model. It is hope, and <strong>hope does not scale</strong>.
+When offensive testing finds a problem, the reproduction steps tell us how the attack worked. We should also use them to understand why it was possible.
 
-## Secure by Design Is Not a Slogan
+For the SQL injection, follow the value from where it entered the application to where it became part of a query. Where did we start trusting it? Was the mistake local, or does the same helper exist elsewhere?
 
-Secure by Design is often reduced to a nice principle:
+For other findings, the questions change:
 
-> Build security in from the beginning.
+- A user accessed another user's record. Why could that endpoint skip the authorization check?
+- A server fetched an attacker-chosen URL. Why could it reach sensitive internal services?
+- A secret leaked. Why did one credential give access to so much?
 
-That is true, but it is too weak for engineering leadership. Secure by Design should mean something more concrete:
+These are things to investigate, not conclusions we can draw from the vulnerability name alone.
 
-> The organization designs its products, platforms, workflows, and incentives so that common classes of vulnerabilities become difficult to introduce, easy to detect early, and structurally unlikely to recur.
+Technical debt often shows up here. Five copies of an old helper mean five places to fix. A service nobody maintains can leave a known problem unresolved. Inconsistent authorization code makes it harder to tell which checks are missing.
 
-This is not only about code; it is about how engineering is organized.
+Record the cause alongside the severity. Otherwise, two findings with the same label may hide very different problems, while several different findings may point back to the same bad default.
 
-It is about which patterns are approved, which abstractions are provided, which risks are owned by product teams, which architectural decisions are reviewed, which security controls are embedded into the platform, which exceptions are tolerated, which trade-offs are visible to leadership, and which recurring findings trigger systemic remediation instead of local patches.
+## Ask these questions before the assessment
 
-<strong>Secure by Design is not just a security initiative. It is an engineering operating model.</strong>
+This is where threat modeling helps.
 
-## The Developer Is Not the Control
+You do not need a large workshop for every change. You do need to stop and ask what the system is assuming, especially when a change introduces a new trust boundary or a new way to use existing data.
 
-A common anti-pattern is to make <strong>the developer the primary security control</strong>.
+Who can supply this value? Where will it go next? Who can call this service? What can this identity access? What happens if the dependency is compromised?
 
-We tell developers:
+Go back to the second-order injection. Looking only at the request handler may not reveal the problem. The dangerous use happens later, perhaps in a background job or a report.
 
-- validate input;
-- encode output;
-- use parameterized queries;
-- check authorization;
-- avoid unsafe deserialization;
-- protect secrets;
-- configure headers correctly;
-- understand OAuth flows;
-- avoid SSRF patterns;
-- write secure infrastructure code;
-- keep dependencies updated;
-- think like an attacker.
+What reads the stored value? Does it become SQL, HTML, a shell argument or something else? Each use has its own rules. Validating a value at the entry point does not replace handling it safely where it is used.
 
-All of this matters, but if every team has to manually remember every rule, every time, in every codebase, under delivery pressure, the organization has already accepted a high failure rate.
+A diagram can help us follow that flow. But the useful part is the conversation and the engineering decisions it changes. Keep the assumptions with the design, and revisit them when the flow changes.
 
-Training, awareness, security champions, and documentation all help. They remain weak controls, though, if the platform still allows unsafe choices to be the fastest choices.
+## How much does this matter here?
 
-Leadership should not build a system that requires developers to be perfect. It should reduce the number of situations where perfection is required.
+Understanding an attack does not automatically tell us how much to invest in preventing it.
 
-This is where secure defaults, paved roads, internal platforms, reusable libraries, golden paths, reference architectures, policy-as-code, and automated guardrails matter.
+Is this path reachable in our system? What access would an attacker need? Is that access realistic? What could they read, change or interrupt? Which controls already limit them?
 
-Not because developers do not care, but because <strong>caring is not a control</strong>.
+A demonstrated attack gives us evidence. A technically credible path can also deserve attention before we see it exploited widely. But a list of everything that might theoretically go wrong is not a useful engineering plan.
 
-## The Secure Path Must Be the Easy Path
+We need to consider exposure, likelihood, attacker capability and impact. We also need to understand how effective a proposed mitigation would be, what it costs to introduce and maintain, and what risk would remain afterward.
 
-If the insecure way is faster, someone will use it.
+Not every service needs the same controls. Not every finding justifies replacing a platform. Sometimes a local fix and a regression test are enough. Sometimes a repeated, widely reachable problem justifies changing a shared library and migrating its callers.
 
-The reason is not carelessness; it is an incentive system that makes the insecure path attractive.
+Suppose several services use the same unsafe helper. Patching each caller may be quicker today, but we will keep paying for reviews, fixes and retests while new code can still use it. Replacing the helper takes time too, including testing and migration. Compare that work with the repeated fixes and the exposure we leave in place. If we choose the shared fix, the work needs to include moving its callers, not just publishing a safer version.
 
-This is one of the most important leadership lessons in application security.
+If we defer a change, who is accepting the remaining risk? What would make us revisit that decision? The product team needs to understand the trade-off too, especially when a delivery deadline is part of it.
 
-You can tell teams that security is important, publish standards, create policies, run training, ask for threat models, and require reviews.
+Real attacks provide evidence. Risk determines where engineering effort should go. After making the change, we still need to check whether it reduced that risk.
 
-But if the delivery system rewards speed, local autonomy, and short-term output while security requires extra work, extra approvals, unclear ownership, and manual interpretation, the outcome is predictable.
+## Tools help, but they do not redesign the system
 
-Security rarely loses through one explicit decision. It loses quietly through small compromises: a shortcut here, an exception there, a temporary workaround, a duplicated pattern, a legacy helper reused because it was available, a review skipped because the release was urgent.
+Static analysis, dynamic testing, dependency scanners and runtime analysis are useful. So are code review and, where they help, LLM-based reviewers.
 
-This is how organizations accumulate security debt, not dramatically but gradually.
+They can find mistakes we would otherwise miss. They can also help us check whether an unsafe pattern is still present after a migration.
 
-Then one day they discover that their security program is mostly a remediation engine.
+But a scanner finding raw SQL does not decide what database API the team should use. A report about missing authorization does not define which users should be allowed to access which records.
 
-## Technical Debt Is Security Debt
+We still have to make those decisions, implement them and check that they work.
 
-<strong>Technical debt and security debt are often treated as separate categories</strong>, even though they are tightly connected.
+Buying another tool can improve detection. It does not automatically make the next unsafe change harder to write.
 
-Complex systems are harder to secure. Inconsistent architectures are harder to reason about. Duplicated patterns are harder to fix. Unclear ownership makes remediation slower. Legacy components become places where risk hides. Unmaintained abstractions become institutionalized vulnerabilities.
+## Recurring findings are data
 
-A vulnerability is often just the visible part of a deeper engineering quality problem.
+If the same vulnerability class keeps appearing, look at the findings together.
 
-This is why <strong>security findings should not only be classified by severity. They should also be classified by cause.</strong>
+Are they using the same library? Copying the same example? Bypassing the same check? Did we fix the original problem but leave its callers using an older version?
 
-Was this a coding mistake, a design flaw, a missing platform capability, a weak default, a documentation gap, a broken ownership model, a deadline-driven exception, a legacy dependency, or a missing architectural standard?
+Useful questions include:
 
-Without this classification, the organization cannot really learn; it can only patch.
+- Which problems keep coming back across releases or services?
+- Which fixes changed a shared component, and which only patched one caller?
+- Are new services still starting with the unsafe default?
+- How long does it take to get the safer version into the affected services?
+- Are exceptions temporary, or have they quietly become permanent?
 
-And patching without learning is how the hamster wheel keeps turning.
+Counting findings alone will not answer these questions. A better assessment may find more vulnerabilities, even while the software is improving. Look at whether the same causes remain and whether the changes are reaching the code that needs them.
 
-## What Directors Should Measure
+## Turn the lesson into a guardrail
 
-If Secure by Design is an operating model, then leadership needs different questions.
+For the second-order SQL injection, I would start by checking how database access is done across the application.
 
-Not only:
+Where is raw SQL used? Is there a legitimate reason for it? Can values be passed separately? Are stored values treated differently from request values? Do the tests cover the later workflow, not just the initial write?
 
-> How many critical vulnerabilities do we have?
+Depending on what we find, the change might be a safer helper, a check for a known dangerous pattern, or the removal of an old API. It might require a migration if several services depend on it.
 
-But also:
+Give that work an owner. Make the supported alternative available before asking everyone to move. If an exception is needed, make its limits clear.
 
-> Which vulnerability classes keep recurring?
+Then retest the attack path. Add a regression test that follows the value through storage and reuse. Check other callers of the affected helper. A passing test for the patched endpoint is useful, but it does not prove that every copy of the problem is gone.
 
-> How many findings are caused by design flaws rather than implementation mistakes?
+That is how an assessment can improve the next release as well as fix the current one.
 
-> How many issues are fixed locally versus eliminated structurally?
+## What happens when prevention fails?
 
-> How long does it take to turn a recurring finding into a platform-level guardrail?
+Even with better defaults and tests, assume that something will eventually go wrong.
 
-> Which secure patterns are still optional?
+If SQL injection gives an attacker the application's database permissions, what do those permissions allow? Can that account only access the data the service needs, or can it read and modify everything?
 
-> Which unsafe patterns are still technically possible?
+If an application is compromised, can it reach every internal service? If one secret leaks, can we revoke it without taking the whole product down?
 
-> How many security exceptions are accepted because of delivery timelines?
+These questions are about limiting the damage. Least privilege, isolation and network boundaries can reduce how far a compromise spreads. Shorter-lived credentials and working revocation can reduce how long access lasts.
 
-These questions are useful precisely because they are uncomfortable.
+We also need to detect the abuse and recover. Would we notice unusual database access? Do we have enough logs to investigate it? Can we restore damaged data? Have we tested that recovery process?
 
-They move the conversation away from individual blame and toward system design.
+Choose those controls according to the system and the risk. The goal is not to add every possible layer. It is to understand what remains possible if one layer fails, and whether we can live with the result.
 
-A Director does not need more vulnerability noise disguised as visibility. They need to understand <strong>whether the organization is becoming better at not producing the same risk again</strong>.
+## Stop fixing the same vulnerability forever
 
-## Findings Should Create Guardrails
+The second-order SQL injection was worth fixing. But the more useful question was why a well-understood vulnerability class was still possible in the first place.
 
-<strong>A finding should not die inside a ticket.</strong>
+How did it escape review? We should ask that. We should also ask why the engineering system was still able to create it so easily.
 
-If a vulnerability is fixed only in the affected component, the organization has removed one instance of the problem, not the condition that allowed it to exist.
+Fix the query. Then look at the library, the examples, the assumptions and the later uses of that data. Decide which changes are justified by the risk, and test whether they actually help.
 
-That is the difference between <strong>remediation and improvement</strong>.
+We cannot make every mistake impossible. We can make familiar mistakes harder to repeat, and limit what happens when one gets through.
 
-Remediation asks:
-
-> How do we fix this vulnerability?
-
-Improvement asks:
-
-> How do we make this class of vulnerability less likely across the organization?
-
-The second question is where Secure by Design becomes real.
-
-A second-order SQL injection should not only trigger a code fix. It should trigger questions like:
-
-- Do we have approved database access patterns?
-- Are raw queries allowed?
-- Where are they allowed?
-- Are query builders and ORMs configured safely by default?
-- Can dangerous patterns be detected automatically?
-- Do code review guidelines cover stored data reuse?
-- Are data flows modeled across trust boundaries?
-- Do teams understand where input becomes trusted by accident?
-- Can the platform prevent this class of issue instead of asking every team to remember it?
-
-The answer may be a library, a framework change, a secure-by-default template, a policy-as-code rule, an architecture review requirement, a deprecation plan, or a migration away from unsafe legacy patterns.
-
-The right answer depends on the organization, but the principle is always the same. <strong>Do not only fix the wound; remove the sharp edge.</strong>
-
-## Threat Modeling Is Not a Workshop
-
-Many organizations say they do threat modeling.
-
-In practice, that often means an occasional workshop, a diagram, a list of risks, and a document that becomes outdated shortly after the meeting. That is not enough.
-
-<strong>Threat modeling should be part of how engineering thinks about design decisions.</strong> It should work less like a ceremony and more like a feedback mechanism.
-
-When a team introduces a new trust boundary, changes authentication flows, exposes internal services, adds asynchronous processing, stores user-controlled data, or integrates with third-party systems, security assumptions should be explicit.
-
-What can cross this boundary? Who can call this service? What data is trusted? What data is only stored but later executed, rendered, queried, or interpreted? What happens if this dependency is compromised? What is the abuse case? What is the failure mode?
-
-A second-order SQL injection is a perfect example of why this matters.
-
-The dangerous input is not always dangerous at the point of entry. Sometimes it becomes dangerous later, in another workflow, another component, another query, or under another assumption.
-
-Secure design requires <strong>understanding data over time</strong>, not only validating input at the edge.
-
-## Tools Help, But They Do Not Own the Problem
-
-Modern security tooling helps. SAST, DAST, SCA, IAST, and LLM-based reviewers can improve detection, visibility, and analysis.
-
-But tools do not own architecture, define incentives, decide whether raw SQL is allowed, standardize authorization, remove unsafe legacy abstractions, or ensure that product teams understand risk.
-
-<strong>Tools can detect symptoms, but they cannot redesign the system that creates them.</strong>
-
-This is why organizations can buy more tools and still stay on the wheel.
-
-Detection improves, dashboards improve, and findings increase, while the production of risk continues.
-
-<strong>At some point, adding another scanner becomes easier than changing the engineering model. That is the trap.</strong>
-
-## Secure by Design Requires Operating Capabilities
-
-For <strong>Secure by Design to become real</strong>, an organization needs at least four capabilities.
-
-### 1. Engineering Guardrails
-
-Teams need <strong>safe building blocks</strong>.
-
-Secure defaults, approved patterns, reusable libraries, standardized authentication and authorization, safe database access, secret management that is easy to use, infrastructure templates that encode baseline controls, and CI/CD checks that prevent known dangerous patterns.
-
-The goal is not to slow teams down, but to make <strong>the secure path faster than the insecure one</strong>.
-
-### 2. Architectural Accountability
-
-<strong>Security-relevant design decisions need ownership.</strong>
-
-Not every decision requires a board. Important decisions should still be visible, reviewed, and traceable.
-
-Who owns this trust boundary? Who owns this authorization model? Who accepted this exception? Who is responsible for removing this legacy pattern? Who decides whether this risk is acceptable?
-
-Without ownership, risk becomes ambient: everyone is aware of it, but no one owns it.
-
-### 3. Product Risk Ownership
-
-<strong>Security risk cannot live only inside the security team.</strong>
-
-If a product decision creates risk, that risk must be visible in product planning.
-
-If a deadline requires accepting a security exception, that exception should be understood as a business decision, not hidden as an engineering detail.
-
-If a feature introduces sensitive data flows, abuse cases should be part of the design conversation.
-
-Security should not be an external reviewer standing at the end of the process; it should be part of how product and engineering make decisions.
-
-### 4. Feedback Loops
-
-<strong>Every recurring vulnerability class should create organizational learning.</strong>
-
-That learning should not stop at a ticket. It should become a lesson, a pattern, a guardrail, a platform improvement, a standard, a migration plan, or a better default.
-
-If the same issue appears again and again, the feedback loop is broken.
-
-The organization is receiving information without changing behavior.
-
-That is one of the clearest signs that the security program is operating downstream.
-
-## The Director-Level Question
-
-The most useful question is not:
-
-> Are we finding vulnerabilities?
-
-Of course we are.
-
-The better question is:
-
-> <strong>Are we reducing the organization’s ability to create the same vulnerabilities again?</strong>
-
-That is the difference between activity and progress.
-
-A security program can be very active and still leave the system unchanged, producing findings, reports, remediations, meetings, and dashboards without reducing the underlying pattern.
-
-But if the same classes of vulnerabilities continue to appear, the organization is not learning fast enough.
-
-Secure by Design is the discipline of <strong>turning that learning into engineering structure</strong>, not slogans, awareness campaigns, or another checklist.
-
-## Final Thought
-
-The second-order SQL injection we found was not interesting because SQL injection is new.
-
-It was interesting because <strong>SQL injection should have been boring enough to be structurally prevented</strong>.
-
-That, for me, is the real lesson.
-
-Mature organizations should not only ask how a vulnerability passed through review. They should ask <strong>why the design allowed that class of vulnerability to exist in the first place</strong>.
-
-The hamster wheel does not stop when we get better at finding issues. It stops when we get better at <strong>making entire classes of issues harder to create</strong>.
-
-Secure by Design is not about asking everyone to care more. It is about <strong>designing an engineering system where secure behavior is supported by defaults, guardrails, ownership, and feedback loops</strong>.
-
-Otherwise, we are not building secure software; we are just running faster inside the wheel.
+If every finding only creates another ticket, we are just getting better at running inside the hamster wheel.
 
 ---
 
@@ -369,15 +231,5 @@ Otherwise, we are not building secure software; we are just running faster insid
 <a href="https://www.jstor.org/stable/10.7591/j.ctv1bxh5t3" target="_blank">Andrew J. Stewart, <em>A Vulnerable System: The History of Information Security in the Computer Age</em></a>
 
 <a href="https://www.enisa.europa.eu/sites/default/files/2026-03/ENISA_Secure_By_Design_and_Default_Playbook_v0.4_draft_for_consultation.pdf" target="_blank">ENISA, <em>Secure by Design and Default Playbook</em></a>
-
-## 👋 Let’s Connect
-
-If you found this post helpful, or if you want to chat more about this or anything at the intersection of development and security — I’d love to hear from you.
-
-Feel free to reach out on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
-
-Always happy to connect with fellow developers, researchers, and security-minded folks.
-
-Stay curious, stay secure. 🔒🚀
 
 </article>
