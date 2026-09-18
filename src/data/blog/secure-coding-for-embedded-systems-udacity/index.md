@@ -11,29 +11,34 @@ published: true
 
 <article class="prose lg:prose-lg xl:prose-lg">
 
-I’m proud to announce the release of the Secure Coding for Embedded Systems course on Udacity — a project I had the honor of contributing to as one of the authors, together with Dennis Kengo Oka.
+The Secure Coding for Embedded Systems course is now available on Udacity. I contributed as one of the authors, together with Dennis Kengo Oka.
 
-My focus was on some of the most critical and timely areas of embedded system security: Hardening, Supply Chain Risk Management, TLS, and Secure Updates. These aren’t just best practices — they’re quickly becoming regulatory requirements, particularly in light of the European Union’s **Cyber Resilience Act (CRA)** and **Radio Equipment Directive (RED)** updates.
+My modules cover hardening, supply chain risk management, TLS and secure updates. What does the device actually need to run? Which dependencies are we shipping? How do we protect its communications and deliver an update we can trust?
 
-## Why Secure Coding Matters — Now More Than Ever
-Embedded systems and IoT devices are everywhere — in homes, hospitals, factories, vehicles, and cities. But as these systems become more connected, they also become more exposed. In response, the regulatory landscape is evolving quickly to enforce security-by-design at the software level.
+These are practical engineering questions. They also connect to requirements being introduced through the EU Cyber Resilience Act (CRA) and updates to the Radio Equipment Directive (RED).
 
-Here are two regulations every embedded developer needs to know:
+<h2 id="why-secure-coding-matters-now-more-than-ever">Why secure coding matters for connected devices</h2>
 
-## 📜 1. The EU Cyber Resilience Act (CRA)
+Embedded systems run in homes, hospitals, factories, vehicles and cities. Connecting them to more systems also exposes them to more attacks. Security-by-design requirements are increasingly part of the rules for developing their software.
+
+For an embedded developer, two regulations are worth understanding:
+
+<h2 id="1-the-eu-cyber-resilience-act-cra">The EU Cyber Resilience Act (CRA)</h2>
+
 The Cyber Resilience Act, formally adopted by the EU in 2024, introduces mandatory cybersecurity requirements for all products with digital elements — including embedded systems and software.
 
-Key obligations include:
+What does that mean for the work?
 
 - Products must be secure-by-design and secure-by-default.
-- Must be in place a process to implement vulnerability handling and provide timely security updates.
+- There must be a process for handling vulnerabilities and providing timely security updates.
 - Risk assessments, technical documentation, and conformity declarations will be required.
 
 Non-compliance may result in penalties up to €15 million or 2.5% of global annual turnover.
 
-The CRA is expected to become enforceable by December 2027, and it will directly impact how products with digital elements are developed, tested, and maintained.
+The CRA is expected to become enforceable by December 2027. That affects development and testing, but also the work needed to maintain a product after it ships.
 
-## 📻 2. Radio Equipment Directive (RED) – Article 3(3)(d)(e)(f)
+<h2 id="2-radio-equipment-directive-red-article-3-3-d-e-f">Radio Equipment Directive (RED) – Article 3(3)(d)(e)(f)</h2>
+
 Since 2022, the Radio Equipment Directive (2014/53/EU) has been extended with new cybersecurity requirements under Delegated Regulation (EU) 2022/30, specifically:
 
 - Devices must not harm network functionality or misuse resources.
@@ -42,39 +47,38 @@ Since 2022, the Radio Equipment Directive (2014/53/EU) has been extended with ne
 
 These rules apply to wirelessly connected devices (Wi-Fi, Bluetooth, LTE, etc.), including most IoT devices, wearables, smart appliances, and industrial controllers.
 
-🗓️ Enforcement begins in August 2025, meaning manufacturers and developers must ensure compliance now — including implementing secure communication protocols and robust update mechanisms.
+Enforcement begins in August 2025. Manufacturers and developers need to address compliance now, including secure communications and reliable update mechanisms.
 
-## What This Course Delivers
+<h2 id="what-this-course-delivers">What we cover in the course</h2>
 
-The Secure Coding for Embedded Systems course is designed to equip developers with the practical skills needed to meet these real-world security challenges and regulatory expectations. In the modules I authored, you'll learn how to:
+The course works through these problems from the development side. Here is what I cover in the modules I authored.
 
-🛡️ Harden Embedded Systems
-Reduce the attack surface by removing unused components, implementing secure boot, and gaining visibility into vulnerabilities in third-party libraries.
+**Hardening embedded systems**
 
-🔗 Manage Supply Chain Risks
-Evaluate and mitigate risks introduced by third-party code and dependencies. You'll build Software Bills of Materials (SBOMs), understand upstream threat vectors, and adopt processes for lifecycle security management.
+Which components does the device need? Which can we remove? We look at reducing the attack surface, implementing secure boot and identifying vulnerabilities in third-party libraries.
 
-🔐 TLS and Secure Updates
-Enhance the security of embedded devices by securing communication with TLS, implementing mechanisms for secure over-the-air (OTA) updates, and ensuring the integrity and authenticity of firmware.
+**Managing supply chain risks**
 
-## For Developers, Engineers, and Product Teams
+What code are we getting from other people, and what risks come with it? You will build Software Bills of Materials (SBOMs), look at upstream threats and work through how to manage those risks over the product lifecycle.
 
-Whether you're an embedded developer, systems engineer, or security architect, this course helps you build systems that are compliant, resilient, and future-ready. And more importantly — it empowers you to build trustworthy technology in a world that depends on it.
+**TLS and secure updates**
 
-## Final Thoughts
-The secure-by-design shift isn’t just about risk management — it’s about building confidence, meeting regulatory requirements, and future-proofing your products.
+How do we protect communication with the device? How do we know that a firmware update is authentic and has not been modified? These modules cover TLS, secure over-the-air (OTA) updates, and firmware integrity and authenticity.
 
+<h2 id="for-developers-engineers-and-product-teams">For Developers, Engineers, and Product Teams</h2>
 
-👉 <a href="https://www.udacity.com/course/secure-coding-for-embedded-systems--cd13387" target="_blank" rel="noopener noreferrer">Explore the course on Udacity</a>
+The course is for embedded developers, systems engineers, security architects and product teams working through these decisions.
 
-## 💬 Let’s Connect
+The questions are technical, but they affect what the team needs to build and maintain. Secure communication and updates need implementation work. Handling vulnerabilities and dependencies needs continued attention after release. The course connects that work to security and compliance requirements.
 
-If you found this course helpful, or if you want to chat more about how to improve it in the future revisions — I’d love to hear from you.
+<h2 id="final-thoughts">Where to start</h2>
 
-Feel free to reach out on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+If you work on embedded products, I hope this gives you a practical way to think through the code, the dependencies and the update process together.
 
-Always happy to connect with fellow developers, researchers, and security-minded folks.
+You can <a href="https://www.udacity.com/course/secure-coding-for-embedded-systems--cd13387" target="_blank" rel="noopener noreferrer">explore the course on Udacity</a>.
 
-Stay curious. Stay secure. 🔒🚀
+<h2 id="let-s-connect">Questions or feedback?</h2>
+
+Tried the course? I would like to hear what helped and what could be clearer in a future revision. You can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.
 
 </article>
