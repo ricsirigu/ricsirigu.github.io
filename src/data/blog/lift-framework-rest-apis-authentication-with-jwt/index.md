@@ -191,7 +191,7 @@ case class JWTAuthentication(realmName: String)(func: PartialFunction[(String, R
 ```
 
 Keep Learning  
-Until next time :sunglasses:
+Until next time 😎
 
 
 </article>

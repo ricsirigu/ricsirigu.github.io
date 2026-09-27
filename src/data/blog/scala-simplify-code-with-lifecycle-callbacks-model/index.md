@@ -73,7 +73,7 @@ Here is an example
 Go and try it out!  
 
 Keep Learning.  
-Until next time :sunglasses:
+Until next time 😎
 
  [liftweb]: http://www.liftweb.net/
  [record]: https://www.assembla.com/wiki/show/liftweb/Record

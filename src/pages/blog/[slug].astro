@@ -1,11 +1,13 @@
 ---
 import BlogPostPage from 'templates/BlogPost';
 import BaseLayout from 'layouts/BaseLayout.astro';
-import { getPublishedBlogPosts } from 'lib/content';
+import { getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import { getBlogTopics, getPublishedBlogPosts, toLegacyBlogPost, type BlogPost } from 'lib/content';
 import { collectStyles } from 'lib/collectStyles';
 
-export function getStaticPaths() {
-  const posts = getPublishedBlogPosts();
+export async function getStaticPaths() {
+  const posts = await getPublishedBlogPosts();
 
   return posts.map((post, index) => {
     const previous = index === posts.length - 1 ? null : posts[index + 1];
@@ -19,27 +21,45 @@ export function getStaticPaths() {
 }
 
 const { post, previous, next } = Astro.props;
+const { Content, headings } = await render(post);
+const legacyPost = toLegacyBlogPost(
+  post,
+  '',
+  headings.map((heading) => ({ depth: heading.depth, id: heading.slug, text: heading.text })),
+);
+const ogImage = await getImage({ src: post.data.cover, width: 1200 });
+const topics = await getBlogTopics();
+const toSibling = (sibling: BlogPost | null) =>
+  sibling
+    ? {
+        fields: { slug: sibling.fields.slug },
+        frontmatter: { title: sibling.data.title },
+      }
+    : null;
 const props = {
-  data: { markdownRemark: post },
-  pageContext: { slug: post.fields.slug, previous, next },
+  data: { markdownRemark: legacyPost },
+  pageContext: { slug: post.fields.slug, previous: toSibling(previous), next: toSibling(next) },
+  indexedTopics: topics.map((topic) => topic.slug),
 };
 const styledStyleTags = collectStyles(BlogPostPage, props);
 ---
 
 <BaseLayout
-  title={post.frontmatter.title}
-  description={post.frontmatter.description || post.excerpt}
-  seoTitle={post.frontmatter.seoTitle}
+  title={post.data.title}
+  description={post.data.description}
+  seoTitle={post.data.seoTitle}
   blog={{
-    date: post.frontmatter.date,
-    image: post.frontmatter.coverUrl,
-    imageHeight: post.frontmatter.coverImage?.height,
-    imageWidth: post.frontmatter.coverImage?.width,
-    modified: post.frontmatter.updated,
+    date: post.data.date.toISOString().slice(0, 10),
+    image: new URL(ogImage.src, Astro.site).href,
+    imageHeight: Math.round((1200 * post.data.cover.height) / post.data.cover.width),
+    imageWidth: 1200,
+    modified: post.data.updated?.toISOString().slice(0, 10),
     slug: post.fields.slug,
-    tags: post.frontmatter.tags,
+    tags: post.data.tags,
   }}
   styledStyleTags={styledStyleTags}
 >
-  <BlogPostPage {...props} />
+  <BlogPostPage {...props}>
+    <Content />
+  </BlogPostPage>
 </BaseLayout>

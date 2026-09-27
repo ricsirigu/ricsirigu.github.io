@@ -51,6 +51,6 @@ original template, no matter what other selectors you are using.
 In contrast, with **andThen** you are composing two functions with the first being executed before the second.
 
 Keep Learning.  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>

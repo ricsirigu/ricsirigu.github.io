@@ -29,7 +29,7 @@ It's useful for a number of reasons:
  - **Performance**: Server side rendering speeds up the initial page load. The server can pre render the view and send it to the client that can render it until the JavaScript gets downloaded and executed. This is what <a href="https://blog.twitter.com/2012/improving-performance-on-twittercom" target="_blank" rel="noopener noreferrer">Twitter did</a> in one year and with 40 engineers.
 
 <div style="background-color:#fff4db; color:#53450e; padding: 25px; border-radius:5px; text-align:center">
-		<i>Can Google crawl my website successfully?</i> :smile:<br/>
+		<i>Can Google crawl my website successfully?</i> 😄<br/>
 		<a href="https://www.google.com/webmasters/tools/googlebot-fetch">Fetch as Google</a> your SPA to see the result.
 </div>
 
@@ -82,7 +82,7 @@ All of them are born to reduce the JavaScript tendency of helping you to make mi
 
 
 <div style="background-color:#fff4db; color:#53450e; padding: 25px; border-radius:5px; text-align:center">
-		<strong>:pencil2: Quiz time: </strong>
+		<strong>✏️ Quiz time: </strong>
 		<br/>
 		<br/>
 		<i>What does this JavaScript snippet print?</i>
@@ -110,6 +110,6 @@ You can also find projects and a Single Page Application example <a href="https:
 
 
 Keep Learning.  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>

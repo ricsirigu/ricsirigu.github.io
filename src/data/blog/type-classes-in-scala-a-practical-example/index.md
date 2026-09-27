@@ -146,6 +146,6 @@ Moreover, they recently open sourced all their ebooks, you can download all of t
 
 
 Keep Learning  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>

@@ -1,5 +1,8 @@
 import type { APIRoute } from 'astro';
 
+import { experimental_AstroContainer as AstroContainer } from 'astro/container';
+import { render } from 'astro:content';
+
 import { getPublishedBlogPosts } from 'lib/content';
 import { siteMetadata } from 'lib/site';
 
@@ -36,18 +39,27 @@ function absoluteArticleHtml(html: string, articleUrl: string): string {
     });
 }
 
-export const GET: APIRoute = () => {
-  const items = getPublishedBlogPosts().map((post) => {
-    const url = new URL(post.fields.slug, siteMetadata.siteUrl).href;
-    return `<item>
-  <title>${escapeXml(post.frontmatter.title)}</title>
+export const GET: APIRoute = async () => {
+  const container = await AstroContainer.create();
+  const published = await getPublishedBlogPosts();
+  const items = await Promise.all(
+    published.map(async (post) => {
+      const { Content } = await render(post);
+      const rawHtml = await container.renderToString(Content);
+      const html = rawHtml.replace(/^<article[^>]*>|<\/article>$/g, '').trim();
+      const url = new URL(post.fields.slug, siteMetadata.siteUrl).href;
+      const excerpt = post.data.description;
+
+      return `<item>
+  <title>${escapeXml(post.data.title)}</title>
   <link>${escapeXml(url)}</link>
   <guid isPermaLink="true">${escapeXml(url)}</guid>
-  <pubDate>${new Date(`${post.frontmatter.date}T00:00:00Z`).toUTCString()}</pubDate>
-  <description>${escapeXml(post.frontmatter.description || post.excerpt)}</description>
-  <content:encoded><![CDATA[${cdata(absoluteArticleHtml(post.html, url))}]]></content:encoded>
+  <pubDate>${post.data.date.toUTCString()}</pubDate>
+  <description>${escapeXml(excerpt)}</description>
+  <content:encoded><![CDATA[${cdata(absoluteArticleHtml(html, url))}]]></content:encoded>
 </item>`;
-  });
+    }),
+  );
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">

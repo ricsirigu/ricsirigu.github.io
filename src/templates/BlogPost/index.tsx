@@ -3,10 +3,15 @@ import React from 'react';
 import Layout from 'components/Layout';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
-import type { BlogPost as BlogPostData } from 'lib/content';
-import { getBlogTopics, topicSlug } from 'lib/content';
+import type { LegacyBlogPost as BlogPostData } from 'lib/content';
+import { topicSlug } from 'lib/content';
 
 import * as Styled from './styles';
+
+interface SiblingLink {
+  fields: { slug: string };
+  frontmatter: { title: string };
+}
 
 interface Props {
   data: {
@@ -14,15 +19,17 @@ interface Props {
   };
   pageContext: {
     slug: string;
-    next: BlogPostData | null;
-    previous: BlogPostData | null;
+    next: SiblingLink | null;
+    previous: SiblingLink | null;
   };
+  indexedTopics?: string[];
+  children?: React.ReactNode;
 }
 
-const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
+const BlogPost: React.FC<Props> = ({ data, pageContext, indexedTopics, children }) => {
   const post = data.markdownRemark;
   const { previous, next } = pageContext;
-  const indexedTopics = new Set(getBlogTopics().map((topic) => topic.slug));
+  const indexedTopicSlugs = new Set(indexedTopics ?? []);
   const formattedUpdatedDate = post.frontmatter.updated
     ? new Intl.DateTimeFormat('en', { day: '2-digit', month: 'short', timeZone: 'UTC', year: 'numeric' }).format(
       new Date(`${post.frontmatter.updated}T00:00:00Z`)
@@ -65,14 +72,13 @@ const BlogPost: React.FC<Props> = ({ data, pageContext }) => {
             </ol>
           </Styled.TableOfContents>
         )}
-        <article
-          className="format-html prose lg:prose-lg xl:prose-lg"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <article className="format-html prose lg:prose-lg xl:prose-lg">
+          {children as React.ReactElement}
+        </article>
         <Styled.Topics aria-label="Article topics">
           <strong>Topics:</strong>
           {post.frontmatter.tags.map((tag) =>
-            indexedTopics.has(topicSlug(tag)) ? (
+            indexedTopicSlugs.has(topicSlug(tag)) ? (
               <a key={tag} href={`/blog/topics/${topicSlug(tag)}/`}>
                 {tag}
               </a>

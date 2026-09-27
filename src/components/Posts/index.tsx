@@ -8,6 +8,14 @@ import { topicSlug } from 'lib/content';
 
 import * as Styled from './styles';
 
+interface PostCover {
+  src: string;
+  srcSet?: string;
+  sizes?: string;
+  width?: number;
+  height?: number;
+}
+
 interface Post {
   node: {
     id: string;
@@ -20,14 +28,7 @@ interface Post {
       date: string;
       publishedDate: string;
       tags: string[];
-      cover: {
-        height: number;
-        sizes: string;
-        srcSet: string;
-        url: string;
-        webpSrcSet?: string;
-        width: number;
-      };
+      cover: PostCover;
     };
   };
 }
@@ -72,19 +73,16 @@ const Posts: React.FC<Props> = ({ activeTopic, introduction, posts, sectionTitle
               <Styled.Card>
                 <Styled.PostLink href={slug}>
                   <Styled.Image>
-                    <picture>
-                      {cover.webpSrcSet && <source type="image/webp" srcSet={cover.webpSrcSet} sizes={cover.sizes} />}
-                      <img
-                        src={cover.url}
-                        srcSet={cover.srcSet}
-                        sizes={cover.sizes}
-                        alt={title}
-                        width={cover.width}
-                        height={cover.height}
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </picture>
+                    <img
+                      src={cover.src}
+                      srcSet={cover.srcSet}
+                      sizes={cover.sizes}
+                      alt={title}
+                      width={cover.width}
+                      height={cover.height}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </Styled.Image>
                   <Styled.Content>
                     <Styled.Date dateTime={publishedDate}>{date}</Styled.Date>

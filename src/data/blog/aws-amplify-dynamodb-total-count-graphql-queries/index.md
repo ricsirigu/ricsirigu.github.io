@@ -103,7 +103,7 @@ Remember that if the size of the Query result set is larger than 1 MB, `scannedC
 
 
 Keep Learning  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>
 

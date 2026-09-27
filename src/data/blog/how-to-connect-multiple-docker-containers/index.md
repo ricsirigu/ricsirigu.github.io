@@ -25,7 +25,7 @@ To allow the communication between our cool containers we need to create a bridg
 
 `docker network create <network-name>`
 
-in our case, let's name it `my-net`. Such an original name. :sweat_smile:
+in our case, let's name it `my-net`. Such an original name. 😅
 
 and then you attach your running containers to the newly created network with
 
@@ -40,6 +40,6 @@ If you want to know how to do the same thing using **Docker Compose**, just take
 
 
 Keep Learning  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>

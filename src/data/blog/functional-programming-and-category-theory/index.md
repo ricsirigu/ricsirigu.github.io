@@ -53,6 +53,6 @@ I hope that those resources will help you to connect the dots between all of the
 
 
 Keep Learning.  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>

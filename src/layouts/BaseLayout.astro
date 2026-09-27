@@ -3,6 +3,9 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 import 'prismjs/themes/prism-solarizedlight.css';
 import 'assets/styles/global.css';
 
+import { getImage } from 'astro:assets';
+import authorImage from '../assets/images/riccardo-sirigu.webp';
+
 import { siteMetadata } from 'lib/site';
 
 interface BlogMetadata {
@@ -39,7 +42,8 @@ const {
   title,
 } = Astro.props;
 
-const defaultImage = '/static/6716eff14ad2af05b485ed7fcbddcf80/1fb14/riccardo-sirigu.webp';
+const authorOgImage = await getImage({ src: authorImage, width: 960 });
+const defaultImage = new URL(authorOgImage.src, Astro.site).href;
 const imagePath = blog?.image || defaultImage;
 const imageUrl = new URL(imagePath, siteMetadata.siteUrl).href;
 const imageWidth = blog?.imageWidth || 960;
@@ -73,7 +77,7 @@ const graph: Record<string, unknown>[] = [
     description: siteMetadata.description,
     image: {
       '@type': 'ImageObject',
-      url: new URL(defaultImage, siteMetadata.siteUrl).href,
+      url: defaultImage,
       width: 960,
       height: 960,
     },

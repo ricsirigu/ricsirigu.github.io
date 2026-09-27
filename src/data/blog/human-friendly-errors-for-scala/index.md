@@ -60,6 +60,6 @@ For more detailed instructions on how to setup just visit the <a href="https://g
 
 
 Keep Learning  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>

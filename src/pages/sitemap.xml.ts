@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro';
 
+import { getImage } from 'astro:assets';
+
 import { getBlogTopics, getPublishedBlogPosts } from 'lib/content';
 import { siteMetadata } from 'lib/site';
 
@@ -8,7 +10,7 @@ export const prerender = true;
 interface SitemapItem {
   image?: string;
   imageTitle?: string;
-  lastModified?: string;
+  lastModified?: string | Date;
   path: string;
 }
 
@@ -21,8 +23,8 @@ function escapeXml(value: string): string {
     .replaceAll("'", '&apos;');
 }
 
-export const GET: APIRoute = () => {
-  const posts = getPublishedBlogPosts();
+export const GET: APIRoute = async () => {
+  const posts = await getPublishedBlogPosts();
   const staticUrls: SitemapItem[] = [
     '/',
     '/about/',
@@ -35,22 +37,24 @@ export const GET: APIRoute = () => {
     '/resume/',
     '/speaking-contributions/',
   ].map((path) => ({ path }));
-  const topicUrls: SitemapItem[] = getBlogTopics().map((topic) => {
+  const topicUrls: SitemapItem[] = (await getBlogTopics()).map((topic) => {
     const topicPosts = posts.filter((post) =>
-      post.frontmatter.tags.some((tag) => tag.toLowerCase() === topic.name.toLowerCase())
+      post.data.tags.some((tag) => tag.toLowerCase() === topic.name.toLowerCase())
     );
     const lastModified = topicPosts
-      .map((post) => post.frontmatter.updated || post.frontmatter.date)
+      .map((post) => (post.data.updated || post.data.date).toISOString().slice(0, 10))
       .sort()
       .at(-1);
     return { path: `/blog/topics/${topic.slug}/`, lastModified };
   });
-  const articleUrls: SitemapItem[] = posts.map((post) => ({
-    path: post.fields.slug,
-    lastModified: post.frontmatter.updated || post.frontmatter.date,
-    image: post.frontmatter.coverUrl,
-    imageTitle: post.frontmatter.title
-  }));
+  const articleUrls: SitemapItem[] = await Promise.all(
+    posts.map(async (post) => ({
+      path: post.fields.slug,
+      lastModified: (post.data.updated || post.data.date).toISOString().slice(0, 10),
+      image: (await getImage({ src: post.data.cover, width: 1200 })).src,
+      imageTitle: post.data.title
+    }))
+  );
 
   const urls = [...staticUrls, ...topicUrls, ...articleUrls].map((item) => {
     const location = new URL(item.path, siteMetadata.siteUrl).href;

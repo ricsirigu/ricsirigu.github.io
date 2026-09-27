@@ -40,10 +40,10 @@ Each card describes an attack, the attacker is given a name.
 You can play the game in many different ways, for examples check the official <a href="https://www.owasp.org/index.php/OWASP_Cornucopia" target="_blank" rel="noopener noreferrer">OWASP Cornucopia Wiki</a>
 
 
-Huge thanks to <a href="http://blackfootuk.com/cornucopia/" target="_blank" rel="noopener noreferrer">Blackfoot</a> for sending me this deck. :raised_hands:
+Huge thanks to <a href="http://blackfootuk.com/cornucopia/" target="_blank" rel="noopener noreferrer">Blackfoot</a> for sending me this deck. 🙌
 
 Keep Learning.  
-Until next time :sunglasses:
+Until next time 😎
 
 
 </article>

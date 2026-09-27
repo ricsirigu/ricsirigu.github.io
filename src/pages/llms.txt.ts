@@ -5,17 +5,17 @@ import { siteMetadata } from 'lib/site';
 
 export const prerender = true;
 
-export const GET: APIRoute = () => {
-  const topics = getBlogTopics()
+export const GET: APIRoute = async () => {
+  const topics = (await getBlogTopics())
     .map(
       (topic) =>
         `- [${topic.name}](${siteMetadata.siteUrl}/blog/topics/${topic.slug}/): ${topic.count} article${topic.count === 1 ? '' : 's'}.`
     )
     .join('\n');
-  const articles = getPublishedBlogPosts()
+  const articles = (await getPublishedBlogPosts())
     .map(
       (post) =>
-        `- [${post.frontmatter.title}](${siteMetadata.siteUrl}${post.fields.slug}): ${post.frontmatter.description || post.excerpt}`
+        `- [${post.data.title}](${siteMetadata.siteUrl}${post.fields.slug}): ${post.data.description || ''}`
     )
     .join('\n');
 

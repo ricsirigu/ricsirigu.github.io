@@ -11,9 +11,9 @@ published: true
 <article class="prose lg:prose-lg xl:prose-lg">
 
 
-As you already know, I like to read a lot. :notebook_with_decorative_cover:   
+As you already know, I like to read a lot. 📔   
 Here is a list of some of the programming resources I found more interesting in 2017.  
-Enjoy. :simple_smile:
+Enjoy. 🙂
 
 
 ## Scala and Functional Programming
@@ -86,6 +86,6 @@ Enjoy. :simple_smile:
 What about Yours?  
 
 Keep Learning  
-Until next time :sunglasses:
+Until next time 😎
 
 </article>

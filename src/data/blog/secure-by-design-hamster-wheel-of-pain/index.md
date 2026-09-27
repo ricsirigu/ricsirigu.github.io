@@ -34,7 +34,7 @@ Those questions lead to different changes. Another secure coding reminder will n
 
 This is the “hamster wheel of pain” described by Andrew J. Stewart in *A Vulnerable System: The History of Information Security in the Computer Age*. We find a vulnerability, patch it, and wait for the next one. A different endpoint, perhaps. A different team. The same kind of mistake.
 
-<img src="hamster-wheel-of-pain.jpg" alt="Hamster wheel of pain">
+![Hamster wheel of pain](./hamster-wheel-of-pain.jpg)
 
 If the next developer can introduce the same problem just as easily, we have fixed one instance. We have not changed much about how we build software.
 

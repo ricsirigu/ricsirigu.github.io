@@ -91,7 +91,7 @@ If we complement this design with the traditional approach previously explained 
 Go and try it out!  
 
 Keep Learning.  
-Until next time :sunglasses:
+Until next time 😎
 
 
 </article>
