@@ -19,14 +19,16 @@ The canonical website is https://www.riccardosirigu.com. Content may be used for
 
 ## Topics
 
-- [cra](https://www.riccardosirigu.com/blog/topics/cra/): 2 articles.
-- [cybersecurity](https://www.riccardosirigu.com/blog/topics/cybersecurity/): 7 articles.
+- [cra](https://www.riccardosirigu.com/blog/topics/cra/): 3 articles.
+- [cybersecurity](https://www.riccardosirigu.com/blog/topics/cybersecurity/): 8 articles.
 - [functional programming](https://www.riccardosirigu.com/blog/topics/functional-programming/): 4 articles.
 - [scala](https://www.riccardosirigu.com/blog/topics/scala/): 6 articles.
 - [security](https://www.riccardosirigu.com/blog/topics/security/): 3 articles.
+- [security-by-design](https://www.riccardosirigu.com/blog/topics/security-by-design/): 2 articles.
 
 ## Published articles
 
+- [AI will kill us all](https://www.riccardosirigu.com/blog/ai-will-kill-us-all-security-by-design-and-cyber-resilience-act/): AI agents can make cyberattacks more adaptive and scalable, but insecure software, weak credentials and poor configurations remain at the core of the problem.
 - [Secure by Design: Escaping the Hamster Wheel of Pain](https://www.riccardosirigu.com/blog/secure-by-design-hamster-wheel-of-pain/): Why recurring vulnerabilities signal systemic management failures, and how secure-by-design practices can break the remediation cycle.
 - [Cyber Resilience Act Compliance: 10 Misconceptions Companies Should Avoid](https://www.riccardosirigu.com/blog/cyber-resilience-act-ten-common-misconceptions-about-cra-compliance/): Ten common Cyber Resilience Act compliance misconceptions that manufacturers and software vendors should address before CRA deadlines.
 - [Security Standards You Should Know](https://www.riccardosirigu.com/blog/security-standards-you-should-know/): A practical reference to essential cybersecurity standards, including ISO, IEC and European EN standards for secure products and compliance.

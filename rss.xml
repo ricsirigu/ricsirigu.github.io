@@ -7,6 +7,68 @@
   <language>en</language>
   <atom:link href="https://www.riccardosirigu.com/rss.xml" rel="self" type="application/rss+xml" />
 <item>
+  <title>AI will kill us all</title>
+  <link>https://www.riccardosirigu.com/blog/ai-will-kill-us-all-security-by-design-and-cyber-resilience-act/</link>
+  <guid isPermaLink="true">https://www.riccardosirigu.com/blog/ai-will-kill-us-all-security-by-design-and-cyber-resilience-act/</guid>
+  <pubDate>Sun, 27 Sep 2026 00:00:00 GMT</pubDate>
+  <description>AI agents can make cyberattacks more adaptive and scalable, but insecure software, weak credentials and poor configurations remain at the core of the problem.</description>
+  <content:encoded><![CDATA[<p><em>With this article I want to emphasize the importance of <strong>security by default</strong> and <strong>security by design</strong>, principles also promoted by the Cyber Resilience Act. Despite the progress in AI and in the automation of attacks, the weak points still remain people, through phishing attacks and stolen passwords, together with insecure software systems.</em></p>
+<p>Extremely sophisticated zero-day exploits, autonomous agents capable of adapting their behavior to the system in front of them, and botnets of a size never seen before. These are scenarios that, until a few years ago, we would probably have associated more easily with a science fiction movie, but that today are starting to be taken seriously even by those developing the most advanced artificial intelligence models.</p>
+<p>Dario Amodei, CEO of Anthropic, recently wrote:</p>
+<blockquote>
+<p>Given the accelerating pace at which AI capabilities are increasing, I fear that within 6 to 12 months such a swarm could be capable of taking over the entire Internet through a persistent botnet.</p>
+</blockquote>
+<p>Amodei’s statement is certainly a strong one, especially because it comes from the CEO of one of the companies developing the most advanced models. At the same time, I find it curious that, when discussing the risks of AI, the example used is specifically a botnet, considering that Amodei does not have a specific background in cybersecurity and that botnets are a phenomenon that has been known and studied for decades.</p>
+<p>Anthropic itself, among other things, has documented examples that I find in some ways even more concerning and, above all, much more concrete. In its September 2026 Threat Intelligence Report, it describes the case of a group using Claude Code during the development of software for weapons systems, including guidance, navigation and control systems for rockets and missiles. In the same report, Anthropic also describes several cases involving the use of its models in dual-use biological research which, although they cannot automatically be considered activities aimed at developing biological weapons, could produce knowledge that may also be used in that direction.</p>
+<p>These examples, in my opinion, help put the problem into the right perspective. AI can certainly increase an attacker’s capabilities enormously, allowing activities that previously required different skills, time and people to be automated. But when we return to cybersecurity, and in particular to the botnet scenario described by Amodei, a much simpler question remains: <strong>how does the attacker initially get inside millions of systems?</strong></p>
+<p>Because a swarm of AI agents can be extremely intelligent, adaptive and capable of trying different strategies, but in order to obtain a <strong>foothold</strong> inside a system it still has to find something to exploit. A vulnerability, a misconfiguration, a weak or stolen password, an exposed service, or a person who is convinced to provide access.</p>
+<p>And this is where, in my opinion, it is worth looking at what has already happened in the past.</p>
+<p>One interesting example, precisely because it shows how a particularly sophisticated technique is not always necessary, is Mirai.</p>
+<p>The attack that led to the creation of the Mirai botnet did not use particularly complex zero-day vulnerabilities. Mirai scanned for IoT devices reachable through Telnet and tried a predefined set of common or default credentials.</p>
+<p>Once a valid combination was found, the device could be compromised and become part of the botnet, in turn starting to search for other vulnerable devices. The study published at USENIX Security in 2017 reconstructed growth to around 65,000 devices within the first twenty hours, a stable population in the range of 200,000–300,000 infections, and peaks reaching approximately 600,000.</p>
+<p>From there, the compromise of a huge number of devices was made possible mainly by a problem much less fascinating than a sophisticated zero-day exploit: devices with exposed services and weak default credentials. The classic <strong>admin/admin</strong> is a perfect example of the kind of problem we are talking about.</p>
+<p>Mirai, moreover, does not even represent the historical maximum if we simply look at the number of systems involved. Over the years, different malware and botnets have reached millions of hosts, although directly comparing these numbers is complicated because we are often comparing different quantities: devices simultaneously under control, computers compromised over time, observed IP addresses, accounts, or systems simply reached by the malware. The interesting point, however, remains the same: <strong>the ability to propagate automatically on an enormous scale did not begin with artificial intelligence.</strong></p>
+<p>What changes, then, with AI agents?</p>
+<p>What changes above all is the ability to adapt the approach based on the asset they encounter, and to do so automatically on a potentially enormous scale.</p>
+<p>A traditional worm normally follows a fairly rigid strategy. It carries an exploit, or in any case a set of predefined techniques, identifies a system that meets certain conditions, attempts the compromise and, if it works, replicates itself. If those conditions are not present, it moves on. This rigidity is both its limitation and one of its main advantages, because once the exploit is available there is no need to reason about every individual target: the code can execute it continuously and at extremely high speed.</p>
+<p>An AI agent works differently because it can observe the system in front of it, interpret outputs, recognize that a particular strategy is not working and modify it. Potentially, it can encounter a Linux system and behave in one way, encounter a Windows system and behave differently, or encounter a web application and look for a completely different path.</p>
+<p>This is exactly the direction analyzed in the recent paper <a href="https://arxiv.org/abs/2606.03811" target="_blank" rel="noopener noreferrer"><strong><em>AI Agents Enable Adaptive Computer Worms</em></strong></a>, which experimentally demonstrates a worm based on AI agents capable of generating different strategies depending on the targets encountered, instead of relying exclusively on a vulnerability and an exploit defined in advance.</p>
+<p>This changes the problem considerably, because a traditional worm can be extremely effective within a specific population of vulnerable systems but become almost completely useless outside that population. If my worm exploits a specific vulnerability present in a particular version of some software, I can scan the Internet at extremely high speed, but once the vulnerable systems are exhausted, the pool of possible new compromises inevitably begins to shrink.</p>
+<p>An adaptive agent could instead, at least theoretically, find new paths and therefore move from one population of systems to another. This does not mean that it can magically compromise anything it encounters, because some weakness still has to exist, but it does mean that it is no longer necessarily tied to a single technique defined before the attack.</p>
+<p>This capability, however, comes at a cost.</p>
+<p>At the moment, a traditional worm still has an enormous advantage in terms of speed. If it carries a ready-made exploit for a specific vulnerability, it can continuously send it against thousands of targets without having to analyze the system every time, interpret the result and decide what to do next.</p>
+<p>An AI agent, on the other hand, has to observe, reason, use tools, interpret the output and decide how to proceed. All of this introduces latency and computational cost that traditional code does not have. It is therefore <strong>more adaptable, but not necessarily faster</strong>.</p>
+<p>For this reason, I find it more interesting to think not so much about a future in which AI completely replaces traditional worms, but about a scenario in which the two are combined.</p>
+<p>The AI agent could take care of the slow and complex part, analyzing different systems and finding new paths to compromise, while traditional software could take care of the part in which it is much more efficient: quickly repeating an already identified technique against all systems that present the same weakness.</p>
+<p>In this case, <strong>AI does not replace the worm, but progressively changes its propagation possibilities</strong>. A traditional worm tends to consume its pool of vulnerable systems because, as those systems are compromised, patched or isolated, fewer and fewer reachable targets remain. An adaptive system could instead manage to identify a new class of vulnerable systems and open up a new pool of possible compromises.</p>
+<p>It is probably this adaptability, more than simple speed, that makes the use of AI agents particularly interesting in this context.</p>
+<p>But at this point the problem shifts.</p>
+<p>We can build an enormously more intelligent attacker, capable of observing what is in front of it and modifying its behavior, but that attacker still has to find something to exploit.</p>
+<p>And this is where, in my opinion, we return to <strong>security by design</strong>.</p>
+<p>We can imagine a computer system as a building and a traditional worm as a thief who knows a particular type of lock extremely well. He goes around the city trying that technique on thousands of doors and, when he finds the lock he knows, he gets in. If the door uses a different lock, he moves on to the next building.</p>
+<p>An AI agent would be a much more adaptable thief, capable of arriving in front of the building, observing the door, realizing that it does not know that particular lock, checking the windows, looking for a secondary entrance and changing its strategy based on what it finds.</p>
+<p>It is clearly a much harder adversary to deal with, but the building still has to have some weak point. A door left open, a weak lock, a window that does not close properly, or someone inside willing to open the door because they have been deceived.</p>
+<p>At this point, we could focus exclusively on making the thief less intelligent, limiting the capabilities of AI agents or trying to prevent them from being used for these activities. That is certainly part of the problem, but we cannot ignore the other half: <strong>we need to build better buildings.</strong></p>
+<p>And this is exactly why <strong>security by design</strong> and <strong>security by default</strong> become even more important.</p>
+<p>Security should not be something that is added to a product afterwards, and above all it should not be the user’s responsibility to turn something that is insecure by default into something secure. A device sold with a trivial default password, a network service that is active and reachable even though it is not actually necessary, or software that does not receive security updates is creating an attack surface that sooner or later someone will try to exploit.</p>
+<p>Whether that someone is a human being, a traditional worm or a swarm of AI agents changes the speed, the ability to adapt and the scale of the attack enormously, but it does not necessarily change the problem that allowed the initial access.</p>
+<p>And it is interesting, once again, to return to Mirai. It did not require a science-fiction superintelligence capable of autonomously discovering unknown vulnerabilities. Hundreds of thousands of IoT devices exposed to the Internet with insecure configurations and credentials were enough to build a botnet capable of generating enormous DDoS attacks.</p>
+<p>The European <a href="https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act" target="_blank" rel="noopener noreferrer"><strong>Cyber Resilience Act (CRA)</strong></a> goes precisely in the direction of shifting a greater share of responsibility toward those who design and manufacture products with digital elements. Among the essential requirements of the CRA is the need to design, develop and produce these products while ensuring a level of cybersecurity appropriate to the risk, as well as, where applicable, making them available with a secure configuration by default and enabling vulnerabilities to be managed through security updates.</p>
+<p><strong>Security by default</strong> may sound like an obvious principle, but in reality it changes the way we approach the problem considerably. A feature that is not necessary should not be exposed by default, a device should not reach the user with easily predictable credentials, and a connected product should be designed from the beginning with the assumption that vulnerabilities will probably be discovered during its lifecycle and will therefore need to be fixed.</p>
+<p>This obviously does not mean that a product designed according to these principles becomes invulnerable, because a system completely free of vulnerabilities is hardly a realistic objective. It does mean reducing the number of opportunities available and, above all, ensuring that a single vulnerability or a single compromise does not automatically make it possible to reach everything else.</p>
+<p>The same reasoning applies to people.</p>
+<p>We very often hear that human beings are the weak link in cybersecurity, and this is partly true because phishing, social engineering and credential theft continue to be extremely effective. But stopping at this statement risks becoming too easy an excuse, because people make mistakes and will continue to make mistakes.</p>
+<p>We can do awareness training, teach people how to recognize a phishing email and explain why they should not reuse the same password across ten different services, but we cannot design the security of an infrastructure on the assumption that thousands of users will never make a mistake.</p>
+<p>In the end, <strong>this too is security by design</strong>.</p>
+<p>If a password is stolen, we need to ask how much an attacker can actually do with that single credential. If an IoT device is compromised, we need to ask why that device could potentially communicate with systems it should not have access to. If an account is compromised, we need to ask why that account has more privileges than it strictly needs.</p>
+<p><strong>Security is not only about preventing someone from getting in, but also about limiting what can happen after someone gets in.</strong></p>
+<p>And perhaps this is exactly where the arrival of AI agents makes the problem even more obvious. If the attacker’s ability to analyze systems, try different strategies and automate operations increases enormously, continuing to put poorly configured products, unnecessarily exposed services, unpatched software and infrastructures in which a single credential provides access to everything else online becomes increasingly unsustainable.</p>
+<p>We can therefore rightly worry about automatically discovered zero-day exploits, swarms of autonomous agents and botnets capable of adapting to the systems they encounter, but in the meantime an enormous number of compromises continue to begin with much more ordinary problems: a stolen password, a phishing email, an unpatched system, or a configuration that should never have been left that way.</p>
+<p>AI can enormously change the capabilities of an attacker and, above all, the scale at which certain activities can be automated, but this makes it even more important to work on the other side of the equation, designing systems in which finding a vulnerability is more difficult and in which exploiting one does not automatically mean compromising everything.</p>
+<p>If tomorrow whoever is looking for that open door is able to do it continuously, across millions of different buildings and changing every time the way they try to get in, then the answer cannot simply be to try to stop the thief. <strong>We also need to start building better buildings.</strong></p>
+</article>]]></content:encoded>
+</item>
+<item>
   <title>Secure by Design: Escaping the Hamster Wheel of Pain</title>
   <link>https://www.riccardosirigu.com/blog/secure-by-design-hamster-wheel-of-pain/</link>
   <guid isPermaLink="true">https://www.riccardosirigu.com/blog/secure-by-design-hamster-wheel-of-pain/</guid>
@@ -24,7 +86,7 @@
 <p>But I also want to know why the code was written that way. Was there a shared database library? Did it support this use case? Was the unsafe helper copied from another service? Did someone assume that values read from the database no longer needed the same care as values from an HTTP request?</p>
 <p>Those questions lead to different changes. Another secure coding reminder will not fix a shared helper that encourages string concatenation.</p>
 <p>This is the “hamster wheel of pain” described by Andrew J. Stewart in <em>A Vulnerable System: The History of Information Security in the Computer Age</em>. We find a vulnerability, patch it, and wait for the next one. A different endpoint, perhaps. A different team. The same kind of mistake.</p>
-<img src="https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/212bf/hamster-wheel-of-pain.jpg" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/7809d/hamster-wheel-of-pain.jpg 192w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/4ecad/hamster-wheel-of-pain.jpg 384w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/212bf/hamster-wheel-of-pain.jpg 768w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/5ef17/hamster-wheel-of-pain.jpg 1152w, https://www.riccardosirigu.com/static/a7bd612c6ec326011db261f0dfb095cf/8351c/hamster-wheel-of-pain.jpg 1254w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="768" style="aspect-ratio: 768 / 768" alt="Hamster wheel of pain">
+<p><img alt="Hamster wheel of pain" loading="lazy" decoding="async" sizes="(min-width: 1254px) 1254px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1254" height="1254" src="https://www.riccardosirigu.com/_astro/hamster-wheel-of-pain.D1QP-LvU_ZtDr3M.webp" srcset="https://www.riccardosirigu.com/_astro/hamster-wheel-of-pain.D1QP-LvU_Z1t2gKu.webp 640w, https://www.riccardosirigu.com/_astro/hamster-wheel-of-pain.D1QP-LvU_V5YPj.webp 750w, https://www.riccardosirigu.com/_astro/hamster-wheel-of-pain.D1QP-LvU_1XISFp.webp 828w, https://www.riccardosirigu.com/_astro/hamster-wheel-of-pain.D1QP-LvU_1p1PuU.webp 1080w, https://www.riccardosirigu.com/_astro/hamster-wheel-of-pain.D1QP-LvU_ZtDr3M.webp 1254w"></p>
 <p>If the next developer can introduce the same problem just as easily, we have fixed one instance. We have not changed much about how we build software.</p>
 <h2 id="the-insecure-path-is-often-cheap">The insecure path is often cheap</h2>
 <p>Concatenating a query can take a few minutes. Finding and removing it later can require an assessment, a report, triage, a ticket, a release and a retest.</p>
@@ -129,11 +191,12 @@
 <p>We cannot make every mistake impossible. We can make familiar mistakes harder to repeat, and limit what happens when one gets through.</p>
 <p>If every finding only creates another ticket, we are just getting better at running inside the hamster wheel.</p>
 <hr>
-<h3 id="references">📚 References</h3>
+<h3 id="-references">📚 References</h3>
 <p><a href="https://www.csmonitor.com/1999/1007/p18s2.html" target="_blank">Tom Regan, <em>Putting the Dancing Pigs in Their Cyber-Pen</em>, 1999</a></p>
 <p><a href="https://www.cs.virginia.edu/~evans/cs551/saltzer/" target="_blank">Jerome H. Saltzer, Michael D. Schroeder, <em>The Protection of Information in Computer Systems</em>, 1975</a></p>
 <p><a href="https://www.jstor.org/stable/10.7591/j.ctv1bxh5t3" target="_blank">Andrew J. Stewart, <em>A Vulnerable System: The History of Information Security in the Computer Age</em></a></p>
-<p><a href="https://www.enisa.europa.eu/sites/default/files/2026-03/ENISA_Secure_By_Design_and_Default_Playbook_v0.4_draft_for_consultation.pdf" target="_blank">ENISA, <em>Secure by Design and Default Playbook</em></a></p>]]></content:encoded>
+<p><a href="https://www.enisa.europa.eu/sites/default/files/2026-03/ENISA_Secure_By_Design_and_Default_Playbook_v0.4_draft_for_consultation.pdf" target="_blank">ENISA, <em>Secure by Design and Default Playbook</em></a></p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Cyber Resilience Act Compliance: 10 Misconceptions Companies Should Avoid</title>
@@ -144,9 +207,9 @@
   <content:encoded><![CDATA[<p>The <a href="https://www.riccardosirigu.com/expertise/cyber-resilience-act/">Cyber Resilience Act</a> is already creating confusion among manufacturers, software vendors, and companies placing products with digital elements on the EU market.</p>
 <p>In this post, I collect ten common misconceptions I often hear during consultancy work on CRA compliance, from the scope of application to risk assessment, incident reporting, third-party components, open-source software, and substantial modifications.</p>
 <p>This article is based on my interpretation of the Regulation, the European Commission guidance, and the official FAQ. It is not legal advice.</p>
-<h2 id="who-this-article-is-for">🤔 Who this article is for:</h2>
+<h3 id="-who-this-article-is-for">🤔 Who this article is for:</h3>
 <p>This article is especially relevant for manufacturers, software vendors, embedded system developers, product security teams, compliance teams, and companies placing products with digital elements on the EU market.</p>
-<h3 id="what-you-ll-find-in-this-post">🧭 What you’ll find in this post:</h3>
+<h3 id="-what-youll-find-in-this-post">🧭 What you’ll find in this post:</h3>
 <ul>
 <li>When does the Cyber Resilience Act apply?</li>
 <li>Does the CRA apply to products without internet connectivity?</li>
@@ -238,7 +301,7 @@ The deciding factor is the concept of <strong>substantial modification</strong>.
 <p>From the Commission guidelines, we can read that <strong>if the change alters the level of cybersecurity risk</strong> and that change or additional risk had <strong>not been considered in the initial risk assessment</strong> (§97), or if the product introduces <strong>new functionalities that modify the intended purpose</strong> of the product as a whole (§98), then the product must be considered substantially modified.</p>
 <p>In that case, a new assessment is mandatory.</p>
 <p>It is worth highlighting one particularly counterintuitive point (§100): the assessment is not <strong>based on</strong> the complexity or size of the modification, but on <strong>its impact on the product’s risk profile</strong>.</p>
-<p>Every case is different, but if in your risk assessment you had not considered the risk arising from the introduction of an <code class="language-text">/admin</code> API, new attack vectors, unauthorised access to administrative functions, or privilege escalation, that apparently minor change could already qualify as a substantial modification.</p>
+<p>Every case is different, but if in your risk assessment you had not considered the risk arising from the introduction of an <code>/admin</code> API, new attack vectors, unauthorised access to administrative functions, or privilege escalation, that apparently minor change could already qualify as a substantial modification.</p>
 <p>Not because of its complexity, but because of the risk it introduces.</p>
 <hr>
 <h2 id="cra-misconception-9-a-component-can-be-declared-secure-without-context">CRA Misconception #9: A Component can be declared secure without context</h2>
@@ -291,15 +354,16 @@ We will cover this point in a future episode ⏭️</p>
 <li>Prepare technical documentation before harmonised standards become available.</li>
 </ul>
 <hr>
-<h3 id="references">📚 References</h3>
+<h3 id="-references">📚 References</h3>
 <p><a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202402847" target="_blank">Cyber Resilience Act - Regulation (EU) 2024/2847 - Legal Text</a></p>
 <p><a href="https://ec.europa.eu/info/law/better-regulation/have-your-say/initiatives/16959-Draft-Commission-guidance-on-the-Cyber-Resilience-Act_en" target="_blank">Cyber Resilience Act - Regulation (EU) 2024/2847 - Guidance</a></p>
 <p><a href="https://digital-strategy.ec.europa.eu/it/library/cyber-resilience-act-implementation-frequently-asked-questions" target="_blank">Cyber Resilience Act - Regulation (EU) 2024/2847 - FAQ</a></p>
-<h2 id="let-s-connect">👋 Let’s Connect</h2>
+<h2 id="-lets-connect">👋 Let’s Connect</h2>
 <p>If you found this post helpful, or if you want to chat more about this or anything at the intersection of development and security — I’d love to hear from you.</p>
 <p>Feel free to reach out on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
 <p>Always happy to connect with fellow developers, researchers, and security-minded folks.</p>
-<p>Stay curious. Stay secure. 🔒🚀</p>]]></content:encoded>
+<p>Stay curious. Stay secure. 🔒🚀</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Security Standards You Should Know</title>
@@ -691,7 +755,8 @@ Defines a machine-readable format for security advisories: affected products, vu
 </table>
 <hr>
 <h2 id="let-s-connect">Questions or feedback?</h2>
-<p>If you want to discuss how one of these references fits your work, you can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>]]></content:encoded>
+<p>If you want to discuss how one of these references fits your work, you can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Your Guide to Understanding EU Cybersecurity Laws and Standards</title>
@@ -788,11 +853,11 @@ The United Nations Economic Commission for Europe (UNECE) develops international
 <hr>
 <h2 id="who-regulates-eu-cybersecurity-key-agencies-bodies">Who Regulates EU Cybersecurity? (Key Agencies & Bodies)</h2>
 <h3 id="enisa-the-eu-s-cybersecurity-agency">ENISA – The EU's Cybersecurity Agency</h3>
-<p><a href="https://www.enisa.europa.eu" target="_blank" rel="noopener noreferrer">https://www.enisa.europa.eu</a><br>
+<p><a href="https://www.enisa.europa.eu" target="_blank" rel="noopener noreferrer"><a href="https://www.enisa.europa.eu">https://www.enisa.europa.eu</a></a><br>
 ENISA supports EU policy and publishes threat intelligence. It also runs the EU Cybersecurity Certification Framework and has a central role in the CRA and the Cybersecurity Act. Its publications are a useful place to start when you need context for these topics.</p>
 <hr>
 <h3 id="cen-cenelec-european-standardization-bodies">CEN & CENELEC – European Standardization Bodies</h3>
-<p><a href="https://www.cencenelec.eu" target="_blank" rel="noopener noreferrer">https://www.cencenelec.eu</a><br>
+<p><a href="https://www.cencenelec.eu" target="_blank" rel="noopener noreferrer"><a href="https://www.cencenelec.eu">https://www.cencenelec.eu</a></a><br>
 Looking for the standards being written to support CRA or RED requirements? CEN and CENELEC draft European standards, with these areas of work:</p>
 <ul>
 <li>CEN: General standards (AI, governance, risk)</li>
@@ -800,11 +865,11 @@ Looking for the standards being written to support CRA or RED requirements? CEN 
 </ul>
 <hr>
 <h3 id="etsi-european-telecommunications-standards-institute">ETSI – European Telecommunications Standards Institute</h3>
-<p><a href="https://www.etsi.org" target="_blank" rel="noopener noreferrer">https://www.etsi.org</a><br>
+<p><a href="https://www.etsi.org" target="_blank" rel="noopener noreferrer"><a href="https://www.etsi.org">https://www.etsi.org</a></a><br>
 ETSI develops standards for cybersecurity, 5G, IoT and telecommunications. For IoT cybersecurity in Europe, its EN 303 645 is the reference to look at.</p>
 <hr>
 <h3 id="efta-european-free-trade-association">EFTA – European Free Trade Association</h3>
-<p><a href="https://www.efta.int" target="_blank" rel="noopener noreferrer">https://www.efta.int</a><br>
+<p><a href="https://www.efta.int" target="_blank" rel="noopener noreferrer"><a href="https://www.efta.int">https://www.efta.int</a></a><br>
 EFTA includes Iceland, Liechtenstein, Norway, and Switzerland. These countries are not EU members, but adopt many EU laws and standards via the European Economic Area (EEA) or bilateral agreements.</p>
 <ul>
 <li>EFTA countries participate in CEN, CENELEC, and ETSI</li>
@@ -815,7 +880,7 @@ EFTA includes Iceland, Liechtenstein, Norway, and Switzerland. These countries a
 </blockquote>
 <hr>
 <h3 id="tic-council-testing-inspection-certification">TIC Council – Testing, Inspection & Certification</h3>
-<p><a href="https://www.tic-council.org" target="_blank" rel="noopener noreferrer">https://www.tic-council.org</a><br>
+<p><a href="https://www.tic-council.org" target="_blank" rel="noopener noreferrer"><a href="https://www.tic-council.org">https://www.tic-council.org</a></a><br>
 Who does the testing and certification? The TIC Council represents the global third-party conformity assessment sector. Its labs and certifiers:</p>
 <ul>
 <li>Evaluate compliance under schemes like EUCC, ISO 27001, Common Criteria</li>
@@ -846,11 +911,11 @@ DORA targets financial entities and critical ICT providers. If you're building g
 </blockquote>
 <hr>
 <h3 id="ecso-european-cyber-security-organisation">ECSO – European Cyber Security Organisation</h3>
-<p><a href="https://ecs-org.eu" target="_blank" rel="noopener noreferrer">https://ecs-org.eu</a></p>
+<p><a href="https://ecs-org.eu" target="_blank" rel="noopener noreferrer"><a href="https://ecs-org.eu">https://ecs-org.eu</a></a></p>
 <p>ECSO brings together industry, researchers and institutions through a public-private partnership. Its work covers EU cybersecurity policy, innovation funding, SME growth and skills development.</p>
 <hr>
 <h3 id="eur-lex-the-eu-s-legal-library">EUR-Lex – The EU’s Legal Library</h3>
-<p><a href="https://eur-lex.europa.eu" target="_blank" rel="noopener noreferrer">https://eur-lex.europa.eu</a><br>
+<p><a href="https://eur-lex.europa.eu" target="_blank" rel="noopener noreferrer"><a href="https://eur-lex.europa.eu">https://eur-lex.europa.eu</a></a><br>
 Need the legal text itself? EUR-Lex publishes the official, legally binding EU regulations, directives, delegated acts and decisions.</p>
 <hr>
 <h2 id="eu-cybersecurity-laws-and-policies-quick-reference">EU Cybersecurity Laws and Policies (Quick Reference)</h2>
@@ -1036,7 +1101,8 @@ Need the legal text itself? EUR-Lex publishes the official, legally binding EU r
 </table>
 <hr>
 <h2 id="let-s-connect">Questions or feedback?</h2>
-<p>If you want to discuss one of these resources, you can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>]]></content:encoded>
+<p>If you want to discuss one of these resources, you can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Exploring Next.js CVE-2025-29927</title>
@@ -1060,7 +1126,7 @@ Score: 9.1 / 10 — Critical</p>
 <p>Before trying it, let's look at the middleware and the assumption behind it.</p>
 <h2 id="how-the-exploit-works">How the exploit works</h2>
 <p>Suppose this middleware protects a private route. We expect it to run on every request to that route:</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">middleware</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">request</span><span class="token operator">:</span> NextRequest</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">function</span> <span class="token function">middleware</span><span class="token punctuation">(</span><span class="token parameter"><span class="token literal-property property">request</span><span class="token operator">:</span> NextRequest</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">const</span> token <span class="token operator">=</span> request<span class="token punctuation">.</span>headers<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"x-super-secret-auth"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -1069,18 +1135,21 @@ Score: 9.1 / 10 — Critical</p>
     <span class="token punctuation">}</span>
 
     <span class="token keyword">return</span> NextResponse<span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre></div><p>The code looks for a custom header. If the header is missing, it redirects the request. Otherwise, it lets the request continue.</p>
+<span class="token punctuation">}</span></code></pre>
+<p>The code looks for a custom header. If the header is missing, it redirects the request. Otherwise, it lets the request continue.</p>
 <p>But what happens if the middleware does not run?</p>
 <p>Under certain conditions, the way Next.js internally resolves routes and static assets allows that to happen. The attacker can avoid the check rather than satisfy it.</p>
 <p>By sending a request with this header:</p>
-<div class="gatsby-highlight" data-language=""><pre class=""><code class="">x-middleware-subrequest: middleware:middleware:middleware:middleware:middleware</code></pre></div><p>an attacker can skip the middleware and reach protected routes without authenticating.</p>
+<pre class="language-plaintext" data-language="plaintext"><code class="language-plaintext">x-middleware-subrequest: middleware:middleware:middleware:middleware:middleware</code></pre>
+<p>an attacker can skip the middleware and reach protected routes without authenticating.</p>
 <p>That is the behavior to observe in the lab. The check is still in the source code, but this request does not go through it.</p>
 <h2 id="are-you-affected">Are You Affected?</h2>
 <p>If you're using Next.js version 11.1.4 or later, there's a strong chance you're vulnerable.
 Unless you've already updated to the latest patched release, your middleware-based authorization is not safe.</p>
 <p>I recommend updating immediately rather than leaving this for a later sprint. The issue affects the check that decides whether a request can reach a protected route.</p>
 <h2 id="let-s-connect">Questions or feedback?</h2>
-<p>If you try the lab and want to discuss the behavior or the authorization design, you can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>]]></content:encoded>
+<p>If you try the lab and want to discuss the behavior or the authorization design, you can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Secure Coding for Embedded Systems</title>
@@ -1128,7 +1197,8 @@ Unless you've already updated to the latest patched release, your middleware-bas
 <p>If you work on embedded products, I hope this gives you a practical way to think through the code, the dependencies and the update process together.</p>
 <p>You can <a href="https://www.udacity.com/course/secure-coding-for-embedded-systems--cd13387" target="_blank" rel="noopener noreferrer">explore the course on Udacity</a>.</p>
 <h2 id="let-s-connect">Questions or feedback?</h2>
-<p>Tried the course? I would like to hear what helped and what could be clearer in a future revision. You can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>]]></content:encoded>
+<p>Tried the course? I would like to hear what helped and what could be clearer in a future revision. You can reach me on <a href="https://www.linkedin.com/in/riccardosirigu/" target="_blank" rel="noopener noreferrer">LinkedIn</a>.</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>A Beautiful girl sent me this...</title>
@@ -1137,37 +1207,38 @@ Unless you've already updated to the latest patched release, your middleware-bas
   <pubDate>Tue, 08 Aug 2023 00:00:00 GMT</pubDate>
   <description>A step-by-step analysis of a phishing email and its obfuscated JavaScript malware, from delivery to data theft and command execution.</description>
   <content:encoded><![CDATA[<p>I remember with almost excitement how our story began, it all started with an email, loaded with... malware? 😒</p>
-<img src="https://www.riccardosirigu.com/static/c9a4a33be1e4d192f8994d36450c7da5/e5715/email.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/c9a4a33be1e4d192f8994d36450c7da5/8514f/email.png 192w, https://www.riccardosirigu.com/static/c9a4a33be1e4d192f8994d36450c7da5/804b2/email.png 384w, https://www.riccardosirigu.com/static/c9a4a33be1e4d192f8994d36450c7da5/e5715/email.png 768w, https://www.riccardosirigu.com/static/c9a4a33be1e4d192f8994d36450c7da5/4ad3a/email.png 1152w, https://www.riccardosirigu.com/static/c9a4a33be1e4d192f8994d36450c7da5/71c1d/email.png 1536w, https://www.riccardosirigu.com/static/c9a4a33be1e4d192f8994d36450c7da5/df438/email.png 1556w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="256" style="aspect-ratio: 768 / 256" alt="phishing email">
+<p><img alt="phishing email" loading="lazy" decoding="async" sizes="(min-width: 1556px) 1556px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1556" height="518" src="https://www.riccardosirigu.com/_astro/email.CD4UF33z_Z1orXwE.webp" srcset="https://www.riccardosirigu.com/_astro/email.CD4UF33z_2ony2z.webp 640w, https://www.riccardosirigu.com/_astro/email.CD4UF33z_NqHCp.webp 750w, https://www.riccardosirigu.com/_astro/email.CD4UF33z_1Gm8h3.webp 828w, https://www.riccardosirigu.com/_astro/email.CD4UF33z_Zcf6V4.webp 1080w, https://www.riccardosirigu.com/_astro/email.CD4UF33z_1tUIQf.webp 1280w, https://www.riccardosirigu.com/_astro/email.CD4UF33z_Z1orXwE.webp 1556w"></p>
 <p>The email that started it all. I don't know any Juliette Leblanc, who, by the way, advises us to avoid printing the email. We wouldn't want to burden this planet with useless paper... and deprive ourselves of a satisfying click on that precious attachment.</p>
 <p>Already anticipating the content of the file that Juliette wants me to open with the browser, I decide to take a different path and open it with VScode editor.</p>
-<p>The file appears like this, after &quot;beautifying&quot; it appropriately, as it was originally minified.</p>
-<img src="https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/e5715/deobfuscated-phase-1.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/8514f/deobfuscated-phase-1.png 192w, https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/804b2/deobfuscated-phase-1.png 384w, https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/e5715/deobfuscated-phase-1.png 768w, https://www.riccardosirigu.com/static/b8b6e6f45e648bba19ac2825303edef0/ae77d/deobfuscated-phase-1.png 1111w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="539" style="aspect-ratio: 768 / 540" alt="deobfuscated code">
+<p>The file appears like this, after "beautifying" it appropriately, as it was originally minified.</p>
+<p><img alt="deobfuscated code" loading="lazy" decoding="async" sizes="(min-width: 1111px) 1111px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1111" height="780" src="https://www.riccardosirigu.com/_astro/deobfuscated-phase-1.CqtgLDLN_Z1GxJs2.webp" srcset="https://www.riccardosirigu.com/_astro/deobfuscated-phase-1.CqtgLDLN_Z1Uq23b.webp 640w, https://www.riccardosirigu.com/_astro/deobfuscated-phase-1.CqtgLDLN_6NE6j.webp 750w, https://www.riccardosirigu.com/_astro/deobfuscated-phase-1.CqtgLDLN_Z8aC4w.webp 828w, https://www.riccardosirigu.com/_astro/deobfuscated-phase-1.CqtgLDLN_Z1yfBh9.webp 1080w, https://www.riccardosirigu.com/_astro/deobfuscated-phase-1.CqtgLDLN_Z1GxJs2.webp 1111w"></p>
 <p>The content of the suspicious attachment. At first glance, it doesn't inspire the utmost trust; it's heavily obfuscated, as if Juliette doesn't want us to understand the semantics of this piece of code.</p>
 <p>In this initial phase, let's not waste time deobfuscating it and instead move towards a <a href="https://www.riccardosirigu.com/expertise/offensive-security/">dynamic analysis on an isolated browser</a>, here's the result.</p>
-<img src="https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/e5715/malware-rendering.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/8514f/malware-rendering.png 192w, https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/804b2/malware-rendering.png 384w, https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/e5715/malware-rendering.png 768w, https://www.riccardosirigu.com/static/30e5f511700fdcb520d87d243a5598a6/b6529/malware-rendering.png 1049w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="491" style="aspect-ratio: 768 / 492" alt="malware rendering office 365">
-<p>Okay, we're starting to understand the intentions of our (former) friend Juliette. If my experience doesn't deceive me, once you press &quot;Sign in,&quot; our precious password won't end up directly on Microsoft's servers.</p>
+<p><img alt="malware rendering office 365" loading="lazy" decoding="async" sizes="(min-width: 1049px) 1049px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1049" height="671" src="https://www.riccardosirigu.com/_astro/malware-rendering.CUlRT3GG_Z2kHsSp.webp" srcset="https://www.riccardosirigu.com/_astro/malware-rendering.CUlRT3GG_thH40.webp 640w, https://www.riccardosirigu.com/_astro/malware-rendering.CUlRT3GG_ZBHLhU.webp 750w, https://www.riccardosirigu.com/_astro/malware-rendering.CUlRT3GG_Z5hvR4.webp 828w, https://www.riccardosirigu.com/_astro/malware-rendering.CUlRT3GG_Z2kHsSp.webp 1049w"></p>
+<p>Okay, we're starting to understand the intentions of our (former) friend Juliette. If my experience doesn't deceive me, once you press "Sign in," our precious password won't end up directly on Microsoft's servers.</p>
 <p>Let's try.</p>
-<img src="https://www.riccardosirigu.com/static/d92d4d6b85e38d971244a65d44800f46/e5715/steal-request.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/d92d4d6b85e38d971244a65d44800f46/8514f/steal-request.png 192w, https://www.riccardosirigu.com/static/d92d4d6b85e38d971244a65d44800f46/804b2/steal-request.png 384w, https://www.riccardosirigu.com/static/d92d4d6b85e38d971244a65d44800f46/e5715/steal-request.png 768w, https://www.riccardosirigu.com/static/d92d4d6b85e38d971244a65d44800f46/4ad3a/steal-request.png 1152w, https://www.riccardosirigu.com/static/d92d4d6b85e38d971244a65d44800f46/536c7/steal-request.png 1480w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="92" style="aspect-ratio: 768 / 92" alt="malware stealing my password">
-<p>As shown in the previous image, our username and password are forwarded to the &quot;purepsychedelic&quot; endpoint... let's leave out the explicit contents of the mentioned website.</p>
+<p><img alt="malware stealing my password" loading="lazy" decoding="async" sizes="(min-width: 1480px) 1480px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1480" height="178" src="https://www.riccardosirigu.com/_astro/steal-request.5Gc9764d_2lkN5k.webp" srcset="https://www.riccardosirigu.com/_astro/steal-request.5Gc9764d_Zy35ao.webp 640w, https://www.riccardosirigu.com/_astro/steal-request.5Gc9764d_ZdjjHX.webp 750w, https://www.riccardosirigu.com/_astro/steal-request.5Gc9764d_Z1NTdM5.webp 828w, https://www.riccardosirigu.com/_astro/steal-request.5Gc9764d_ZkWC5y.webp 1080w, https://www.riccardosirigu.com/_astro/steal-request.5Gc9764d_Z1wTtp5.webp 1280w, https://www.riccardosirigu.com/_astro/steal-request.5Gc9764d_2lkN5k.webp 1480w"></p>
+<p>As shown in the previous image, our username and password are forwarded to the "purepsychedelic" endpoint... let's leave out the explicit contents of the mentioned website.</p>
 <p>But those jokers are not satisfied with collecting non-functional passwords. The malicious backend also handles the verification of the entered password's validity, trying them on the target Outlook account.</p>
 <p>The following is the response after incorrect password.</p>
-<img src="https://www.riccardosirigu.com/static/09f4e86456326764af012de62beea21d/e5715/response-steal.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/09f4e86456326764af012de62beea21d/8514f/response-steal.png 192w, https://www.riccardosirigu.com/static/09f4e86456326764af012de62beea21d/804b2/response-steal.png 384w, https://www.riccardosirigu.com/static/09f4e86456326764af012de62beea21d/e5715/response-steal.png 768w, https://www.riccardosirigu.com/static/09f4e86456326764af012de62beea21d/4ad3a/response-steal.png 1152w, https://www.riccardosirigu.com/static/09f4e86456326764af012de62beea21d/1f038/response-steal.png 1481w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="89" style="aspect-ratio: 768 / 88" alt="malware trying the credentials on outlook">
+<p><img alt="malware trying the credentials on outlook" loading="lazy" decoding="async" sizes="(min-width: 1481px) 1481px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1481" height="171" src="https://www.riccardosirigu.com/_astro/response-steal.DzP5sb0B_Z218j3D.webp" srcset="https://www.riccardosirigu.com/_astro/response-steal.DzP5sb0B_GAhon.webp 640w, https://www.riccardosirigu.com/_astro/response-steal.DzP5sb0B_Z1KEch0.webp 750w, https://www.riccardosirigu.com/_astro/response-steal.DzP5sb0B_Z1Ps3al.webp 828w, https://www.riccardosirigu.com/_astro/response-steal.DzP5sb0B_Zg0hSN.webp 1080w, https://www.riccardosirigu.com/_astro/response-steal.DzP5sb0B_ZOtv5G.webp 1280w, https://www.riccardosirigu.com/_astro/response-steal.DzP5sb0B_Z218j3D.webp 1481w"></p>
 <p>Let's see how the execution of this stealer occurs.</p>
 <p>Let's take the slightly deobfuscated original file and analyze it more carefully. Let's focus on the juicier parts, as this kind of code is usually quite redundant to confuse reverse engineering.</p>
-<img src="https://www.riccardosirigu.com/static/dba778d7c313baf95282146bd6d99287/e5715/malware-deobfuscated.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/dba778d7c313baf95282146bd6d99287/8514f/malware-deobfuscated.png 192w, https://www.riccardosirigu.com/static/dba778d7c313baf95282146bd6d99287/804b2/malware-deobfuscated.png 384w, https://www.riccardosirigu.com/static/dba778d7c313baf95282146bd6d99287/e5715/malware-deobfuscated.png 768w, https://www.riccardosirigu.com/static/dba778d7c313baf95282146bd6d99287/f680b/malware-deobfuscated.png 1108w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="562" style="aspect-ratio: 768 / 564" alt="malware deobfuscated">
-<p>In the second line, the Base64-encoded &quot;value&quot; is our email. Between lines 32 and 34, the URL is generated from which a second script is downloaded to be embedded in the main page, a modus operandi similar to that of Droppers.</p>
-<img src="https://www.riccardosirigu.com/static/a42f6e0c1f5aaa6f8f70f2cbb4628505/62de4/deobfuscated-running.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/a42f6e0c1f5aaa6f8f70f2cbb4628505/8514f/deobfuscated-running.png 192w, https://www.riccardosirigu.com/static/a42f6e0c1f5aaa6f8f70f2cbb4628505/804b2/deobfuscated-running.png 384w, https://www.riccardosirigu.com/static/a42f6e0c1f5aaa6f8f70f2cbb4628505/62de4/deobfuscated-running.png 746w" sizes="(max-width: 746px) 100vw, 746px" width="746" height="84" style="aspect-ratio: 768 / 88" alt="malware running">
+<p><img alt="malware deobfuscated" loading="lazy" decoding="async" sizes="(min-width: 1108px) 1108px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1108" height="811" src="https://www.riccardosirigu.com/_astro/malware-deobfuscated.DgPNTOSr_Z2dBOs9.webp" srcset="https://www.riccardosirigu.com/_astro/malware-deobfuscated.DgPNTOSr_2eyhou.webp 640w, https://www.riccardosirigu.com/_astro/malware-deobfuscated.DgPNTOSr_2nPd8w.webp 750w, https://www.riccardosirigu.com/_astro/malware-deobfuscated.DgPNTOSr_Z1SdnwC.webp 828w, https://www.riccardosirigu.com/_astro/malware-deobfuscated.DgPNTOSr_1qombX.webp 1080w, https://www.riccardosirigu.com/_astro/malware-deobfuscated.DgPNTOSr_Z2dBOs9.webp 1108w"></p>
+<p>In the second line, the Base64-encoded "value" is our email. Between lines 32 and 34, the URL is generated from which a second script is downloaded to be embedded in the main page, a modus operandi similar to that of Droppers.</p>
+<p><img alt="malware running" loading="lazy" decoding="async" sizes="(min-width: 746px) 746px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="746" height="84" src="https://www.riccardosirigu.com/_astro/deobfuscated-running.DdeCY8UP_Z1ArPQb.webp" srcset="https://www.riccardosirigu.com/_astro/deobfuscated-running.DdeCY8UP_Z1kegCj.webp 640w, https://www.riccardosirigu.com/_astro/deobfuscated-running.DdeCY8UP_Z1ArPQb.webp 746w"></p>
 <p>The downloaded script is the following, which will be embedded in the initial web page. We're at the second stage.</p>
-<img src="https://www.riccardosirigu.com/static/19fe770924421af5e6bb41fde0657c52/e5715/second-stage.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/19fe770924421af5e6bb41fde0657c52/8514f/second-stage.png 192w, https://www.riccardosirigu.com/static/19fe770924421af5e6bb41fde0657c52/804b2/second-stage.png 384w, https://www.riccardosirigu.com/static/19fe770924421af5e6bb41fde0657c52/e5715/second-stage.png 768w, https://www.riccardosirigu.com/static/19fe770924421af5e6bb41fde0657c52/4ad3a/second-stage.png 1152w, https://www.riccardosirigu.com/static/19fe770924421af5e6bb41fde0657c52/71c1d/second-stage.png 1536w, https://www.riccardosirigu.com/static/19fe770924421af5e6bb41fde0657c52/1e5d2/second-stage.png 1630w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="484" style="aspect-ratio: 768 / 484" alt="second stage of the malware">
+<p><img alt="second stage of the malware" loading="lazy" decoding="async" sizes="(min-width: 1630px) 1630px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1630" height="1028" src="https://www.riccardosirigu.com/_astro/second-stage.DOTlje-e_2iK9wd.webp" srcset="https://www.riccardosirigu.com/_astro/second-stage.DOTlje-e_Z13NuiK.webp 640w, https://www.riccardosirigu.com/_astro/second-stage.DOTlje-e_eFV4d.webp 750w, https://www.riccardosirigu.com/_astro/second-stage.DOTlje-e_UJkJ8.webp 828w, https://www.riccardosirigu.com/_astro/second-stage.DOTlje-e_2bW7JY.webp 1080w, https://www.riccardosirigu.com/_astro/second-stage.DOTlje-e_2brgh4.webp 1280w, https://www.riccardosirigu.com/_astro/second-stage.DOTlje-e_2iK9wd.webp 1630w"></p>
 <p>Subsequently, another request is made to the URL we see in line 34 of the previous image. This additional payload will also be embedded in the initial page. This is the third stage.</p>
-<img src="https://www.riccardosirigu.com/static/3e9ec802dcedd9ae85bd943700f12268/e5715/third-stage.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/3e9ec802dcedd9ae85bd943700f12268/8514f/third-stage.png 192w, https://www.riccardosirigu.com/static/3e9ec802dcedd9ae85bd943700f12268/804b2/third-stage.png 384w, https://www.riccardosirigu.com/static/3e9ec802dcedd9ae85bd943700f12268/e5715/third-stage.png 768w, https://www.riccardosirigu.com/static/3e9ec802dcedd9ae85bd943700f12268/4ad3a/third-stage.png 1152w, https://www.riccardosirigu.com/static/3e9ec802dcedd9ae85bd943700f12268/71c1d/third-stage.png 1536w, https://www.riccardosirigu.com/static/3e9ec802dcedd9ae85bd943700f12268/c4842/third-stage.png 1634w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="159" style="aspect-ratio: 768 / 160" alt="malware deobfuscated">
-<p>The response is Base64 encoded; the decoded payload is as follows. I highlight the most interesting part. The <code class="language-text">.nextb</code> class is associated with the login button, and it has a click handler whose behavior is summarized below.</p>
-<img src="https://www.riccardosirigu.com/static/c426ba4c46782491a8db1c338a2aea00/e5715/code-send-to-server.png" class="gatsby-resp-image-image" srcset="https://www.riccardosirigu.com/static/c426ba4c46782491a8db1c338a2aea00/8514f/code-send-to-server.png 192w, https://www.riccardosirigu.com/static/c426ba4c46782491a8db1c338a2aea00/804b2/code-send-to-server.png 384w, https://www.riccardosirigu.com/static/c426ba4c46782491a8db1c338a2aea00/e5715/code-send-to-server.png 768w, https://www.riccardosirigu.com/static/c426ba4c46782491a8db1c338a2aea00/4ad3a/code-send-to-server.png 1152w, https://www.riccardosirigu.com/static/c426ba4c46782491a8db1c338a2aea00/b30aa/code-send-to-server.png 1405w" sizes="(max-width: 768px) 100vw, 768px" width="768" height="418" style="aspect-ratio: 768 / 416" alt="malware deobfuscated">
-<p>In line 1834, we notice the HTTP POST call to the malicious server. The <code class="language-text">compi</code> variable will contain our email and password. The <code class="language-text">ur</code> variable defined earlier will contain the attacker's server address. Juliette is indeed receiving our Outlook credentials 🤦🏻.</p>
+<p><img alt="malware deobfuscated" loading="lazy" decoding="async" sizes="(min-width: 1634px) 1634px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1634" height="339" src="https://www.riccardosirigu.com/_astro/third-stage.DQJJ_Zju_Z1Lgfm1.webp" srcset="https://www.riccardosirigu.com/_astro/third-stage.DQJJ_Zju_Z2gfP9b.webp 640w, https://www.riccardosirigu.com/_astro/third-stage.DQJJ_Zju_HRAwF.webp 750w, https://www.riccardosirigu.com/_astro/third-stage.DQJJ_Zju_Z2b2zzo.webp 828w, https://www.riccardosirigu.com/_astro/third-stage.DQJJ_Zju_Za781W.webp 1080w, https://www.riccardosirigu.com/_astro/third-stage.DQJJ_Zju_1MYzvh.webp 1280w, https://www.riccardosirigu.com/_astro/third-stage.DQJJ_Zju_Z1Lgfm1.webp 1634w"></p>
+<p>The response is Base64 encoded; the decoded payload is as follows. I highlight the most interesting part. The <code>.nextb</code> class is associated with the login button, and it has a click handler whose behavior is summarized below.</p>
+<p><img alt="malware deobfuscated" loading="lazy" decoding="async" sizes="(min-width: 1405px) 1405px, 100vw" data-astro-image="constrained" data-astro-image-pos="center" width="1405" height="764" src="https://www.riccardosirigu.com/_astro/code-send-to-server.Bs2i37ql_Z25uniU.webp" srcset="https://www.riccardosirigu.com/_astro/code-send-to-server.Bs2i37ql_1WXRc9.webp 640w, https://www.riccardosirigu.com/_astro/code-send-to-server.Bs2i37ql_1l4BXP.webp 750w, https://www.riccardosirigu.com/_astro/code-send-to-server.Bs2i37ql_Z1Yg0dW.webp 828w, https://www.riccardosirigu.com/_astro/code-send-to-server.Bs2i37ql_18cenM.webp 1080w, https://www.riccardosirigu.com/_astro/code-send-to-server.Bs2i37ql_Z2jjvwM.webp 1280w, https://www.riccardosirigu.com/_astro/code-send-to-server.Bs2i37ql_Z25uniU.webp 1405w"></p>
+<p>In line 1834, we notice the HTTP POST call to the malicious server. The <code>compi</code> variable will contain our email and password. The <code>ur</code> variable defined earlier will contain the attacker's server address. Juliette is indeed receiving our Outlook credentials 🤦🏻.</p>
 <p>I haven't tested the flow after entering a correct password, but the code seems to include functionality to obtain the two-factor authentication code.</p>
-<p>Our story with Juliette ends here, after dismantling her stalking objective towards me, and hopefully succeeding in imparting a bit of healthy <strong>&quot;security paranoia&quot;</strong> for when you receive an email with suspicious attachments or links in your inbox.</p>
+<p>Our story with Juliette ends here, after dismantling her stalking objective towards me, and hopefully succeeding in imparting a bit of healthy <strong>"security paranoia"</strong> for when you receive an email with suspicious attachments or links in your inbox.</p>
 <p>Keep Learning<br>
-Until next time 😎</p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>How to write secure code</title>
@@ -1189,12 +1260,13 @@ Writing code that is also secure is even harder.</p>
 <p>Although these practices are strongly recommended, there is also another point to consider, which is often overlooked.</p>
 <p><strong>A strong Design</strong></p>
 <p>Let's suppose to have a simple domain object that represents a Developer in a typical web application with the Developer's username displayed in a public profile page.</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">case</span> <span class="token keyword">class</span> Developer<span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">Long</span><span class="token punctuation">,</span> username<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span></code></pre></div><p>The <code class="language-text">Developer</code> is quite simple, it holds an <code class="language-text">id</code> and its <code class="language-text">username</code>.</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">case</span> <span class="token keyword">class</span> Developer<span class="token punctuation">(</span>id<span class="token operator">:</span> <span class="token builtin">Long</span><span class="token punctuation">,</span> username<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span></code></pre>
+<p>The <code>Developer</code> is quite simple, it holds an <code>id</code> and its <code>username</code>.</p>
 <p>If we take a closer look at the code we can identify at least one security vulnerability.<br>
 Can you figure out where?<br>
 (Here a knowledge of the <a href="https://owasp.org/www-project-proactive-controls/" target="_blank" rel="noopener noreferrer">most common web vulnerabilities is needeed</a>)</p>
-<p>The  <code class="language-text">username</code> is displayed in a public page and is Developer-controlled.</p>
-<p>A malicious actor could name itself something along the lines of <code class="language-text">'&gt;&lt;script&gt;alert('I'm an evil script!')&lt;/script&gt;</code>
+<p>The  <code>username</code> is displayed in a public page and is Developer-controlled.</p>
+<p>A malicious actor could name itself something along the lines of <code>'&gt;&lt;script&gt;alert('I'm an evil script!')&lt;/script&gt;</code>
 and manage to execute JavaScript code on the visitor's browser.<br>
 <a href="https://portswigger.net/web-security/cross-site-scripting" target="_blank" rel="noopener noreferrer">This vulnerability is called Cross Site Scripting (<em>XSS</em>)</a>.<br>
 Or he can even store its name as a malicious SQL query and perform <a href="https://portswigger.net/web-security/sql-injection/blind" target="_blank" rel="noopener noreferrer">a blind <em>SQL injection</em></a> attack.</p>
@@ -1202,17 +1274,17 @@ Or he can even store its name as a malicious SQL query and perform <a href="http
 The presentation layer in the case of <em>XSS</em> and the persistence layer in the case of SQL injection.<br>
 With the traditional approach we usually do one or more of the following:</p>
 <ul>
-<li>To mitigate the first security vulnerability (<em>XSS</em>) we could encode the <code class="language-text">username</code> when displaying it in the profile page, to strip out all the dangerous characters by hand or by using a modern JavaScript framework being careful not to disable the encoding for whatever reason.</li>
+<li>To mitigate the first security vulnerability (<em>XSS</em>) we could encode the <code>username</code> when displaying it in the profile page, to strip out all the dangerous characters by hand or by using a modern JavaScript framework being careful not to disable the encoding for whatever reason.</li>
 <li>To mitigate the second security vulnerability we could add a filter to strip out everything except all the allowed non-dangerous characters.</li>
 </ul>
 <p>We could even employ a web application firewall that manages this filtering automagically.</p>
 <p>But these approaches, if not rigorously applied, tends to provide a false sense of security.</p>
 <p>Moreover if a new attack vector is discovered, for which the above mitigations are not suitable, we are in trouble.</p>
-<p>An alternative method is a variation of the <a href="https://en.wikipedia.org/wiki/Rule_of_least_power" target="_blank" rel="noopener noreferrer">&quot;Rule of least power&quot;</a>.<br>
-Why representing the <code class="language-text">username</code> as a whole <code class="language-text">String</code> when we don't need all the UTF-16 charset (in this case)?</p>
-<h2 id="secure-by-design">Secure By Design</h2>
-<p>What if our <code class="language-text">Developer</code> was represented in the following way?</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala">
+<p>An alternative method is a variation of the <a href="https://en.wikipedia.org/wiki/Rule_of_least_power" target="_blank" rel="noopener noreferrer">"Rule of least power"</a>.<br>
+Why representing the <code>username</code> as a whole <code>String</code> when we don't need all the UTF-16 charset (in this case)?</p>
+<h3 id="secure-by-design">Secure By Design</h3>
+<p>What if our <code>Developer</code> was represented in the following way?</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala">
 <span class="token keyword">object</span> refinements <span class="token punctuation">{</span>
     <span class="token keyword">type</span> Id <span class="token operator">=</span> <span class="token builtin">Long</span> Refined Positive
     <span class="token keyword">type</span> Username <span class="token operator">=</span> <span class="token builtin">String</span> Refined AllOf<span class="token punctuation">[</span>
@@ -1223,14 +1295,16 @@ Why representing the <code class="language-text">username</code> as a whole <cod
     <span class="token punctuation">]</span>
     
     <span class="token keyword">final</span> <span class="token keyword">case</span> <span class="token keyword">class</span> Developer<span class="token punctuation">(</span>id<span class="token operator">:</span> Id<span class="token punctuation">,</span> username<span class="token operator">:</span> Username<span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre></div><p>Here I'm using Scala with <a href="https://github.com/fthomas/refined" target="_blank" rel="noopener noreferrer">refined</a>, but the same concepts apply to all the other programming languages.</p>
+<span class="token punctuation">}</span></code></pre>
+<p>Here I'm using Scala with <a href="https://github.com/fthomas/refined" target="_blank" rel="noopener noreferrer">refined</a>, but the same concepts apply to all the other programming languages.</p>
 <p><strong>We need to validate our domain model as strictly as possible.</strong></p>
 <p>In our example the username can only be a non-empty String with a length between 5 and 20 characters and can only contain alfanumeric characters plus the underscore.
 This makes the aforementioned attacks very unlikely to happen.</p>
 <p>If we complement this design with the traditional approach previously explained and explicit security awareness, our code becomes even more secure.</p>
 <p>Go and try it out!</p>
 <p>Keep Learning.<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>How to count the number of results with AWS Amplify DynamoDB and GraphQL</title>
@@ -1243,14 +1317,15 @@ Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" styl
 <p>If you are about to bang your head against the wall, stop.</p>
 <p>I'll show you how to do it.</p>
 <p>From the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html#Query.Count" target="_blank" rel="noopener noreferrer">DynamoDB documentation</a>:</p>
-<div class="gatsby-highlight" data-language=""><pre class=""><code class="">the Query response contains the following elements:
+<pre class="language-plaintext" data-language="plaintext"><code class="language-plaintext">the Query response contains the following elements:
 
 ScannedCount — The number of items that matched the key condition expression before a filter expression (if present) was applied.
 
 Count — The number of items that remain after a filter expression (if present) was applied.
-</code></pre></div><p>The problem is that the automatically generated queries from Amplify don't have those fields.</p>
+</code></pre>
+<p>The problem is that the automatically generated queries from Amplify don't have those fields.</p>
 <p>This is an example of a query that lists users:</p>
-<div class="gatsby-highlight" data-language="javascript"><pre class="language-javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> listUsers <span class="token operator">=</span> <span class="token comment">/* GraphQL */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
+<pre class="language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">export</span> <span class="token keyword">const</span> listUsers <span class="token operator">=</span> <span class="token comment">/* GraphQL */</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">
   query ListUsers(
     $filter: ModelAlertFilterInput
     $limit: Int
@@ -1268,30 +1343,35 @@ Count — The number of items that remain after a filter expression (if present)
     }
   }
 </span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
-</code></pre></div><p>And so, there will be no <code class="language-text">scannedCount</code> and <code class="language-text">count</code> in the result.</p>
-<p>To make them magically appear, open your <code class="language-text">amplify/backend/api/&lt;project-name&gt;/build/schema.graphql</code></p>
-<p>and look for the definition of the <code class="language-text">type Query</code>.</p>
+</code></pre>
+<p>And so, there will be no <code>scannedCount</code> and <code>count</code> in the result.</p>
+<p>To make them magically appear, open your <code>amplify/backend/api/&lt;project-name&gt;/build/schema.graphql</code></p>
+<p>and look for the definition of the <code>type Query</code>.</p>
 <p>You'll find something like this</p>
-<div class="gatsby-highlight" data-language="graphql"><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
+<pre class="language-graphql" data-language="graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">Query</span> <span class="token punctuation">{</span>
   <span class="token attr-name">getUser</span><span class="token punctuation">(</span><span class="token attr-name">id</span><span class="token punctuation">:</span> <span class="token scalar">ID</span><span class="token operator">!</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name">User</span>
   <span class="token attr-name">listUsers</span><span class="token punctuation">(</span><span class="token attr-name">filter</span><span class="token punctuation">:</span> <span class="token atom-input class-name">ModelUserFilterInput</span><span class="token punctuation">,</span> <span class="token attr-name">limit</span><span class="token punctuation">:</span> <span class="token scalar">Int</span><span class="token punctuation">,</span> <span class="token attr-name">nextToken</span><span class="token punctuation">:</span> <span class="token scalar">String</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token class-name">ModelUserConnection</span>
   <span class="token operator">...</span>
-<span class="token punctuation">}</span></code></pre></div><p>a <code class="language-text">listUsers</code> field that returns a type of <code class="language-text">ModelUserConnection</code>, that is the result type that we want to edit.</p>
-<p>Copy the type <code class="language-text">ModelUserConnection</code> in your <code class="language-text">amplify/backend/api/&lt;project-name&gt;/schema.graphql</code> to override it.</p>
-<div class="gatsby-highlight" data-language="graphql"><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">ModelUserConnection</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
+<p>a <code>listUsers</code> field that returns a type of <code>ModelUserConnection</code>, that is the result type that we want to edit.</p>
+<p>Copy the type <code>ModelUserConnection</code> in your <code>amplify/backend/api/&lt;project-name&gt;/schema.graphql</code> to override it.</p>
+<pre class="language-graphql" data-language="graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">ModelUserConnection</span> <span class="token punctuation">{</span>
   <span class="token attr-name">items</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">User</span><span class="token punctuation">]</span>
   <span class="token attr-name">nextToken</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
-<span class="token punctuation">}</span></code></pre></div><p>Add the <code class="language-text">scannedCount</code> and <code class="language-text">count</code> fields.</p>
-<div class="gatsby-highlight" data-language="graphql"><pre class="language-graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">ModelUserConnection</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Add the <code>scannedCount</code> and <code>count</code> fields.</p>
+<pre class="language-graphql" data-language="graphql"><code class="language-graphql"><span class="token keyword">type</span> <span class="token class-name">ModelUserConnection</span> <span class="token punctuation">{</span>
   <span class="token attr-name">items</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token class-name">User</span><span class="token punctuation">]</span>
   <span class="token attr-name">nextToken</span><span class="token punctuation">:</span> <span class="token scalar">String</span>
   <span class="token attr-name">scannedCount</span><span class="token punctuation">:</span> <span class="token scalar">Int</span>
   <span class="token attr-name">count</span><span class="token punctuation">:</span> <span class="token scalar">Int</span>
-<span class="token punctuation">}</span></code></pre></div><p>Now type <code class="language-text">amplify push</code> and enjoy.</p>
+<span class="token punctuation">}</span></code></pre>
+<p>Now type <code>amplify push</code> and enjoy.</p>
 <p>Now the query will return the scannedCount and count and you can happily paginate your results.</p>
-<p>Remember that if the size of the Query result set is larger than 1 MB, <code class="language-text">scannedCount</code> and <code class="language-text">count</code> represent only a partial count of the total items. You need to perform multiple Query operations to retrieve all the results.</p>
+<p>Remember that if the size of the Query result set is larger than 1 MB, <code>scannedCount</code> and <code>count</code> represent only a partial count of the total items. You need to perform multiple Query operations to retrieve all the results.</p>
 <p>Keep Learning<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Quick recipe: How to connect multiple Docker containers</title>
@@ -1304,20 +1384,21 @@ You have two or more <strong>Docker</strong> containers and you want them to com
 Here is how you do it.</p>
 <p>For semplicity of sake let's assume you have two containers.</p>
 <ul>
-<li><code class="language-text">my-dev-db</code> is the first container, a database used for development for example</li>
-<li><code class="language-text">my-web-app</code> is the second one, a web app written in your favourite programming language</li>
+<li><code>my-dev-db</code> is the first container, a database used for development for example</li>
+<li><code>my-web-app</code> is the second one, a web app written in your favourite programming language</li>
 </ul>
 <p>To allow the communication between our cool containers we need to create a bridge network with</p>
-<p><code class="language-text">docker network create &lt;network-name&gt;</code></p>
-<p>in our case, let's name it <code class="language-text">my-net</code>. Such an original name. <img alt="" aria-hidden="true" data-icon="emoji-sweat_smile" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sweat_smile.png" width="25" height="25"></p>
+<p><code>docker network create &lt;network-name&gt;</code></p>
+<p>in our case, let's name it <code>my-net</code>. Such an original name. 😅</p>
 <p>and then you attach your running containers to the newly created network with</p>
-<p><code class="language-text">docker network connect my-net my-dev-db</code>
-<code class="language-text">docker network connect my-net my-web-app</code></p>
-<p>now if you run the command <code class="language-text">docker network inspect my-net</code> you should see your containers listed. Now your containers should see each other and can talk with each other.</p>
+<p><code>docker network connect my-net my-dev-db</code>
+<code>docker network connect my-net my-web-app</code></p>
+<p>now if you run the command <code>docker network inspect my-net</code> you should see your containers listed. Now your containers should see each other and can talk with each other.</p>
 <p>If you want to learn more, check out <a href="https://docs.docker.com/network/bridge/" target="_blank" rel="noopener noreferrer">the official Docker documentation</a></p>
 <p>If you want to know how to do the same thing using <strong>Docker Compose</strong>, just take a look <a href="https://docs.docker.com/compose/networking/" target="_blank" rel="noopener noreferrer">here</a></p>
 <p>Keep Learning<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>The best programming resources I read in 2017</title>
@@ -1325,9 +1406,9 @@ Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" styl
   <guid isPermaLink="true">https://www.riccardosirigu.com/blog/best-programming-resources-of-2017/</guid>
   <pubDate>Sun, 28 Jan 2018 00:00:00 GMT</pubDate>
   <description>A curated collection of standout resources on Scala, functional programming, machine learning, deep learning and software security.</description>
-  <content:encoded><![CDATA[<p>As you already know, I like to read a lot. <img alt="" aria-hidden="true" data-icon="emoji-notebook_with_decorative_cover" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-notebook_with_decorative_cover.png" width="25" height="25"><br>
+  <content:encoded><![CDATA[<p>As you already know, I like to read a lot. 📔<br>
 Here is a list of some of the programming resources I found more interesting in 2017.<br>
-Enjoy. <img alt="" aria-hidden="true" data-icon="emoji-simple_smile" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-simple_smile.png" width="25" height="25"></p>
+Enjoy. 🙂</p>
 <h2 id="scala-and-functional-programming">Scala and Functional Programming</h2>
 <p><a href="https://underscore.io/books/scala-with-cats/" target="_blank" rel="noopener noreferrer">Scala with cats</a></p>
 <p><a href="http://www.codecommit.com/blog/ruby/monads-are-not-metaphors" target="_blank" rel="noopener noreferrer">Monads are not metaphors</a></p>
@@ -1361,7 +1442,8 @@ Enjoy. <img alt="" aria-hidden="true" data-icon="emoji-simple_smile" style="disp
 <p><a href="https://cybersecuritybase.mooc.fi/" target="_blank" rel="noopener noreferrer">Cyber Security Base with F‑Secure</a></p>
 <p>What about Yours?</p>
 <p>Keep Learning<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>How to protect your RESTful APIs in Lift with JWT</title>
@@ -1374,77 +1456,82 @@ Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" styl
 <p>As explained in <a href="https://jwt.io/introduction/" target="_blank" rel="noopener noreferrer">the official JWT page</a> or in the <a href="https://tools.ietf.org/html/rfc7519" target="_blank" rel="noopener noreferrer">RFC 7519</a>:</p>
 <p><em>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.</em></p>
 <p>In brief, it's a string with the following format</p>
-<p><code class="language-text">header.payload.signature</code></p>
+<p><code>header.payload.signature</code></p>
 <p>where each part is <strong>base64url</strong> encoded, interactive examples <a href="https://jwt.io/#debugger" target="_blank" rel="noopener noreferrer">here</a>.</p>
 <p>Just rember that the payload is not encrypted and <strong>ANYONE</strong> that has access to the token can see what's inside. An attacker can inspect the payload but he can't tamper with it because it's signed with a <strong>STRONG</strong> key that you generated.</p>
 <p>My library of choice to encode/decode/verify JWT with Scala is <a href="http://pauldijou.fr/jwt-scala" target="_blank" rel="noopener noreferrer">jwt-scala</a></p>
 <h2 id="building-an-interceptor-with-lift">Building an interceptor with Lift</h2>
 <p>The api we want to protect is the following</p>
-<p><code class="language-text">GET /api/secured/treasure</code></p>
+<p><code>GET /api/secured/treasure</code></p>
 <p>I would like to have a middleware (in Express.js terms, a decorator if you are a Python lover) that intercepts every request that points to a protected resource, decode the JWT inside of the http request's <strong>Authorization</strong> header and allow or deny access to the forementioned resource according to the token validity.</p>
 <p><strong>How can we do this with Lift?</strong></p>
-<p>The <code class="language-text">LiftRules</code> object is where most of the configuration parameters that handles HTTP request and responses reside.
+<p>The <code>LiftRules</code> object is where most of the configuration parameters that handles HTTP request and responses reside.
 It gets initialized during boot.</p>
 <p>As the <a href="https://exploring.liftweb.net/master/index-9.html#toc-Section-9.9" target="_blank" rel="noopener noreferrer">documentation says</a>, this is the place where we tell Lift what resource needs to be protected and how.</p>
 <p>Lift doesn't support Token based authentication out of the box, but thanks to its extensibility we can easily write our own JWT authenticator.</p>
 <p>Let the fun begin!</p>
 <p>Let's start with informing Lift that out precious API needs to be protected.</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">def</span> protectedRoutes<span class="token operator">:</span> LiftRules<span class="token punctuation">.</span>HttpAuthProtectedResourcePF <span class="token operator">=</span> <span class="token punctuation">{</span>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">def</span> protectedRoutes<span class="token operator">:</span> LiftRules<span class="token punctuation">.</span>HttpAuthProtectedResourcePF <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token comment">//Empty means that this resource is protected by authentication but no authorization is performed</span>
-  <span class="token keyword">case</span> <span class="token string">"api"</span> <span class="token operator">::</span> <span class="token string">"secured"</span> <span class="token operator">::</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=></span> Empty
+  <span class="token keyword">case</span> <span class="token string">"api"</span> <span class="token operator">::</span> <span class="token string">"secured"</span> <span class="token operator">::</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=&gt;</span> Empty
 <span class="token punctuation">}</span>
 LiftRules<span class="token punctuation">.</span>httpAuthProtectedResource<span class="token punctuation">.</span>append<span class="token punctuation">(</span>protectedRoutes<span class="token punctuation">)</span>
 LiftRules<span class="token punctuation">.</span>authentication <span class="token operator">=</span> JWTAuthentication<span class="token punctuation">(</span><span class="token string">"api"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  <span class="token keyword">case</span><span class="token punctuation">(</span>payload<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token keyword">=></span>
+  <span class="token keyword">case</span><span class="token punctuation">(</span>payload<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
     <span class="token boolean">true</span>
-<span class="token punctuation">}</span></code></pre></div><p>For each <code class="language-text">HttpAuthProtectedResourcePF</code> inside <code class="language-text">LiftRules.httpAuthProtectedResource</code>, Lift will use the authentication mechanism defined with <code class="language-text">LiftRules.authentication</code>.<br>
-In our case <code class="language-text">JWTAuthentication</code>.</p>
+<span class="token punctuation">}</span></code></pre>
+<p>For each <code>HttpAuthProtectedResourcePF</code> inside <code>LiftRules.httpAuthProtectedResource</code>, Lift will use the authentication mechanism defined with <code>LiftRules.authentication</code>.<br>
+In our case <code>JWTAuthentication</code>.</p>
 <p>Let's write it.</p>
-<p>First thing to do, in order to tell Lift we are writing an HTTP authentication method, we must extend the <code class="language-text">HttpAuthentication</code> trait</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">trait</span> HttpAuthentication <span class="token punctuation">{</span>
+<p>First thing to do, in order to tell Lift we are writing an HTTP authentication method, we must extend the <code>HttpAuthentication</code> trait</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">trait</span> HttpAuthentication <span class="token punctuation">{</span>
   <span class="token keyword">def</span> header<span class="token punctuation">(</span>r<span class="token operator">:</span> Req<span class="token punctuation">)</span><span class="token operator">:</span> Box<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> r<span class="token punctuation">.</span>request<span class="token punctuation">.</span>header<span class="token punctuation">(</span><span class="token string">"Authorization"</span><span class="token punctuation">)</span>
   <span class="token keyword">def</span> verified_<span class="token operator">?</span> <span class="token operator">:</span> PartialFunction<span class="token punctuation">[</span>Req<span class="token punctuation">,</span> <span class="token builtin">Boolean</span><span class="token punctuation">]</span>
   <span class="token keyword">def</span> realm<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> <span class="token string">""</span>
   <span class="token keyword">def</span> unauthorizedResponse<span class="token operator">:</span> UnauthorizedResponse <span class="token operator">=</span> UnauthorizedResponse<span class="token punctuation">(</span>realm<span class="token punctuation">)</span>
   <span class="token keyword">def</span> shutDown <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre></div><p>and override the <code class="language-text">verified_?</code> partial function, that is the bouncer of our API.</p>
-<p>Inside the <code class="language-text">verified_?</code> partial function we need to take the token from the request's <code class="language-text">Authorization</code> header, verify it and decode its payload, if we are interested in the claims inside its stomach.<br>
-If <code class="language-text">verified_?</code> returns <code class="language-text">true</code>, the client is allowed, otherwise a 401 UnauthorizedResponse will be returned.</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">case</span> <span class="token keyword">class</span> JWTAuthentication<span class="token punctuation">(</span>realmName<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span><span class="token punctuation">(</span>func<span class="token operator">:</span> PartialFunction<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token builtin">String</span><span class="token punctuation">,</span> Req<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">Boolean</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">extends</span> HttpAuthentication <span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
+<p>and override the <code>verified_?</code> partial function, that is the bouncer of our API.</p>
+<p>Inside the <code>verified_?</code> partial function we need to take the token from the request's <code>Authorization</code> header, verify it and decode its payload, if we are interested in the claims inside its stomach.<br>
+If <code>verified_?</code> returns <code>true</code>, the client is allowed, otherwise a 401 UnauthorizedResponse will be returned.</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">case</span> <span class="token keyword">class</span> JWTAuthentication<span class="token punctuation">(</span>realmName<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span><span class="token punctuation">(</span>func<span class="token operator">:</span> PartialFunction<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token builtin">String</span><span class="token punctuation">,</span> Req<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">Boolean</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">extends</span> HttpAuthentication <span class="token punctuation">{</span>
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     <span class="token comment">//If the credentials functions returns a Full box, func gets executed</span>
     <span class="token keyword">override</span> <span class="token keyword">def</span> verified_<span class="token operator">?</span> <span class="token operator">:</span> PartialFunction<span class="token punctuation">[</span>Req<span class="token punctuation">,</span> <span class="token builtin">Boolean</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token keyword">=></span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
         credentials<span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token keyword">match</span> <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> Full<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token keyword">if</span> func<span class="token punctuation">.</span>isDefinedAt<span class="token punctuation">(</span>payload<span class="token punctuation">,</span> req<span class="token punctuation">)</span> <span class="token keyword">=></span>
+        <span class="token keyword">case</span> Full<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token keyword">if</span> func<span class="token punctuation">.</span>isDefinedAt<span class="token punctuation">(</span>payload<span class="token punctuation">,</span> req<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
             jwtClaims<span class="token punctuation">.</span>set<span class="token punctuation">(</span>Option<span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span>
             func<span class="token punctuation">(</span>payload<span class="token punctuation">,</span> req<span class="token punctuation">)</span>
-        <span class="token keyword">case</span> _ <span class="token keyword">=></span> <span class="token boolean">false</span>
+        <span class="token keyword">case</span> _ <span class="token keyword">=&gt;</span> <span class="token boolean">false</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre></div><p><code class="language-text">credentials</code> is a simple function that decodes the JWT with your secret and a given algorithm, you can find the full code at the end of this post.</p>
+<span class="token punctuation">}</span></code></pre>
+<p><code>credentials</code> is a simple function that decodes the JWT with your secret and a given algorithm, you can find the full code at the end of this post.</p>
 <p>Now we have an interceptor that can extract a JWT from each request that points to a protected resource, but how can we examine the claims that are inside the token without redoing the work that our interceptor has already done?</p>
-<p>It's simple, we can stick our decoded payload in a <code class="language-text">TransientRequestVar</code>, a request variable that has the scope of the current HTTP request.</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">object</span> jwtClaims <span class="token keyword">extends</span> TransientRequestVar<span class="token punctuation">[</span>Option<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span>Empty<span class="token punctuation">)</span></code></pre></div><p>Now in our api we can access jwtClaims and analyze the JWT payload.</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">object</span> SecuredApi <span class="token keyword">extends</span> RestHelper<span class="token punctuation">{</span>
+<p>It's simple, we can stick our decoded payload in a <code>TransientRequestVar</code>, a request variable that has the scope of the current HTTP request.</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">object</span> jwtClaims <span class="token keyword">extends</span> TransientRequestVar<span class="token punctuation">[</span>Option<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span>Empty<span class="token punctuation">)</span></code></pre>
+<p>Now in our api we can access jwtClaims and analyze the JWT payload.</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">object</span> SecuredApi <span class="token keyword">extends</span> RestHelper<span class="token punctuation">{</span>
   serve<span class="token punctuation">(</span><span class="token string">"api"</span> <span class="token operator">/</span> <span class="token string">"secured"</span> prefix <span class="token punctuation">{</span>
-     <span class="token keyword">case</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=></span>
+     <span class="token keyword">case</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=&gt;</span>
        <span class="token comment">//Here you can access jwtClaims TransientRequestVar</span>
        JString<span class="token punctuation">(</span><span class="token string">"My Treasure"</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre></div><p>This example is purposefully simple in order to make you better understand the general architecture, a better approach would be deserialize our claims and stick inside the TransientRequestVar not a String but a more suitable and easier to manage data type.</p>
+<span class="token punctuation">}</span></code></pre>
+<p>This example is purposefully simple in order to make you better understand the general architecture, a better approach would be deserialize our claims and stick inside the TransientRequestVar not a String but a more suitable and easier to manage data type.</p>
 <p>Here below, for your enjoyment, the full source code.</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">object</span> SecuredApi <span class="token keyword">extends</span> RestHelper<span class="token punctuation">{</span>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">object</span> SecuredApi <span class="token keyword">extends</span> RestHelper<span class="token punctuation">{</span>
 
   <span class="token keyword">def</span> init<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
 
     <span class="token keyword">def</span> protectedRoutes<span class="token operator">:</span> LiftRules<span class="token punctuation">.</span>HttpAuthProtectedResourcePF <span class="token operator">=</span> <span class="token punctuation">{</span>
       <span class="token comment">//Empty means that this resource is protected by authentication but no authorization is performed</span>
-      <span class="token keyword">case</span> <span class="token string">"api"</span> <span class="token operator">::</span> <span class="token string">"secured"</span> <span class="token operator">::</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=></span> Empty
+      <span class="token keyword">case</span> <span class="token string">"api"</span> <span class="token operator">::</span> <span class="token string">"secured"</span> <span class="token operator">::</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=&gt;</span> Empty
     <span class="token punctuation">}</span>
     LiftRules<span class="token punctuation">.</span>httpAuthProtectedResource<span class="token punctuation">.</span>append<span class="token punctuation">(</span>protectedRoutes<span class="token punctuation">)</span>
     LiftRules<span class="token punctuation">.</span>authentication <span class="token operator">=</span> JWTAuthentication<span class="token punctuation">(</span><span class="token string">"api"</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">case</span><span class="token punctuation">(</span>payload<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token keyword">=></span>
+      <span class="token keyword">case</span><span class="token punctuation">(</span>payload<span class="token punctuation">,</span> _<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
         <span class="token boolean">true</span>
     <span class="token punctuation">}</span>
     LiftRules<span class="token punctuation">.</span>statelessDispatch<span class="token punctuation">.</span>append<span class="token punctuation">(</span>SecuredApi<span class="token punctuation">)</span>
@@ -1452,23 +1539,24 @@ If <code class="language-text">verified_?</code> returns <code class="language-t
 
 
   serve<span class="token punctuation">(</span><span class="token string">"api"</span> <span class="token operator">/</span> <span class="token string">"secured"</span> prefix <span class="token punctuation">{</span>
-     <span class="token keyword">case</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=></span>
+     <span class="token keyword">case</span> <span class="token string">"treasure"</span> <span class="token operator">::</span> Nil JsonGet _ <span class="token keyword">=&gt;</span>
        <span class="token comment">//Here you can access jwtClaims TransientRequestVar</span>
        JString<span class="token punctuation">(</span><span class="token string">"My Treasure"</span><span class="token punctuation">)</span>
   <span class="token punctuation">}</span><span class="token punctuation">)</span>
   
-<span class="token punctuation">}</span></code></pre></div><div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">object</span> jwtClaims <span class="token keyword">extends</span> TransientRequestVar<span class="token punctuation">[</span>Option<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span>Empty<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">object</span> jwtClaims <span class="token keyword">extends</span> TransientRequestVar<span class="token punctuation">[</span>Option<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">(</span>Empty<span class="token punctuation">)</span>
 
 <span class="token keyword">case</span> <span class="token keyword">class</span> JWTAuthentication<span class="token punctuation">(</span>realmName<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">)</span><span class="token punctuation">(</span>func<span class="token operator">:</span> PartialFunction<span class="token punctuation">[</span><span class="token punctuation">(</span><span class="token builtin">String</span><span class="token punctuation">,</span> Req<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">Boolean</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">extends</span> HttpAuthentication <span class="token punctuation">{</span>
 
   <span class="token comment">//Take the JWT from the Authorization header</span>
   <span class="token keyword">def</span> credentials<span class="token punctuation">(</span>r<span class="token operator">:</span> Req<span class="token punctuation">)</span><span class="token operator">:</span> Box<span class="token punctuation">[</span><span class="token builtin">String</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
 
-    header<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">{</span> token <span class="token keyword">=></span>
+    header<span class="token punctuation">(</span>r<span class="token punctuation">)</span><span class="token punctuation">.</span>flatMap<span class="token punctuation">{</span> token <span class="token keyword">=&gt;</span>
       <span class="token keyword">if</span> <span class="token punctuation">(</span>Jwt<span class="token punctuation">.</span>isValid<span class="token punctuation">(</span>sanitizeHeader<span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">,</span> secret<span class="token punctuation">,</span> Seq<span class="token punctuation">(</span>JwtAlgorithm<span class="token punctuation">.</span>HS256<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         Jwt<span class="token punctuation">.</span>decode<span class="token punctuation">(</span>sanitizeHeader<span class="token punctuation">(</span>token<span class="token punctuation">)</span><span class="token punctuation">,</span> secret<span class="token punctuation">,</span> Seq<span class="token punctuation">(</span>JwtAlgorithm<span class="token punctuation">.</span>HS256<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token keyword">match</span> <span class="token punctuation">{</span>
-          <span class="token keyword">case</span> Success<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token keyword">=></span> Full<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
-          <span class="token keyword">case</span> Failure<span class="token punctuation">(</span>_<span class="token punctuation">)</span> <span class="token keyword">=></span> Empty
+          <span class="token keyword">case</span> Success<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> Full<span class="token punctuation">(</span>payload<span class="token punctuation">)</span>
+          <span class="token keyword">case</span> Failure<span class="token punctuation">(</span>_<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span> Empty
         <span class="token punctuation">}</span>
       <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
         Empty
@@ -1478,18 +1566,20 @@ If <code class="language-text">verified_?</code> returns <code class="language-t
 
   <span class="token comment">//If the credentials functions returns a Full box, func gets executed</span>
   <span class="token keyword">override</span> <span class="token keyword">def</span> verified_<span class="token operator">?</span> <span class="token operator">:</span> PartialFunction<span class="token punctuation">[</span>Req<span class="token punctuation">,</span> <span class="token builtin">Boolean</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
-    <span class="token keyword">case</span> <span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token keyword">=></span>
+    <span class="token keyword">case</span> <span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
       credentials<span class="token punctuation">(</span>req<span class="token punctuation">)</span> <span class="token keyword">match</span> <span class="token punctuation">{</span>
-        <span class="token keyword">case</span> Full<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token keyword">if</span> func<span class="token punctuation">.</span>isDefinedAt<span class="token punctuation">(</span>payload<span class="token punctuation">,</span> req<span class="token punctuation">)</span> <span class="token keyword">=></span>
+        <span class="token keyword">case</span> Full<span class="token punctuation">(</span>payload<span class="token punctuation">)</span> <span class="token keyword">if</span> func<span class="token punctuation">.</span>isDefinedAt<span class="token punctuation">(</span>payload<span class="token punctuation">,</span> req<span class="token punctuation">)</span> <span class="token keyword">=&gt;</span>
           jwtClaims<span class="token punctuation">.</span>set<span class="token punctuation">(</span>Option<span class="token punctuation">(</span>payload<span class="token punctuation">)</span><span class="token punctuation">)</span>
           func<span class="token punctuation">(</span>payload<span class="token punctuation">,</span> req<span class="token punctuation">)</span>
-        <span class="token keyword">case</span> _ <span class="token keyword">=></span> <span class="token boolean">false</span>
+        <span class="token keyword">case</span> _ <span class="token keyword">=&gt;</span> <span class="token boolean">false</span>
       <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 
   <span class="token keyword">override</span> <span class="token keyword">def</span> realm<span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> realmName
-<span class="token punctuation">}</span></code></pre></div><p>Keep Learning<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+<span class="token punctuation">}</span></code></pre>
+<p>Keep Learning<br>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Type Classes in Scala: A Practical Example</title>
@@ -1500,9 +1590,10 @@ Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" styl
   <content:encoded><![CDATA[<p>Say you want to extend a particular class (type) with some new functionality but you can't access the source code..
 or perhaps you can but you don't want to use inheritance and subtype polimorphism..</p>
 <p>Let's suppose you have the following type that represents an uploaded picture</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">case</span> <span class="token keyword">class</span> Picture<span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> uri<span class="token operator">:</span> Uri<span class="token punctuation">)</span>     </code></pre></div><p>and you want to return the json representation of it to your clients.<br>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">case</span> <span class="token keyword">class</span> Picture<span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> uri<span class="token operator">:</span> Uri<span class="token punctuation">)</span>     </code></pre>
+<p>and you want to return the json representation of it to your clients.<br>
 You can do something like this</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala">
+<pre class="language-scala" data-language="scala"><code class="language-scala">
 <span class="token keyword">trait</span> Jsonable<span class="token punctuation">{</span>
     <span class="token keyword">def</span> toJson<span class="token operator">:</span> JValue
 <span class="token punctuation">}</span>
@@ -1511,19 +1602,22 @@ You can do something like this</p>
     <span class="token keyword">def</span> toJson<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> JValue <span class="token operator">=</span> <span class="token punctuation">{</span>
         <span class="token comment">//implementation omitted</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>    </code></pre></div><p>Then you realize that you need another type, Attachment.<br>
+<span class="token punctuation">}</span>    </code></pre>
+<p>Then you realize that you need another type, Attachment.<br>
 No problem, let's add another case class to the mix</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala">
+<pre class="language-scala" data-language="scala"><code class="language-scala">
 <span class="token keyword">final</span> <span class="token keyword">case</span> <span class="token keyword">class</span> Attachment<span class="token punctuation">(</span>name<span class="token operator">:</span> <span class="token builtin">String</span><span class="token punctuation">,</span> uri<span class="token operator">:</span> Uri<span class="token punctuation">,</span> visibile<span class="token operator">:</span> <span class="token builtin">Boolean</span><span class="token punctuation">)</span> <span class="token keyword">extends</span> Jsonable<span class="token punctuation">{</span>
     <span class="token keyword">def</span> toJson<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span> JValue <span class="token operator">=</span> <span class="token punctuation">{</span>
         <span class="token comment">//implementation omitted</span>
     <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>    </code></pre></div><p>Now you can serialize to json all of your case classes that extends the <em>Jsonable</em> trait</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">val</span> picture<span class="token operator">:</span> Jsonable <span class="token operator">=</span> Picture<span class="token punctuation">(</span><span class="token string">"scalaitaly.png"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> Uri<span class="token punctuation">(</span><span class="token string">"aws.s3.scalaitaly.png"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>    </code></pre>
+<p>Now you can serialize to json all of your case classes that extends the <em>Jsonable</em> trait</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">val</span> picture<span class="token operator">:</span> Jsonable <span class="token operator">=</span> Picture<span class="token punctuation">(</span><span class="token string">"scalaitaly.png"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> Uri<span class="token punctuation">(</span><span class="token string">"aws.s3.scalaitaly.png"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token keyword">val</span> attachment<span class="token operator">:</span> Jsonable <span class="token operator">=</span> Attachment<span class="token punctuation">(</span><span class="token string">"speakers.pdf"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> Uri<span class="token punctuation">(</span><span class="token string">"aws.s3.speakers.pdf"</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
 
 println<span class="token punctuation">(</span>picture<span class="token punctuation">.</span>toJson<span class="token punctuation">)</span>
-println<span class="token punctuation">(</span>attachment<span class="token punctuation">.</span>toJson<span class="token punctuation">)</span></code></pre></div><p>This all works, but what if you don't have access to the source code of <code class="language-text">Picture</code> or <code class="language-text">Attachment</code>?
+println<span class="token punctuation">(</span>attachment<span class="token punctuation">.</span>toJson<span class="token punctuation">)</span></code></pre>
+<p>This all works, but what if you don't have access to the source code of <code>Picture</code> or <code>Attachment</code>?
 Is there another way? Maybe more <strong>Scala-ish</strong>?</p>
 <h2 id="type-classes-to-the-rescue">Type Classes to the rescue</h2>
 <p>First and foremost. A Type Class has nothing to do with the concept of class in a typical Object Oriented programming language.<br>
@@ -1531,32 +1625,37 @@ It's a concept from the Haskell world and it's used to achieve <strong>ad-hoc po
 <h3 id="type-classes-in-practice">Type Classes in practice</h3>
 <p>The first thing to do is define the behavior that you want your classes to have, in this case we want our case classes to be serializable in the json format.<br>
 That's the Type Class.</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">trait</span> JsonWriter<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">{</span>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">trait</span> JsonWriter<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">{</span>
   <span class="token keyword">def</span> toJson<span class="token punctuation">(</span>in<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token operator">:</span> JValue
-<span class="token punctuation">}</span></code></pre></div><p>then we need the Type Class instances for each concrete class we have</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">implicit</span> <span class="token keyword">val</span> pictureJsonWriter <span class="token operator">=</span> <span class="token keyword">new</span> JsonWriter<span class="token punctuation">[</span>Picture<span class="token punctuation">]</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span></code></pre>
+<p>then we need the Type Class instances for each concrete class we have</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">implicit</span> <span class="token keyword">val</span> pictureJsonWriter <span class="token operator">=</span> <span class="token keyword">new</span> JsonWriter<span class="token punctuation">[</span>Picture<span class="token punctuation">]</span><span class="token punctuation">{</span>
   <span class="token keyword">override</span> <span class="token keyword">def</span> toJson<span class="token punctuation">(</span>in<span class="token operator">:</span> Picture<span class="token punctuation">)</span><span class="token operator">:</span> JValue <span class="token operator">=</span> <span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span>
 <span class="token punctuation">}</span>  
   
 <span class="token keyword">implicit</span> <span class="token keyword">val</span> attachmentJsonWriter <span class="token operator">=</span> <span class="token keyword">new</span> JsonWriter<span class="token punctuation">[</span>Attachment<span class="token punctuation">]</span><span class="token punctuation">{</span>
   <span class="token keyword">override</span> <span class="token keyword">def</span> toJson<span class="token punctuation">(</span>in<span class="token operator">:</span> Attachment<span class="token punctuation">)</span><span class="token operator">:</span> JValue <span class="token operator">=</span> <span class="token operator">?</span><span class="token operator">?</span><span class="token operator">?</span>
-<span class="token punctuation">}</span></code></pre></div><p>we mark them <code class="language-text">implicit</code> because we want the compiler to be able to inject the correct implementation into the interface the we are defining next</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">def</span> jsonOf<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">(</span>in<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">implicit</span> jsonWriter<span class="token operator">:</span> JsonWriter<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span>
-  jsonWriter<span class="token punctuation">.</span>toJson<span class="token punctuation">(</span>in<span class="token punctuation">)</span></code></pre></div><p>You can play with the code below</p>
+<span class="token punctuation">}</span></code></pre>
+<p>we mark them <code>implicit</code> because we want the compiler to be able to inject the correct implementation into the interface the we are defining next</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">def</span> jsonOf<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">(</span>in<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token keyword">implicit</span> jsonWriter<span class="token operator">:</span> JsonWriter<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span>
+  jsonWriter<span class="token punctuation">.</span>toJson<span class="token punctuation">(</span>in<span class="token punctuation">)</span></code></pre>
+<p>You can play with the code below</p>
 <iframe height="300" frameborder="0" style="width: 100%; overflow: hidden;" src="https://embed.scalafiddle.io/embed?sfid=eRUVeR8/5&layout=v80"></iframe>
-<p>Wouldn't it better if the method <code class="language-text">toJson</code> would be a part of the classes in our domain model but without touching them?
+<p>Wouldn't it better if the method <code>toJson</code> would be a part of the classes in our domain model but without touching them?
 Adding the functionality magically from the outside.</p>
 <p>I would like to write</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala">println<span class="token punctuation">(</span>Picture<span class="token punctuation">(</span><span class="token string">"mypic"</span><span class="token punctuation">,</span> <span class="token string">"mypicurl"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toJson<span class="token punctuation">)</span>
-println<span class="token punctuation">(</span>Attachment<span class="token punctuation">(</span><span class="token string">"myattachment"</span><span class="token punctuation">,</span> <span class="token string">"myurl"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toJson<span class="token punctuation">)</span></code></pre></div><p>As if <code class="language-text">toJson</code> were a built-in method of the class.</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala">println<span class="token punctuation">(</span>Picture<span class="token punctuation">(</span><span class="token string">"mypic"</span><span class="token punctuation">,</span> <span class="token string">"mypicurl"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toJson<span class="token punctuation">)</span>
+println<span class="token punctuation">(</span>Attachment<span class="token punctuation">(</span><span class="token string">"myattachment"</span><span class="token punctuation">,</span> <span class="token string">"myurl"</span><span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">.</span>toJson<span class="token punctuation">)</span></code></pre>
+<p>As if <code>toJson</code> were a built-in method of the class.</p>
 <p>Yes, I know that, for example in Ruby, Javascript you can do monkey patching, but we are talking about compile time transformation, not runtime.</p>
 <p>In Scala you can achieve that using <strong>Implicit Classes</strong></p>
 <p>You just need to write</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token keyword">implicit</span> <span class="token keyword">class</span> JsonSerializer<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">(</span>data<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token keyword">implicit</span> <span class="token keyword">class</span> JsonSerializer<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">(</span>data<span class="token operator">:</span> T<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">def</span> toJson<span class="token punctuation">(</span><span class="token keyword">implicit</span> writer<span class="token operator">:</span> JsonWriter<span class="token punctuation">[</span>T<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">String</span> <span class="token operator">=</span> 
     writer<span class="token punctuation">.</span>toJson<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-<span class="token punctuation">}</span></code></pre></div><p>This way, when you try to do something like <code class="language-text">Picture(&quot;mypic&quot;, &quot;mypicurl&quot;).toJson</code>, the compiler, not finding the <code class="language-text">toJson</code> method in the <code class="language-text">Picture</code> class, tries to convert <code class="language-text">Picture</code> in a <code class="language-text">JsonSerializer</code> that has the method you want.<br>
-Then it passes as <code class="language-text">implicit writer: JsonWriter[T]</code> your Type Class instance that you defined for <code class="language-text">Picture</code> before.</p>
+<span class="token punctuation">}</span></code></pre>
+<p>This way, when you try to do something like <code>Picture("mypic", "mypicurl").toJson</code>, the compiler, not finding the <code>toJson</code> method in the <code>Picture</code> class, tries to convert <code>Picture</code> in a <code>JsonSerializer</code> that has the method you want.<br>
+Then it passes as <code>implicit writer: JsonWriter[T]</code> your Type Class instance that you defined for <code>Picture</code> before.</p>
 <p>You can play with the final code below</p>
 <iframe height="300" frameborder="0" style="width: 100%; overflow: hidden;" src="https://embed.scalafiddle.io/embed?sfid=V6QiLPI/1&layout=v80"></iframe>
 <h3 id="conclusions">Conclusions</h3>
@@ -1567,7 +1666,8 @@ It's so important that many famous libraries such as <a href="https://github.com
 <p>If you want to learn more (yes you want) I suggest you <a href="http://underscore.io/books/advanced-scala/" target="_blank" rel="noopener noreferrer">Advanced Scala</a> by the amazing guys of <a href="http://underscore.io/" target="_blank" rel="noopener noreferrer">Underscore.io</a>.</p>
 <p>Moreover, they recently open sourced all their ebooks, you can download all of them for free <a href="http://underscore.io/books/" target="_blank" rel="noopener noreferrer">here</a>, what are you waiting for?</p>
 <p>Keep Learning<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Functional Programming and Category Theory</title>
@@ -1586,7 +1686,7 @@ Maybe that's the answer you are looking for...</p>
 <p>Knock Knock Neo..</p>
 <h2 id="what-is-category-theory">What is Category Theory</h2>
 <p>As Philip Wadler said:</p>
-<p><em>&quot;Category theory is easy stuff that I understand very well, made difficult.&quot;</em></p>
+<p><em>"Category theory is easy stuff that I understand very well, made difficult."</em></p>
 <p>Here I'm going to point you to some resources that I found very helpful helping me to learn Category Theory.</p>
 <p><a href="https://www.youtube.com/watch?v=V10hzjgoklA" target="_blank" rel="noopener noreferrer">Category Theory for the Working Hacker</a> by Philip Wadler</p>
 <p>My favourite is the series
@@ -1602,7 +1702,8 @@ The documentation is very well written, and Eugene Yokota wrote <a href="http://
 <p>After you have a general idea of what category theory is, you can dive into <strong>type classes</strong> with <a href="http://channingwalton.github.io/typeclassopedia/" target="_blank" rel="noopener noreferrer">typeclassopedia</a>, <a href="http://blog.scalac.io/2017/04/19/typeclasses-in-scala.html" target="_blank" rel="noopener noreferrer">this blog post</a> and <a href="https://www.riccardosirigu.com/blog/type-classes-in-scala-a-practical-example/" target="_blank" rel="noopener noreferrer">this one</a>.</p>
 <p>I hope that those resources will help you to connect the dots between all of these concepts.</p>
 <p>Keep Learning.<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Human Friendly errors for Scala</title>
@@ -1611,29 +1712,34 @@ Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" styl
   <pubDate>Fri, 17 Feb 2017 00:00:00 GMT</pubDate>
   <description>Learn how to transform cryptic Scala compiler errors into clearer, more actionable messages that improve the developer experience.</description>
   <content:encoded><![CDATA[<p>Sometimes Scala compiler errors can be too cryptic and scare beginners away</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala">error<span class="token operator">:</span> diverging <span class="token keyword">implicit</span> expansion <span class="token keyword">for</span> <span class="token keyword">type</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>generic<span class="token punctuation">.</span>CanBuildFrom<span class="token punctuation">[</span>ird<span class="token punctuation">.</span>replay<span class="token punctuation">.</span>gui<span class="token punctuation">.</span>GraphType<span class="token punctuation">.</span>ValueSet<span class="token punctuation">,</span><span class="token punctuation">(</span>ird<span class="token punctuation">.</span>replay<span class="token punctuation">.</span>gui<span class="token punctuation">.</span>GraphType<span class="token punctuation">.</span>Value<span class="token punctuation">,</span> org<span class="token punctuation">.</span>jfree<span class="token punctuation">.</span>data<span class="token punctuation">.</span>time<span class="token punctuation">.</span>TimeSeries<span class="token punctuation">)</span><span class="token punctuation">,</span>That<span class="token punctuation">]</span>
+<pre class="language-scala" data-language="scala"><code class="language-scala">error<span class="token operator">:</span> diverging <span class="token keyword">implicit</span> expansion <span class="token keyword">for</span> <span class="token keyword">type</span> scala<span class="token punctuation">.</span>collection<span class="token punctuation">.</span>generic<span class="token punctuation">.</span>CanBuildFrom<span class="token punctuation">[</span>ird<span class="token punctuation">.</span>replay<span class="token punctuation">.</span>gui<span class="token punctuation">.</span>GraphType<span class="token punctuation">.</span>ValueSet<span class="token punctuation">,</span><span class="token punctuation">(</span>ird<span class="token punctuation">.</span>replay<span class="token punctuation">.</span>gui<span class="token punctuation">.</span>GraphType<span class="token punctuation">.</span>Value<span class="token punctuation">,</span> org<span class="token punctuation">.</span>jfree<span class="token punctuation">.</span>data<span class="token punctuation">.</span>time<span class="token punctuation">.</span>TimeSeries<span class="token punctuation">)</span><span class="token punctuation">,</span>That<span class="token punctuation">]</span>
 starting <span class="token keyword">with</span> <span class="token namespace">method</span> newCanBuildFrom in <span class="token keyword">object</span> SortedSet
-</code></pre></div><p>Or</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token punctuation">[</span>error<span class="token punctuation">]</span> TheNextFacebook<span class="token punctuation">.</span>scala<span class="token operator">:</span><span class="token number">16</span><span class="token operator">:</span> <span class="token keyword">type</span> mismatch<span class="token punctuation">;</span>
+</code></pre>
+<p>Or</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token punctuation">[</span>error<span class="token punctuation">]</span> TheNextFacebook<span class="token punctuation">.</span>scala<span class="token operator">:</span><span class="token number">16</span><span class="token operator">:</span> <span class="token keyword">type</span> mismatch<span class="token punctuation">;</span>
 <span class="token punctuation">[</span>error<span class="token punctuation">]</span>  found   <span class="token operator">:</span> akka<span class="token punctuation">.</span>http<span class="token punctuation">.</span>scaladsl<span class="token punctuation">.</span>server<span class="token punctuation">.</span>StandardRoute
 <span class="token punctuation">[</span>error<span class="token punctuation">]</span>  required<span class="token operator">:</span> akka<span class="token punctuation">.</span>stream<span class="token punctuation">.</span>scaladsl<span class="token punctuation">.</span>Flow<span class="token punctuation">[</span>akka<span class="token punctuation">.</span>http<span class="token punctuation">.</span>scaladsl<span class="token punctuation">.</span>model<span class="token punctuation">.</span>HttpRequest<span class="token punctuation">,</span>akka<span class="token punctuation">.</span>http<span class="token punctuation">.</span>scaladsl<span class="token punctuation">.</span>model<span class="token punctuation">.</span>HttpResponse<span class="token punctuation">,</span><span class="token builtin">Any</span><span class="token punctuation">]</span>
 <span class="token punctuation">[</span>error<span class="token punctuation">]</span>   Http<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>bindAndHandle<span class="token punctuation">(</span>r<span class="token punctuation">,</span> <span class="token string">"localhost"</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">)</span>
-</code></pre></div><p>What if we could have right now an human friendly explanation of the error, similar to what <a href="https://elm-lang.org/" target="_blank" rel="noopener noreferrer">Elm</a> or <a href="https://reactnative.dev/blog/2020/07/06/version-0.63" target="_blank" rel="noopener noreferrer">React</a> do?
+</code></pre>
+<p>What if we could have right now an human friendly explanation of the error, similar to what <a href="https://elm-lang.org/" target="_blank" rel="noopener noreferrer">Elm</a> or <a href="https://reactnative.dev/blog/2020/07/06/version-0.63" target="_blank" rel="noopener noreferrer">React</a> do?
 (Well, even Scala itself with <a href="http://scala-lang.org/blog/2016/10/14/dotty-errors.html" target="_blank" rel="noopener noreferrer">Dotty</a> will have it but in the future)</p>
 <p>Scala <a href="https://github.com/softwaremill/scala-clippy" target="_blank" rel="noopener noreferrer">Clippy</a> is a compiler (or SBT) plugin that does just that.</p>
 <p>Just import it in your project</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala">addSbtPlugin<span class="token punctuation">(</span><span class="token string">"com.softwaremill.clippy"</span> <span class="token operator">%</span> <span class="token string">"plugin-sbt"</span> <span class="token operator">%</span> <span class="token string">"0.5.1"</span><span class="token punctuation">)</span>
-</code></pre></div><p>and the previous error magically becomes</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"><span class="token punctuation">[</span>error<span class="token punctuation">]</span>  Clippy advises<span class="token operator">:</span> did you forget to <span class="token namespace">define</span> an <span class="token keyword">implicit</span> akka<span class="token punctuation">.</span>stream<span class="token punctuation">.</span>ActorMaterializer<span class="token operator">?</span>
+<pre class="language-scala" data-language="scala"><code class="language-scala">addSbtPlugin<span class="token punctuation">(</span><span class="token string">"com.softwaremill.clippy"</span> <span class="token operator">%</span> <span class="token string">"plugin-sbt"</span> <span class="token operator">%</span> <span class="token string">"0.5.1"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>and the previous error magically becomes</p>
+<pre class="language-scala" data-language="scala"><code class="language-scala"><span class="token punctuation">[</span>error<span class="token punctuation">]</span>  Clippy advises<span class="token operator">:</span> did you forget to <span class="token namespace">define</span> an <span class="token keyword">implicit</span> akka<span class="token punctuation">.</span>stream<span class="token punctuation">.</span>ActorMaterializer<span class="token operator">?</span>
 <span class="token punctuation">[</span>error<span class="token punctuation">]</span>  It allows routes to <span class="token namespace">be</span> converted into a flow<span class="token punctuation">.</span>
 <span class="token punctuation">[</span>error<span class="token punctuation">]</span>  You can read more at http<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>doc<span class="token punctuation">.</span>akka<span class="token punctuation">.</span>io<span class="token operator">/</span>docs<span class="token operator">/</span>akka<span class="token operator">-</span>stream<span class="token operator">-</span>and<span class="token operator">-</span>http<span class="token operator">-</span>experimental<span class="token operator">/</span><span class="token number">2.0</span><span class="token operator">/</span>scala<span class="token operator">/</span>http<span class="token operator">/</span>routing<span class="token operator">-</span>dsl<span class="token operator">/</span>index<span class="token punctuation">.</span>html
-</code></pre></div><p>But there is no magic, it's all community driven.<br>
+</code></pre>
+<p>But there is no magic, it's all community driven.<br>
 When first started Clippy will download the current advice list from<br>
 <a href="https://scala-clippy.org/" target="_blank" rel="noopener noreferrer">scala-clippy.org</a>.<br>
 It's community driven so you can also contribute!</p>
 <p>For more detailed instructions on how to setup just visit the <a href="https://github.com/softwaremill/scala-clippy" target="_blank" rel="noopener noreferrer">Clippy Github repository.</a></p>
 <p>Keep Learning<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Building Secure Software With a Card Game</title>
@@ -1665,9 +1771,10 @@ If you are not familiar with <a href="https://en.wikipedia.org/wiki/STRIDE_(secu
 <p>The suit Cornucopia is for anything else</p>
 <p>Each card describes an attack, the attacker is given a name.
 You can play the game in many different ways, for examples check the official <a href="https://www.owasp.org/index.php/OWASP_Cornucopia" target="_blank" rel="noopener noreferrer">OWASP Cornucopia Wiki</a></p>
-<p>Huge thanks to <a href="http://blackfootuk.com/cornucopia/" target="_blank" rel="noopener noreferrer">Blackfoot</a> for sending me this deck. <img alt="" aria-hidden="true" data-icon="emoji-raised_hands" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-raised_hands.png" width="25" height="25"></p>
+<p>Huge thanks to <a href="http://blackfootuk.com/cornucopia/" target="_blank" rel="noopener noreferrer">Blackfoot</a> for sending me this deck. 🙌</p>
 <p>Keep Learning.<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Isomorphic Web Applications with Scala and ScalaJs</title>
@@ -1688,7 +1795,7 @@ With no doubt a more clear and less scary term is <strong>Universal web applicat
 <li><strong>Performance</strong>: Server side rendering speeds up the initial page load. The server can pre render the view and send it to the client that can render it until the JavaScript gets downloaded and executed. This is what <a href="https://blog.twitter.com/2012/improving-performance-on-twittercom" target="_blank" rel="noopener noreferrer">Twitter did</a> in one year and with 40 engineers.</li>
 </ul>
 <div style="background-color:#fff4db; color:#53450e; padding: 25px; border-radius:5px; text-align:center">
-		<i>Can Google crawl my website successfully?</i> <img alt="" aria-hidden="true" data-icon="emoji-smile" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-smile.png" width="25" height="25"><br/>
+		<i>Can Google crawl my website successfully?</i> 😄<br/>
 		<a href="https://www.google.com/webmasters/tools/googlebot-fetch">Fetch as Google</a> your SPA to see the result.
 </div>
 <p>An example of this architectural pattern is the <a href="https://www.meteor.com/" target="_blank" rel="noopener noreferrer">Meteor</a> framework.
@@ -1707,7 +1814,7 @@ All of them are born to reduce the JavaScript tendency of helping you to make mi
 <ul>
 <li>
 <p>It's safer.</p>
-<p>No more <code class="language-text">undefined is not a function</code> errors discovered at runtime, maybe in a production environment.</p>
+<p>No more <code>undefined is not a function</code> errors discovered at runtime, maybe in a production environment.</p>
 <p>You now have <strong>strong</strong> type checking and lots of errors will be discovered at compile time. Your code will be more robust and your cortisol level will be optimal.</p>
 </li>
 <li>
@@ -1717,7 +1824,7 @@ All of them are born to reduce the JavaScript tendency of helping you to make mi
 </li>
 <li>
 <p>Same language for the server and the client.</p>
-<p>It's great to know many programming languages but for a web application, maybe with offline support, it's great using only one. This way you reduce code duplication, for example form validation, currency formatting and so on, sharing the business logic code easily with the server. This way you reduce your cognitive load and the probability of making stupid mistakes such as writing <code class="language-text">throw new Exception()</code> in JavaScript.</p>
+<p>It's great to know many programming languages but for a web application, maybe with offline support, it's great using only one. This way you reduce code duplication, for example form validation, currency formatting and so on, sharing the business logic code easily with the server. This way you reduce your cognitive load and the probability of making stupid mistakes such as writing <code>throw new Exception()</code> in JavaScript.</p>
 </li>
 <li>
 <p>You also get better tooling and better IDE support.</p>
@@ -1725,7 +1832,7 @@ All of them are born to reduce the JavaScript tendency of helping you to make mi
 </li>
 </ul>
 <div style="background-color:#fff4db; color:#53450e; padding: 25px; border-radius:5px; text-align:center">
-		<strong><img alt="" aria-hidden="true" data-icon="emoji-pencil2" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-pencil2.png" width="25" height="25"> Quiz time: </strong>
+		<strong>✏️ Quiz time: </strong>
 		<br/>
 		<br/>
 		<i>What does this JavaScript snippet print?</i>
@@ -1743,7 +1850,8 @@ You can write your <a href="https://reactnative.dev/" target="_blank" rel="noope
 I also suggest the <a href="http://www.lihaoyi.com/scalatags/" target="_blank" rel="noopener noreferrer">Scalatags</a> library, to write HTML in Scala.<br>
 You can also find projects and a Single Page Application example <a href="https://github.com/lihaoyi/workbench-example-app" target="_blank" rel="noopener noreferrer">here</a> and <a href="https://github.com/ochrons/scalajs-spa-tutorial" target="_blank" rel="noopener noreferrer">here</a>.</p>
 <p>Keep Learning.<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 <item>
   <title>Scala &amp; Lift and the record lifecycle callbacks</title>
@@ -1762,7 +1870,7 @@ Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" styl
 </ul>
 <p>In <a href="http://www.liftweb.net/" target="_blank" rel="noopener noreferrer">Lift</a> we accomplish this with the LifecycleCallbacks <a href="http://docs.scala-lang.org/tutorials/tour/traits.html" target="_blank" rel="noopener noreferrer">trait</a> that we can mix in the fields of our <a href="https://www.assembla.com/wiki/show/liftweb/Record" target="_blank" rel="noopener noreferrer">record</a>, <a href="https://www.assembla.com/wiki/show/liftweb/Mongo_Record_Basics" target="_blank" rel="noopener noreferrer">MongoRecord</a> in our case.
 This trait make us available the following methods</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"> 
+<pre class="language-scala" data-language="scala"><code class="language-scala"> 
  <span class="token keyword">def</span> beforeValidation <span class="token punctuation">{</span><span class="token punctuation">}</span>
  <span class="token keyword">def</span> afterValidation <span class="token punctuation">{</span><span class="token punctuation">}</span>
  
@@ -1773,11 +1881,12 @@ This trait make us available the following methods</p>
  <span class="token keyword">def</span> afterSave <span class="token punctuation">{</span><span class="token punctuation">}</span>
  <span class="token keyword">def</span> afterCreate <span class="token punctuation">{</span><span class="token punctuation">}</span>
  <span class="token keyword">def</span> afterUpdate <span class="token punctuation">{</span><span class="token punctuation">}</span>
- </code></pre></div><p>that we can override in order to perform actions at various points during the lifecycle of a given instance. Their names are self explanatory but a thing to remember is that <code class="language-text">beforeSave</code> is always called before <code class="language-text">beforeCreate</code> or <code class="language-text">beforeUpdate</code>.<br>
-<code class="language-text">afterSave</code>, similarly, is called after <code class="language-text">afterCreate</code> or <code class="language-text">afterUpdate</code>.</p>
+ </code></pre>
+<p>that we can override in order to perform actions at various points during the lifecycle of a given instance. Their names are self explanatory but a thing to remember is that <code>beforeSave</code> is always called before <code>beforeCreate</code> or <code>beforeUpdate</code>.<br>
+<code>afterSave</code>, similarly, is called after <code>afterCreate</code> or <code>afterUpdate</code>.</p>
 <p>With this tool in our toolbelt we can centralize the code that was spread all over the codebase, in our model, making our software more mantainable, <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank" rel="noopener noreferrer"><strong>DRY</strong></a>, and clean.</p>
 <p>Here is an example</p>
-<div class="gatsby-highlight" data-language="scala"><pre class="language-scala"><code class="language-scala"> <span class="token keyword">class</span> ChatMsg <span class="token keyword">extends</span> MongoRecord<span class="token punctuation">[</span>ChatMsg<span class="token punctuation">]</span> 
+<pre class="language-scala" data-language="scala"><code class="language-scala"> <span class="token keyword">class</span> ChatMsg <span class="token keyword">extends</span> MongoRecord<span class="token punctuation">[</span>ChatMsg<span class="token punctuation">]</span> 
    <span class="token keyword">with</span> ObjectIdPk<span class="token punctuation">[</span>ChatMsg<span class="token punctuation">]</span><span class="token punctuation">{</span>
      <span class="token keyword">def</span> meta <span class="token operator">=</span> ChatMsg
      <span class="token keyword">object</span> text <span class="token keyword">extends</span> StringField<span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span> 
@@ -1786,9 +1895,11 @@ This trait make us available the following methods</p>
              <span class="token comment">//send push notification or whatever</span>
      <span class="token punctuation">}</span>
    <span class="token punctuation">}</span>
- <span class="token punctuation">}</span></code></pre></div><p>Go and try it out!</p>
+ <span class="token punctuation">}</span></code></pre>
+<p>Go and try it out!</p>
 <p>Keep Learning.<br>
-Until next time <img alt="" aria-hidden="true" data-icon="emoji-sunglasses" style="display: inline; margin: 0; margin-top: 1px; top: 5px; width: 25px" src="https://www.riccardosirigu.com/emojis/emoji-sunglasses.png" width="25" height="25"></p>]]></content:encoded>
+Until next time 😎</p>
+</article>]]></content:encoded>
 </item>
 </channel>
 </rss>
