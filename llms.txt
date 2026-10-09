@@ -19,8 +19,8 @@ The canonical website is https://www.riccardosirigu.com. Content may be used for
 
 ## Topics
 
-- [cra](https://www.riccardosirigu.com/blog/topics/cra/): 3 articles.
-- [cybersecurity](https://www.riccardosirigu.com/blog/topics/cybersecurity/): 8 articles.
+- [cra](https://www.riccardosirigu.com/blog/topics/cra/): 4 articles.
+- [cybersecurity](https://www.riccardosirigu.com/blog/topics/cybersecurity/): 9 articles.
 - [functional programming](https://www.riccardosirigu.com/blog/topics/functional-programming/): 4 articles.
 - [scala](https://www.riccardosirigu.com/blog/topics/scala/): 6 articles.
 - [security](https://www.riccardosirigu.com/blog/topics/security/): 3 articles.
@@ -28,6 +28,7 @@ The canonical website is https://www.riccardosirigu.com. Content may be used for
 
 ## Published articles
 
+- [Risk Assessment and the Cyber Resilience Act: A Guide to Staying Out of the Emergency Room](https://www.riccardosirigu.com/blog/cyber-resilience-act-cybersecurity-risk-assessment/): What a skateboard accident can teach us about CRA cybersecurity risk assessment, from product scope and classification to risk evaluation and mitigation.
 - [AI will kill us all](https://www.riccardosirigu.com/blog/ai-will-kill-us-all-security-by-design-and-cyber-resilience-act/): AI agents can make cyberattacks more adaptive and scalable, but insecure software, weak credentials and poor configurations remain at the core of the problem.
 - [Secure by Design: Escaping the Hamster Wheel of Pain](https://www.riccardosirigu.com/blog/secure-by-design-hamster-wheel-of-pain/): Why recurring vulnerabilities signal systemic management failures, and how secure-by-design practices can break the remediation cycle.
 - [Cyber Resilience Act Compliance: 10 Misconceptions Companies Should Avoid](https://www.riccardosirigu.com/blog/cyber-resilience-act-ten-common-misconceptions-about-cra-compliance/): Ten common Cyber Resilience Act compliance misconceptions that manufacturers and software vendors should address before CRA deadlines.
