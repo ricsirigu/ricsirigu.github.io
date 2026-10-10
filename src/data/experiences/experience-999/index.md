@@ -6,4 +6,6 @@ startDate: 'Sep 2025'
 endDate: 'Present'
 ---
 
-As Offensive Security Director at Abissi, I define the strategic direction of the offensive security practice, aligning client priorities with business objectives, threat exposure, and evolving regulatory expectations. I own executive client relationships and provide senior accountability across the consulting portfolio, driving service positioning, prioritization, and governance to strengthen client impact and support the growth of the business unit.
+As Offensive Security Director at Abissi, I define the technical direction of the offensive security practice, making sure our work reflects the risks clients actually face, their business priorities, and evolving regulatory requirements.
+I work directly with senior stakeholders, manage relationships with key clients, and oversee the consulting portfolio, setting priorities and guiding the development of our services.
+I am also responsible for the business unit's budget, revenue, and profitability. This means deciding where to focus our resources, which capabilities to develop, and how to grow the practice without losing sight of the quality and value of the work we deliver.

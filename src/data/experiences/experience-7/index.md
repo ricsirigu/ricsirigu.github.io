@@ -7,4 +7,4 @@ endDate: 'Dec 2020'
 ---
 
 Performed penetration testing, secure code reviews, and vulnerability assessments across software, hardware, and cloud environments.
-Advised clients on improving their security posture and delivered workshops to help development teams integrate security into everyday engineering workflows.
+Worked with clients to understand the findings, prioritize security improvements, and address the risks that mattered most. Delivered workshops to help development teams integrate security into their day-to-day engineering work.
