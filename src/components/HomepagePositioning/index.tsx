@@ -24,20 +24,19 @@ const HomepagePositioning: React.FC = () => (
         />
         <Styled.Copy>
           <p>
-            Security problems are not just bugs in code. Sometimes an attacker does not need
-            a bug at all. A stolen password, a valid token, too much privilege, a bad default
-            or a wrong assumption about what we can trust may be enough.
+            Security problems are not just bugs in code. Sometimes an attacker does not need a bug at all.
+            A stolen password, a valid token, excessive privileges, a bad default, or a wrong assumption about what we can trust may be enough.
           </p>
           <p>
-            When that happens, fixing the finding is only part of the job. I want to understand
-            why the attack worked in the first place. What did we assume? What made that
-            assumption dangerous? Then we change the system so that the same class of problem
-            is harder to repeat.
+            When that happens, fixing the finding is only part of the job.
+            I want to understand why the attack worked in the first place.
+            What did we assume? What made that assumption dangerous?
+            Then we need to change the system so that the same class of problem is less likely to happen again.
           </p>
           <p>
-            But not every possible attack deserves the same attention. I start from attacks
-            that are real, or at least have a credible path to impact, and then look at the
-            actual risk. That is what tells us where the engineering effort should go.
+            But not every possible attack deserves the same attention.
+            I start with attacks that are real, or at least have a credible path to impact, and then look at the actual risk.
+            That is what tells us where to focus our engineering efforts.
           </p>
         </Styled.Copy>
       </Container>
