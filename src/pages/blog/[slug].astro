@@ -27,7 +27,9 @@ const legacyPost = toLegacyBlogPost(
   '',
   headings.map((heading) => ({ depth: heading.depth, id: heading.slug, text: heading.text })),
 );
-const ogImage = await getImage({ src: post.data.cover, width: 1200 });
+const ogImage = post.data.cover
+  ? await getImage({ src: post.data.cover, width: 1200 })
+  : undefined;
 const topics = await getBlogTopics();
 const toSibling = (sibling: BlogPost | null) =>
   sibling
@@ -50,9 +52,9 @@ const styledStyleTags = collectStyles(BlogPostPage, props);
   seoTitle={post.data.seoTitle}
   blog={{
     date: post.data.date.toISOString().slice(0, 10),
-    image: new URL(ogImage.src, Astro.site).href,
-    imageHeight: Math.round((1200 * post.data.cover.height) / post.data.cover.width),
-    imageWidth: 1200,
+    image: ogImage ? new URL(ogImage.src, Astro.site).href : undefined,
+    imageHeight: post.data.cover ? Math.round((1200 * post.data.cover.height) / post.data.cover.width) : undefined,
+    imageWidth: ogImage ? 1200 : undefined,
     modified: post.data.updated?.toISOString().slice(0, 10),
     slug: post.fields.slug,
     tags: post.data.tags,

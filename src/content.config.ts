@@ -10,7 +10,7 @@ const blog = defineCollection({
   schema: ({ image }) =>
     z.object({
       category: z.literal('blog'),
-      cover: image(),
+      cover: image().optional(),
       coverAlt: z.string().optional(),
       title: z.string(),
       seoTitle: z.string().optional(),

@@ -35,6 +35,11 @@ export const expertisePages: ExpertisePageData[] = [
       "Finding the same vulnerability across several products is a good indication that fixing individual findings is not enough. Secure by Design means changing the architecture, defaults, or development practices that keep making those problems possible.",
     highlights: [
       {
+        href: '/blog/ai-will-kill-us-all-security-by-design-and-cyber-resilience-act/',
+        label: 'AI will kill us all',
+        description: 'Why adaptive AI attacks make secure defaults and sound engineering decisions even more important.',
+      },
+      {
         href: '/blog/secure-by-design-hamster-wheel-of-pain/',
         label: 'Escaping the Hamster Wheel of Pain',
         description: "What recurring vulnerabilities tell us about the way we build software, and what needs to change.",
@@ -160,6 +165,16 @@ export const expertisePages: ExpertisePageData[] = [
     summary:
       "A useful assessment tells us how an attacker could compromise a system, what made the attack possible, and which risks deserve attention first. The findings matter, but so do the assumptions and design decisions behind them.",
     highlights: [
+      {
+        href: '/blog/anthropic-ai-worms-slow-motion-air-fryers/',
+        label: 'Anthropic AI Worms in Slow Motion and Air Fryers',
+        description: 'What simulated replication and distributed LLM inference demonstrate, and where real IoT constraints complicate the picture.',
+      },
+      {
+        href: '/blog/ai-will-kill-us-all-security-by-design-and-cyber-resilience-act/',
+        label: 'AI will kill us all',
+        description: 'How AI agents change attack strategies, and why insecure software and configurations still matter.',
+      },
       {
         href: '/blog/exploring-cve-2025-29927-a-hands-on-look-at-authorization-bypass-in-nextjs-middleware/',
         label: 'Hands-on Analysis of CVE-2025-29927',

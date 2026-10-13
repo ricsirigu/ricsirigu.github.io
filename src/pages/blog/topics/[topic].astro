@@ -43,7 +43,9 @@ const topicMetadata =
       };
 const posts = await Promise.all(
   topicPosts.map(async (post) => {
-    const cover = await getImage({ src: post.data.cover, width: 720, layout: 'constrained' });
+    const cover = post.data.cover
+      ? await getImage({ src: post.data.cover, width: 720, layout: 'constrained' })
+      : undefined;
     return {
       node: {
         id: post.id,
@@ -54,13 +56,13 @@ const posts = await Promise.all(
           date: post.formattedDate,
           publishedDate: post.data.date.toISOString().slice(0, 10),
           tags: post.data.tags,
-          cover: {
+          cover: cover ? {
             src: cover.src,
             srcSet: cover.srcSet.attribute,
             sizes: cover.rawOptions.sizes,
             width: cover.rawOptions.width,
             height: cover.rawOptions.height,
-          },
+          } : undefined,
         },
       },
     };

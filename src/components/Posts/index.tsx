@@ -28,7 +28,7 @@ interface Post {
       date: string;
       publishedDate: string;
       tags: string[];
-      cover: PostCover;
+      cover?: PostCover;
     };
   };
 }
@@ -72,7 +72,7 @@ const Posts: React.FC<Props> = ({ activeTopic, introduction, posts, sectionTitle
             <Styled.Post key={id}>
               <Styled.Card>
                 <Styled.PostLink href={slug}>
-                  <Styled.Image>
+                  {cover && <Styled.Image>
                     <img
                       src={cover.src}
                       srcSet={cover.srcSet}
@@ -83,7 +83,7 @@ const Posts: React.FC<Props> = ({ activeTopic, introduction, posts, sectionTitle
                       loading="lazy"
                       decoding="async"
                     />
-                  </Styled.Image>
+                  </Styled.Image>}
                   <Styled.Content>
                     <Styled.Date dateTime={publishedDate}>{date}</Styled.Date>
                     <Styled.Title>{title}</Styled.Title>

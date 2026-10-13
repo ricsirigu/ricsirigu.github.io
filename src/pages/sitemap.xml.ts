@@ -51,7 +51,7 @@ export const GET: APIRoute = async () => {
     posts.map(async (post) => ({
       path: post.fields.slug,
       lastModified: (post.data.updated || post.data.date).toISOString().slice(0, 10),
-      image: (await getImage({ src: post.data.cover, width: 1200 })).src,
+      image: post.data.cover ? (await getImage({ src: post.data.cover, width: 1200 })).src : undefined,
       imageTitle: post.data.title
     }))
   );
