@@ -42,12 +42,12 @@
 </tbody>
 </table>
 <p>But before returning to that fall, let's take a few steps back.</p>
-<p>Under the Cyber Resilience Act (CRA), before getting to the risk assessment, we need to understand the context in which the product will operate, establish whether it falls within the regulation or is covered by other sector-specific legislation, define its scope properly, and identify the company's role.</p>
+<p>Under the <a href="https://www.riccardosirigu.com/expertise/cyber-resilience-act/">Cyber Resilience Act (CRA)</a>, before getting to the risk assessment, we need to understand the context in which the product will operate, establish whether it falls within the regulation or is covered by other sector-specific legislation, define its scope properly, and identify the company's role.</p>
 <p>It may sound obvious, but it isn't something to take lightly. I've seen products declared outside the scope of the CRA because they were (apparently) not connected to the Internet. The thing is, an Internet connection is not a prerequisite for the CRA to apply.</p>
 <h2 id="step-1--does-the-product-fall-within-the-scope-of-the-cra">Step 1 — Does the product fall within the scope of the CRA?</h2>
 <p>Under the Cyber Resilience Act, a <em>product with digital elements</em> (PDE) is a hardware or software product, together with its related <em>remote data processing solutions</em>. The regulation applies to PDEs whose intended or reasonably foreseeable use includes a direct or indirect, logical or physical data connection to another device or network.</p>
 <p>Standalone SaaS applications are generally not PDEs, unless the remote service qualifies as a <em>remote data processing solution</em>: a solution designed and developed by the manufacturer, or under its responsibility, without which the product would be unable to perform one of its functions.</p>
-<p>This distinction matters because I still hear things like: "My product doesn't connect to the Internet," "It's only software," or "The CRA only applies to IoT devices." Three shortcuts that can lead you in the wrong direction.</p>
+<p>This distinction matters because I still hear things like: "My product doesn't connect to the Internet," "It's only software," or "The CRA only applies to IoT devices." Three <a href="https://www.riccardosirigu.com/blog/cyber-resilience-act-ten-common-misconceptions-about-cra-compliance/">shortcuts that can lead you in the wrong direction</a>.</p>
 <h2 id="step-2--is-the-product-made-available-on-the-market-in-the-course-of-a-commercial-activity">Step 2 — Is the product made available on the market in the course of a commercial activity?</h2>
 <p>The European Commission makes it clear that if a product is not made available on the market in the course of a commercial activity, the CRA does not apply. Specific rules also apply to free and open-source software.</p>
 <h2 id="step-3--is-the-product-covered-by-other-sector-specific-legislation">Step 3 — Is the product covered by other sector-specific legislation?</h2>
@@ -96,7 +96,7 @@
 <p>It's not just about filling in a spreadsheet. It's about making technical decisions and being able to explain them.</p>
 <p>To structure this work, the CRA does not prescribe a specific methodology or standard. A general reference is <strong>ISO 31000:2018</strong>, which addresses risk management across different sectors and provides a foundation for many other standards.</p>
 <p>In the specific context of the CRA, a particularly relevant reference is <strong>EN 40000-1-2</strong>, covering cybersecurity principles, product risk management and activities throughout the lifecycle of products with digital elements. As of October 2026, the text had passed the formal vote in the European standardisation process supporting the CRA, with final publication expected by the end of the year.</p>
-<p>There is, however, an important distinction to make. Approval of a standard and its citation in the <em>Official Journal of the European Union</em> are two different steps. EN 40000-1-2 is not expected to be cited for the purpose of granting a presumption of conformity. Using it, therefore, does not automatically provide a presumption of conformity with the CRA.</p>
+<p>There is, however, an important distinction to make. <a href="https://www.riccardosirigu.com/blog/guide-to-understanding-eu-cybersecurity-standards-and-policy-essential-resources/#understanding-the-new-legislative-framework-nlf">Approval of a standard and its citation in the <em>Official Journal of the European Union</em></a> are two different steps. EN 40000-1-2 is not expected to be cited for the purpose of granting a presumption of conformity. Using it, therefore, does not automatically provide a presumption of conformity with the CRA.</p>
 <p>It remains an important horizontal reference for structuring product cybersecurity risk management and the activities carried out throughout the product lifecycle.</p>
 <p>A good risk assessment is valuable because of the decisions it helps us make. It isn't just about filling in a risk matrix. It's about choosing practical, proportionate controls, explaining those choices, and revisiting them when the context changes — from design through to maintenance.</p>
 <p>And you? How far along are you with your risk assessment?</p>
@@ -937,10 +937,10 @@ Following a harmonized standard means the product is presumed to meet the essent
 The United Nations Economic Commission for Europe (UNECE) develops international legal instruments, including vehicle regulations that many countries — including all EU Member States — adopt. UNECE's <em>World Forum for Harmonization of Vehicle Regulations (WP.29)</em> sets global standards on automotive safety, cybersecurity, and environmental impact.</p>
 </blockquote>
 <hr>
-<h2 id="key-eu-cybersecurity-law-deadlines-2025">Key EU Cybersecurity Law Deadlines (2025+)</h2>
+<h2 id="key-eu-cybersecurity-law-deadlines-2025">Key EU Cybersecurity Law Deadlines and Milestones</h2>
 <p>Here are the dates and areas covered by the main laws on cybersecurity, data governance and digital resilience:</p>
 <ul>
-<li>Cyber Resilience Act (CRA): Enters into force in 2025 with a 36-month transition period for most digital products. Establishes baseline cybersecurity requirements across hardware and software.</li>
+<li>Cyber Resilience Act (CRA): Entered into force on 10 December 2024. Its main provisions apply from 11 December 2027. Chapter IV provisions on the notification of conformity assessment bodies apply from 11 June 2026, while the reporting obligations under Article 14 apply from 11 September 2026. The regulation establishes cybersecurity requirements for products with digital elements.</li>
 <li>AI Act: Finalized in 2024 — introduces a risk-based framework for AI. High-risk systems must meet cybersecurity, transparency, and conformity requirements.</li>
 <li>Digital Operational Resilience Act (DORA): Applies from January 17, 2025. Covers financial institutions and critical ICT providers. Mandates ICT risk management, incident reporting, and resilience testing.</li>
 <li>Data Act: Applies from September 2025. Sets rules for who can access and use data from connected products and services. Promotes data-sharing obligations, cloud interoperability, and limits vendor lock-in.</li>
