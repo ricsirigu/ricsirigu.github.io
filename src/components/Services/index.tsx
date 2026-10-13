@@ -17,6 +17,7 @@ interface Service {
       icon: IconProps;
       description: string;
       linkTo?: string;
+      linkLabel?: string;
     };
   };
 }
@@ -34,12 +35,12 @@ const Services: React.FC<Props> = ({ sectionTitle, services }) => {
         {services.map((item) => {
           const {
             id,
-            frontmatter: { title, icon, description, linkTo }
+            frontmatter: { title, icon, description, linkTo, linkLabel }
           } = item.node;
 
           return (
             <Styled.ServiceItem key={id}>
-              <InfoBlock icon={icon} title={title} content={description} linkTo={linkTo} />
+              <InfoBlock icon={icon} title={title} content={description} linkTo={linkTo} linkLabel={linkLabel} />
             </Styled.ServiceItem>
           );
         })}

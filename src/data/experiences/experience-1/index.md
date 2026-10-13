@@ -6,5 +6,6 @@ startDate: 'Mar 2017'
 endDate: 'Present'
 ---
 
-Design and develop full-stack software solutions with an emphasis on scalability, security, testability, and maintainability.
-Provide strategic consulting on architecture decisions, technology stacks, and engineering best practices, supporting teams in building robust and future-proof systems.
+I design and develop full-stack software systems, focusing on security, scalability, testability, and maintainability.
+
+I also work with teams on architecture and technology choices, helping them understand the trade-offs and the long-term implications of those decisions.

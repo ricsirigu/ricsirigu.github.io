@@ -2,7 +2,7 @@
 import BlogPage from 'react-pages/BlogPage';
 import BaseLayout from 'layouts/BaseLayout.astro';
 import { getImage } from 'astro:assets';
-import { getBlogTopics, getPublishedBlogPosts } from 'lib/content';
+import { getBlogTopics, getPublishedBlogPosts, topicSlug } from 'lib/content';
 import { collectStyles } from 'lib/collectStyles';
 import type { ComponentProps } from 'react';
 
@@ -18,7 +18,7 @@ export async function getStaticPaths() {
       topic,
       topics,
       topicPosts: posts.filter((post) =>
-        post.data.tags.some((tag) => tag.toLowerCase() === topic.name.toLowerCase()),
+        post.data.tags.some((tag) => topicSlug(tag) === topic.slug),
       ),
     },
   }));

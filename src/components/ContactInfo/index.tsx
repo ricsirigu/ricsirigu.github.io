@@ -15,6 +15,7 @@ interface Contact {
     frontmatter: {
       title: string;
       content: string;
+      href?: string;
       icon: IconProps;
     };
   };
@@ -32,12 +33,26 @@ const ConctactInfo: React.FC<Props> = ({ contacts, sectionTitle }) => {
       {contacts.map((item) => {
         const {
           id,
-          frontmatter: { title, icon, content }
+          frontmatter: { title, icon, content, href }
         } = item.node;
 
         return (
           <Styled.ContactInfoItem key={id}>
-            <InfoBlock icon={icon} title={title} content={content} headingLevel="h2" center />
+            <InfoBlock
+              icon={icon}
+              title={title}
+              content={href ? (
+                <Styled.ContactLink
+                  href={href}
+                  target={href.startsWith('https://') ? '_blank' : undefined}
+                  rel={href.startsWith('https://') ? 'noopener noreferrer' : undefined}
+                >
+                  {content}
+                </Styled.ContactLink>
+              ) : content}
+              headingLevel="h2"
+              center
+            />
           </Styled.ContactInfoItem>
         );
       })}

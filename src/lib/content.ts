@@ -203,8 +203,11 @@ export async function getBlogTopics(): Promise<Array<{ count: number; name: stri
   const counts = new Map<string, { count: number; name: string }>();
 
   for (const post of posts) {
+    const seen = new Set<string>();
     for (const tag of post.data.tags) {
       const slug = topicSlug(tag);
+      if (seen.has(slug)) continue;
+      seen.add(slug);
       const current = counts.get(slug);
       counts.set(slug, { count: (current?.count || 0) + 1, name: current?.name || tag });
     }

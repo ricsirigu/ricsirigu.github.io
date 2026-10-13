@@ -5,6 +5,7 @@ title: 'Your Guide to Understanding EU Cybersecurity Laws and Standards'
 seoTitle: 'EU Cybersecurity Laws and Standards: Essential Guide'
 description: 'A practical guide to authoritative EU cybersecurity laws, policies and standards, including NIS2, RED and the Cyber Resilience Act.'
 date: '2025-04-09'
+updated: '2026-10-13'
 tags: ['cybersecurity', 'nis2', 'red', 'cra']
 published: true
 ---
@@ -73,11 +74,11 @@ How do the legal requirements connect to the work on a product or service? The E
 
 ---
 
-<h2 id="key-eu-cybersecurity-law-deadlines-2025">Key EU Cybersecurity Law Deadlines (2025+)</h2>
+<h2 id="key-eu-cybersecurity-law-deadlines-2025">Key EU Cybersecurity Law Deadlines and Milestones</h2>
 
 Here are the dates and areas covered by the main laws on cybersecurity, data governance and digital resilience:
 
-- Cyber Resilience Act (CRA): Enters into force in 2025 with a 36-month transition period for most digital products. Establishes baseline cybersecurity requirements across hardware and software.
+- Cyber Resilience Act (CRA): Entered into force on 10 December 2024. Its main provisions apply from 11 December 2027. Chapter IV provisions on the notification of conformity assessment bodies apply from 11 June 2026, while the reporting obligations under Article 14 apply from 11 September 2026. The regulation establishes cybersecurity requirements for products with digital elements.
 - AI Act: Finalized in 2024 — introduces a risk-based framework for AI. High-risk systems must meet cybersecurity, transparency, and conformity requirements.
 - Digital Operational Resilience Act (DORA): Applies from January 17, 2025. Covers financial institutions and critical ICT providers. Mandates ICT risk management, incident reporting, and resilience testing.
 - Data Act: Applies from September 2025. Sets rules for who can access and use data from connected products and services. Promotes data-sharing obligations, cloud interoperability, and limits vendor lock-in.

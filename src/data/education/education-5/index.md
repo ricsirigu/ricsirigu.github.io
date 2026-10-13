@@ -1,6 +1,6 @@
 ---
 category: 'education'
-university: 'University of Helsinky'
+university: 'University of Helsinki'
 degree: 'Cybersecurity Specialization, Online'
 startDate: '2016'
 endDate: '2016'

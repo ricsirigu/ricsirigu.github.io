@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 import { getImage } from 'astro:assets';
 
-import { getBlogTopics, getPublishedBlogPosts } from 'lib/content';
+import { getBlogTopics, getPublishedBlogPosts, topicSlug } from 'lib/content';
 import { siteMetadata } from 'lib/site';
 
 export const prerender = true;
@@ -39,7 +39,7 @@ export const GET: APIRoute = async () => {
   ].map((path) => ({ path }));
   const topicUrls: SitemapItem[] = (await getBlogTopics()).map((topic) => {
     const topicPosts = posts.filter((post) =>
-      post.data.tags.some((tag) => tag.toLowerCase() === topic.name.toLowerCase())
+      post.data.tags.some((tag) => topicSlug(tag) === topic.slug)
     );
     const lastModified = topicPosts
       .map((post) => (post.data.updated || post.data.date).toISOString().slice(0, 10))

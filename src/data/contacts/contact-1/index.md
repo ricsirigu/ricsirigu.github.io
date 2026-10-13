@@ -1,6 +1,7 @@
 ---
 category: 'contact'
-title: 'Linkedin'
+title: 'LinkedIn'
 icon: 'brand-linkedin'
 content: 'riccardosirigu'
+href: 'https://www.linkedin.com/in/riccardosirigu'
 ---

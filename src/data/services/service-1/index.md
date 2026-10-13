@@ -3,5 +3,6 @@ category: 'services'
 title: 'Engineering & Leadership Training'
 icon: 'university'
 linkTo: '/speaking-contributions/'
-description: 'I develop the security judgment of engineering and product teams — grounded in real attack scenarios, architectural thinking, and the regulatory context that now shapes product requirements across the EU.'
+linkLabel: "Training & Contributions"
+description: "I work with engineers, product teams, and technical leaders to understand how security problems happen in real systems and what can be done to prevent them. The focus is on real attack scenarios, architecture decisions, and what European security requirements mean for the products they build."
 ---

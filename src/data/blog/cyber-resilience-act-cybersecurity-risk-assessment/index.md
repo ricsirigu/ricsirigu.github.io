@@ -35,7 +35,7 @@ I had assessed the situation far too optimistically and superficially. In my hea
 
 But before returning to that fall, let's take a few steps back.
 
-Under the Cyber Resilience Act (CRA), before getting to the risk assessment, we need to understand the context in which the product will operate, establish whether it falls within the regulation or is covered by other sector-specific legislation, define its scope properly, and identify the company's role.
+Under the [Cyber Resilience Act (CRA)](/expertise/cyber-resilience-act/), before getting to the risk assessment, we need to understand the context in which the product will operate, establish whether it falls within the regulation or is covered by other sector-specific legislation, define its scope properly, and identify the company's role.
 
 It may sound obvious, but it isn't something to take lightly. I've seen products declared outside the scope of the CRA because they were (apparently) not connected to the Internet. The thing is, an Internet connection is not a prerequisite for the CRA to apply.
 
@@ -45,7 +45,7 @@ Under the Cyber Resilience Act, a *product with digital elements* (PDE) is a har
 
 Standalone SaaS applications are generally not PDEs, unless the remote service qualifies as a *remote data processing solution*: a solution designed and developed by the manufacturer, or under its responsibility, without which the product would be unable to perform one of its functions.
 
-This distinction matters because I still hear things like: "My product doesn't connect to the Internet," "It's only software," or "The CRA only applies to IoT devices." Three shortcuts that can lead you in the wrong direction.
+This distinction matters because I still hear things like: "My product doesn't connect to the Internet," "It's only software," or "The CRA only applies to IoT devices." Three [shortcuts that can lead you in the wrong direction](/blog/cyber-resilience-act-ten-common-misconceptions-about-cra-compliance/).
 
 ## Step 2 — Is the product made available on the market in the course of a commercial activity?
 
@@ -131,7 +131,7 @@ To structure this work, the CRA does not prescribe a specific methodology or sta
 
 In the specific context of the CRA, a particularly relevant reference is **EN 40000-1-2**, covering cybersecurity principles, product risk management and activities throughout the lifecycle of products with digital elements. As of October 2026, the text had passed the formal vote in the European standardisation process supporting the CRA, with final publication expected by the end of the year.
 
-There is, however, an important distinction to make. Approval of a standard and its citation in the *Official Journal of the European Union* are two different steps. EN 40000-1-2 is not expected to be cited for the purpose of granting a presumption of conformity. Using it, therefore, does not automatically provide a presumption of conformity with the CRA.
+There is, however, an important distinction to make. [Approval of a standard and its citation in the *Official Journal of the European Union*](/blog/guide-to-understanding-eu-cybersecurity-standards-and-policy-essential-resources/#understanding-the-new-legislative-framework-nlf) are two different steps. EN 40000-1-2 is not expected to be cited for the purpose of granting a presumption of conformity. Using it, therefore, does not automatically provide a presumption of conformity with the CRA.
 
 It remains an important horizontal reference for structuring product cybersecurity risk management and the activities carried out throughout the product lifecycle.
 

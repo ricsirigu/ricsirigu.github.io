@@ -10,7 +10,7 @@ const props = {
   eyebrow: 'Expertise',
   title: 'Attack-Informed Security for Products and Engineering Organizations',
   summary:
-    'Riccardo Sirigu works at the intersection of offensive security, secure product engineering and European cybersecurity regulation. The objective is durable risk reduction: make systemic weaknesses visible and turn evidence into better architecture, controls and engineering decisions.',
+    "A penetration test can tell us where a system breaks. What interests me more is understanding why it breaks, whether the same problem could exist somewhere else, and what would make it harder to repeat. That is where offensive security, Secure by Design, and product security requirements start to connect.",
   highlights: expertisePages.map((page) => ({
     href: `/expertise/${page.slug}/`,
     label: page.eyebrow,
@@ -18,10 +18,10 @@ const props = {
   })),
   sections: [
     {
-      title: 'One connected operating model',
+      title: "Why these areas belong together",
       paragraphs: [
-        'Offensive security reveals how systems fail. Secure-by-design practices turn those lessons into architecture and engineering guardrails. Product security and regulatory readiness ensure the resulting controls remain owned, documented and effective throughout the product lifecycle.',
-        'Treating these disciplines as a connected system produces more value than running them as independent activities or compliance workstreams.',
+        "An attack shows us where an assumption fails. Secure by Design helps us change the architecture or development practices behind it. Product security requirements, including those introduced by the CRA, make us consider how those decisions hold up throughout the product lifecycle, who is responsible for them, and how they are documented.",
+        "They are different activities, but treating them as separate checklists usually misses the point.",
       ],
     },
   ],

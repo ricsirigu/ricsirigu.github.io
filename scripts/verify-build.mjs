@@ -174,14 +174,35 @@ if (existsSync(output)) {
     }
   }
   const topicCounts = new Map();
-  for (const tag of publishedBlogs.flatMap((record) => record.frontmatter.tags || [])) {
-    const slug = topicSlug(tag);
-    topicCounts.set(slug, (topicCounts.get(slug) || 0) + 1);
+  for (const record of publishedBlogs) {
+    for (const slug of new Set((record.frontmatter.tags || []).map(topicSlug))) {
+      topicCounts.set(slug, (topicCounts.get(slug) || 0) + 1);
+    }
   }
   const topicSlugs = [...topicCounts.entries()]
     .filter(([, count]) => count >= 2)
     .map(([slug]) => slug)
     .sort();
+
+  // Check rendered cards, not just navigation links or the schema's item list.
+  for (const topic of topicSlugs) {
+    const html = readFileSync(path.join(output, `blog/topics/${topic}/index.html`), 'utf8');
+    const expected = publishedBlogs
+      .filter((record) => (record.frontmatter.tags || []).some((tag) => topicSlug(tag) === topic))
+      .map((record) => `/blog/${record.slug}/`)
+      .sort();
+    const cards = [...html.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>[\s\S]*?<\/a>/g)]
+      .filter((match) => /<h2\b/i.test(match[0]))
+      .map((match) => decodeEntities(match[1]))
+      .sort();
+    assert(JSON.stringify(cards) === JSON.stringify(expected), `${topic}: rendered cards must match all tagged articles exactly once`);
+    const activeLink = [...html.matchAll(/<a\b[^>]*aria-current="page"[^>]*>([\s\S]*?)<\/a>/g)]
+      .find((match) => htmlAttribute(match[0], 'href') === `/blog/topics/${topic}/`);
+    assert(plainText(activeLink?.[1])?.endsWith(`(${expected.length})`), `${topic}: displayed count must match rendered articles`);
+    const graph = JSON.parse(html.match(/<script[^>]+application\/ld\+json[^>]*>([\s\S]*?)<\/script>/i)[1])['@graph'];
+    const items = graph.find((entry) => entry['@type'] === 'ItemList')?.itemListElement || [];
+    assert(JSON.stringify(items.map((item) => new URL(item.url).pathname).sort()) === JSON.stringify(expected), `${topic}: structured list must match rendered articles`);
+  }
 
   for (const slug of blogDirectories) {
     const relativeSource = `src/data/blog/${slug}/index.md`;
@@ -306,6 +327,7 @@ if (existsSync(output)) {
     assert(titleCount === 1, `${relativeHtml}: expected exactly one title, found ${titleCount}`);
     assert(canonicalCount === 1, `${relativeHtml}: expected exactly one canonical, found ${canonicalCount}`);
     assert(descriptionCount === 1, `${relativeHtml}: expected exactly one meta description, found ${descriptionCount}`);
+    assert(meta.robots.toLowerCase().includes('noindex') === (relativeHtml === '404.html'), `${relativeHtml}: only the 404 page should be noindex`);
     assert(meta.canonical === meta.ogUrl, `${relativeHtml}: canonical and og:url must match`);
     try {
       const canonical = new URL(meta.canonical);
@@ -346,6 +368,10 @@ if (existsSync(output)) {
           );
           assert(meta.ogType === 'article', `${relativeHtml}: article must use og:type=article`);
           assert(posting?.datePublished === blogRecord?.frontmatter.date, `${relativeHtml}: datePublished is incorrect`);
+          assert(posting?.headline === blogRecord?.frontmatter.title, `${relativeHtml}: headline must preserve the article title`);
+          assert(posting?.url === meta.canonical, `${relativeHtml}: BlogPosting URL must match canonical`);
+          assert(posting?.author?.['@id'] === `${siteOrigin}/#person`, `${relativeHtml}: BlogPosting must identify the author`);
+          assert(posting?.mainEntityOfPage?.['@id'] === `${meta.canonical}#webpage`, `${relativeHtml}: mainEntityOfPage must identify the canonical page`);
           assert(
             posting?.dateModified === blogRecord?.frontmatter.updated,
             `${relativeHtml}: dateModified must match updated and be omitted when updated is absent`
@@ -355,6 +381,9 @@ if (existsSync(output)) {
         assert(false, `${relativeHtml}: invalid JSON-LD (${error.message})`);
       }
     }
+    const schemaIds = graphEntries.map((entry) => entry['@id']).filter(Boolean);
+    assert(new Set(schemaIds).size === schemaIds.length, `${relativeHtml}: duplicate JSON-LD entity`);
+    assert(graphEntries.filter((entry) => entry['@type'] === 'Person').length === 1, `${relativeHtml}: expected one Person`);
     if (
       relativeHtml === 'about/index.html' ||
       relativeHtml === 'expertise/index.html' ||

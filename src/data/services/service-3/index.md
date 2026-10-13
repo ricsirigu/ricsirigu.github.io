@@ -3,5 +3,6 @@ category: 'services'
 title: 'Offensive Security & Systemic Risk Assessment'
 icon: 'user-secret'
 linkTo: '/expertise/offensive-security/'
-description: 'I direct offensive security assessments designed to surface systemic weaknesses, not isolated vulnerabilities. The output is an actionable understanding of how your systems fail under real-world conditions and what that means for your risk posture.'
+linkLabel: "Offensive Security"
+description: "I lead offensive security assessments to understand how an attacker could compromise a system, why the attack would work, and whether the same weakness exists elsewhere. The findings help us assess the actual risk and decide what deserves attention first."
 ---
