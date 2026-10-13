@@ -19,15 +19,19 @@ The canonical website is https://www.riccardosirigu.com. Content may be used for
 
 ## Topics
 
+- [ai](https://www.riccardosirigu.com/blog/topics/ai/): 2 articles.
 - [cra](https://www.riccardosirigu.com/blog/topics/cra/): 4 articles.
-- [cybersecurity](https://www.riccardosirigu.com/blog/topics/cybersecurity/): 9 articles.
+- [cybersecurity](https://www.riccardosirigu.com/blog/topics/cybersecurity/): 10 articles.
+- [embedded](https://www.riccardosirigu.com/blog/topics/embedded/): 2 articles.
 - [functional programming](https://www.riccardosirigu.com/blog/topics/functional-programming/): 4 articles.
+- [malware](https://www.riccardosirigu.com/blog/topics/malware/): 2 articles.
 - [scala](https://www.riccardosirigu.com/blog/topics/scala/): 6 articles.
 - [security](https://www.riccardosirigu.com/blog/topics/security/): 3 articles.
 - [security-by-design](https://www.riccardosirigu.com/blog/topics/security-by-design/): 2 articles.
 
 ## Published articles
 
+- [Anthropic AI Worms in Slow Motion and Air Fryers](https://www.riccardosirigu.com/blog/anthropic-ai-worms-slow-motion-air-fryers/): Anthropic's AI worm research combines simulated replication with distributed LLM inference on 15 TV boxes. But how realistic is an autonomous IoT worm?
 - [Risk Assessment and the Cyber Resilience Act: A Guide to Staying Out of the Emergency Room](https://www.riccardosirigu.com/blog/cyber-resilience-act-cybersecurity-risk-assessment/): What a skateboard accident can teach us about CRA cybersecurity risk assessment, from product scope and classification to risk evaluation and mitigation.
 - [AI will kill us all](https://www.riccardosirigu.com/blog/ai-will-kill-us-all-security-by-design-and-cyber-resilience-act/): AI agents can make cyberattacks more adaptive and scalable, but insecure software, weak credentials and poor configurations remain at the core of the problem.
 - [Secure by Design: Escaping the Hamster Wheel of Pain](https://www.riccardosirigu.com/blog/secure-by-design-hamster-wheel-of-pain/): Why recurring vulnerabilities signal systemic management failures, and how secure-by-design practices can break the remediation cycle.
